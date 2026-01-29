@@ -52,6 +52,9 @@
 <table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/884f4c46-4ae1-4923-89f9-fe5c854652a8" width="200"/><br/>
       <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
 
+<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/630aadc7-46cb-4f6c-8c50-7e368e1abe9d" width="200"/><br/>
+      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
+      
  - **05\. 자동차 소프트웨어 개발 프로세스 (A-SPICE, ISO 26262 포함)**  
  📅 2026.01.22 ~ 2026.01.28  
 
