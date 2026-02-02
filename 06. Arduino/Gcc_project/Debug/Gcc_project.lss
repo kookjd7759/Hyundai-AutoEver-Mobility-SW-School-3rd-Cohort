@@ -3,27 +3,29 @@ Gcc_project.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000000e4  2**0
+  0 .data         00000000  00800100  00800100  000000f6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000090  00000000  00000000  00000054  2**1
+  1 .text         000000a2  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      00000030  00000000  00000000  000000e4  2**0
+  2 .comment      00000030  00000000  00000000  000000f6  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000114  2**2
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000128  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000020  00000000  00000000  00000154  2**0
+  4 .debug_aranges 00000020  00000000  00000000  00000168  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   0000067b  00000000  00000000  00000174  2**0
+  5 .debug_info   0000068c  00000000  00000000  00000188  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000005f5  00000000  00000000  000007ef  2**0
+  6 .debug_abbrev 00000607  00000000  00000000  00000814  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000001de  00000000  00000000  00000de4  2**0
+  7 .debug_line   00000204  00000000  00000000  00000e1b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000024  00000000  00000000  00000fc4  2**2
+  8 .debug_frame  00000024  00000000  00000000  00001020  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000036a  00000000  00000000  00000fe8  2**0
+  9 .debug_str    00000374  00000000  00000000  00001044  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000010  00000000  00000000  00001352  2**0
+ 10 .debug_loc    00000022  00000000  00000000  000013b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  000013da  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -64,33 +66,57 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
   74:	0e 94 40 00 	call	0x80	; 0x80 <main>
-  78:	0c 94 46 00 	jmp	0x8c	; 0x8c <_exit>
+  78:	0c 94 4f 00 	jmp	0x9e	; 0x9e <_exit>
 
 0000007c <__bad_interrupt>:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000080 <main>:
-#include <util/delay.h>
 
-#define LED_DELAY_TIME	(100) //ms
+#define KEY_1_PIN		(PINB7)
+
 
 int main(void) {
-	DDRB = 0xFF; // PB[7:0]을 모두 출력으로 설정한다.
-  80:	8f ef       	ldi	r24, 0xFF	; 255
-  82:	84 b9       	out	0x04, r24	; 4
-	PORTB = 0x00; // PB[7:0]에 모두 0을 출력한다. (=LED가 꺼진다)
-  84:	15 b8       	out	0x05, r1	; 5
-		PORTB= 0x00; // PB[7:0]에 모두 0을 출력한다. (=LED가 꺼진다)
-		_delay_ms(LED_DELAY_TIME); // LED_DELAY_TIME 만큼 기다린다.
-		// 무한 루프로 계속 반복한다.
-	}*/
-	return (0);
-  86:	80 e0       	ldi	r24, 0x00	; 0
-  88:	90 e0       	ldi	r25, 0x00	; 0
-  8a:	08 95       	ret
+	cbi(KEY_DIR_PORT, KEY_1_PIN); // KEY는 PB7 입력 설정
+  80:	27 98       	cbi	0x04, 7	; 4
+	
+	sbi(LED_DIR_PORT, LED_1_PIN); // LED는 PB5 출력 설정
+  82:	25 9a       	sbi	0x04, 5	; 4
+	cbi(LED_OUT_PORT, LED_1_PIN); // LED 꺼놓고..
+  84:	2d 98       	cbi	0x05, 5	; 5
+	
+	uint8_t key_1_val= 0; // 키값을 받을 변수 하나 만들어 놓고
+	
+	while(1) {
+		//key_1_val= (KEY_IN_PORT & (1<< KEY_1_PIN)) >> KEY_1_PIN;
+		key_1_val= (KEY_IN_PORT >> KEY_1_PIN);
+  86:	83 b1       	in	r24, 0x03	; 3
+		// 꼭 쉬프트 시켜줘야 0,1이 들어온다.
+		// 그렇지 않으면 0x8?, 0x?? 값이 들어올수 있다.
+		// ??는 PINB의 각 핀 상태에 따라서 달라지기 때문에 꼭 0이라고 말할수 없다.
+		
+		switch(key_1_val) {
+  88:	88 1f       	adc	r24, r24
+  8a:	88 27       	eor	r24, r24
+  8c:	88 1f       	adc	r24, r24
+  8e:	19 f0       	breq	.+6      	; 0x96 <main+0x16>
+  90:	81 30       	cpi	r24, 0x01	; 1
+  92:	19 f0       	breq	.+6      	; 0x9a <main+0x1a>
+  94:	f8 cf       	rjmp	.-16     	; 0x86 <main+0x6>
+			case KEY_PRESSED: // 0 1이 아니라 0이다. Pull-up 회로이기 때문에
+			sbi(LED_OUT_PORT, LED_1_PIN);
+  96:	2d 9a       	sbi	0x05, 5	; 5
+			break;
+  98:	f6 cf       	rjmp	.-20     	; 0x86 <main+0x6>
+			
+			case KEY_RELEASED: // 1
+			cbi(LED_OUT_PORT, LED_1_PIN);
+  9a:	2d 98       	cbi	0x05, 5	; 5
+			break;
+  9c:	f4 cf       	rjmp	.-24     	; 0x86 <main+0x6>
 
-0000008c <_exit>:
-  8c:	f8 94       	cli
+0000009e <_exit>:
+  9e:	f8 94       	cli
 
-0000008e <__stop_program>:
-  8e:	ff cf       	rjmp	.-2      	; 0x8e <__stop_program>
+000000a0 <__stop_program>:
+  a0:	ff cf       	rjmp	.-2      	; 0xa0 <__stop_program>
