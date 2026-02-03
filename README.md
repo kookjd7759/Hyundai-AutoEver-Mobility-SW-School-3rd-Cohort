@@ -17,7 +17,7 @@
 ---
 
 해당 **Hyundai AutoEver Mobility SW School, 3rd Cohort (현대오토에버 모빌리티 SW 스쿨 3기)** 과정은,  
-현대자동차그룹의 SDV(Software Defined Vehicle) 및 모빌리티 소프트웨어 인재 양성을 목표로 한 실무 중심 교육 프로그램이다.
+🚗 현대자동차그룹의 SDV(Software Defined Vehicle) 및 모빌리티 소프트웨어 인재 양성을 목표로 한 실무 중심 교육 프로그램이다.
 
 본 과정은 C/C++ 기반 임베디드 프로그래밍을 중심으로,  
 자동차 전장 시스템 이해, 차량용 소프트웨어 개발 프로세스(A-SPICE, ISO 26262), 임베디드 Linux·MCU 개발, AUTOSAR, 차량 통신(Ethernet/RTOS), OTA,
@@ -29,7 +29,7 @@
 ## Course <sub>(2025.12.18 ~2026.06.29)</sub>  
 #### 01\. 미래 모빌리티 트렌드 <sub>(2025.12.18 ~ 2025.12.22)</sub>  
 > **📝 학습 내용**  
-> 과정 오리엔테이션과 팀 빌딩을 진행하고, 미래 모빌리티 트렌드 리서치를 통한 모빌리티 혁신 아이디어 기획 및 팀 발표 수행  
+> OT와 팀 빌딩, 미래 모빌리티 트렌드 리서치를 통한 모빌리티 혁신 아이디어 기획 및 팀 발표  
 
 #### 02\. C/C++ 프로그래밍 <sub>(2025.12.23 ~ 2026.01.08)</sub>  
 > **📝 학습 내용**  
@@ -75,8 +75,8 @@
   <summary>📚 상세 학습 내용 보기</summary>
 
   ###### 임베디드 시스템  
-  : 특정 기기에 MCU와 SW를 내장하여, 미리 정해진 고유한 기능만을 수행하도록 설계된 전용 컴퓨터 시스템  
-  [특징] : 단일/특정 작업만 수행, 하드웨어와 펌웨어가 밀접하게 결합, 제한된 resource, 실시간성(입력에 대한 즉각적인 반응이 필수)  
+   : 특정 기기에 MCU와 SW를 내장하여, 미리 정해진 고유한 기능만을 수행하도록 설계된 전용 컴퓨터 시스템  
+  [특징] : 단일/특정 작업만 수행, 하드웨어와 펌웨어가 밀접하게 결합, 제한된 resource, 실시간성
   [구조] : 입력 센서 - Main Processor - 출력 엑츄에이터  
 
   ###### CPU/GPU/MPU/MCU  
@@ -88,6 +88,24 @@
   ###### 개발용 MCU 보드 종류  
   [초보용 MCU] : 아두이노, 라즈베리
   [상용 MCU] : ST(Nucleo 시리즈), 노르딕, 인피니언
+  
+  ###### Volatile keyword  
+  : 해당 변수를 최적화에서 제외하여 항상 메모리에 접근하도록 컴파일  
+  [사용법] : volatile data_type variable_name  
+  [필요성] : MIMO, 멀티 쓰레드 환경, 인터럽트 서비스 루틴  
+  
+  ###### MCU Bring-up  
+  : MCU가 기본적으로 동작하는 것, 동작 가능한 상태를 의미 (?)
+
+  ###### I/O Access 방법  
+  Special Instruction I/O  
+  Memory-mapped I/O  
+  Direct memory access (DMA)
+
+  ###### GPIO(General-purpose I/O)  
+
+
+  
 
 </details>
   
