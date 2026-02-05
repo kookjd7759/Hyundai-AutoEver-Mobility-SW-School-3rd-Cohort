@@ -1,4 +1,3 @@
-
 <div>
   <img
     src="https://i.namu.wiki/i/An5mFROiD7MnRwB0SXP8k-BMeVnpTiWB1Vf2atoI9yco-hHDD-CyTQ0UASL5ktk7sueDdf3OQBNQXfstMPPh3YE9uyjsmELk9rBmIsBHfrVmALG-wnN7kZqyT4nGHJCnx2YoqEcgeLdX0gtBDCIyGA.svg"
@@ -102,7 +101,9 @@
   Memory-mapped I/O  
   Direct memory access (DMA)
 
-  ###### GPIO(General-purpose I/O)  
+  ###### HAL  
+  [Basic HAL] : 특정 MCU 아키텍처에 맞춰 하드웨어 기능을 직접 추상화한 기본 수준의 HAL (GPIO, SYSTICK, NVIC, RCC, FLASH etc)    
+  [Generic HAL] : 하드웨어 독립적인 공통 인터페이스를 정의하여 다양한 플랫폼에서 동일한 상위 코드를 가능하게 하는 HAL  
 
 
   
