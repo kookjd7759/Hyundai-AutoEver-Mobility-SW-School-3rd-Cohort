@@ -1,4 +1,3 @@
-<div>
   <img
     src="https://i.namu.wiki/i/An5mFROiD7MnRwB0SXP8k-BMeVnpTiWB1Vf2atoI9yco-hHDD-CyTQ0UASL5ktk7sueDdf3OQBNQXfstMPPh3YE9uyjsmELk9rBmIsBHfrVmALG-wnN7kZqyT4nGHJCnx2YoqEcgeLdX0gtBDCIyGA.svg"
     width="120"
@@ -163,20 +162,55 @@
 > **📝 학습 내용**  
 > TODO  
 
-<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/8eb8b48f-3f14-4803-8651-a18a4455aafa" width="200"/><br/>
-      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
 
-<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/0189d492-56d1-4068-ad19-eb62f70ba2ab" width="200"/><br/>
-      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+  
+---
 
-<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/de1d682e-b4b5-41e1-9e31-467bdf0f693f" width="200"/><br/>
-      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
-      
-<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/884f4c46-4ae1-4923-89f9-fe5c854652a8" width="200"/><br/>
-      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
+**이론**  
+- 바디 - 차체, 의장 부품, 전장 부품  
+- 섀시 - 주행장치(현가장치, 조향장치, 제동장치), 구동장치(전륜, 후륜, 사륜, 엔진, 클러치, 변속기 자재이음, 종감속기어, 차동기어, 휠/타이어)  
 
-<table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/630aadc7-46cb-4f6c-8c50-7e368e1abe9d" width="200"/><br/>
-      <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
+**실습**  
+**1. 내연 기관 바디 전장 전기 장치 실습**  
+- [실습 차량] - 기아 K5(JF)  
+- [내용] - 프런트 범퍼, 리어 범퍼, 전조등 분리, 방향 지시등, 리어 콤비네이션 램프, 전방 안개등, 퓨즈, 릴레이 점검, 번호판등 탈거 및 재장착  
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/ec2f1768-ec88-49bd-b9be-d0c01d3207c7" width="220"/><br/>
+      <sub><b>프런트 범퍼 탈거 실습 중</b></sub> </td> </tr> </table> <br clear="left"/>
+
+**2. 동력전달/섀시 구조 및 전기 장치 실습**  
+- [실습 차량] - 현대 싼타페 DM  
+- [내용] - 타이어, 브레이크 장치 탈거 및 재장착, 변속 시스템, 동력 전달 구조, 차동 장치, 타이어와 휠의 구조, 현가 장치, 승차 감각, 조향 장치, 제동 장치 실습  
+  ABS (Anti-lock Braking System) - 급제동 시 바퀴가 잠기는 것을 방지해 조향 능력을 유지하도록 돕는 제동 보조 시스템.  
+  BAS (Brake Assist System) - 긴급 상황에서 운전자의 급제동을 감지해 제동력을 자동으로 증폭시키는 시스템.  
+  EBD (Electronic Brakeforce Distribution) - 차량 하중과 주행 상태에 따라 앞뒤 바퀴의 제동력을 전자적으로 배분하는 시스템.  
+  TCS (Traction Control System) - 가속 시 바퀴의 헛돌림을 감지해 구동력을 제어하는 미끄럼 방지 시스템.  
+  ESP (Electronic Stability Program) - 차량이 미끄러지거나 차체가 불안정할 때 제동력과 엔진 출력을 제어해 주행 안정성을 유지하는 시스템.
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/654f503e-2c14-41e4-9eb8-4687d2742901" width="220"/><br/>
+      <sub><b>브레이크 장치 제거 실습 중</b></sub> </td> </tr> </table>
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/201781e3-2899-44a2-b1ea-d3ee1eeefcc7" width="220"/><br/>
+      <sub><b>전체 부품 탈거 후</b></sub> </td> </tr> </table> <br clear="left"/>
+
+**3. 에어백 및 스마트 키 전장시스템 실습**  
+- [실습 차량] - 그랜저 하이브리드 2014년식
+- [내용] - 도어 트림, 사이드미러, 윈도우 모터, 스피커, 아웃 사이드 핸들, 시트벨트 및 프리텐셔너, 에어백 컴퓨터, 요-레이트센서, 스마트키 안테나, ECM 리어 뷰 미러, 오버 헤드 콘솔 램프, 계기판, 흡기호스 및 에어클리터, 맵센서, 캠 포지션 센서 탈거 및 재장착
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/9ae86738-6400-4b90-8a0b-070efc864dde" width="220"/><br/>
+      <sub><b>프런트 범퍼 탈거 실습</b></sub> </td> </tr> </table>
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/7899641c-ad0a-42da-9572-2913f077b7c9" width="220"/><br/>
+      <sub><b>시트 탈거 후</b></sub> </td> </tr> </table> <br clear="left"/>
+
+</details>
 
 #### 05\. 자동차 소프트웨어 개발 프로세스 <sub>(2026.01.22 ~ 2026.01.28)</sub>  
 > **📝 학습 내용**  
