@@ -1,150 +1,261 @@
-typedef struct {
-   volatile unsigned int MODER;
-   volatile unsigned int OTYPER;
-   volatile unsigned int OSPEEDR;
-   volatile unsigned int PUPDR;
-   volatile unsigned int IDR;
-   volatile unsigned int ODR;
-   volatile unsigned int BSRR;
-   volatile unsigned int LCKR;
-   volatile unsigned int ARF[2];
-   volatile unsigned int BRR;
-}GPIO_TypeDef;
-#define PERIPH_BASE (0x40000000)
-#define AHBPERIPH_HASE (PERIPH_BASE + 0x20000)
-#define RCC_BASE (AHBPERIPH_HASE + 0x1000)
-#define RCC_IOPENR_OFFSET 0x2c
-#define RCC_IOPENR_ADDR *(volatile unsigned int*)(RCC_BASE+RCC_IOPENR_OFFSET )
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2026 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
 
-#define RCC_GPIOA_EN ((unsigned int)(0x00000001U))
-#define RCC_GPIOB_EN ((unsigned int)(0x00000002U))
-#define IOPAEN_BIT 1
-#define IOPBEN_BIT 2
-#define IOPCEN_BIT 4
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
-#define GPIO_ADDR (unsigned int) 0x50000000U
-#define GPIO_PORTA_BASE (GPIO_ADDR)
-#define GPIOA (GPIO_TypeDef*)GPIO_PORTA_BASE
-#define GPIO_PORTB_BASE ((GPIO_ADDR) + 0x400U)
-#define GPIOB (GPIO_TypeDef*)GPIO_PORTB_BASE
+/* USER CODE END Includes */
 
-#define DELAY_TIME 0x10000
-void delay ( unsigned int t ){
-   volatile int counter=0;
-   while(counter <t){
-      ++counter;
-   }
-   return;
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
-#define GPIO_2BIT_POS_MASK ((unsigned int)0x00000003U) //0b11
-#define GPIO_1BIT_POS_MASK ((unsigned int)0x00000001U)//0b01
-#define GPIO_PIN_5_POS 5
-#define GPIO_PIN_8_POS 8
-//d7 - pa8
-typedef enum{
-   GPIO_PIN_RESET = 0U,
-   GPIO_PIN_SET
-}GPIO_PinState;
-void GPIO_Init(GPIO_TypeDef* port, unsigned short pin, GPIO_TypeDef*initVal);
-void GPIO_Write_Pin(GPIO_TypeDef* port, unsigned short pin, GPIO_PinState state);
-//void GPIO_Read_Pin(GPIO_TypeDef* port, unsigned short pin, GPIO_PinState state);
-void GPIO_Toggle_Pin(GPIO_TypeDef* port, unsigned short pin){
-   unsigned int position = pin;
-   position = GPIO_1BIT_POS_MASK << pin;
-   unsigned int odr;
-   odr = port -> ODR;
-   
-   port -> BSRR = ((odr&position)<<16)| (~odr& position);
-}
-void GPIO_Write_Pin(GPIO_TypeDef* port, unsigned short pin, GPIO_PinState state){
-      //5. ourput data(ODR) - 1bit
-   /*unsigned int reg = port -> ODR;
-   reg &= ~(GPIO_1BIT_POS_MASK << pin);
-   unsigned int tmp = reg;
-   reg |= state << pin;
-   port-> ODR = reg;*/
-   
-   //BSRR/BRR
-   unsigned int position =0;
-   position = GPIO_1BIT_POS_MASK << pin;
-   if( state != GPIO_PIN_RESET){
-      port->BSRR = position;
-   } else {
-      port->BRR = position;
-   }
-   
-}
-void GPIO_init(GPIO_TypeDef* port, unsigned short pin, GPIO_TypeDef* initVal){
-   //1. GPIO port mode register (GPIOx_MODER)
-   //GPIO_MODE_REG_ADDR = 0xEBFFF4FF;
-   unsigned int reg =  port -> MODER ;
-   reg &= ~(GPIO_2BIT_POS_MASK << 2U*pin);
-   reg |= ((initVal->MODER) << 2U*pin);
-   port -> MODER  = reg;
 
-   //2. type register - 1bit
-   //GPIO_TYPE_REG_ADDR = 0x0;
-   reg = port -> OTYPER ;
-   reg &= ~(GPIO_1BIT_POS_MASK << 1U*pin);
-   reg |= ( (initVal->OTYPER)  << 1U*pin);
-   port -> OTYPER = reg;
-   
-   //3. output speed register - 2bit
-   //GPIO_OUTPUT_SPEED_REG_ADDR = 0x0c000c00;
-   reg = port -> OSPEEDR;
-   reg &= ~(GPIO_2BIT_POS_MASK << 2U*pin);
-   reg |= ( (initVal->OSPEEDR) << 2U*pin);
-   port -> OSPEEDR = reg;
-   
-   //4. pull up / down - 2bit
-   //GPIO_PULL_UP_DOWN_REG_ADDR = 0x24000000;
-   reg = port -> PUPDR;
-   reg &= ~(GPIO_2BIT_POS_MASK << 2U*pin);
-   reg |= ((initVal->PUPDR)  << 2U*pin);
-   port -> PUPDR = reg;
-}   
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
-int main (void){
-/*
-1. Rcc port a enable register (IOPAEN)
-AHB
-0x40021000
-I/O port
-0x2c offset
-= 0x 4002 102c 
-*/
-   
-   RCC_IOPENR_ADDR |= RCC_GPIOA_EN;
-   RCC_IOPENR_ADDR |= RCC_GPIOB_EN;
-   GPIO_TypeDef* GPIOA_reg = GPIOA;
-   GPIO_TypeDef* GPIOB_reg = GPIOB;
-   GPIO_TypeDef init_val;
-   init_val.MODER = 0x000000001U;
-   init_val.OTYPER = 0x000000000U;
-   init_val.OSPEEDR = 0x00000003U;
-   init_val.PUPDR = 0x00000000U;
-   GPIO_init(GPIOA_reg, GPIO_PIN_5_POS, &init_val);
-   GPIO_init(GPIOA_reg, GPIO_PIN_8_POS, &init_val);
-   GPIO_init(GPIOB_reg, GPIO_PIN_5_POS, &init_val);
-   GPIO_PinState GPIOA_PIN_5_State = GPIO_PIN_RESET;
-   GPIO_PinState GPIOA_PIN_8_State = GPIO_PIN_SET;
-   GPIO_PinState GPIOB_PIN_5_State = GPIO_PIN_RESET;
-   GPIO_Write_Pin(GPIOA_reg, GPIO_PIN_5_POS, GPIOA_PIN_5_State);
-   GPIO_Write_Pin(GPIOA_reg, GPIO_PIN_8_POS, GPIOA_PIN_8_State);
-   GPIO_Write_Pin(GPIOB_reg, GPIO_PIN_5_POS, GPIOB_PIN_5_State);
-   
-   while (1){
-      delay(DELAY_TIME);
-      /*
-      GPIOA_PIN_5_State = (GPIO_PinState)(!GPIOA_PIN_5_State);
-      GPIOA_PIN_8_State = (GPIO_PinState)(!GPIOA_PIN_8_State);
-      GPIOB_PIN_5_State = (GPIO_PinState)(!GPIOB_PIN_5_State);
-      GPIO_Write_Pin(GPIOA_reg, GPIO_PIN_5_POS, GPIOA_PIN_5_State);
-      GPIO_Write_Pin(GPIOA_reg, GPIO_PIN_8_POS, GPIOA_PIN_8_State);
-      GPIO_Write_Pin(GPIOB_reg, GPIO_PIN_5_POS, GPIOB_PIN_5_State);*/
-      GPIO_Toggle_Pin(GPIOA_reg, GPIO_PIN_5_POS);
-      GPIO_Toggle_Pin(GPIOA_reg, GPIO_PIN_8_POS);
-      GPIO_Toggle_Pin(GPIOB_reg, GPIO_PIN_5_POS);
-   }
-   return 0; 
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
+  RCC_OscInitStruct.MSICalibrationValue = 0;
+  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_5;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
+  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
 }
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+
+  /* USER CODE END MX_GPIO_Init_1 */
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : B1_Pin */
+  GPIO_InitStruct.Pin = B1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LD2_Pin */
+  GPIO_InitStruct.Pin = LD2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+
+  /* USER CODE END MX_GPIO_Init_2 */
+}
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+#ifdef USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

@@ -57,7 +57,6 @@
 <table align="left"> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/630aadc7-46cb-4f6c-8c50-7e368e1abe9d" width="200"/><br/>
       <sub>test1</sub> </td> </tr> </table> <br clear="left"/>
 
-
 #### 05\. 자동차 소프트웨어 개발 프로세스 <sub>(2026.01.22 ~ 2026.01.28)</sub>  
 > **📝 학습 내용**  
 > TODO  
@@ -90,11 +89,11 @@
   
   ###### Volatile keyword  
   : 해당 변수를 최적화에서 제외하여 항상 메모리에 접근하도록 컴파일  
-  [사용법] : volatile data_type variable_name  
+  [사용법] : volatile data_type variable_name  897
   [필요성] : MIMO, 멀티 쓰레드 환경, 인터럽트 서비스 루틴  
   
   ###### MCU Bring-up  
-  : MCU가 기본적으로 동작하는 것, 동작 가능한 상태를 의미 (?)
+  : 전원이 인가된 MCU가 “의도한 소프트웨어를 실행할 수 있는 최소한의 정상 상태”까지 올라오는 과정  
 
   ###### I/O Access 방법  
   Special Instruction I/O  
@@ -105,15 +104,12 @@
   [Basic HAL] : 특정 MCU 아키텍처에 맞춰 하드웨어 기능을 직접 추상화한 기본 수준의 HAL (GPIO, SYSTICK, NVIC, RCC, FLASH etc)    
   [Generic HAL] : 하드웨어 독립적인 공통 인터페이스를 정의하여 다양한 플랫폼에서 동일한 상위 코드를 가능하게 하는 HAL  
 
-
-  
-
 </details>
   
 
 #### 08\. 임베디드 리눅스 시스템 프로그래밍 <sub>(2026.02.10 ~ 2026.02.13)</sub>  
 > **📝 학습 내용**  
->   
+> 라즈베리파이 기반 리눅스 환경에서 시스템 구조와 동작 원리를 이해하고, C 프로그래밍과 네트워크 통신을 통해 임베디드 리눅스 시스템 전반을 학습  
 
 #### 09\. 임베디드 MCU 프로그래밍 <sub>(2026.02.19 ~ 2026.02.25)</sub>  
 > **📝 학습 내용**  
