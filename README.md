@@ -89,7 +89,7 @@
   
   ###### Volatile keyword  
   : 해당 변수를 최적화에서 제외하여 항상 메모리에 접근하도록 컴파일  
-  [사용법] : volatile data_type variable_name  897
+  [사용법] : volatile data_type variable_name  
   [필요성] : MIMO, 멀티 쓰레드 환경, 인터럽트 서비스 루틴  
   
   ###### MCU Bring-up  
@@ -98,7 +98,7 @@
   ###### I/O Access 방법  
   Special Instruction I/O  
   Memory-mapped I/O  
-  Direct memory access (DMA)
+  Direct memory access (DMA)  
 
   ###### HAL  
   [Basic HAL] : 특정 MCU 아키텍처에 맞춰 하드웨어 기능을 직접 추상화한 기본 수준의 HAL (GPIO, SYSTICK, NVIC, RCC, FLASH etc)    
