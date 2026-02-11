@@ -219,6 +219,15 @@
 > **📝 학습 내용**  
 > LED·버튼·부저·DC 모터·센서(DHT) 제어를 중심으로 GPIO, PWM, ADC, 시리얼 통신 및 AVR 레지스터 직접 제어를 실습하며 임베디드 소프트웨어 개발 기초를 학습    
 
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/20f3b36f-ede5-4cc4-ad24-5c4a98f1a4dd" width="220"/><br/>
+      <sub><b>LED 점등 응용 실습</b></sub> </td> </tr> </table> <br clear="left"/>
+
+<table align="left"> <tr> <td align="center">
+      <img src="https://github.com/user-attachments/assets/b1bcd98f-2e67-4135-a045-061ffb89cd7f" width="220"/><br/>
+      <sub><b>DC 모터 제어 실습</b></sub> </td> </tr> </table> <br clear="left"/>
+
+
 #### 07\. 임베디드 C 프로그래밍 기초 <sub>(2026.02.03 ~ 2026.02.09)</sub>  
 > **📝 학습 내용**  
 > C언어 기반으로 임베디드 시스템을 구현하며, STM32 보드 환경 이해부터 기본 동작 구현과 시리얼 통신을 통한 외부 장치 데이터 송수신까지 학습  
