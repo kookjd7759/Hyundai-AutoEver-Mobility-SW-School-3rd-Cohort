@@ -30,6 +30,9 @@
 > **📝 학습 내용**  
 > OT와 팀 빌딩, 미래 모빌리티 트렌드 리서치를 통한 모빌리티 혁신 아이디어 기획 및 팀 발표  
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
 <table align="left"> <tr> <td align="center">
       <img src="https://github.com/user-attachments/assets/e56df490-c14d-4822-a232-f5083c5033f6" width="220"/><br/>
       <sub><b>트렌드 리서치 결과 발표</b></sub> </td> </tr> </table>
@@ -38,6 +41,8 @@
       <img src="https://github.com/user-attachments/assets/466de70e-10e8-4e7b-9278-03e7dded7dfb" width="220"/><br/>
       <sub><b>모빌리티 산업 아이디어 소개</b></sub> </td> </tr> </table> <br clear="left"/>
 
+</details>
+  
 #### 02\. C/C++ 프로그래밍 <sub>(2025.12.23 ~ 2026.01.08)</sub>  
 > **📝 학습 내용**  
 > C/C++ 프로그래밍 기초 학습  
