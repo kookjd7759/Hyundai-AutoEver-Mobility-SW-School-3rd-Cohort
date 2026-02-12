@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/mman.h>
+#include <time.h>
 
 #define GPIO_BASE   (0xFE200000) // GPIO controller address
 #define GPIO_SIZE   (256)
@@ -35,21 +36,38 @@ int main(int argc, char** argv) {
 	}
 
 	// GPIO and mmap
-	gpio_map = mmap(NULL, GPIO_SIZE, PROT_READ | PROT_WRITE,
-		MAP_SHARED, mem_fd, GPIO_BASE);
+	gpio_map = mmap(NULL, GPIO_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, mem_fd, GPIO_BASE);
 	if (gpio_map == MAP_FAILED) {
 		printf("[Error] mmap() : %d\n", gpio_map);
 		return -1;
 	}
 	printf("[OK] start\n");
+	printf("pressed time - %.3f sec     ", 0.0); fflush(stdout);
 
 	gpio = (volatile unsigned*)gpio_map;
 	GPIO_IN(sw);
 	GPIO_OUT(led);
+	GPIO_OUT(13); GPIO_OUT(19); GPIO_OUT(26); // 7 segment test
+	GPIO_CLR(13); GPIO_CLR(19); GPIO_CLR(26); // 7 segment test
+	int prev = 0;
+	struct timespec start, now;
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	while (1) {
 		int pressed = (GPIO_GET(sw) ? 1 : 0);
-		if (pressed) GPIO_SET(led);
-		else 		 GPIO_CLR(led);
+
+		if (pressed) {
+			if (!prev) clock_gettime(CLOCK_MONOTONIC, &start);
+			clock_gettime(CLOCK_MONOTONIC, &now);
+			double time =
+				(now.tv_sec - start.tv_sec) +
+				(now.tv_nsec - start.tv_nsec) / 1e9;
+			printf("\rpressed time - %.3f sec     ", time); fflush(stdout);
+			GPIO_SET(led);
+			usleep(1000);
+		}
+		else GPIO_CLR(led);
+
+		prev = pressed;
 	}
 
 	munmap(gpio_map, GPIO_SIZE);
