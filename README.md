@@ -219,7 +219,7 @@
   <summary>📚 상세 학습 내용 보기</summary>
   
 ---
-
+ 
 
 
 </details>
@@ -239,42 +239,67 @@
 
 #### 07\. 임베디드 C 프로그래밍 기초 <sub>(2026.02.03 ~ 2026.02.09)</sub>  
 > **📝 학습 내용**  
-> C언어 기반으로 임베디드 시스템을 구현하며, STM32 보드 환경 이해부터 기본 동작 구현과 시리얼 통신을 통한 외부 장치 데이터 송수신까지 학습  
+> STM32 기반 임베디드 시스템 개발 전반을 이해하고, GPIO·HAL·인터럽트·통신(UART/I2C/SPI)·아날로그 입력·타이머·PWM·센서 제어까지 이론과 실습으로 익히는 과정.
 
  <details>
   <summary>📚 상세 학습 내용 보기</summary>
 
-  ###### 임베디드 시스템  
-   : 특정 기기에 MCU와 SW를 내장하여, 미리 정해진 고유한 기능만을 수행하도록 설계된 전용 컴퓨터 시스템  
-  [특징] : 단일/특정 작업만 수행, 하드웨어와 펌웨어가 밀접하게 결합, 제한된 resource, 실시간성
+  **이론**  
+  - [임베디드 시스템] - 특정 기기에 MCU와 SW를 내장하여, 미리 정해진 고유한 기능만을 수행하도록 설계된 전용 컴퓨터 시스템  
+  [특징] : 단일/특정 작업만 수행, 하드웨어와 펌웨어가 밀접하게 결합, 제한된 resource, 실시간성  
   [구조] : 입력 센서 - Main Processor - 출력 엑츄에이터  
-
-  ###### CPU/GPU/MPU/MCU  
-  CPU = Central Processing Unit  
-  GPU = Graphic Processing Unit  
-  MPU = Micro Processing Unit  
-  MCU = Micro Controller Unit : CPU + 메모리 + 인터페이스, 단독 동작이 가능하도록 만들어짐  
-
-  ###### 개발용 MCU 보드 종류  
-  [초보용 MCU] : 아두이노, 라즈베리
-  [상용 MCU] : ST(Nucleo 시리즈), 노르딕, 인피니언
   
-  ###### Volatile keyword  
-  : 해당 변수를 최적화에서 제외하여 항상 메모리에 접근하도록 컴파일  
+  - [CPU/GPU/MPU/MCU]  
+  [CPU] = Central Processing Unit  
+  [GPU] = Graphic Processing Unit  
+  [MPU] = Micro Processing Unit  
+  [MCU] = Micro Controller Unit : CPU + 메모리 + 인터페이스, 단독 동작이 가능하도록 만들어짐  
+
+  - [개발용 MCU 보드 종류] - 초보용 MCU(아두이노, 라즈베리), 상용 MCU(ST(Nucleo 시리즈), 노르딕, 인피니언)  
+  
+  - [Volatile keyword] - 해당 변수를 최적화에서 제외하여 항상 메모리에 접근하도록 컴파일  
   [사용법] : volatile data_type variable_name  
   [필요성] : MIMO, 멀티 쓰레드 환경, 인터럽트 서비스 루틴  
   
-  ###### MCU Bring-up  
-  : 전원이 인가된 MCU가 “의도한 소프트웨어를 실행할 수 있는 최소한의 정상 상태”까지 올라오는 과정  
+  - [MCU Bring-up] - 전원이 인가된 MCU가 “의도한 소프트웨어를 실행할 수 있는 최소한의 정상 상태”까지 올라오는 과정  
 
-  ###### I/O Access 방법  
-  Special Instruction I/O  
-  Memory-mapped I/O  
-  Direct memory access (DMA)  
+  - [I/O Access 방법] - Special Instruction I/O, Memory-mapped I/O, Direct memory access (DMA)  
 
-  ###### HAL  
-  [Basic HAL] : 특정 MCU 아키텍처에 맞춰 하드웨어 기능을 직접 추상화한 기본 수준의 HAL (GPIO, SYSTICK, NVIC, RCC, FLASH etc)    
-  [Generic HAL] : 하드웨어 독립적인 공통 인터페이스를 정의하여 다양한 플랫폼에서 동일한 상위 코드를 가능하게 하는 HAL  
+  - [HAL]  
+  [Basic HAL] - 특정 MCU 아키텍처에 맞춰 하드웨어 기능을 직접 추상화한 기본 수준의 HAL (GPIO, SYSTICK, NVIC, RCC, FLASH etc)  
+  [Generic HAL] - 하드웨어 독립적인 공통 인터페이스를 정의하여 다양한 플랫폼에서 동일한 상위 코드를 가능하게 하는 HAL  
+
+  - [컴파일과 링킹]  
+  [컴파일(Compile)] - 소스코드(.c)를 기계어 오브젝트 파일(.o)로 번역하는 과정  
+  [링킹(Linking)] - 여러 오브젝트 파일과 라이브러리를 연결해 실행 파일을 만드는 과정  
+  [링커(Linker)] - 오브젝트 파일들을 연결하고 주소를 배치해 최종 실행 파일을 만드는 프로그램  
+
+  - [GPIO] - 마이크로컨트롤러의 핀을 입력 또는 출력으로 설정해 외부 장치와 디지털 신호를 주고받는 범용 입출력 인터페이스  
+
+  - [Pull up과 Pull down 저항]  
+  [Pull up 저항] - 입력 핀이 아무것도 연결되지 않았을 때 기본값을 HIGH(1)로 유지하게 해주는 저항  
+  [Pull down 저항] - 입력 핀이 떠 있지 않도록 기본값을 LOW(0)로 유지하게 해주는 저항  
+  위 둘은 입력 핀이 아무것도 연결되지 않아 값이 불안정하게 변하는 floating 상태를 방지하기 위해 기본 전압(0 또는 1)을 안정적으로 정해주기 위해 사용한다.  
+
+  - [HAL] - TM32의 레지스터를 직접 다루지 않고도 주변장치(GPIO, UART, SPI 등)를 쉽게 제어할 수 있도록 만든 하드웨어 추상화 라이브러리  
+
+  **실습**  
+  - [Board] - STM32 Nucleo-L073RZ  
+  - [development enviroment] - Windows, Keil MDK_ARM, STM32CubeMX  
+  
+  **1. 개발 환경 설치**  
+  MDK-ARM 설치 및 Licensing, STM32CubeMX 설치  
+
+  **2. 첫번째 프로젝트**  
+  개발 환경 설정, 변수 및 제어문, 컴파일과 디버깅, 최적화 옵션 및 Volatile 키워드, Data Type 크기, 포인터, 비트 연산 실습  
+  
+  **3. LED Blinking**  
+  포인터, define, MACRO 비트 연산자, Counting 함수 생성 및 활용, structure, LED 제어 및 PIN Map 작성 실습  
+
+  **4. HAL 사용하기**  
+  STM32L0 Source Download, HAL Driver를 이용한 LED 제어, NUCLEO BSP(Board Support, Package)를 이용한 LED 제어  
+  
+
 
 </details>
   
