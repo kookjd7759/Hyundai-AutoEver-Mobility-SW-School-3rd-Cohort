@@ -1,5 +1,5 @@
   <img
-    src="https://i.namu.wiki/i/An5mFROiD7MnRwB0SXP8k-BMeVnpTiWB1Vf2atoI9yco-hHDD-CyTQ0UASL5ktk7sueDdf3OQBNQXfstMPPh3YE9uyjsmELk9rBmIsBHfrVmALG-wnN7kZqyT4nGHJCnx2YoqEcgeLdX0gtBDCIyGA.svg"
+    src="https://i.namu.wiki/i/2qIUz7F5QHjrgQAnDWkImlqD7cXjMpjWNEfVm8QXsESVl9UjVX4A72cTaqaqh_VuA_vD0cECe9l_alyQPxmelQ9jbmZQ1RBLcf7misVcHd3pka1jZkQAxnKFqcdRYNl41M5eBFEbgfwsBu31DGKu-w.svg"
     width="120"
     align="left"
     hspace="20"
