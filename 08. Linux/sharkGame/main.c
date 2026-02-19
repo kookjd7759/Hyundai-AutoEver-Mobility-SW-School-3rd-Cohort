@@ -20,15 +20,15 @@ int shark, alive_cnt;
 
 int roll_dice() { return rand() % 6 + 1; }
 
-void reset() {
-    memset(board, 0, sizeof(board));
-    for (int i = 1; i < BOARD_SIZE; ++i) { // 0번째 칸에는 코인 없음 보장
+void reset() { 
+    memset(board, 0, sizeof(board)); 
+    for (int i = 1; i < BOARD_SIZE; ++i){ // 0번째 칸에는 코인 없음 보장
         int isCoin = rand() % 2; // 1/2 확률로 코인 존재
         if (isCoin) continue;
         board[i] = roll_dice();  // 코인은 1원 부터 6원
     }
-
-    shark = 0;
+    
+    shark = 0; 
     alive_cnt = PLAYER_SIZE;
 }
 void init() {
@@ -39,7 +39,7 @@ void init() {
     for (int i = 0; i < PLAYER_SIZE; ++i) {
         printf("Enter player %dth nickname >> ", i + 1);
         scanf("%9s", player[i].name);
-        player[i].pos = 0;
+        player[i].pos  = 0;
         player[i].coin = 0;
         player[i].state = 1;
     }
@@ -77,20 +77,20 @@ void print_state() {
 
     // Shark
     printf(" - Shark\n|");
-    for (int i = 0; i < BOARD_SIZE; ++i) {
+    for (int i = 0; i < BOARD_SIZE; ++i){
         if (shark == i) printf("\033[31m■\033[0m|");
         else                    printf("□|");
     }
     printf("\n");
 }
 
-void player_move(int idx, int step) {
+void player_move(int idx, int step){
     printf("\t%s moves %d !\n", player[idx].name, step);
     player[idx].pos += step;
     if (player[idx].pos >= BOARD_SIZE) {
         player[idx].state = 2;
         alive_cnt--;
-        return;
+        return; 
     }
     if (board[player[idx].pos]) {
         player[idx].coin += board[player[idx].pos];
@@ -98,8 +98,8 @@ void player_move(int idx, int step) {
     }
 }
 
-void capture() {
-    for (int i = 0; i < PLAYER_SIZE; ++i) {
+void capture(){
+    for (int i = 0; i < PLAYER_SIZE; ++i){
         if (player[i].state != 1) continue;
         if (player[i].pos <= shark) {
             player[i].state = 3;
@@ -109,18 +109,18 @@ void capture() {
     }
 }
 
-void run() {
+void run(){
     init();
 
     int round = 1;
-    while (1) {
+    while(1){
         print_state();
         printf("[round - %d]\n", round);
         // player move
-        for (int i = 0; i < PLAYER_SIZE; ++i) {
+        for (int i = 0; i < PLAYER_SIZE; ++i){
             if (player[i].state != 1) continue;
             printf("\t[turn - %s]\n", player[i].name);
-            while (1) {
+            while(1) {
                 printf("\tEnter 'r' for roll the dice >> ");
                 char input; scanf("%c", &input);
                 if (input == 'r' || input == 'R') break;
@@ -141,7 +141,7 @@ void run() {
     }
 
     printf("Game over !!\n[Ranking]\n");
-    for (int i = 0; i < PLAYER_SIZE; ++i) {
+    for (int i = 0; i < PLAYER_SIZE; ++i){
         printf("Player <%s>, COIN: %d - ", player[i].name, player[i].coin);
         if (player[i].state == 2) printf("\033[32mALIVE !!\033[0m\n");
         else                      printf("\033[31mDIE ....\033[0m\n");

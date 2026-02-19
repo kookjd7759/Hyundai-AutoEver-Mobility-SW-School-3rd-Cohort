@@ -18,16 +18,14 @@
 volatile unsigned* gpio;
 
 int main(int argc, char **argv) {
-	int led, sw, mem_fd;
+	int mem_fd;
 	void* gpio_map;
 	
 	// get GPIO number
-	if (argc < 3) { // input verification
+	if (argc < 1) { // input verification
 		printf("Usage : %s GPIO_NO\n", argv[0]);
 		return -1;
 	}
-	led = atoi(argv[1]);
-	sw = atoi(argv[2]);
 
 	// /dev/mem device open
 	if ((mem_fd = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
@@ -41,33 +39,17 @@ int main(int argc, char **argv) {
 		printf("[Error] mmap() : %d\n", gpio_map);
 		return -1;
 	}
-	printf("[OK] start\n");
-    printf("pressed time - %.3f sec     ", 0.0); fflush(stdout);
 
 	gpio = (volatile unsigned*)gpio_map;
-	GPIO_IN(sw);
-	GPIO_OUT(led);
-	GPIO_OUT(13); GPIO_OUT(19); GPIO_OUT(26); // 7 segment test
-	GPIO_CLR(13); GPIO_CLR(19); GPIO_CLR(26); // 7 segment test
-	int prev = 0;
-    struct timespec start, now;
-    clock_gettime(CLOCK_MONOTONIC, &start);
-	while (1) {
-		int pressed = (GPIO_GET(sw) ? 1 : 0);
-		
-		if (pressed) {
-			if (!prev) clock_gettime(CLOCK_MONOTONIC, &start);
-        	clock_gettime(CLOCK_MONOTONIC, &now);
-			double time =
-				(now.tv_sec - start.tv_sec) +
-				(now.tv_nsec - start.tv_nsec) / 1e9;
-        	printf("\rpressed time - %.3f sec     ", time); fflush(stdout);
-			GPIO_SET(led);
-        	usleep(1000);
-		}
-		else GPIO_CLR(led);
 
-		prev = pressed;
+	GPIO_OUT(25); GPIO_OUT(8); GPIO_OUT(7); GPIO_OUT(1);
+	GPIO_CLR(25); GPIO_CLR(8); GPIO_CLR(7); GPIO_CLR(1);
+
+	GPIO_OUT(6); GPIO_OUT(13); GPIO_OUT(19); GPIO_OUT(26);
+	GPIO_CLR(6); GPIO_CLR(13); GPIO_CLR(19); GPIO_CLR(26);
+
+	while (1) {
+
 	}
 
 	munmap(gpio_map, GPIO_SIZE);
