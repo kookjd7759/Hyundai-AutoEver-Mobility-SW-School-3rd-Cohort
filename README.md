@@ -227,7 +227,8 @@
   <summary>📚 상세 학습 내용 보기</summary>
   
 ---
- 
+
+
 
 ---
 
@@ -262,6 +263,8 @@
  <details>
   <summary>📚 상세 학습 내용 보기</summary>
 
+---
+  
   **이론**  
   - **[임베디드 시스템]** - 특정 기기에 MCU와 SW를 내장하여, 미리 정해진 고유한 기능만을 수행하도록 설계된 전용 컴퓨터 시스템
     - 특징 : 단일/특정 작업만 수행, 하드웨어와 펌웨어가 밀접하게 결합, 제한된 resource, 실시간성
@@ -317,7 +320,7 @@
   **4. HAL 사용하기**  
   STM32L0 Source Download, HAL Driver를 이용한 LED 제어, NUCLEO BSP(Board Support, Package)를 이용한 LED 제어  
   
-
+---
 
 </details>
   
@@ -329,6 +332,22 @@
 ### 09\. 임베디드 MCU 프로그래밍 <sub>(2026.02.19 ~ 2026.02.25)</sub>  
 > **📝 학습 내용**  
 >   
+
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+  - [Board] - Hitex, ShieldBuuddy TC275  
+  - [development enviroment] - Windows, AURIX Development Studio  
+
+  **GPIO Sample Project**  
+  1. TC275 보드에서 GPIO를 사용하여 LED/SW를 제어  
+  2. 
+  
+---
+
+</details>
 
 ### 10\. 임베디드 C 프로그래밍 코드 최적화 기법 <sub>(2026.02.26 ~ 2026.03.04)</sub>  
 > **📝 학습 내용**  
