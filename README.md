@@ -77,6 +77,8 @@
       <img src="https://github.com/user-attachments/assets/466de70e-10e8-4e7b-9278-03e7dded7dfb" width="220"/><br/>
       <sub><b>모빌리티 산업 아이디어 소개</b></sub> </td> </tr> </table> <br clear="left"/>
 
+---
+
 </details>
   
 ### 02\. C/C++ 프로그래밍 <sub>(2025.12.23 ~ 2026.01.08)</sub>  
@@ -132,6 +134,8 @@
 - 예외 처리 - try-catch  
 - 형변환 연산자  
 
+---
+
 </details>
   
 ### 03\. 모던 C++ <sub>(2026.01.09 ~ 2026.01.15)</sub>  
@@ -155,6 +159,8 @@
 - 자동 타입 추론 - auto, decltype
 - 람다 표현식
 - friend, static, mutable  
+
+---
 
 </details>
   
@@ -209,6 +215,8 @@
       <img src="https://github.com/user-attachments/assets/7899641c-ad0a-42da-9572-2913f077b7c9" width="220"/><br/>
       <sub><b>시트 탈거 후</b></sub> </td> </tr> </table> <br clear="left"/>
 
+---
+
 </details>
 
 ### 05\. 자동차 소프트웨어 개발 프로세스 <sub>(2026.01.22 ~ 2026.01.28)</sub>  
@@ -221,6 +229,7 @@
 ---
  
 
+---
 
 </details>
   
@@ -228,6 +237,11 @@
 > **📝 학습 내용**  
 > LED·버튼·부저·DC 모터·센서(DHT) 제어를 중심으로 GPIO, PWM, ADC, 시리얼 통신 및 AVR 레지스터 직접 제어를 실습하며 임베디드 소프트웨어 개발 기초를 학습    
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+  
+---
+  
 <table align="left"> <tr> <td align="center">
       <img src="https://github.com/user-attachments/assets/20f3b36f-ede5-4cc4-ad24-5c4a98f1a4dd" width="220"/><br/>
       <sub><b>LED 점등 응용 실습</b></sub> </td> </tr> </table> <br clear="left"/>
@@ -236,6 +250,10 @@
       <img src="https://github.com/user-attachments/assets/b1bcd98f-2e67-4135-a045-061ffb89cd7f" width="220"/><br/>
       <sub><b>DC 모터 제어 실습</b></sub> </td> </tr> </table> <br clear="left"/>
 
+---
+
+</details>
+  
 
 ### 07\. 임베디드 C 프로그래밍 기초 <sub>(2026.02.03 ~ 2026.02.09)</sub>  
 > **📝 학습 내용**  
