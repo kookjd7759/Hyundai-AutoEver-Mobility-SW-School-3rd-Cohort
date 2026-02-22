@@ -343,9 +343,11 @@
 6. 아두이노 내부 풀업 사용해보기
 7. 스위치를 입력받아 LED의 패턴 바꿔보기
 
-<table align="left"> <tr> <td align="center">
-      <img src="https://github.com/user-attachments/assets/20f3b36f-ede5-4cc4-ad24-5c4a98f1a4dd" width="220"/><br/>
-      <sub><b>LED 점등 응용 실습</b></sub> </td> </tr> </table> <br clear="left"/>  
+
+    <table align="left"> <tr> <td align="center">
+          <img src="https://github.com/user-attachments/assets/20f3b36f-ede5-4cc4-ad24-5c4a98f1a4dd" width="220"/><br/>
+          <sub><b>LED 점등 응용 실습</b></sub> </td> </tr> </table> <br clear="left"/>  
+
 
 8. 아두이노 시리얼 통신 소개 및 Hello, Arudion Serial
 9. 시리얼 통신 연습: Write 및 정수 값 출력
@@ -363,9 +365,11 @@
 21. 아두이노 우노 외부 인터럽트
 22. 아두이노 DC 모터 구동  
 
-<table align="left"> <tr> <td align="center">
-      <img src="https://github.com/user-attachments/assets/b1bcd98f-2e67-4135-a045-061ffb89cd7f" width="220"/><br/>
-      <sub><b>DC 모터 제어 실습</b></sub> </td> </tr> </table> <br clear="left"/>
+
+    <table align="left"> <tr> <td align="center">
+          <img src="https://github.com/user-attachments/assets/b1bcd98f-2e67-4135-a045-061ffb89cd7f" width="220"/><br/>
+          <sub><b>DC 모터 제어 실습</b></sub> </td> </tr> </table> <br clear="left"/>
+
 
 23. Hello, Buzzer !!
 24. 도레미파솔라시도 연주
