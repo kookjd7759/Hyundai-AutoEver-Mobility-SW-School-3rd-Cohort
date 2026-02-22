@@ -430,7 +430,12 @@
     - Pull down 저항 - 입력 핀이 떠 있지 않도록 기본값을 LOW(0)로 유지하게 해주는 저항
     - 위 둘은 입력 핀이 아무것도 연결되지 않아 값이 불안정하게 변하는 floating 상태를 방지하기 위해 기본 전압(0 또는 1)을 안정적으로 정해주기 위해 사용한다.  
 
-  - **[HAL]** - TM32의 레지스터를 직접 다루지 않고도 주변장치(GPIO, UART, SPI 등)를 쉽게 제어할 수 있도록 만든 하드웨어 추상화 라이브러리  
+  - **[HAL]** - TM32의 레지스터를 직접 다루지 않고도 주변장치(GPIO, UART, SPI 등)를 쉽게 제어할 수 있도록 만든 하드웨어 추상화 라이브러리
+
+  - **[임베디드 시스템 HW 구조]** - 메인 프로세서, 입력 센서, 출력 엑츄에이
+
+  - **[USART]** - 마이크로컨트롤러가 외부 장치와 직렬 방식으로 데이터를 주고받기 위한 통신 모듈
+
 
   **실습**  
   - [Board] - STM32 Nucleo-L073RZ  
@@ -447,6 +452,18 @@
 
   **4. HAL 사용하기**  
   STM32L0 Source Download, HAL Driver를 이용한 LED 제어, NUCLEO BSP(Board Support, Package)를 이용한 LED 제어  
+  
+  **5. User Button 실습**  
+  User Button을 이용해 내부/외부 LED 제어, 진동감지센서 연동
+
+  **6. UART 실습**  
+  UART를 이용한 PC와 Device간 Serial Communication, TX/RX 실습,  UART TX를 이용한 Printf함수 만들기  
+  
+  **7. 아날로그 센서 실습**  
+  LM35(Analog Input) 온도센서 소개 및 연결, LM35 센서 연결 및 온도 읽기
+
+  **8. Clock  실습**  
+  Clock Config, 1초 인터럽트 타이머를 이용한 LED Blinking, PWM을 이용한 LED 밝기 제어, 1us counter 만들기, 초음파 센서를 이용한 거리 재기  
   
 ---
 
