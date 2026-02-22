@@ -452,7 +452,11 @@
 
   **4. HAL 사용하기**  
   STM32L0 Source Download, HAL Driver를 이용한 LED 제어, NUCLEO BSP(Board Support, Package)를 이용한 LED 제어  
-  
+
+  <table align="left"> <tr> <td align="center">
+        <img src="https://github.com/user-attachments/assets/470e5dd0-8b5d-445b-bff8-2e681a3c48ac" width="220"/><br/>
+        <sub><b>외부 LED Bliking, 내부 LED toggle</b></sub> </td> </tr> </table> <br clear="left"/>
+
   **5. User Button 실습**  
   User Button을 이용해 내부/외부 LED 제어, 진동감지센서 연동
 
