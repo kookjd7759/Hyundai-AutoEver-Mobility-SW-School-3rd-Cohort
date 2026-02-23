@@ -1,2 +1,0 @@
- - NUCLEO-L073RZ_project - STM32 HAL 기반으로 GPIO 인터럽트와 UART 통신을 구성한 기본 시스템 초기화 및 주변장치 동작 확인 실습  
- - using_HAL - STM32L073RZ 기반으로 ADC 온도 센서 측정, 진동·버튼 인터럽트 처리 및 UART 통신을 통합 구현한 임베디드 센서 제어 시스템 실습  
