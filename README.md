@@ -551,6 +551,10 @@
   - SPI 구성 - MOSI / MISO, SCK, SS, CPOL / CPHA  
   - TM74HC595 기반 FND 제어 - Bit shift 전송, SCLK, RCLK, DIO 직접 GPIO 제어, 7-segment 배열 정의  
 
+  <table align="left"> <tr> <td align="center">
+        <img src="https://github.com/user-attachments/assets/f63962b2-64d8-43c3-b568-bdfc31e1a787" width="220"/><br/>
+        <sub><b>Timer 구현</b></sub> </td> </tr> </table> <br clear="left"/>
+
   **7. ADC (Analog to Digital Converter)**  
   - 12bit 해상도 - 0 ~ 4095 값 변환, Group4 Channel7 사용  
   - 변환 흐름 - ADC 초기화 -> Conversion 요청 -> 결과 획득 (RES 레지스터)  
