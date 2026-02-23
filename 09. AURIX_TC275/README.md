@@ -5,3 +5,4 @@
 - eru_led_on.c - ERU(External Request Unit) 인터럽트를 설정하고 ISR에서 LED를 제어하는 외부 인터럽트 기초 실습
 - eru_dual_toggle.c - 두 개의 버튼을 ERU 인터럽트로 구성하여 각각의 LED를 개별적으로 토글하는 인터럽트 실습
 - eru_blink_state.c - ERU 인터럽트와 상태 머신을 결합하여 버튼 입력에 따라 LED 점멸 동작을 전환하는 상태 기반 제어 실습
+- stm_traffic_pause.c - STM 타이머 기반 3상 신호등에 버튼 입력으로 일시정지/재개 기능을 추가한 상태머신 구현
