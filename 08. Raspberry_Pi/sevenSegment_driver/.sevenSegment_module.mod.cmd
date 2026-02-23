@@ -1,1 +1,0 @@
-savedcmd_/home/kookjd7759/workspace/sevenSegment_driver/sevenSegment_module.mod := printf '%s\n'   sevenSegment_module.o | awk '!x[$$0]++ { print("/home/kookjd7759/workspace/sevenSegment_driver/"$$0) }' > /home/kookjd7759/workspace/sevenSegment_driver/sevenSegment_module.mod
