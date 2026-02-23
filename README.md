@@ -517,19 +517,51 @@
 
 ### 09\. 임베디드 MCU 프로그래밍 <sub>(2026.02.19 ~ 2026.02.25)</sub>  
 > **📝 학습 내용**  
->   
+> Infineon AURIX TC275 기반 Bare-metal 프로그래밍을 수행하며, 레지스터 직접 제어부터 iLLD 활용, 인터럽트·타이머·SPI·ADC·PWM·스케줄러 구현까지 차량용 MCU 실전 제어 흐름을 단계적으로 학습  
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
 
----
+---  
 
-  - [Board] - Hitex, ShieldBuuddy TC275  
-  - [development enviroment] - Windows, AURIX Development Studio  
+  **1. 개발 환경 구축 (AURIX TC275)**  
+  - [Board] : ShieldBuddy TC275 (Hitex)  
+  - [IDE] : AURIX Development Studio (ADS)  
+  - [Architecture] : TriCore (CPU0 사용)  
+    
+  - AURIX Development Studio 설치 및 Debug 환경 설정, CPU0 기반 프로젝트 생성.  
+  - Build -> Debug -> Register/Assembly 확인  
+  -  Datasheet vs User Manual 차이 이해  
 
-  **GPIO Sample Project**  
-  1. TC275 보드에서 GPIO를 사용하여 LED/SW를 제어  
-  2. 
+  **2. GPIO 직접 레지스터 제어**  
+  - LED 출력 제어 - IOCR 레지스터 분석, Base Address 계산, Output Register 세팅, Memory-mapped I/O 직접 접근  
+  - SW 입력 제어 - Pull-up 회로 이해, Pn_IN 레지스터로 입력값 읽기, 입력값 기반 LED 제어  
+
+  **3. 외부 인터럽트**  
+  - Polling vs Interrupt 비교 - Polling: 순차 처리 -> 지연 발생 가능, Interrupt: 우선순위 기반 즉시 처리  
+  - ERU 구성 요소 - ERS (External Request Selection), ETL (Event Trigger Logic), OGU (Output Gating Unit), Interrupt Router (IR)  
+  - 설정 흐름 - EICR 설정 (Falling Edge), IGCR 설정, SCUERU 설정 (CPU0 지정), ISR 등록  
+
+  **4. Internal Timer Interrupt (STM)**  
+  - Timer 구조 이해 - Crystal -> PLL -> 200MHz, STM 모듈 사용, Compare Match 기반 Interrupt 발생
+  - iLLD 사용 이유 - 레지스터 직접 제어 부담 감소, 가독성 향상, 개발 시간 단축
+  - 1초 LED Blink 구현 - STM Compare 값 설정, ISR에서 Toggle  
+
+  **5. Non-Preemptive Task Scheduler**  
+  - 1ms/10ms/100ms/1000ms 단위로 작업을 분리하거나, Multi-tasking 구조 구현하기 위해 필요  
+
+  **6. SPI를 활용한 4-FND 제어**  
+  - 통신 이론 - Serial vs Parallel, 동기 vs 비동기, Full duplex vs Half duplex  
+  - SPI 구성 - MOSI / MISO, SCK, SS, CPOL / CPHA  
+  - TM74HC595 기반 FND 제어 - Bit shift 전송, SCLK, RCLK, DIO 직접 GPIO 제어, 7-segment 배열 정의  
+
+  **7. ADC (Analog to Digital Converter)**  
+  - 12bit 해상도 - 0 ~ 4095 값 변환, Group4 Channel7 사용  
+  - 변환 흐름 - ADC 초기화 -> Conversion 요청 -> 결과 획득 (RES 레지스터)  
+
+  **8. PWM (GTM-TOM 기반)**  
+  - PWM - Duty Cycle 제어, 평균값 기반 아날로그 효과  
+  - GTM 구조 - GTM → TOM → Output Pin, Fxclk 설정, Period & Duty 설정
   
 ---
 

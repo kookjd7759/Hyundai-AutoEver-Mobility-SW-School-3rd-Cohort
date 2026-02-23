@@ -1,0 +1,7 @@
+- gpio_button_select.c - 폴링 방식으로 버튼 입력을 읽어 조건에 따라 서로 다른 LED를 제어하는 GPIO 입력/출력 실습
+- gpio_button_omr.c - OMR(Set/Reset) 레지스터를 활용하여 버튼 입력에 따라 LED를 전환하는 GPIO 제어 실습
+- button_toggle_polling.c - 버튼 입력을 폴링으로 감지하고 버튼 해제 대기 로직을 포함해 LED를 토글하는 실습
+- button_toggle_fast.c - 디바운스 없이 버튼 입력 시 OMR을 이용해 LED를 빠르게 토글하는 동작 확인 실습
+- eru_led_on.c - ERU(External Request Unit) 인터럽트를 설정하고 ISR에서 LED를 제어하는 외부 인터럽트 기초 실습
+- eru_dual_toggle.c - 두 개의 버튼을 ERU 인터럽트로 구성하여 각각의 LED를 개별적으로 토글하는 인터럽트 실습
+- eru_blink_state.c - ERU 인터럽트와 상태 머신을 결합하여 버튼 입력에 따라 LED 점멸 동작을 전환하는 상태 기반 제어 실습
