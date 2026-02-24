@@ -12,3 +12,4 @@
 - blink_scheduler - 1ms 기반 소프트웨어 스케줄러를 활용해 100ms·1000ms 주기 LED 토글을 구현하며 주기 태스크 구조를 검증한 실습
 - eru_stopwatch - ERU 외부 인터럽트와 상태머신(FSM)을 적용해 FND 기반 스톱워치를 제어하는 인터럽트 중심 구조 실습
 - mux_stopwatch - 1ms 멀티플렉싱 FND 구동과 10ms 디바운싱 입력 처리를 결합한 논블로킹 스톱워치 시스템 구현
+- Driver_Adc.c / Driver_Adc.h - AURIX VADC Group4의 Autoscan 기능을 설정하고 CH7 변환을 시작/대기(VF) 후 결과(RESULT)를 읽어오는 ADC 드라이버 실습
