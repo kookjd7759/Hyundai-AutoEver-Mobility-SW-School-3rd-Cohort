@@ -543,9 +543,6 @@
   - iLLD 사용 이유 - 레지스터 직접 제어 부담 감소, 가독성 향상, 개발 시간 단축
   - 1초 LED Blink 구현 - STM Compare 값 설정, ISR에서 Toggle  
 
-  **5. Non-Preemptive Task Scheduler**  
-  - 1ms/10ms/100ms/1000ms 단위로 작업을 분리하거나, Multi-tasking 구조 구현하기 위해 필요  
-
   **6. SPI를 활용한 4-FND 제어**  
   - 통신 이론 - Serial vs Parallel, 동기 vs 비동기, Full duplex vs Half duplex  
   - SPI 구성 - MOSI / MISO, SCK, SS, CPOL / CPHA  
@@ -553,7 +550,14 @@
 
   <table align="left"> <tr> <td align="center">
         <img src="https://github.com/user-attachments/assets/f63962b2-64d8-43c3-b568-bdfc31e1a787" width="220"/><br/>
-        <sub><b>Timer 구현</b></sub> </td> </tr> </table> <br clear="left"/>
+        <sub><b>Timer 묘사</b></sub> </td> </tr> </table> <br clear="left"/>
+
+  **5. Non-Preemptive Task Scheduler**  
+  - 1ms/10ms/100ms/1000ms 단위로 작업을 분리하거나, Multi-tasking 구조 구현하기 위해 필요  
+
+  <table align="left"> <tr> <td align="center">
+        <img src="https://github.com/user-attachments/assets/67eac0cc-83aa-40c4-aa59-5af1e738d3aa" width="220"/><br/>
+        <sub><b>스톱워치 시스템 구현</b></sub> </td> </tr> </table> <br clear="left"/>
 
   **7. ADC (Analog to Digital Converter)**  
   - 12bit 해상도 - 0 ~ 4095 값 변환, Group4 Channel7 사용  
