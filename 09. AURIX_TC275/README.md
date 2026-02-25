@@ -15,3 +15,6 @@
 - Driver_Adc.c / Driver_Adc.h - AURIX VADC Group4의 Autoscan 기능을 설정하고 CH7 변환을 시작/대기(VF) 후 결과(RESULT)를 읽어오는 ADC 드라이버 실습
 - Driver_Adc.c / Driver_Adc.h - AURIX VADC Group4 Autoscan을 구성해 CH6·CH7을 주기적으로 변환하고 VF 플래그 폴링으로 결과를 읽어오는 ADC 드라이버 구현
 - adc-light-control.c - STM 주기 스케줄러 기반으로 VADC(CH6·CH7) 값을 필터링하여 RGB 색상 제어, 조도 히스테리시스 제어 및 FND 멀티플렉싱 표시를 구현한 통합 제어 실습
+- GTM_TOM_PWM.c - AURIX GTM TOM PWM 초기화/듀티 제어를 구현하고, 주파수(Period) 변경으로 부저 음계 생성 + 듀티로 LED 페이드(ADC 기반 포함)까지 제공하는 PWM 드라이버
+- StmScheduler_ButtonBuzzer.c - STM 기반 1/10/100/1000ms 태스크 스케줄링으로 버튼 입력에 따라 부저 음 전환 실습
+- StmScheduler_BabySharkPlayer.c - TM 1ms 주기 타이머로 멜로디 배열(“Baby Shark”)을 재생하고, 버튼으로 재생 및 정지
