@@ -1,0 +1,1 @@
+- memory_addr_test.c - Infineon AURIX TC275에서 코드/데이터/BSS/Heap/Stack 영역의 실제 메모리 주소를 확인하여 메모리 배치 구조를 분석한 실습
