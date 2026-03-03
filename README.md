@@ -631,7 +631,20 @@
   - 비트 플래그 사용: 상태를 나타내기 위한 플래그로 비트 연산(비트 플래그)을 사용  
 
   **7. Flow Control Handling (흐름제어 처리)**
-  - 
+  - if VS switch: 하나의 var를 받아 control flow를 짤 때에는 switch가 효율적, if는 값에 따라 시간이 달라지지만 switch는 lookup table 방식이기 때문
+  - Inline: 컴파일러가 함수에 대한 모든 호출을 함수 코드의 복사본으로 대체하여 함수 호출과 관련한 오버헤드가 제거 (큰 함수를 인라인 할 경우 실행 파일의 크기가 너무 커짐)
+  - Loop Hoisting: 컴퓨팅 시간 절약을 위해 후프 외부로 계산 이동
+  - Loop overhead: MCU에는 양수에서 0으로 카운트다운 할 때 잘 작동, "미리 정의된 숫자"보다 "0"을 감지하는 것이 더 쉬움
+  
+  **8. Other Handling (기타 처리)**
+  - Use of operators: 기존 연산자 적극 활용
+  - Replacing, Integer Division with Multiplication: 정수 나눗셈은 모든 정수 연살 중 가장 느리므로, 식에 여러 나눗셈이 있는 경우 정수 나눗셈을 곱셈으로 변경
+  - Use of Fomula: 곱셈을 최대한 피하고 덧셈으로 치환
+  - Inline assembly: 어셈블리 명령들을 inline 함수로 작성
+  - 부동소수점 연산 제거
+  - 조건문 최적화
+
+  **9. 신뢰성 있는 코드를 위한 가이드 라인**
 
 
 --- 
