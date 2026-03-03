@@ -1,3 +1,7 @@
 - memory_addr_test.c - Infineon AURIX TC275에서 코드/데이터/BSS/Heap/Stack 영역의 실제 메모리 주소를 확인하여 메모리 배치 구조를 분석한 실습
 - boot-sequence.c - AURIX TC275에서 ROM/Init Data/BSS와 Heap(malloc), Stack(재귀 로컬변수) 주소를 기록해 실제 메모리 레이아웃을 확인한 실습
+<<<<<<< HEAD
 - compiler_test.c - TC275에서 ROM/Data/BSS/Heap/Stack 주소를 직접 확인하여 실제 메모리 배치를 분석한 실습 코드
+=======
+- compiler_test.c - AURIX TC275에서 함수/전역/루프 코드의 최적화 동작을 비교하기 위해 결과를 전역 변수로 저장하는 실습
+>>>>>>> 1aad32b3c23da40238c1e72ea2d3b8b31846de59
