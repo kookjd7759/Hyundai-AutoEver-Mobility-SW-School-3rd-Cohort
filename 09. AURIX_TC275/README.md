@@ -18,7 +18,8 @@
 - GTM_TOM_PWM.c - AURIX GTM TOM PWM 초기화/듀티 제어를 구현하고, 주파수(Period) 변경으로 부저 음계 생성 + 듀티로 LED 페이드(ADC 기반 포함)까지 제공하는 PWM 드라이버
 - StmScheduler_ButtonBuzzer.c - STM 기반 1/10/100/1000ms 태스크 스케줄링으로 버튼 입력에 따라 부저 음 전환 실습
 - StmScheduler_BabySharkPlayer.c - TM 1ms 주기 타이머로 멜로디 배열(“Baby Shark”)을 재생하고, 버튼으로 재생 및 정지
-<br>
+<br>  
+
 - [Final Mini project], VehicleControlSystem.c - AURIX 기반 Multi-rate 스케줄링(1~1000ms)과 상태 머신을 적용해 ADC 입력, ERU 인터럽트, FND 표시, LED/부저 경고 로직을 통합 구현한 차량 제어 실습 코드  
   
     해당 프로젝트는 단순 GPIO 제어를 넘어, 주기 기반 소프트웨어 스케줄링 구조를 설계하고 각 주기별 역할을 분리하여 실시간 제어 시스템을 구성하는 데 목적을 두었다. 1ms 주기에서는 FND 동적 스캔을 수행하고, 10ms/100ms 주기에서는 상태 전이 및 센서 입력 처리를 담당하도록 계층적으로 구성하였다.  
