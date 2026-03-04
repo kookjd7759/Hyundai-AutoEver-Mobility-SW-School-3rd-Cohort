@@ -581,70 +581,114 @@
 ---  
 
   **1. 프로그램 실행을 위한 메모리 구조**  
-  - 메모리 구조: <sub>High memory</sub> | 스택 | 힙 | 데이터 | 코드 | <sub>Low memory</sub>
-    - 코드 영역: 실행할 프로그램의 코드가 저장
-    - 데이터 영역: 전역 변수와 정적 변수가 저장 (프로그램 시작과 함께 할당 → 종료되면 소멸)
-    - 힙 영역: 사용자가 직접 관리할 수 있는 영역으로 메모리 공간이 동적으로 할당 및 해제, 낮은 메모리 주소로부터 높은 주소 방향으로 할당, 메모리 엑세스가 느림
-    - 스택 영역: 지역 변수와 매개변수가 저장되는 영역으로 높은 메모리 주소부터 낮은 주소의 방향으로 할당, 메모리 엑세스가 빠름  
+  - 메모리 구조 : <sub>High memory</sub> | 스택 | 힙 | 데이터 | 코드 | <sub>Low memory</sub>
+    - 코드 영역 : 실행할 프로그램의 코드가 저장
+    - 데이터 영역 : 전역 변수와 정적 변수가 저장 (프로그램 시작과 함께 할당 → 종료되면 소멸)
+    - 힙 영역 : 사용자가 직접 관리할 수 있는 영역으로 메모리 공간이 동적으로 할당 및 해제, 낮은 메모리 주소로부터 높은 주소 방향으로 할당, 메모리 엑세스가 느림
+    - 스택 영역 : 지역 변수와 매개변수가 저장되는 영역으로 높은 메모리 주소부터 낮은 주소의 방향으로 할당, 메모리 엑세스가 빠름  
     
   - ROM, RAM
-    - RAM: CPU와 HDD 사이에 위치하여 자주 쓰는 데이터를 저장해 고속 처리 (Static RAM, Dynamic RAM)
-    - ROM: 전원이 꺼져도 데이터가 유지되는 읽기 전용 비휘발성 메모리. (MASK ROM, Programmable ROM, etc.)
+    - RAM : CPU와 HDD 사이에 위치하여 자주 쓰는 데이터를 저장해 고속 처리 (Static RAM, Dynamic RAM)
+    - ROM : 전원이 꺼져도 데이터가 유지되는 읽기 전용 비휘발성 메모리. (MASK ROM, Programmable ROM, etc.)
   
   **2. TC275 부트시퀀스**  
-  - Linker: 불완전한 object 파일들을 합쳐 모든 코드와 데이터를 포함하는 새로운 object 파일을 생성해 내는 도구
-  - Locate: 메모리에서 실행 가능하도록 코드와 데이터를 배치하여 최종 바이너리 이미지를 생성하는 도구
+  - Linker : 불완전한 object 파일들을 합쳐 모든 코드와 데이터를 포함하는 새로운 object 파일을 생성해 내는 도구
+  - Locate : 메모리에서 실행 가능하도록 코드와 데이터를 배치하여 최종 바이너리 이미지를 생성하는 도구
 
   **3. TC275 코드 프로파일링**
   - Disassembly를 활용한 코드 성능 파악
 
   **4. 컴파일러 최적화**
-  - 코드 최적화: 주어진 코드에 대해 동등한 의미를 가지면서 실행시간 및 메모리를 줄이는 것  
+  - 코드 최적화 : 주어진 코드에 대해 동등한 의미를 가지면서 실행시간 및 메모리를 줄이는 것  
     - 핍홀 최적화 - 몇 개의 연속적인 명령어를 하나의 명령어나 더 짧은 명령어로 변환  
     - 지역 최적화 - 부분적인 관점에서 일련의 비효율적인 코드를 구분해내고 좀 더 효율적인 코드로 만드는 방법  
     - 루프 최적화 - 한 루프 안에서의 최적화 기법  
     - 전역 최적화 - 한 프로시저 내에서 일련의 비효율적인 코드를 구분해내고 좀 더효율적인 코드로 만드는 방법  
     - 프로시저 간 최적화 - 한 프로시저의 한계를 넘어 전체 프로그램에 적용되는 최적화  
     - 기계 종속적 최적화 - 기계의 특성에 따라 달라질 수 있는 성능을 최적화  
-  - 기본 블록과 흐름 그래프: 최적화 기법을 수행하기 위한 방법 중 일부  
+  - 기본 블록과 흐름 그래프 : 최적화 기법을 수행하기 위한 방법 중 일부  
     - 기본 블록 - 지역 최적화의 기본 단위
     - 흐름 그래프 - 기본 블록의 집합에 제어 흐름에 관한 정보를 추가하여 만든 유향 그래프  
   
   **5. 임베디드 C코드 최적화**
-  - ROM 최적화: 프로그램 코드, 상수, 초기화된 전역 변수와 정적 변수 최적화 즉, 코드와 상수를 줄이는 것
-  - RAM 최적화: 초기화되지 않은 전역변수와 정적 변수, 지역변수, 함수의 인자 및 함수 호출시 발생하는 context 최적화 즉, Stack의 사용량을 줄이는 것
-  - 실행시간 최적화: 인라인 함수 사용, 참조 테이블 및 인라인 어셈블리어 활용, 전역 변수 사용을 통한 함수 호출 오버헤드 회피, 폴링방식 및 정수 연산 활용  
+  - ROM 최적화 : 프로그램 코드, 상수, 초기화된 전역 변수와 정적 변수 최적화 즉, 코드와 상수를 줄이는 것
+  - RAM 최적화 : 초기화되지 않은 전역변수와 정적 변수, 지역변수, 함수의 인자 및 함수 호출시 발생하는 context 최적화 즉, Stack의 사용량을 줄이는 것
+  - 실행시간 최적화 : 인라인 함수 사용, 참조 테이블 및 인라인 어셈블리어 활용, 전역 변수 사용을 통한 함수 호출 오버헤드 회피, 폴링방식 및 정수 연산 활용  
 
   **6. Data Handling (데이터 처리)**
-  - Data Types Usage: 올바른 Data Type을 사용하여, 불필요한 변수 크기로 인한 처리시간 증가를 예방  
-  - Avoid Type Coversion: 처리를 위해 동일한 타입의 변수를 사용하여, 타입 변환으로 인한 처리시간 증가를 예방  
+  - Data Types Usage : 올바른 Data Type을 사용하여, 불필요한 변수 크기로 인한 처리시간 증가를 예방  
+  - Avoid Type Coversion : 처리를 위해 동일한 타입의 변수를 사용하여, 타입 변환으로 인한 처리시간 증가를 예방  
   - Signed & Unsigned의 구분  
     - Unsigned = 몫/나머지, loop cointer, array, indexing
     - Signed = 사칙 연산
-  - Floats & Doubles: Float의 최대 값 = 0x7F7F FFFF, Double의 최대 값 = 0x7F7F FFFF FFFF FFFF, 불필요한 유형 변환이나 혼동을 피하기 위해 숫자 값 뒤에 문자 'f'를 지정
-  - Constant: 데이터를 상수로 정의해 ROM 공간에 할당
-  - Volatile: 컴파일러가 변수에 대한 최적화를 수행하지 못하도록 금지
-  - Data Alignment - Arrangement & Paking: 메모리 structure를 고려한 변수를 선언
-  - Pass bt Reference: 매개변수 수가 많을수록 각 함수 호출에서 push 및 pop 동작이 많기 때문에 오버헤드를 줄이기 위해 structure 참조를 파라미터로 전달하는 것이 더욱 효율적  
-  - Initialization: Memory allocation 방법을 적절히 사용하여 RAM 사용량을 줄이는 것이 가능
-  - Return 값: 함수의 Return 값은 레지스터에 저장되며, Return data가 의도된 용도로 사용되지 않는다면 낭비가 됨
-  - 비트 플래그 사용: 상태를 나타내기 위한 플래그로 비트 연산(비트 플래그)을 사용  
+  - Floats & Doubles : Float의 최대 값 = 0x7F7F FFFF, Double의 최대 값 = 0x7F7F FFFF FFFF FFFF, 불필요한 유형 변환이나 혼동을 피하기 위해 숫자 값 뒤에 문자 'f'를 지정
+  - Constant : 데이터를 상수로 정의해 ROM 공간에 할당
+  - Volatile : 컴파일러가 변수에 대한 최적화를 수행하지 못하도록 금지
+  - Data Alignment - Arrangement & Paking : 메모리 structure를 고려한 변수를 선언
+  - Pass bt Reference : 매개변수 수가 많을수록 각 함수 호출에서 push 및 pop 동작이 많기 때문에 오버헤드를 줄이기 위해 structure 참조를 파라미터로 전달하는 것이 더욱 효율적  
+  - Initialization : Memory allocation 방법을 적절히 사용하여 RAM 사용량을 줄이는 것이 가능
+  - Return 값 : 함수의 Return 값은 레지스터에 저장되며, Return data가 의도된 용도로 사용되지 않는다면 낭비가 됨
+  - 비트 플래그 사용 : 상태를 나타내기 위한 플래그로 비트 연산(비트 플래그)을 사용  
 
   **7. Flow Control Handling (흐름제어 처리)**
-  - if VS switch: 하나의 var를 받아 control flow를 짤 때에는 switch가 효율적, if는 값에 따라 시간이 달라지지만 switch는 lookup table 방식이기 때문
-  - Inline: 컴파일러가 함수에 대한 모든 호출을 함수 코드의 복사본으로 대체하여 함수 호출과 관련한 오버헤드가 제거 (큰 함수를 인라인 할 경우 실행 파일의 크기가 너무 커짐)
-  - Loop Hoisting: 컴퓨팅 시간 절약을 위해 후프 외부로 계산 이동
-  - Loop overhead: MCU에는 양수에서 0으로 카운트다운 할 때 잘 작동, "미리 정의된 숫자"보다 "0"을 감지하는 것이 더 쉬움
+  - if VS switch : 하나의 var를 받아 control flow를 짤 때에는 switch가 효율적, if는 값에 따라 시간이 달라지지만 switch는 lookup table 방식이기 때문
+  - Inline : 컴파일러가 함수에 대한 모든 호출을 함수 코드의 복사본으로 대체하여 함수 호출과 관련한 오버헤드가 제거 (큰 함수를 인라인 할 경우 실행 파일의 크기가 너무 커짐)
+  - Loop Hoisting : 컴퓨팅 시간 절약을 위해 후프 외부로 계산 이동
+  - Loop overhead : MCU에는 양수에서 0으로 카운트다운 할 때 잘 작동, "미리 정의된 숫자"보다 "0"을 감지하는 것이 더 쉬움
   
   **8. Other Handling (기타 처리)**
-  - Use of operators: 기존 연산자 적극 활용
-  - Replacing, Integer Division with Multiplication: 정수 나눗셈은 모든 정수 연살 중 가장 느리므로, 식에 여러 나눗셈이 있는 경우 정수 나눗셈을 곱셈으로 변경
-  - Use of Fomula: 곱셈을 최대한 피하고 덧셈으로 치환
-  - Inline assembly: 어셈블리 명령들을 inline 함수로 작성
+  - Use of operators : 기존 연산자 적극 활용
+  - Replacing, Integer Division with Multiplication : 정수 나눗셈은 모든 정수 연살 중 가장 느리므로, 식에 여러 나눗셈이 있는 경우 정수 나눗셈을 곱셈으로 변경
+  - Use of Fomula : 곱셈을 최대한 피하고 덧셈으로 치환
+  - Inline assembly : 어셈블리 명령들을 inline 함수로 작성
   - 부동소수점 연산 제거
   - 조건문 최적화
 
   **9. 신뢰성 있는 코드를 위한 가이드 라인**
+  - [MISRA-C] : Moter Industry Software Reliablility Association, 자동차 산업 소프트웨어 신뢰성 협회로, 자동차 임베디드 소프트웨어의 결함을 줄이기 위해 탄생했지만 많은 개발자 스타일 가이드 라인으로 사용됨
+  - [BARR-C] : Barr 그룹에서 발표한 자동차 임베디드 C코딩 표준으로 유지보수성과 이식성 향상이 목적
+  - Line Widths : 프로그램 내 모든 줄의 너비는 최대 80자
+  - Keywords to Avoid : auto/register 사용 불가, goto, continue 사용 지향
+  - Braces : if, else, while 등의 코드 블록은 항상 중괄호로 둘러싸기 및 중괄호는 단독 줄에 표시
+  - Parentheses : 수식은 명확성을 위해 괄효 사용
+  - Common Abberviations : 약자는 되도록 '약어표'를 참조
+  - Casts : 각 형변환에는 가능한 값 범위에서 적절한 동작을 보장하는 방법을 설명하는 주석이 포함되어야 함
+  - Keywords to Frequent
+    - static - 모듈 외부에 표시될 필요가 없는 모든 함수와 변수를 선언하는데 활용
+    - const - 초기화 후 변경해서는 안되는 변수 선언, 수정해서는 안되는 call-by-reference 함수 매개변수 정의, 수정해서는 안되는 struct 또는 union의 필드 정의에 활용
+    - volatile - interrupt service routune에서 엑세스할 수 있는 전역 변수 선언, 두 개 이상의 thread에서 엑세스할 수 있는 전역 변수 선언, memory-mapped I/O 주변 레지스터 세트에 대한 포인터 선언, delay loop counter 선언에 활용
+  - Acceptable Formats : 일시적인 코드 주석 처리 안됨 (조건부 컴파일 기능을 활용하기)  
+  - Locations and Content : 주석은 완전한 문장과 같은 들여쓰기 수준으로 모든 가정을 설명해야 함
+    - WARNING - 이 코드를 변경하는데 위험이 있음을 경고
+    - NOTE - chunk의 why에 대한 설명적 주석을 제공
+    - TODO - 코드가 아직 작성 중임을 나타냄
+  - Space : 대입/이항연산자 앞뒤 공백, 단항연산자는 피연산자쪽에 공백 없이, 삼항 연산자 구성 문자 앞뒤 공백 등
+  - Alignment : 일련 선언 내 변수 이름은 첫 글자를 정렬, struct 및 union의 이름은 첫 글자를 정렬
+  - Blank Lines : 한 줄의 코드에 두 개 이상의 문장이 포함되면 안되며 코드 블록의 앞뒤는 공백이 있어야 함
+  - Indentation : 각 들여쓰기는 4자의 배수, 가독성 있게 들여쓰기 해야 함
+  - Tabs : 탭 문자는 소스 코드 파일 내에 나타나지 않아야 함
+  - Naming Conventions : 모든 모듈 이름은 소문자/숫자/밑줄로만 구성, 모든 모듈 이름의 처음 8자는 고유해야 함
+  - Header Files : 각 소스 파일에는 정확히 하나의 헤더파일이 있어야 하며 헤더 파일은 항상 동일한 경로와 이름을 가져야 함, 각 헤더 파일에는 다중 포함을 방지하는 전처리기 가드가 포함되어야 함
+  - File Templates : 헤더 파일과 소스 파일에 대한 템플릿 세트는 프로젝트 수준에서 유지 관리 되어야 함
+  - Naming Conventions : structur, union, enum 등의 data type의 이름은 소문자와 밑줄로만 구성해야 하며, typedef를 통해 이름을 지정해야 함
+  - Fixed-Width Integers : integer 값의 width가 중요한 경우 fixed width data types 중 하나를 사용해야 함
+  - Signed and Unsigned Intergers : Bit-fiels는 signed integer types 내에 정의되어서는 안됨, 비트 연산자는 signed interger 연산에 사용해서는 안됨
+  - Floating Point : floating point 상수와 변수 대신 가급적 Fixed-point math를 사용하는 것이 대안이 될 수 있음
+  - Structuers and Unions : 컴파일러가 외부와 통신하는데 사용되는 struct 또는 unoin 내에 padding bytes가 삽입되지 않도록 주의, 컴파일러가 bit-fields 내 bits의 정해진 순서를 변경하지 않도록 적절한 주의
+  - Booleans : bool 키워드로 선언, Non-boolean 값은 관계형 연산사를 사용해 boolean으로 변환해야 함
+  - Naming Conventions : Procedure의 이름은 기존 라이브러리의 키워드 및 함수 이름에 겹칠 수 없으며, 함수 이름에 대문자를 포함하면 안됨, 매크로 이름에 소문자를 포함하면 안됨
+  - Functions : 각 함수 길이는 100줄 이내로 제한하기 위해 노력해야 함, 종료 지점은 하나가 바람직, 모든 private functions 는 static으로 선언해야 함
+  - Function-Like Macros : 동일한 동작을 수행하는 함수를 작성할 수 있는 경우 매개 변수화된 매크로를 사용하면 안됨
+  - Threads of Execution : 실행 threads를 캡슐화하는 모든 함수의 이름의 끝은 "_thread" 로 지정
+  - Interrupt Service Routines : ISRs은 일반적인 함수가 아니며 #pragma 또는 컴파일 전용 키워드를 통해 ISR임을 알려야 함, 관련 함수의 이름은 "_isr"로 끝나야 함
+  - Naming Conventions : pointer 변수는 'p'로 시작해야 함, pointer-to-pointer는 'pp'로 시작해야 함, 전역 변수는 'g'로 시작해야 함, 3자 이상 31자 이내로 선언해야 함
+  - Initialization : 모든 변수는 사용 전 초기화, 지역변수는 함수 맨 위에 모두 정의하는 것보다 필요할 때마다 정의하는 것이 좋음
+  - Variable Declarations : 쉼표 연산자(,)는 변수 선언 내 사용 불가
+  - Conditional Statements : if 및 else if 절 중 가장 짧은(코드행이) 항목은 먼저 배치, if 또는 else if 조건문 안에서 변수 할당을 하지 말아야 함
+  - Switch Statements : 각 case는 코드 블록의 내용이 아닌 관련 case와 일치하도록 들여쓰기, 다음 case로 넘어가도록 설계된 경우 break가 없는 이유를 주석으로 달아야 함
+  - Loops : Magic number를 초기값으로 사용하거나 while, do-while 등의 endpoint test에 사용하면 안됨, 무한 루프는 (;;)에 대한 제어 표현식을 통해 구현해야 함
+  - Jumps : goto 문은 사용 제한
+  - Equivalence Tests : 상수에 대해 변수의 동일성을 평가할 때 상수는 항상 등호 연산자 (==)의 왼쪽에 배치
 
 
 --- 
