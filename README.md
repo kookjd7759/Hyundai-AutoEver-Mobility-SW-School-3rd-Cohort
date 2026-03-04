@@ -690,7 +690,6 @@
   - Jumps : goto 문은 사용 제한
   - Equivalence Tests : 상수에 대해 변수의 동일성을 평가할 때 상수는 항상 등호 연산자 (==)의 왼쪽에 배치
 
-
 --- 
 
 </details> <br>
