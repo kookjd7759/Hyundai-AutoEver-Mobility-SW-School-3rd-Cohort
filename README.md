@@ -40,7 +40,7 @@
   <tr>
     <td align="left"><b>03. </b><a href="#course-03">모던 C++</a></td>
     <td align="left"><b>10. </b><a href="#course-10">임베디드 C 프로그래밍 코드 최적화 기법</a></td>
-    <td align="left"><b>17. </b><a href="#course-17">차량용 신시간 운영체제 기반 프로그래밍</a></td>
+    <td align="left"><b>17. </b><a href="#course-17">차량용 실시간 운영체제 기반 프로그래밍</a></td>
   </tr>
   <tr>
     <td align="left"><b>04. </b><a href="#course-04">자동차 구조 및 전장시스템 이해</a></td>
@@ -1212,7 +1212,7 @@
 >   
 
 <a id="course-17"></a>
-### 17\. 차량용 신시간 운영체제 기반 프로그래밍 <sub>(2026.04.23 ~ 2026.04.28)</sub>  
+### 17\. 차량용 실시간 운영체제 기반 프로그래밍 <sub>(2026.04.23 ~ 2026.04.28)</sub>  
 > **📝 학습 내용**  
 >   
 
