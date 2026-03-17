@@ -63,7 +63,6 @@
     <td align="left"><b>21. </b><a href="#course-21">자율주행 기능 구현 프로젝트</a></td>
   </tr>
 </table>
-<br>
 
 ## Course <sub>(2025.12.18 ~2026.06.29)</sub>  
 <a id="course-01"></a>
