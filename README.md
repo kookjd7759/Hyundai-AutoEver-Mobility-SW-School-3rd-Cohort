@@ -1464,8 +1464,17 @@
     - [목적] - 잘못된 OS Serivce (API) 사용에 의해 OS에 문제가 생기는 것을 방지, OSEK에서 포함하지 못한 case에 OSEK OS의 error status를 적용
     - [예] OS API에 유효하지 않은 Parameter 전달, 잘못된 context에서의 OS API 호출 ..etc
 
-
-
+  #### **AUTOSAR OS 실습**  
+  1. 준비단계
+  - Odin Studio 실행
+  - 'autron_autosar_edu_Warrior_mpc5606b_Base_R181026' 프로젝트 import
+  2. 비주기 Task
+    - LED Part를 초기화하는 Task를 하나 추가
+    - Autostart Task에서 실행시켜 시스템 시작 시 초기화를 수행
+  3. 주기 Task
+    - 1초에 한번씩 Activate 되는 주기 Task를 추가
+    - Task 안에서 LED를 토글하는 테스트 코드를 작성하여 Task가 실제 동작하는 모습을 확인
+  
 
 
 ---
