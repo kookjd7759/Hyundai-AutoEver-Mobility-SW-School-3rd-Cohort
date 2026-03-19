@@ -1344,6 +1344,13 @@
    : Starting Project with mobilgene, Basic UI, Menu, Toolbar, Explorer, Bottom view, Perspective
 
   #### **AUTOSAR OS**  
+  **1. OSEK/VDX OS**  
+  - OSEK/VDX 개요 : 차량용 Real-time OS 표준화 단체 및 표준 규격
+    - [구성 주요 기능] - COM, NM, OS, OIL
+    - [제정 목적] - SW의 재사용성 및 이식성 향상, SW 개발 비용 감소
+    - **AUTOSAR OS는 OSEK OS를 기반으로 만들어짐**
+    - [주요 Service 기능] - Task 관리, Event 처리, Resource 처리, Interrupt 처리, Alarm 처리, Error 처리, System Start-up / Shutdown, Hook 루틴
+  - **이처럼 Hard Real-time system은 deadline이 존재함 (해당 시간 안에 특정 operation을 완료해야 함)**
 
 
 ---
