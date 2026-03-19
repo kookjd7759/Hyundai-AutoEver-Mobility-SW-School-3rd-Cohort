@@ -1,0 +1,15 @@
+ - DC_motor - 디지털 출력과 PWM 신호를 사용해 DC 모터의 회전 방향 및 속도를 제어하는 모터 제어 실습  
+ - DHT - DHT 센서를 사용해 온도·습도 데이터를 측정하고, 시리얼 모니터를 통해 실시간으로 출력하는 센서 인터페이싱 구현  
+ - Gcc_project - AVR 레지스터 직접 제어를 통해 버튼 입력(PB7)을 감지하고, 입력 상태에 따라 LED(PB5)를 ON/OFF 제어하는 디지털 입력·출력 실습
+ - LED_brightness_control - PWM 출력을 이용해 LED 밝기를 단계적으로 제어하며 아날로그 출력 개념을 실습  
+ - auto_temp-humidity_control_system - 가변저항(ADC) 값을 온도(-40~80℃)로 변환해 설정한 상·하한 범위에 따라 DC 모터의 방향/속도(PWM)와 브레이크를 자동 제어하고, LED·시리얼로 상태를 출력하는 아두이노 제어 시스템 구현  
+ - blink_1LED - Arduino 기본 디지털 출력 실습으로, 단일 LED를 일정 주기로 ON/OFF 제어하는 블링크 프로그램 구현  
+ - blink_4LED - 여러 디지털 핀을 사용해 4개의 LED를 동시에 제어하며 출력 제어 및 타이밍 동작을 확인하는 LED 제어 실습  
+ - buzzer - 디지털 출력 신호를 이용해 부저(Buzzer)를 ON/OFF 제어하며 기본적인 소리 출력 동작을 실습  
+ - buzzer_CDEFGABC - 주파수 제어를 통해 부저로 도·레·미·파·솔·라·시·도 음계를 순차적으로 재생하는 멜로디 출력 프로그램 구현  
+ - sequential_blink - 여러 개의 LED를 순차적으로 점등·소등하며 반복 제어 로직과 타이밍 동작을 구현  
+ - sequential_stack_blink - LED를 하나씩 누적 점등하고 역순으로 소등하며 상태 유지 및 순차 제어 로직을 실습  
+ - serial_communication1 - 시리얼 통신을 통해 데이터를 송신하고, 시리얼 모니터 출력으로 통신 기본 동작을 확인  
+ - serial_communication2 - 시리얼 입력 값을 수신해 조건에 따라 동작을 제어하며 양방향 시리얼 통신을 구현  
+ - toggle_LED - 입력 이벤트(버튼 또는 신호)에 따라 LED 상태를 토글하며 상태 전환 로직을 구현  
+ - using_adjustable_resistance - 가변저항(ADC) 입력 값을 읽어 아날로그 신호 처리 및 제어 로직에 활용하는 실습  
