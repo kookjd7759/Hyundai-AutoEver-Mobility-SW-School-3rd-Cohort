@@ -1254,6 +1254,7 @@
 
 ---
 
+  #### **AUTOSAR OVERVIEW**  
   **1. 소프트웨어 플랫폼**  
   - 소프트웨어 플랫폼 개요 : 제어계층에서 응용 SW와 HW를 연결해주는 중간 계층으로, 표준 인터페이스와 공통 기능 모듈을 제공함
   - 소프트웨어 플랫폼 개발 배경 : 제어기 수량의 증가 및 차량 공간의 제약에 따라 제어기 통합이 필요하며, 제어기 SW의 복잡성이 증가함에 따라 플랫폼 공용화 및 표준화가 필요하기 때문
@@ -1312,7 +1313,7 @@
   - SW Safety : 안전이 검증된 S/W의 재사용이 가능해 안전성이 확보됨
   - Cost efficiency : S/W 재사용 및 신차 모델 개발 기간 단축으로 인한 원가 절감, 부품사와 명확한 커뮤니케이션 가능, 다양한 OEM에 공급 가능
 
-  **AUTOSAR 개발환경**  
+  #### **AUTOSAR 개발환경**  
   1. mobilgene studio 기반 Tool-Chain 환경
   2. mobilgene studio 기반 프로젝트 개요
   3. mobilgene studio 시용 가이드
@@ -1326,16 +1327,23 @@
     - SConstruct Build System - Pyhton 기반 오픈소스 소프트웨어 빌드 도구
     - MCAL Generator - 설정 기반 코드 생성
     - FreeScale CodeWarrior Compiler - 사용자 언어에서 기계 언어로 compile을 해줌
-  
-  [1] JRE 설치
-  [2] mobilgene studio 설치
-  [3] Tool-chain 설치
-  [4] Code Warrior 설치
+  - JRE 설치 - mobilgene studio 설치 - Tool-chain 설치 - Code Warrior 설치
 
+  **2. mobilgene studio 기반 프로젝트 개요**  
+   : mobilgene studio 라이선스 설치 및 실행, 프로젝트 생성-빌드-구조
+  **3. mobilgene studio 사용 가이드**  
+   : 사용자 인터페이스 학습 및 주요 기능 사용법
+  **4. mobilgene 프로젝트 생성 및 컴파일**  
+   : Workspace 지정 및 프로젝트 생성, ELF 파일 Flash, 실행파일 Target Debugging
+  **5. Target 디버그**  
+   : 디버깅 화면 학습 및 Break Point 설정, Watch 변수 등록
+  **6. Appendix**
+   : 수정된 이미지 파일 다운로드 하기, 명령어 모음 확인
 
+  #### **MOBILGENE 사용법 - Basic UI**  
+   : Starting Project with mobilgene, Basic UI, Menu, Toolbar, Explorer, Bottom view, Perspective
 
-
-
+  #### **AUTOSAR OS**  
 
 
 ---
