@@ -1351,6 +1351,12 @@
     - **AUTOSAR OS는 OSEK OS를 기반으로 만들어짐**
     - [주요 Service 기능] - Task 관리, Event 처리, Resource 처리, Interrupt 처리, Alarm 처리, Error 처리, System Start-up / Shutdown, Hook 루틴
   - **이처럼 Hard Real-time system은 deadline이 존재함 (해당 시간 안에 특정 operation을 완료해야 함)**
+  - **Task**
+    - [정의] - OS가 제어하는 프로그램의 기본 단위로 복잡한 제어 소프트웨어의 실시간 요구사항을 나누어 여러 task로 구성
+    - Task State Model - Task는 실행되며 상태가 변함, OSEK에서는 2가지 타입(Basic Task, Extended Task)의 Task 상태에 대한 model을 제공
+      - Basic task의 states : running <-> ready <- suspended <- running
+      - Extended task의 states : ready <- wating <- running <-> ready <- suspended <- running
+    
 
 
 ---
