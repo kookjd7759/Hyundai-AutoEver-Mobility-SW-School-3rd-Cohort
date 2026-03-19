@@ -1395,6 +1395,10 @@
     - [System Start-up] - 시스템을 generation할 때 자동으로 시작하는 task와 alarm을 설정
     - [Shutdown] - Fatal error 발생 시 application 이나 OS에서 Shutdown을 요청
 
+  **2. AUTOSAR OS**  
+
+
+
 ---
 
 </details> <br>  
