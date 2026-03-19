@@ -1343,8 +1343,7 @@
   #### **MOBILGENE 사용법 - Basic UI**  
    : Starting Project with mobilgene, Basic UI, Menu, Toolbar, Explorer, Bottom view, Perspective
 
-  #### **AUTOSAR OS**  
-  **1. OSEK/VDX OS**  
+  #### **OSEK/VDX OS**  
   - OSEK/VDX 개요 : 차량용 Real-time OS 표준화 단체 및 표준 규격
     - [구성 주요 기능] - COM, NM, OS, OIL
     - [제정 목적] - SW의 재사용성 및 이식성 향상, SW 개발 비용 감소
@@ -1395,8 +1394,38 @@
     - [System Start-up] - 시스템을 generation할 때 자동으로 시작하는 task와 alarm을 설정
     - [Shutdown] - Fatal error 발생 시 application 이나 OS에서 Shutdown을 요청
 
-  **2. AUTOSAR OS**  
-
+  #### **AUTOSAR OS**  
+  **AUTOSAR 개요**  
+  AUTOSAR : 기존의 OSEK OS를 기반으로 추가적인 기능을 부여한 것
+  - Scalability Class : 기존 OSEK OS에서 사용자의 목적에 따른 확장성 제공
+    - Scalability Class 1
+      1. OSEK OS - AUTOSAR는 backward compatibility가 되도록 OSEK OS의 API
+      2. SWFRT - OS에서 사용하는 timer
+      3. Counter - OSEK OS의 Counter를 직접 제어할 수 있는 API
+      4. Schedule Table - 여러 동작을 시간에 따라 수행하기 위해 OS에서 제공하는 expiry point의 집합
+      5. Stack Monitoring - Stack이 설정된 값보다 초과되어 사용되고 있지 않은지 검사하는 OS Service
+    - Scalability Class 2
+      1. Protection Hook - 치명적인 에러 발생시 사용자가 선택한 동작을 수행하게 하는 hook mechanism
+      2. Timing Protection - Task가 제시간에 동작하는 것을 보장하기 위해, task 수행시간, resource 점유시간, activation 주기 등을 감시
+    - Scalability Class 3
+      1. Protection Hook
+      2. OS-Application - OS object들을 기능적 단위로 만들어 놓은 것
+      3. IOC - Application 간의 정보 전달을 위한 서비스
+      4. CallTrustedFunction - Non-Trusted OS-Application에서 trusted service를 사용하기 위해 Trusted OS-Application에서 제공하는 함수
+      5. Memory Protection - 허가되지 않은 메모리 영여의 접근을 감지하여 메모리 영역의 무결성을 보장해주는 OS service
+      6. Service Protection - OS-Application의 서비스 호출이 OS module을 corruption 하지 않도록하는 OS의 protection 메커니즘
+    - Scalability Class 4 : Scalability Class 2 와 3 의 기능을 모두 지원
+  - Schedule Table 
+    - [정의] - 고정적으로 정의되어 있는 expiry point 들의 집합
+    - [구성 요소] - Action, Offset
+    - [동작] - Initial Expiry Point 부터 Final Expiry Point까지 offset이 증가하는 순서로 처리, 다수의 schedule table을 동시에 처리 가능
+  **Stack Monitoring**  
+    - [목적] - Stack이 설정된 값보다 초과되어 사용되고 있지 않은지 검사
+    - [대상] - Task, Category 2 ISR
+    - [시점] - context switching time, 에러 발생 후 발견까지 오래걸림, SC3, SC4 에서는 stack monitoring fault 발생 전에 memory protection error 발생 
+    - [처리] - ProtectionHook 설정시 ProtectionHook 호출, 미설정시 ShutdownOS 호출
+  **Protection Hook**  
+   : OS에 의해 감지되는 심각한 에러의 발생을 알리기 위한 Interface 채널로 API 함수 형식을 가짐
 
 
 ---
