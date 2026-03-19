@@ -1240,6 +1240,8 @@
   - ECB, CTR, GCM 모드 간 보안 특성을 비교하여 암호 모드 선택이 보안에 미치는 영향 이해  
   - 보안 통신은 단순 암호화가 아닌 무결성 검증과 인증까지 포함해야 안전함을 확인  
 
+---  
+
 </details> <br>  
 
 <a id="course-13"></a>
@@ -1247,43 +1249,208 @@
 > **📝 학습 내용**  
 >   
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+  **1. 소프트웨어 플랫폼**  
+  - 소프트웨어 플랫폼 개요 : 제어계층에서 응용 SW와 HW를 연결해주는 중간 계층으로, 표준 인터페이스와 공통 기능 모듈을 제공함
+  - 소프트웨어 플랫폼 개발 배경 : 제어기 수량의 증가 및 차량 공간의 제약에 따라 제어기 통합이 필요하며, 제어기 SW의 복잡성이 증가함에 따라 플랫폼 공용화 및 표준화가 필요하기 때문
+  - HKMC 표준 플랫폼 비교 (XENON AUTOSAR) : 최신 차량용 기반 기술의 국제 표준화 및 사양화, 고성능 MCU 사용으로 플랫폼 적용 도메인 확대 및 전 분야 공용 표준화 플랫폼 제공
+
+  **2. AUTOSAR 란?**
+  - AUTOSAR 정의 : AUTOmotive Open System ARchitecture, 더욱 향상된 성능과 안전성 및 친환경적인 전장 시스템의 혁신을 위한 기반을 조성하기 위해 자동차 수명 전반에 걸쳐 소프트웨어와 하드웨어의 교체나 업데이트를 가능하게 함
+  - AUTOSAR 운영조직 : 참여 정도에 따라 4개의 조직으로 구성됨
+    - Core Partner - 조직 및 행정 관리
+    - Premium Partner - Working group의 선도 및 개선
+    - Development Partner - 전문 지식 기여
+    - Associate Partner - AUTOSAR 표준 사용자
+    | 항목 | Classic AUTOSAR | Adaptive AUTOSAR |
+    |-----|-----------------|------------------|
+    | 대상 하드웨어 | MCU | MPU |
+    | 운영체제 | OSEK/VDX 기반 RTOS | POSIX 기반 OS |
+    | 프로그래밍 언어 | C | C++, 일부 Python |
+    | 통신 방식 | 정적 통신 구성 | 동적 서비스 기반 통신 |
+    | 적용 분야 | 샤시, 파워트레인, 진단 | IVI, 쟈율주행, V2X 등 |
+    | 구성 방식 | 정적 구성 | 동적 구성 |
+    | 주요 특징 | 실시간 경량, 고신뢰성 | 고성능 처리, 유연성, OTA |
+    | RTE 사용 여부 | 사용 | 미사용 |
+
+  **3. AUTOSAR 플랫폼**
+  - AUTOSAR 개발 과정
+    1. Configure System : 시스템 설정 단계로 컴포넌트의 구성/연결 등을 정의
+    2. Implement Component : "Configure System" 단계에서 구성한 컴포넌트들에 대한 코드 구현 등을 진행
+    3. Extract ECU-Specific Information : 시스템 구성 정보로부터 특정 제어기 소프트웨어를 구현하기 위한 정보만을 추출
+    4. Configure ECU : 제어기 관련 설정을 진행 (ECU Configuration Description 개발)
+    5. Generate Executable : 제어기에서 동작하는 실행 파일을 생성
+    - 차량 시스템은 신뢰성이 중요하기 때문에 사람이 직접 코딩하는 것을 막으려고 함
+    - AUTOSAR 개발 과정은 일반적으로 Top-Down 방식 
+    - 시스템 설계자는 VFB 상에서 SW-C를 설계. SW-C 간 Data의 이동은 Port와 Interface로 정의
+    - Configure System이라는 디자인 단계에서 SW-C는 특정 ECU에 할당. ECU Extract 과정을 통해 개별 ECU에 설계 정보 전달
+    - 개별 ECU는 SW-C 간 또는 SW-C와 BSW간 구체적인 인터페이스를 RTE를 통해 구현
+    - SW-C : Software Component, 일반적으로 소프트웨어 기능 단위를 의미
+    - VFB : Virtual Functional Bus, 컴포넌트가 상호작용 할 수 있는 통신 메커니즘
+    - RTE : Run-Time Environment, SW-C 간 또는 SW-C와 BSW간 인터페이스 설정을 통해 자동 생성해주는 기능
+  
+  - AUTOSAR 플랫폼 구조
+    - 차량용 SW Application 개발의 생산성 향상을 위한 표준 플랫폼으로 계층화된 구조를 사용해 업체별 개발 분담이 가능 (Application, BSW, MCAL), AUTOSAR 표준 준수를 통한 안전성 확보 및 H/W와 독립적인 구조를 통해 SW Application 재사용 가능
+    - AUTOSAR Layered Software Architecture
+      - Application Layer - H/W 독립적인 응용 프로그램 S/W를 정의
+      - Runtime Environment (RTE) - VFB로 모델화된 통신 구조가 실제 로컬 연결이나 네트워크 통신으로 구현된 환경
+      - AUTOSAR Inferface - 사용자 설정에 따라 생성되는 API
+      - Standardized AUTOSAR Interface - AUTOSAR Interface와 동일한 API 구조를 갖지만 표준에 정의된 Interface를 사용
+      - Standardized Interface - 표준 Interface와 BSW간 Data를 주고 받거나 동작을 실행하기 위한 API
+      - Basic Software Layers (BSW)
+        1. Services Layer - 시스템 구동 및 다른 BSW 모듈 제어를 위한 관리 서비스 제공
+        2. ECU Abstraction - MCAL 드라이버들을 상위 계층에 Interface하는 추상화 계층
+        3. Micro-Controller Abstraction Layer - MCU 내부 장치를 이용하기 위한 드라이버들로 구성
+        4. Complex Drivers - AUTOSAR 표준에 정의되지 않은 기능 구현을 위한 계층
+  
+  **4. What are the benefits?**
+  - SW Reusability : SW 플랫폼을 통한 HW 독립적인 SW 애플리케이션 설계 및 재사용 
+  - SW Safety : 안전이 검증된 S/W의 재사용이 가능해 안전성이 확보됨
+  - Cost efficiency : S/W 재사용 및 신차 모델 개발 기간 단축으로 인한 원가 절감, 부품사와 명확한 커뮤니케이션 가능, 다양한 OEM에 공급 가능
+
+  
+
+
+
+
+
+
+
+
+
+---
+
+</details> <br>  
+
+
 <a id="course-14"></a>
 ### 14\. 차량용 임베디드 SW 개발 프로젝트 <sub>(2026.03.25 ~ 2026.04.08)</sub>  
 > **📝 학습 내용**  
 >   
+
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
 
 <a id="course-15"></a>
 ### 15\. 차량용 이더넷 통신 이해 <sub>(2026.04.09 ~ 2026.04.15)</sub>  
 > **📝 학습 내용**  
 >   
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
+
 <a id="course-16"></a>
 ### 16\. 차량용 통신시스템 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
 > **📝 학습 내용**  
 >   
+
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
 
 <a id="course-17"></a>
 ### 17\. 차량용 실시간 운영체제 기반 프로그래밍 <sub>(2026.04.23 ~ 2026.04.28)</sub>  
 > **📝 학습 내용**  
 >   
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
+
 <a id="course-18"></a>
 ### 18\. 차량용 통신시스템 구현 프로젝트 <sub>(2026.04.29 ~ 2026.06.01)</sub>  
 > **📝 학습 내용**  
 >   
+
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
 
 <a id="course-19"></a>
 ### 19\. 소프트웨어 테스팅 <sub>(2026.06.02 ~ 2026.06.08)</sub>  
 > **📝 학습 내용**  
 >   
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
+
 <a id="course-20"></a>
 ### 20\. OTA <sub>(2026.06.09 ~ 2026.06.15)</sub>  
 > **📝 학습 내용**  
 >   
+
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
 
 <a id="course-21"></a>
 ### 21\. 자율주행 기능 구현 프로젝트 <sub>(2026.06.16 ~ 2026.06.29)</sub>  
 > **📝 학습 내용**  
 >   
 
+<details>
+  <summary>📚 상세 학습 내용 보기</summary>
+
+---
+
+
+
+---
+
+</details> <br>  
