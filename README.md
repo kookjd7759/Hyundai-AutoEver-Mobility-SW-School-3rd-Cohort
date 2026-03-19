@@ -1356,6 +1356,11 @@
     - Task State Model - Task는 실행되며 상태가 변함, OSEK에서는 2가지 타입(Basic Task, Extended Task)의 Task 상태에 대한 model을 제공
       - Basic task의 states : running <-> ready <- suspended <- running
       - Extended task의 states : ready <- wating <- running <-> ready <- suspended <- running
+    - Scheduling
+      - Multi-Tasking - 여러 개의 Task를 실시간 상에서 동시에 실행
+      - Priority 기반의 scheduling - ready/running state 상의 state에서 highest priority를 가진 Task 집합을 결정해 그 중 가장 먼저 들어온 Task를 running 상태로 전환
+        - Full Preemptive - 우선순위가 높은 Task가 새로 들어오면 다시 scheduling
+        - Non Preemptive - 우선순위가 높은 Task가 새로 들어와도 현재 Task의 종료를 기다림
     
 
 
