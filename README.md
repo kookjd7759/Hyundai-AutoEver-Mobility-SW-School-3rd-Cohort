@@ -1425,7 +1425,47 @@
     - [시점] - context switching time, 에러 발생 후 발견까지 오래걸림, SC3, SC4 에서는 stack monitoring fault 발생 전에 memory protection error 발생 
     - [처리] - ProtectionHook 설정시 ProtectionHook 호출, 미설정시 ShutdownOS 호출
   **Protection Hook**  
-   : OS에 의해 감지되는 심각한 에러의 발생을 알리기 위한 Interface 채널로 API 함수 형식을 가짐
+    - [목적] - OS에 의해 감지되는 심각한 에러의 발생을 알리기 위함
+    - [형식] - Interface 채널로 API 함수 형식을 가짐
+    - [처리] - ProtectionHook 설정시 ProtectionHook 호출, 미설정시 ShutdownOS 호출
+  **Timing Protection**  
+    - [정의] - Task 및 ISR이 지정된 시간에 동작할 수 있도록 timing fault가 발생 시 이에 대한 에러 처리를 수행
+    - [원인] - Real-time system에서 timing fault는 Task가 deadline을 만족하지 못할 경우 발생
+    - [종류]
+      1. Excution Budget - Task/ISR의 excution time의 상한을 넘겨 수행하는 경우
+      2. Lock Budget - Task/ISR이 공유 resource lock/interrupt disable로 겪게되는 blocking time의 상한을 넘는 경우
+      3. Time Frame - 같은 Task/ISR 간의 inter arrival time의 하한보다 짧은 경우
+  **OS-Application**  
+    - [정의] - OS object 들의 모음
+    - [특징] - OS-Application을 사용하면 모든 OS object는 OS-Application에 속해야 함, Resource는 어느 App에도 속하지 않지만 명시적으로는 access가 주어져야 함, 하나의 OS-Application의 object는 모두 동일한 core에 있어야 함
+    - [상태]
+      1. APPLICATION_ACCESSIBLE - Application object들에 접근 가능한 상태
+      2. APPLICATION_RESTARTING - Application object에 접근 불가능한 상태
+      3. APPLICATION_TERMINATED - Application이 종료되어 사용 불가능한 상태
+    - [접근 권한]
+      - 동일 OS-Application에 속한 모든 Objects 간에는 서로 접근 가능
+      - 다른 OS-Application의 Object에 대한 접근은 설정 필요
+    - [type]
+      - Trusted OS-Application - 다른 application들에게 serivce를 제공 가능, monitoring 이나 protection이 disable되어 동작 가능
+      - Non-Trusted OS-Application - non-priciledged 모드에서 동작, 제한적으로 API와 hardware 자원에 접근 가능
+  **IOC**  
+    - [정의] - 정보 전달 방법(Intra OS-Application communication, Inter ECU comminication, Inter OS-Application communication)
+    - [목적] - Memory가 보호되는 application 사이에서의 communication으로 Multi-Core를 지원하여 core간 정보 교환을 수행할 수 있도록 함
+    - [IOC functionality] - 1:1, N:1, N:M 통신이 지원, Data item은 atomic이든 complex 구조이든 하나의 memory block으로 만들어짐
+    - [IOC interface] - Generic API를 제공하는 대신에 인터페이스를 제공
+  **Call Trusted Function**  
+    - [주요 기능] - Trusted OS-Application은 자기의 함수를 Trusted function으로 외부에 제공
+    - [사용 제한] - 동일한 Core 내의 application 간에만 사용 가능
+  **Memory Protection**  
+    - [정의] - 실행 프로그램(Task/ISR)이 특정 메모리 영역(Stack, Data, Code)에 대하여 권한 없이 접근하지 못하도록 보호하는 서비스
+    - [제약사항] - SC3 혹은 SC4로 Scalability를 선택해야 함, H/W 지원될 경우에만 사용, OS가 관리하는 object에 대해서만 보호가 가능
+    - [Memory Access Violation] - 실행 프로그램이 특정 메모리 영역에 권한 없이 접근할 경우 발생
+  **Service Protection**  
+    - [목적] - 잘못된 OS Serivce (API) 사용에 의해 OS에 문제가 생기는 것을 방지, OSEK에서 포함하지 못한 case에 OSEK OS의 error status를 적용
+    - [예] OS API에 유효하지 않은 Parameter 전달, 잘못된 context에서의 OS API 호출 ..etc
+
+
+
 
 
 ---
