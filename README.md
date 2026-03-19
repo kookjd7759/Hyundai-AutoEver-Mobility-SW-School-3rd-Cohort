@@ -1351,18 +1351,49 @@
     - **AUTOSAR OS는 OSEK OS를 기반으로 만들어짐**
     - [주요 Service 기능] - Task 관리, Event 처리, Resource 처리, Interrupt 처리, Alarm 처리, Error 처리, System Start-up / Shutdown, Hook 루틴
   - **이처럼 Hard Real-time system은 deadline이 존재함 (해당 시간 안에 특정 operation을 완료해야 함)**
+
   - **Task**
     - [정의] - OS가 제어하는 프로그램의 기본 단위로 복잡한 제어 소프트웨어의 실시간 요구사항을 나누어 여러 task로 구성
-    - Task State Model - Task는 실행되며 상태가 변함, OSEK에서는 2가지 타입(Basic Task, Extended Task)의 Task 상태에 대한 model을 제공
+    - [Task State Model] - Task는 실행되며 상태가 변함, OSEK에서는 2가지 타입(Basic Task, Extended Task)의 Task 상태에 대한 model을 제공
       - Basic task의 states : running <-> ready <- suspended <- running
       - Extended task의 states : ready <- wating <- running <-> ready <- suspended <- running
-    - Scheduling
+    - [Scheduling]
       - Multi-Tasking - 여러 개의 Task를 실시간 상에서 동시에 실행
       - Priority 기반의 scheduling - ready/running state 상의 state에서 highest priority를 가진 Task 집합을 결정해 그 중 가장 먼저 들어온 Task를 running 상태로 전환
         - Full Preemptive - 우선순위가 높은 Task가 새로 들어오면 다시 scheduling
         - Non Preemptive - 우선순위가 높은 Task가 새로 들어와도 현재 Task의 종료를 기다림
-    
-
+      - Basic Task에서의 Context Switching - Task 선점시 Conext 저장, running 상태로 전환시 불러옴
+      - Extended Task에서의 Context Switching - wait 상태로 전이/선점시 저장, running 전환시 불러옴
+    - TaskHook : 디버깅이나 타이밍 정보 측정 등을 위해 Task 동작 전후로 사용자가 작성하여 사용 가능한 루틴
+  - **Event**
+    - [정의] - Waiting state를 지원하는 task에 대해 task간 순서를 동기화할 수 있는 mechanism
+    - [용도] - Task의 동작 순서를 동기화
+    - [제약] - Extended Task 에서만 사용 가능
+  - **Interrupt** 
+    - [정의] - 주변 장치에서 발생한 상태 변화
+    - [특징] - Task들을 선점
+    - [분류] 
+      1. Category1 Interrupt - OS 서비스를 사용하지 않는 ISR, ISR 이후 처리 중이던 구문을 계속 처리
+      2. Category2 Interrupt - OS 서비스를 사용하는 ISR, OS가 지정된 사용자 routine을 위해 ISR-frame 제공
+    - [Interrupt와 Task간 scheduling] - ISR 중에는 rescheduling이 발생하지 않음, ISR cat.2가 종료되었을 때 다른 interrupt가 없다면 task에 대해 rescheduling을 수행
+  - **Alam**
+    - [정의] - Counter에 기반하여 특정 시점에 도달하였을 경우 지정된 동작을 함으로 반복적으로 이벤트를 발생시킬 수 있도록 함
+    - [용도] - OS 내 구성된 Task를 주기적으로 실행 시키기 위함
+    - [Counter] - 소스(Timer) 값을 TICK 단위의 상수 값으로 변경시킴 
+    - [동작] - ALAM은 COUNTER가 미리 정의된 값에 도달했을 경우 expire
+  - **Resource**
+    - [정의] - 우선순위가 다른 여러 task가 공유된 자원에 병행 접근하는 것을 조정
+    - [종류] - Standard, Internal, Linked
+    - [Priority Ceiling Protocol] - 우선순위 낮은 Task가 resource를 가지고 preemption될 때 발생할 수 있는 교착상태 해결을 위한 방법. Resource를 얻는 순간에 resource에 지정된 priority로 task의 priority 상승
+    - [제약 사항] - 동일 Resource에 대해 중첩해서 획득할 수 없음, Task/ISR은 점유된 리소스를 가지고 종료할 수 없음
+    - [Scheduler as a resource] - Task가 자신이 다른 Task들에 의해 선점되는 것으로부터 보호하려면, 스케줄러를 잠글 수 있음
+  - **Error**
+    - [종류] - E_OS_ACCESS, E_OS_CALLEVEL, E_OS_ID, E_OS_LIMIT, E_OS_NOFUNC ..etc
+    - [Status] - Standard (E_OK, E_OS_LIMIT 값만 return), Extended (모든 Error state를 return)
+    - [ErrorHook] - Error가 발생할 경우 사용자가 이를 처리할 수 있도록 OS에서 제공하는 Hook Routine
+  - **System Start-up/Shutdown**
+    - [System Start-up] - 시스템을 generation할 때 자동으로 시작하는 task와 alarm을 설정
+    - [Shutdown] - Fatal error 발생 시 application 이나 OS에서 Shutdown을 요청
 
 ---
 
