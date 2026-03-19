@@ -151,6 +151,82 @@
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="20c6c169-05c0-44f8-b316-cb11f2dfc356">
+              <SHORT-NAME>OsAlarm_Test_1s</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                    <SD T="2026-03-19T17:12:13Z" GID="OsAlarmCounterRef">/Os/Os/OsCounter_0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Freescale/Os/OsAlarm</DEFINITION-REF>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsAlarm/OsAlarmCounterRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsCounter_0</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="570c75ef-e815-4bbe-9ac4-d821e6a934c5">
+                  <SHORT-NAME>OsAlarmAction</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/Freescale/Os/OsAlarm/OsAlarmAction</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="64fbe709-e552-4d9f-bd7a-3c995dd5e399">
+                      <SHORT-NAME>OsAlarmActivateTask</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                            <SD T="2026-03-19T17:12:33Z" GID="OsAlarmActivateTaskRef">/Os/Os/OsTask_Test_1s</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Freescale/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask</DEFINITION-REF>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask/OsAlarmActivateTaskRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsTask_Test_1s</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4056b528-41df-4adf-bbdf-1d599bde185f">
+                  <SHORT-NAME>OsAlarmAutostart</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                        <SD T="2026-03-19T17:13:00Z" GID="OsAlarmAlarmTime">500000</SD>
+                        <SD T="2026-03-19T17:13:03Z" GID="OsAlarmAutostartType">RELATIVE</SD>
+                        <SD T="2026-03-19T17:13:12Z" GID="OsAlarmCycleTime">1000000</SD>
+                        <SD T="2026-03-19T17:13:21Z" GID="OsAlarmAppModeRef">/Os/Os/OsAppMode0</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Freescale/Os/OsAlarm/OsAlarmAutostart</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Freescale/Os/OsAlarm/OsAlarmAutostart/OsAlarmAlarmTime</DEFINITION-REF>
+                      <VALUE>500000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Freescale/Os/OsAlarm/OsAlarmAutostart/OsAlarmAutostartType</DEFINITION-REF>
+                      <VALUE>RELATIVE</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Freescale/Os/OsAlarm/OsAlarmAutostart/OsAlarmCycleTime</DEFINITION-REF>
+                      <VALUE>1000000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsAlarm/OsAlarmAutostart/OsAlarmAppModeRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsAppMode0</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
             <ECUC-CONTAINER-VALUE UUID="1a18cb1f-9553-4478-9d9a-0407932cd312">
               <SHORT-NAME>OsAppMode0</SHORT-NAME>
               <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Freescale/Os/OsAppMode</DEFINITION-REF>
@@ -161,7 +237,8 @@
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
-                    <SD T="2026-03-19T16:38:49Z" GID="OsAppTaskRef">/Os/Os/OsTask_ASW_FG1_10ms,/Os/Os/OsTask_BSW_FG1_10ms,/Os/Os/OsTask_BSW_FG1_5ms_Mem,/Os/Os/OsTask_BSW_FG1_IOManager,/Os/Os/OsTask_BSW_FG2_IOManager,/Os/Os/OsTask_BSW_FG2_WdgMAPI,/Os/Os/OsTask_ASW_FG2_WdgMTestMode,/Os/Os/OsTask_BSW_Init,/Os/Os/OsTask_BSW_System_Idle,/Os/Os/OsTask_BSW_AppModeRequest,/Os/Os/OsTask_BSW_Mem_Process,/Os/Os/OsTask_BSW_FG1_5ms_Com,/Os/Os/OsTask_BSW_ComMModeRequest,/Os/Os/OsTask_ASW_FG1_100ms,/Os/Os/OsTask_ASW_TestModeManager,/Os/Os/OsTask_LED_Init</SD>
+                    <SD T="2026-03-19T17:14:00Z" GID="OsAppTaskRef">/Os/Os/OsTask_ASW_FG1_10ms,/Os/Os/OsTask_BSW_FG1_10ms,/Os/Os/OsTask_BSW_FG1_5ms_Mem,/Os/Os/OsTask_BSW_FG1_IOManager,/Os/Os/OsTask_BSW_FG2_IOManager,/Os/Os/OsTask_BSW_FG2_WdgMAPI,/Os/Os/OsTask_ASW_FG2_WdgMTestMode,/Os/Os/OsTask_BSW_Init,/Os/Os/OsTask_BSW_System_Idle,/Os/Os/OsTask_BSW_AppModeRequest,/Os/Os/OsTask_BSW_Mem_Process,/Os/Os/OsTask_BSW_FG1_5ms_Com,/Os/Os/OsTask_BSW_ComMModeRequest,/Os/Os/OsTask_ASW_FG1_100ms,/Os/Os/OsTask_ASW_TestModeManager,/Os/Os/OsTask_LED_Init,/Os/Os/OsTask_Test_1s</SD>
+                    <SD T="2026-03-19T17:13:52Z" GID="OsAppAlarmRef">/Os/Os/OsAlarm_BSW_5ms_Mem,/Os/Os/OsAlarm_BSW_10ms,/Os/Os/OsAlarm_ASW_10ms,/Os/Os/OsAlarm_BSW_5ms_Com,/Os/Os/OsAlarm_ASW_100ms,/Os/Os/OsAlarm_Test_1s</SD>
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
@@ -316,6 +393,14 @@
                 <ECUC-REFERENCE-VALUE>
                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsTask_LED_Init</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsApplication/OsAppAlarmRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsAlarm_Test_1s</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/Freescale/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/OsTask_Test_1s</VALUE-REF>
                 </ECUC-REFERENCE-VALUE>
               </REFERENCE-VALUES>
               <SUB-CONTAINERS>
@@ -1409,6 +1494,33 @@
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Freescale/Os/OsTask/OsTaskPriority</DEFINITION-REF>
                   <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Freescale/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                  <VALUE>FULL</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="2ab4b569-6d61-46c9-a010-b56980198c5b">
+              <SHORT-NAME>OsTask_Test_1s</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                    <SD T="2026-03-19T17:11:03Z" GID="OsTaskActivation">1</SD>
+                    <SD T="2026-03-19T17:11:04Z" GID="OsTaskPriority">2</SD>
+                    <SD T="2026-03-19T17:11:05Z" GID="OsTaskSchedule">FULL</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/Freescale/Os/OsTask</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Freescale/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/Freescale/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                  <VALUE>2</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-TEXTUAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/Freescale/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
