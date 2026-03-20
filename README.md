@@ -1518,36 +1518,44 @@
   
   #### AUTOSAR RTE 실습  
     **Overview**  
-    - [개요] : AUTOSAR에서 기초적인 애플리케이션 설계 및 구현 방법을 학습
-    - [용도] : AUTOSAR를 처음 접하는 애플리케이션 개발자를 위한 애플리케이션 설계 및 구현
-    - [방향] : Software Component 설계 - Runnable 구현 - RTE 동작 구조 파악
-    - [내용] : 스위치 입력에 따른 LED 출력을 구현
-    - [관련 지식] : Timing Event, Sender-Receiver Interface, Client-Server Interface
-    - [실습 환경] : TRX-MP5606B
+      - [개요] : AUTOSAR에서 기초적인 애플리케이션 설계 및 구현 방법을 학습
+      - [용도] : AUTOSAR를 처음 접하는 애플리케이션 개발자를 위한 애플리케이션 설계 및 구현
+      - [방향] : Software Component 설계 - Runnable 구현 - RTE 동작 구조 파악
+      - [내용] : 스위치 입력에 따른 LED 출력을 구현
+      - [관련 지식] : Timing Event, Sender-Receiver Interface, Client-Server Interface
+      - [실습 환경] : TRX-MP5606B
 
     **Timing Evnet**  
-    - 설계 : 주기적으로 스위치 실행 값을 읽어 그 값에 따라 LED 출력, Component 구성, Port 생성, Interface 생성, Composition 생성, Component 배치, Connector를 통해 P-Port와 R-Port를 연결  
-    - Step 1 : SW-C Type 생성
-    - Step 2 : Runnable 생성 및 TIming Event 연결
-    - Step 3 : SW-C Prototype 생성
-    - Step 4 : ECU Software Components Mapping
-    - Step 5 : Generate ECU Configuration
-    - Step 6 : Task Mapping
-    - Step 7 : 코드 구현 및 테스트
+      - 설계 : 주기적으로 스위치 실행 값을 읽어 그 값에 따라 LED 출력, Component 구성, Port 생성, Interface 생성, Composition 생성, Component 배치, Connector를 통해 P-Port와 R-Port를 연결  
+      - Step 1 : SW-C Type 생성
+      - Step 2 : Runnable 생성 및 TIming Event 연결
+      - Step 3 : SW-C Prototype 생성
+      - Step 4 : ECU Software Components Mapping
+      - Step 5 : Generate ECU Configuration
+      - Step 6 : Task Mapping
+      - Step 7 : 코드 구현 및 테스트
 
     **Sender-Receiver Interface**  
-    - 개요 : SeatSwitch에 Counter가 100ms 주기로 전환. 이 Counter가 HIGH 값이면 1, LOW 값이면 0을 SeatHeatingControl로 전송
-    - Sender Reciever Interface 생성
-    - P-Port 생성
-    - Data Sender Point 설정
-    - SW_C Type 생성
-    - R_Port 생성
-    - Runable 생성 및 Data Received Event 설정
-    - P/R Port 연결
-    - ECU Software Component Mapping
-    - Generate ECU Configuration
-    - RteSwComponentInterface 및 RteEventToTaskMapping 생성
-    - 코드 구현 및 테스트
+      - 개요 : SeatSwitch에 Counter가 100ms 주기로 전환. 이 Counter가 HIGH 값이면 1, LOW 값이면 0을 SeatHeatingControl로 전송
+      - Sender Reciever Interface 생성
+      - P-Port 생성
+      - Data Sender Point 설정
+      - SW_C Type 생성
+      - R_Port 생성
+      - Runable 생성 및 Data Received Event 설정
+      - P/R Port 연결
+      - ECU Software Component Mapping
+      - Generate ECU Configuration
+      - RteSwComponentInterface 및 RteEventToTaskMapping 생성
+      - 코드 구현 및 테스트
+
+    **Client-Server Interface**
+      - 개요 : SeatHeatingControl에서 IoHwAb를 통해 실제 MCU pin에 digital 신호를 출력
+      - R-Port 생성
+      - Synchronous Server Call Point 설정
+      - ECU Software Component Mapping
+      - P/R Ports 연결 
+      - 코드 구현
 
 ---
 
