@@ -1486,8 +1486,11 @@
   **Software Component Description**  
    : 소프트웨어 컴포넌트를 구성하고 설계한 정보를 담고 있는 문서  
     1. Software Component Description 개발 단계 : 최상위 단계, 컴포넌트 및 컴포넌트 간의 연결을 기술 컴포넌트의 통신 속성 및 관계 표현
+      - [구성요소] - Component, Composition, Port, Interface, Assembly/Delegation Connector
     2. Run-Time Enviroment (RTE) level - 중간 단계, 컴포넌트의 행동을 기술
+      - [구성요소] - Runnable, Event, Access Point
     3. Implementation level - 최하위 단계, Internal Behavior 구현
+      - [구성요소] - Code (C언어로 작성)
     - VFM-level
       - [Component] - VFB 수준에서 시스템을 구성할 때 사용되는 중심 구성 요소
       - [종류] - Application Software Component, Composition Software Component, Service Software Component, Sensor-Actuator Software Component, Parameter Software Component, Service Proxy Software Component, ECU-Abstraction Software Component, Complex Device Driver SW-C, NV Block Software Component
@@ -1512,6 +1515,7 @@
       - Case 3 : Client-Server Interface
   
   #### AUTOSAR RTE 실습  
+    **Overview**  
     - [개요] : AUTOSAR에서 기초적인 애플리케이션 설계 및 구현 방법을 학습
     - [용도] : AUTOSAR를 처음 접하는 애플리케이션 개발자를 위한 애플리케이션 설계 및 구현
     - [방향] : Software Component 설계 - Runnable 구현 - RTE 동작 구조 파악
@@ -1519,6 +1523,7 @@
     - [관련 지식] : Timing Event, Sender-Receiver Interface, Client-Server Interface
     - [실습 환경] : TRX-MP5606B
 
+    **Timing Evnet**  
     - 설계 : 주기적으로 스위치 실행 값을 읽어 그 값에 따라 LED 출력, Component 구성, Port 생성, Interface 생성, Composition 생성, Component 배치, Connector를 통해 P-Port와 R-Port를 연결  
     - Step 1 : SW-C Type 생성
     - Step 2 : Runnable 생성 및 TIming Event 연결
@@ -1528,7 +1533,19 @@
     - Step 6 : Task Mapping
     - Step 7 : 코드 구현 및 테스트
 
-
+    **Sender-Receiver Interface**  
+    - 개요 : SeatSwitch에 Counter가 100ms 주기로 전환. 이 Counter가 HIGH 값이면 1, LOW 값이면 0을 SeatHeatingControl로 전송
+    - Sender Reciever Interface 생성
+    - P-Port 생성
+    - Data Sender Point 설정
+    - SW_C Type 생성
+    - R_Port 생성
+    - Runable 생성 및 Data Received Event 설정
+    - P/R Port 연결
+    - ECU Software Component Mapping
+    - Generate ECU Configuration
+    - RteSwComponentInterface 및 RteEventToTaskMapping 생성
+    - 코드 구현 및 테스트
 
 ---
 
