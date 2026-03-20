@@ -1503,6 +1503,8 @@
       - [Event] - Runnable은 RTE에 의해 실행, Runnable이 특정 방식으로 실행될 수 있도록 Event 지정
       - [Access Point] - Runnable에서는 RTE가 제공하는 API를 사용하며, Runnable 내에서 사용하려는 API를 Access Point를 통해 지정
       - [코드 개발] - Runnable 코드를 개발하는 단계로 다음과 같은 규칙을 따른다. [1] Include Header File [2] RUnnable Body [3] RTE API
+      -  R-Port = sender ,P=Port = reeiver
+
     **ECU Configuration Description**  
       - ECU Configuration Description - 제어기에 대한 설정 정보를 담고 있는 문서
       - RteSwComponentInstance - 제어기에 할당된 컴포넌트에 대해 제어기 관련 설정을 하기 위해 해당 컴포넌트를 명시화
