@@ -1,3 +1,5 @@
  - Periodic_Task-NonPeriodic_Task - LED Part를 초기화하는 Task를 하나 추가, Autostart Task에서 실행시켜 시스템 시작 시 초기화를 수행. 1초에 한번씩 Activate 되는 주기 Task를 추가, Task 안에서 LED를 토글하는 테스트 코드를 작성하여 Task가 실제 동작하는 모습을 확인
 
  - Seat_Heating_Switch_Control - 주기적으로 스위치 실행 값을 읽어 그 값에 따라 LED 출력, SeatSwitch에 Counter가 100ms 주기로 전환. 이 Counter가 HIGH 값이면 1, LOW 값이면 0을 SeatHeatingControl로 전송, SeatHeatingControl에서 IoHwAb를 통해 실제 MCU pin에 digital 신호를 출력
+
+ - Seat_Heating_Switch_Control - LED 1 - ON, LED 2 - Blinking, Potentiometer value -> change LED brightness  
