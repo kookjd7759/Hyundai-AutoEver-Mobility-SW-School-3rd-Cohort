@@ -1643,6 +1643,13 @@
         3. data received event를 이용하여 Event stack 발생
         4. Event stack에서 Runnable을 실행하고 RTE API를 사용해 Signal read
 
+  #### AUTOSAR CAN Communication 실습  
+  - [Overview] : CANDB Import를 위한 BSW 모듈 설정, SWC와 BSW 모듈간 Sender-Receiver 통신 설정, CAN 데이터를 Data received event로 수신
+  - [scenario]
+    1. AUTOSAR IO Hardware Abstraction 실습 완료한 프로젝트 사용
+    2. CANDM Import
+    3. Swc_SeatSwitch 추가
+    4. CAN Analyzer를 통하여 전송 받은 CAN 데이터 수신 및 확인
 
 ---
 
