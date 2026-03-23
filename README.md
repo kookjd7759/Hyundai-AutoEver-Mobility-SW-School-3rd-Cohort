@@ -1509,7 +1509,7 @@
     - ECU Configuration Description - 제어기에 대한 설정 정보를 담고 있는 문서
     - RteSwComponentInstance - 제어기에 할당된 컴포넌트에 대해 제어기 관련 설정을 하기 위해 해당 컴포넌트를 명시화
     - RteEventToTaskMapping - Runnable을 실행하는 Event에 대해 RTE가 실제 코드 구현을 할 수 있도록 자원을 할당
-    
+
     **Use Case**  
     - Case 1 : Timing Event
       - [Software Component Description 구조] - Timing Event -> Runnable
@@ -1557,6 +1557,34 @@
   - ECU Software Component Mapping
   - P/R Ports 연결 
   - 코드 구현
+  
+  #### AUTOSAR IO Hardware Abstraction  
+  - Overview : The IO Hardware Abstraction module abstracts from the signal path fo the ECU hardware. It provides a signal based interface to the upper software layer.
+  - AUTOSAR SW-Cs : AUTOSAR application SW-Cs are ECU and location independent, AUTOSAR sensor-actuator SW-Cs are dependent on ECU hardware and not readily relocatable for performance/efficiency
+  - Interface with MCAL drivers : IoHwAb calls the driver's APIs for managing on chip devices
+  - Interface provided by Ports : IoHwAb has Runnable Entities that implement the Provide Ports required by Ports
+  - Onboard Device Abstraction : Drivers for ECU onboard devices which cannot be seen as sensors or actuators like internal or external watchdogs
+  - Memory Hardware Abstraction : A group of modules which abstracts from the location of peripheral memory devices and the ECU hardware layout
+  - Crypto Hardware Abstraction : A group of modules which abstracts from the location of cryptographic primitives
+  - Communication Hardware Abstraction : Abstracts from the location of commuication controllers and the ECU hardware
+  - I/O Hardware Abstraction : A group of modules which abstracts from the location and the ECU hardware layout 
+  - External driver : External devices are located on the ECU hardware outside the microcontroller, A driver for an external device is called external driver and is located in the ECU Abstraction Layer
+  - Interface : An Interface contains the functionality to abstract from modules which are architecturally placed below them
+
+  #### AUTOSAR IO Hardware Abstraction  
+  - Internal driver : A driver contains fhe functionality th control and access an internal or an external device
+  - Microcontroller Abstraction Layer (MCAL) : Microcontroller Drivers, Memory Drivers, Crypto Drivers, Communication Drivers, Wireless Communication Drivers, I/O Drivers
+  - Expected interfaces : No mandatory interfaces for I/O hardware abstraction
+  - PORT Driver - MPC5606B Microcontroller
+  - DIO (Digital Input Output) driver
+    - DIO channel - MCU's individual Pins
+    - DIO port - group of several DIO channels hardware
+    - DIO channel group - formal logical combination of several adjoining DIO channels within a DIO port
+  - ADC (Analog-to-Digital) driver : Initialize and control the MCU's internal ADC
+  - ICU (Input Capture Uint) driver : ICU is used for demodulation of a PWM signal, counting puleses, measuring of frequency and duty cycle, generating simple interrupts and wakeup interrupts
+  - OCU (Output Compare Uint) driver : OCU is composed of two main elements, OCU compares both values each time the free running counter is increased by one unit
+  - PWM : PWM initialization & de-initialization, set duty cycle, period, PWM output at idle state
+
 
 ---
 
