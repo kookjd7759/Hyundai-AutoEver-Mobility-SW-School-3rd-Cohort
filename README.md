@@ -1588,7 +1588,7 @@
   #### AUTOSAR IO Hardware Abstraction 실습
   - LED 1 - ON
   - LED 2 - Blinking
-  - Potentiometer value -> change LED brightness 
+  - Potentiometer value -> change LED brightness  
 
   #### AUTOSAR Communication Layers  
   - Communication Layers : Drivers for ECU onboard and vechicle cummunication 

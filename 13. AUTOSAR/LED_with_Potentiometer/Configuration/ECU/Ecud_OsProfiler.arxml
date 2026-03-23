@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="986e0711-e1c8-4e82-912d-38ba96fab94f">
+      <SHORT-NAME>AUTRON</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="c9254929-5d8e-489c-adb7-8b127d9c6bd8">
+          <SHORT-NAME>OsProfiler</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTRON/OsProfiler</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/ArPackage_OsProfiler/BswImplementation_OsProfiler</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="25c5f8bb-b115-4fb9-bc07-8c27a24d6e48">
+              <SHORT-NAME>OsProfilerGlobalConfig</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                    <SD T="2022-08-09T14:25:06Z" GID="EnableOsProfiler">0</SD>
+                    <SD T="2022-08-09T14:22:52Z" GID="EnableProfileIsr">0</SD>
+                    <SD T="2022-08-09T14:23:07Z" GID="ProfileEventCount">20</SD>
+                    <SD T="2022-08-09T14:23:08Z" GID="EnableTimeIndex">0</SD>
+                    <SD T="2022-08-09T14:23:15Z" GID="TimeIndexPeriod">0.005</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig/EnableOsProfiler</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig/EnableProfileIsr</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig/ProfileEventCount</DEFINITION-REF>
+                  <VALUE>20</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig/EnableTimeIndex</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerGlobalConfig/TimeIndexPeriod</DEFINITION-REF>
+                  <VALUE>0.005</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="f74242b6-3e85-477f-8550-86fb1db0aa5c">
+              <SHORT-NAME>OsProfilerTargetConfig</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_WRITER_TYPE:USER_CONFIGURED">
+                    <SD T="2022-08-09T14:23:47Z" GID="TargetOperatingSystem">FREESCALE_MPC560xB</SD>
+                    <SD T="2022-08-09T14:24:27Z" GID="XOSC">8</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/OsProfiler/OsProfilerTargetConfig</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerTargetConfig/TargetOperatingSystem</DEFINITION-REF>
+                  <VALUE>FREESCALE_MPC560xB</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/OsProfiler/OsProfilerTargetConfig/XOSC</DEFINITION-REF>
+                  <VALUE>8</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
