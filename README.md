@@ -1586,6 +1586,63 @@
   - PWM : PWM initialization & de-initialization, set duty cycle, period, PWM output at idle state
 
   #### AUTOSAR IO Hardware Abstraction 실습
+  - LED 1 - ON
+  - LED 2 - Blinking
+  - Potentiometer value -> change LED brightness 
+
+  #### AUTOSAR Communication Layers  
+  - Communication Layers : Drivers for ECU onboard and vechicle cummunication 
+  - Communication Hardware Abstraction : Abstracts from the location of communication controllers and the ECU hardware, Provide equal access mechanisms regardless of it's location
+  - Basic services for applications and basic software modules : vehicle network communication and management services, Diagnositc services
+  - Communications Services - General : A group of modules for vehicle network communication
+  - Communication Stack - CAN : A group of modules for vehicle network communication with the communication system CAN
+  - Communication Stack - LIN : A group of modules for vehicle network communication with LIN
+  - Communication Stack - FlexRay : A group of modules for vehicle nework communication with the communication system FlexRay
+  - Communication Stack - Ethernet : A group of modules for vehicle network communication with the communication system TCP/IP
+
+  #### AUTOSAR CAN Communication Layers  
+  - CAN communication stack
+    - Com - PDU data를 signal 단위로 read 및 write 하는 interface 제공
+    - PduR - Routing table 설정에 따라 soruce와 Destination 모듈 사이 PDU 전달
+    - CanIf - Can Driver에서 수신한 PDU를 상위 Layer로 전달, 상위 Layer가 송신하는 PDU를 하위 Layer인 CAN Driver에 전달
+    - Can - Can controller 활성화 및 비활성화
+    - CanTrcv - CAN Transceiver 하드웨어 상태 제어
+  - CAN status stack
+    - BswM - 통신 상태 별 Rule에 따른 Action 제어
+    - ComM - 통신 제어를 요청하는 interface 제공, Nm 모듈에 Network Request / Release 명령 전송
+    - CanSM - 각각의 CAN Bus에 대한 control flow 구현
+    - DEM - Bus-off 발생시 해당 진단 Event 저장
+  - CAN Network Management stack
+    - Nm - Network의 normal operation과 bus-sleep 모드 간의 전환 조성, 전체 노드의 상태 감지 서비스 제공
+    - OsekNm - Nm PDU를 송수신하여 network 상태 감시
+  - AUTOSAR Communication module (COM) : Signal based gateway, Provision of signal-oriented data interface for the RTE, Packing of AUTOSAR signals to I-PDUs to be transmitted, Unpacking of received I-PDUs and provision of reveived signals to RTE
+  - PDU Router module (PduR) : Routing of I-PDUs services with other modules
+  - CAN Transport Layer (CanTp) : The module between the Funcions is based on ISO 15765 PDU Router and the CAN Interface module, Multiple frame transmission
+  - CAN Interface module (CanIf) : Represents the interface to the service of the CAN driver for upper communication layers, consists of all CAN hardware independent tasks, Provides main control flow and data flow requirements of PDU Router and upper layer communication modules, Mapping between PDU ids and HW object bandles (HOH)
+  - CAN Driver modules (CanDrv) : hardware access and hardware Functions independent API to CanIf
+  - AUTOSAR CAN Communication Flow : Signal-based Timing Communication
+    - Signal-based Timing Communication 
+      - 송신 Flow
+        1. Timing task에서 주기적으로 Runnable 실행
+        2. Runnable에서 해당하는 RTE API를 사용하여 Signal wirte
+        3. COM의 해당 송신 Buffer에 signal에 저장되면, Communication stack의 처리 과정을 통하여 message를 전송
+      - 수신 Flow
+        1. Communication stack의 처리 과정을 통하여 수신된 message를 COM의 signal에 저장
+        2. OS의 Notification 호출을 통하여 RTE buffer에 데이터 저장
+        3. Timing task에서 주기적으로 Runnable 실행
+        4. Runnable에서 해당하는 RTE API를 사용하여 Signal read
+    - Signal-based Event Communication 
+      - 송신 Flow
+        1. Event 발행시 연결된 stack이 실행
+        2. Task에서 Runnable 실행
+        3. Runnable에서 해당하는 RTE Write API를 사용하면 전송할 Signal이 PDU 버퍼에 복사
+        4. COM의 해당 송신 buffer에 signal에 저장되면, Communication stack의 처리 과정을 통해 message를 전송
+      - 수신 Flow
+        1. Communication stack의 처리 과정을 통하여 수신된 message를 COM의 signal에 저장
+        2. OS의 Notification 호출을 통하여 RTE buffer에 데이터 저장
+        3. data received event를 이용하여 Event stack 발생
+        4. Event stack에서 Runnable을 실행하고 RTE API를 사용해 Signal read
+
 
 ---
 
