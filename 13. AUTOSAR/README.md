@@ -5,3 +5,7 @@
  - Hardware_Abstraction - LED 점등·점멸 제어와 가변저항 입력 기반 밝기 조절을 통해 하드웨어 입출력 추상화 구조를 구현한 실습  
 
  - CAN_Communication - CANDB Import와 BSW 모듈 설정, SWC-BSW 간 Sender-Receiver 통신, Data Received Event 기반 CAN 데이터 수신을 통해 외부 CAN 메시지를 애플리케이션에 연동한 실습
+
+ - Memory_1 - Native Block과 CRC16 기반 Redundant Block 설정을 통해 NvM/Fee 블록 구성 방법을 익혔다.
+
+ - Memory_2 - Application SW-C, 100ms Task, NvM Service, Single Block Callback을 연계해 Nv Data Read/Write 흐름을 구현했다.
