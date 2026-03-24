@@ -1266,7 +1266,7 @@
     - Core Partner - 조직 및 행정 관리
     - Premium Partner - Working group의 선도 및 개선
     - Development Partner - 전문 지식 기여
-    - Associate Partner - AUTOSAR 표준 사용자
+    - Associate Partner - AUTOSAR 표준 사용자  
     | 항목 | Classic AUTOSAR | Adaptive AUTOSAR |
     |-----|-----------------|------------------|
     | 대상 하드웨어 | MCU | MPU |
@@ -1276,23 +1276,23 @@
     | 적용 분야 | 샤시, 파워트레인, 진단 | IVI, 쟈율주행, V2X 등 |
     | 구성 방식 | 정적 구성 | 동적 구성 |
     | 주요 특징 | 실시간 경량, 고신뢰성 | 고성능 처리, 유연성, OTA |
-    | RTE 사용 여부 | 사용 | 미사용 |
+    | RTE 사용 여부 | 사용 | 미사용 |  
 
-  **3. AUTOSAR 플랫폼**
-  - AUTOSAR 개발 과정
-    1. Configure System : 시스템 설정 단계로 컴포넌트의 구성/연결 등을 정의
-    2. Implement Component : "Configure System" 단계에서 구성한 컴포넌트들에 대한 코드 구현 등을 진행
-    3. Extract ECU-Specific Information : 시스템 구성 정보로부터 특정 제어기 소프트웨어를 구현하기 위한 정보만을 추출
-    4. Configure ECU : 제어기 관련 설정을 진행 (ECU Configuration Description 개발)
-    5. Generate Executable : 제어기에서 동작하는 실행 파일을 생성
-    - 차량 시스템은 신뢰성이 중요하기 때문에 사람이 직접 코딩하는 것을 막으려고 함
-    - AUTOSAR 개발 과정은 일반적으로 Top-Down 방식 
-    - 시스템 설계자는 VFB 상에서 SW-C를 설계. SW-C 간 Data의 이동은 Port와 Interface로 정의
-    - Configure System이라는 디자인 단계에서 SW-C는 특정 ECU에 할당. ECU Extract 과정을 통해 개별 ECU에 설계 정보 전달
-    - 개별 ECU는 SW-C 간 또는 SW-C와 BSW간 구체적인 인터페이스를 RTE를 통해 구현
-    - SW-C : Software Component, 일반적으로 소프트웨어 기능 단위를 의미
-    - VFB : Virtual Functional Bus, 컴포넌트가 상호작용 할 수 있는 통신 메커니즘
-    - RTE : Run-Time Environment, SW-C 간 또는 SW-C와 BSW간 인터페이스 설정을 통해 자동 생성해주는 기능
+  **3. AUTOSAR 플랫폼**  
+  - AUTOSAR 개발 과정  
+    1. Configure System : 시스템 설정 단계로 컴포넌트의 구성/연결 등을 정의  
+    2. Implement Component : "Configure System" 단계에서 구성한 컴포넌트들에 대한 코드 구현 등을 진행  
+    3. Extract ECU-Specific Information : 시스템 구성 정보로부터 특정 제어기 소프트웨어를 구현하기 위한 정보만을 추출  
+    4. Configure ECU : 제어기 관련 설정을 진행 (ECU Configuration Description 개발)  
+    5. Generate Executable : 제어기에서 동작하는 실행 파일을 생성  
+  - 차량 시스템은 신뢰성이 중요하기 때문에 사람이 직접 코딩하는 것을 막으려고 함
+  - AUTOSAR 개발 과정은 일반적으로 Top-Down 방식 
+  - 시스템 설계자는 VFB 상에서 SW-C를 설계. SW-C 간 Data의 이동은 Port와 Interface로 정의
+  - Configure System이라는 디자인 단계에서 SW-C는 특정 ECU에 할당. ECU Extract 과정을 통해 개별 ECU에 설계 정보 전달
+  - 개별 ECU는 SW-C 간 또는 SW-C와 BSW간 구체적인 인터페이스를 RTE를 통해 구현
+  - SW-C : Software Component, 일반적으로 소프트웨어 기능 단위를 의미
+  - VFB : Virtual Functional Bus, 컴포넌트가 상호작용 할 수 있는 통신 메커니즘
+  - RTE : Run-Time Environment, SW-C 간 또는 SW-C와 BSW간 인터페이스 설정을 통해 자동 생성해주는 기능
   
   - AUTOSAR 플랫폼 구조
     - 차량용 SW Application 개발의 생산성 향상을 위한 표준 플랫폼으로 계층화된 구조를 사용해 업체별 개발 분담이 가능 (Application, BSW, MCAL), AUTOSAR 표준 준수를 통한 안전성 확보 및 H/W와 독립적인 구조를 통해 SW Application 재사용 가능
@@ -1330,18 +1330,18 @@
   - JRE 설치 - mobilgene studio 설치 - Tool-chain 설치 - Code Warrior 설치
 
   **2. mobilgene studio 기반 프로젝트 개요**  
-   : mobilgene studio 라이선스 설치 및 실행, 프로젝트 생성-빌드-구조
+   : mobilgene studio 라이선스 설치 및 실행, 프로젝트 생성-빌드-구조  
   **3. mobilgene studio 사용 가이드**  
-   : 사용자 인터페이스 학습 및 주요 기능 사용법
+   : 사용자 인터페이스 학습 및 주요 기능 사용법  
   **4. mobilgene 프로젝트 생성 및 컴파일**  
-   : Workspace 지정 및 프로젝트 생성, ELF 파일 Flash, 실행파일 Target Debugging
+   : Workspace 지정 및 프로젝트 생성, ELF 파일 Flash, 실행파일 Target Debugging  
   **5. Target 디버그**  
-   : 디버깅 화면 학습 및 Break Point 설정, Watch 변수 등록
-  **6. Appendix**
-   : 수정된 이미지 파일 다운로드 하기, 명령어 모음 확인
+   : 디버깅 화면 학습 및 Break Point 설정, Watch 변수 등록  
+  **6. Appendix**  
+   : 수정된 이미지 파일 다운로드 하기, 명령어 모음 확인  
 
   #### **MOBILGENE 사용법 - Basic UI**  
-   : Starting Project with mobilgene, Basic UI, Menu, Toolbar, Explorer, Bottom view, Perspective
+   : Starting Project with mobilgene, Basic UI, Menu, Toolbar, Explorer, Bottom view, Perspective  
 
   #### **OSEK/VDX OS**  
   - OSEK/VDX 개요 : 차량용 Real-time OS 표준화 단체 및 표준 규격
@@ -1349,9 +1349,9 @@
     - [제정 목적] - SW의 재사용성 및 이식성 향상, SW 개발 비용 감소
     - **AUTOSAR OS는 OSEK OS를 기반으로 만들어짐**
     - [주요 Service 기능] - Task 관리, Event 처리, Resource 처리, Interrupt 처리, Alarm 처리, Error 처리, System Start-up / Shutdown, Hook 루틴
-  - **이처럼 Hard Real-time system은 deadline이 존재함 (해당 시간 안에 특정 operation을 완료해야 함)**
+  - **이처럼 Hard Real-time system은 deadline이 존재함 (해당 시간 안에 특정 operation을 완료해야 함)**  
 
-  - **Task**
+  - **Task**  
     - [정의] - OS가 제어하는 프로그램의 기본 단위로 복잡한 제어 소프트웨어의 실시간 요구사항을 나누어 여러 task로 구성
     - [Task State Model] - Task는 실행되며 상태가 변함, OSEK에서는 2가지 타입(Basic Task, Extended Task)의 Task 상태에 대한 model을 제공
       - Basic task의 states : running <-> ready <- suspended <- running
@@ -1396,7 +1396,7 @@
 
   #### **AUTOSAR OS**  
   **AUTOSAR 개요**  
-  AUTOSAR : 기존의 OSEK OS를 기반으로 추가적인 기능을 부여한 것
+  AUTOSAR : 기존의 OSEK OS를 기반으로 추가적인 기능을 부여한 것  
   - Scalability Class : 기존 OSEK OS에서 사용자의 목적에 따른 확장성 제공
     - Scalability Class 1
       1. OSEK OS - AUTOSAR는 backward compatibility가 되도록 OSEK OS의 API
@@ -1659,13 +1659,13 @@
     - Basic Storage Object - NV block, RAM block, ROM block, Administrative block  
     - Block Type  
       - [종류]
-        1. NVM_BLOCK_NATIVE - Write시 Ram Block의 Data를 EEPROM에 한 번 저장
+        1. NVM_BLOCK_NATIVE - Write시 Ram Block의 Data를 EEPROM에 한 번 저장  
           - 구성 = NV (1), RAM (1), ROM (0~1), Administrative (1)
-        2. NVM_BLOCK_REDUNDANT - Write시 Ram Block의 Data를 EEPROM에 두 번 저장
+        2. NVM_BLOCK_REDUNDANT - Write시 Ram Block의 Data를 EEPROM에 두 번 저장  
           - 구성 = NV (2), RAM (1), ROM (0~1), Administrative (1)
-        3. NVM_BLOCK_DATASET - 여러 개의 NV Block과 Rom Block들로 구성되어 원하는 Block에 read, write
+        3. NVM_BLOCK_DATASET - 여러 개의 NV Block과 Rom Block들로 구성되어 원하는 Block에 read, write  
           - 구성 = NV (1+), RAM (1), ROM (0~N), Administrative (1)  
-    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)  
+    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)    
     - NvM과 Fee/Ea Block의 연결 관계 : 
 
 ---
