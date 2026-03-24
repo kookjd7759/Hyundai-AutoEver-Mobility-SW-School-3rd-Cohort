@@ -1,5 +1,5 @@
- - Periodic_Task-NonPeriodic_Task - LED Part를 초기화하는 Task를 하나 추가, Autostart Task에서 실행시켜 시스템 시작 시 초기화를 수행. 1초에 한번씩 Activate 되는 주기 Task를 추가, Task 안에서 LED를 토글하는 테스트 코드를 작성하여 Task가 실제 동작하는 모습을 확인
+ - OS - 비주기 초기화 Task와 1초 주기 Task를 구성해 시스템 시작 시 LED를 초기화하고 주기적으로 토글하는 태스크 동작을 구현·검증한 실습  
 
- - Seat_Heating_Switch_Control - 주기적으로 스위치 실행 값을 읽어 그 값에 따라 LED 출력, SeatSwitch에 Counter가 100ms 주기로 전환. 이 Counter가 HIGH 값이면 1, LOW 값이면 0을 SeatHeatingControl로 전송, SeatHeatingControl에서 IoHwAb를 통해 실제 MCU pin에 digital 신호를 출력
+ - RTE - Timing Event, Sender-Receiver, Client-Server를 하나의 흐름으로 구성해 스위치 입력에 따라 LED를 제어하는 애플리케이션을 설계·구현한 통합 실습  
 
- - Seat_Heating_Switch_Control - LED 1 - ON, LED 2 - Blinking, Potentiometer value -> change LED brightness  
+ - Hardware_Abstraction - LED 점등·점멸 제어와 가변저항 입력 기반 밝기 조절을 통해 하드웨어 입출력 추상화 구조를 구현한 실습  
