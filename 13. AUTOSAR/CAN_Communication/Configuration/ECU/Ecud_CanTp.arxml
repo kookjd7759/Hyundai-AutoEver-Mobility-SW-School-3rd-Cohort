@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by yyj (Carnes Company Ltd) -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES>
+          <SHORT-NAME>CanTp</SHORT-NAME>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.2.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+                <DATE>2011-11-09</DATE>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTRON/CanTp</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/CanTp_BswMDT/BswImplementation_CanTp</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>CanTpConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpMainFunctionPeriod</DEFINITION-REF>
+                  <VALUE>0.005</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="ce896071-45cc-4c8a-851f-de445c3e220c">
+                  <SHORT-NAME>CanTpChannel_0_Pdu_ISignalIPdu_Project_GST_Msg_TP1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="CanTpChannelMode">CANTP_MODE_HALF_DUPLEX</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="CanTpChannelMode">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpChannelMode</DEFINITION-REF>
+                      <VALUE>CANTP_MODE_HALF_DUPLEX</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="be0d88c0-8f85-4924-a85d-e8b70d3cc62f">
+                      <SHORT-NAME>CanTpRxNSdu_0_Pdu_ISignalIPdu_Project_GST_Msg_TP1</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxTaType">CANTP_PHYSICAL</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduId">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxDl">1</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpRxPaddingActivation">true</SD>
+                            <SD GID="CanTpRxAddressingFormat">true</SD>
+                            <SD GID="CanTpRxTaType">true</SD>
+                            <SD GID="CanTpRxNSduId">true</SD>
+                            <SD GID="CanTpRxDl">true</SD>
+                            <SD GID="CanTpRxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbr">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpBs">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcr">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNar">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxWftMax">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpSTmin">0.005</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNbr</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpBs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNcr</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNar</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxWftMax</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpSTmin</DEFINITION-REF>
+                          <VALUE>0.005</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="6b369860-0b54-484e-8480-86eeb160b647">
+                          <SHORT-NAME>CanTpTxFcNPdu_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduConfirmationPduId">0</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxFcNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="d0c25fd1-1fa8-4210-b752-5ac18fc96f54">
+                          <SHORT-NAME>CanTpRxNPdu_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP1</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduId">0</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxNPduId">true</SD>
+                                <SD GID="CanTpRxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="7d9c16b0-9ebe-4d70-a87a-c3ffcbc3c3a8">
+                          <SHORT-NAME>CanTpNSa_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="f2fee1a7-5137-41c6-a832-eb684743cce4">
+                          <SHORT-NAME>CanTpNTa_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="7cbaa27a-44b1-4476-b595-a250f012156e">
+                      <SHORT-NAME>CanTpTxNSdu_0_Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxDl">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduId">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTc">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxTaType">CANTP_PHYSICAL</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpTxAddressingFormat">true</SD>
+                            <SD GID="CanTpTxPaddingActivation">true</SD>
+                            <SD GID="CanTpTxDl">true</SD>
+                            <SD GID="CanTpTxNSduId">true</SD>
+                            <SD GID="CanTpTc">true</SD>
+                            <SD GID="CanTpTxTaType">true</SD>
+                            <SD GID="CanTpTxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbs">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNas">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcs">0</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTc</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNbs</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNas</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNcs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="cbc07e12-e1f4-4997-87dc-31d301b445c0">
+                          <SHORT-NAME>CanTpTxNPdu_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP1</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduConfirmationPduId">0</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="63eb61aa-738e-4a14-b949-a4de5228b1d5">
+                          <SHORT-NAME>CanTpRxFcNPdu_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduId">0</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxFcNPduId">true</SD>
+                                <SD GID="CanTpRxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="75959958-c903-40de-a244-651bd8d52c12">
+                          <SHORT-NAME>CanTpNSa_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="65e02882-049e-44bd-af1c-bd20b1e59418">
+                          <SHORT-NAME>CanTpNTa_0</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ac272255-b59b-458e-adce-b5e13bb5b9fa">
+                  <SHORT-NAME>CanTpChannel_1_Pdu_ISignalIPdu_Project_GST_Msg_TP2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="CanTpChannelMode">CANTP_MODE_HALF_DUPLEX</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="CanTpChannelMode">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpChannelMode</DEFINITION-REF>
+                      <VALUE>CANTP_MODE_HALF_DUPLEX</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="b6d819c7-65f9-40c1-a135-6fc0959440c6">
+                      <SHORT-NAME>CanTpRxNSdu_1_Pdu_ISignalIPdu_Project_GST_Msg_TP2</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxTaType">CANTP_PHYSICAL</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduId">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxDl">1</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpRxPaddingActivation">true</SD>
+                            <SD GID="CanTpRxAddressingFormat">true</SD>
+                            <SD GID="CanTpRxTaType">true</SD>
+                            <SD GID="CanTpRxNSduId">true</SD>
+                            <SD GID="CanTpRxDl">true</SD>
+                            <SD GID="CanTpRxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxWftMax">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNar">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcr">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpBs">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbr">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpSTmin">0.005</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxWftMax</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNar</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNcr</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpBs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNbr</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpSTmin</DEFINITION-REF>
+                          <VALUE>0.005</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="b7b571c7-9a0f-4ff1-8923-9100aaddcb57">
+                          <SHORT-NAME>CanTpTxFcNPdu_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduConfirmationPduId">1</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxFcNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="a0970693-7660-4ba7-90f5-e30116264e86">
+                          <SHORT-NAME>CanTpRxNPdu_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP2</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduId">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxNPduId">true</SD>
+                                <SD GID="CanTpRxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="f47f8c6b-5a11-40eb-9952-1b46b553fa1c">
+                          <SHORT-NAME>CanTpNSa_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="674f09f3-65e4-4e48-949e-772bfdfa611b">
+                          <SHORT-NAME>CanTpNTa_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="2559acc1-bc42-4ccb-bf1f-f30232b8d160">
+                      <SHORT-NAME>CanTpTxNSdu_1_Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxDl">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduId">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTc">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxTaType">CANTP_PHYSICAL</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpTxAddressingFormat">true</SD>
+                            <SD GID="CanTpTxPaddingActivation">true</SD>
+                            <SD GID="CanTpTxDl">true</SD>
+                            <SD GID="CanTpTxNSduId">true</SD>
+                            <SD GID="CanTpTc">true</SD>
+                            <SD GID="CanTpTxTaType">true</SD>
+                            <SD GID="CanTpTxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcs">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbs">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNas">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTc</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNcs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNbs</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNas</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="cfc77600-a662-40c8-ac45-bdd541a8ef0b">
+                          <SHORT-NAME>CanTpTxNPdu_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP2</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduConfirmationPduId">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="af8464aa-ba60-4697-98e5-f7869084b9b8">
+                          <SHORT-NAME>CanTpRxFcNPdu_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduId">1</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxFcNPduId">true</SD>
+                                <SD GID="CanTpRxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="21aa5bdc-aba9-47f5-b746-c073da99374e">
+                          <SHORT-NAME>CanTpNSa_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="49be9dfe-0c2d-454a-a1d9-bccf1ca079e7">
+                          <SHORT-NAME>CanTpNTa_1</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="7300a1cd-21df-4c29-8f20-897b4a6f2147">
+                  <SHORT-NAME>CanTpChannel_2_Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="CanTpChannelMode">CANTP_MODE_HALF_DUPLEX</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="CanTpChannelMode">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpChannelMode</DEFINITION-REF>
+                      <VALUE>CANTP_MODE_HALF_DUPLEX</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4ef8b04e-10ec-4b06-8f9a-0bbfb9d05a4f">
+                      <SHORT-NAME>CanTpTxNSdu_2_Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxDl">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNSduId">2</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTc">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpTxTaType">CANTP_PHYSICAL</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpTxAddressingFormat">true</SD>
+                            <SD GID="CanTpTxPaddingActivation">true</SD>
+                            <SD GID="CanTpTxDl">true</SD>
+                            <SD GID="CanTpTxNSduId">true</SD>
+                            <SD GID="CanTpTc">true</SD>
+                            <SD GID="CanTpTxTaType">true</SD>
+                            <SD GID="CanTpTxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbs">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNas">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcs">0</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTc</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNbs</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNas</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNcs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="b6369602-4974-4bb7-9584-cedb32a6c4d5">
+                          <SHORT-NAME>CanTpTxNPdu_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_GST_Msg_TP</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxNPduConfirmationPduId">2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpTxNPdu/CanTpTxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="9665f438-6dbe-49cb-9a42-2de6a592e251">
+                          <SHORT-NAME>CanTpRxFcNPdu_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduId">2</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Phys</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxFcNPduId">true</SD>
+                                <SD GID="CanTpRxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpRxFcNPdu/CanTpRxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="bdeeb54b-0be7-4725-9c11-7444458138cf">
+                          <SHORT-NAME>CanTpNSa_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="c0d147a9-4a9e-44ed-a7d1-97840c590b9e">
+                          <SHORT-NAME>CanTpNTa_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpTxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0f5680bf-130b-410a-9c98-a0cb29025acc">
+                      <SHORT-NAME>CanTpRxNSdu_2_Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxTaType">CANTP_PHYSICAL</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduId">2</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxDl">1</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpRxPaddingActivation">true</SD>
+                            <SD GID="CanTpRxAddressingFormat">true</SD>
+                            <SD GID="CanTpRxTaType">true</SD>
+                            <SD GID="CanTpRxNSduId">true</SD>
+                            <SD GID="CanTpRxDl">true</SD>
+                            <SD GID="CanTpRxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNar">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbr">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcr">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpBs">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxWftMax">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpSTmin">0.005</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_PHYSICAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNar</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNbr</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNcr</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpBs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxWftMax</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpSTmin</DEFINITION-REF>
+                          <VALUE>0.005</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="7504998d-46b3-4ad3-80c8-9baceca2f617">
+                          <SHORT-NAME>CanTpTxFcNPdu_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduConfirmationPduId">2</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpTxFcNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_GST_Msg_TP</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpTxFcNPduConfirmationPduId">true</SD>
+                                <SD GID="CanTpTxFcNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduConfirmationPduId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpTxFcNPdu/CanTpTxFcNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="97933f2d-9b50-4ea7-a8a7-6d9775f2e199">
+                          <SHORT-NAME>CanTpRxNPdu_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Phys</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduId">2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxNPduId">true</SD>
+                                <SD GID="CanTpRxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="24abd694-c8d2-4e44-aeb5-65640ee9455f">
+                          <SHORT-NAME>CanTpNSa_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="4e7d7b38-b231-4c6c-8e9b-39343bf4b0d8">
+                          <SHORT-NAME>CanTpNTa_2</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b0bc0b14-95c2-4510-9f2a-cf0aec0e44c5">
+                  <SHORT-NAME>CanTpChannel_3_RxOnly_Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="CanTpChannelMode">CANTP_MODE_HALF_DUPLEX</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="CanTpChannelMode">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpChannelMode</DEFINITION-REF>
+                      <VALUE>CANTP_MODE_HALF_DUPLEX</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="3f1bc06c-c9f7-445b-8662-18e09330ab24">
+                      <SHORT-NAME>CanTpRxNSdu_3_Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxPaddingActivation">CANTP_ON</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxAddressingFormat">CANTP_STANDARD</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxTaType">CANTP_FUNCTIONAL</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNSduId">3</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxDl">1</SD>
+                          </SDG>
+                          <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                            <SD GID="CanTpRxPaddingActivation">true</SD>
+                            <SD GID="CanTpRxAddressingFormat">true</SD>
+                            <SD GID="CanTpRxTaType">true</SD>
+                            <SD GID="CanTpRxNSduId">true</SD>
+                            <SD GID="CanTpRxDl">true</SD>
+                            <SD GID="CanTpRxNSduRef">true</SD>
+                          </SDG>
+                          <SDG GID="ODIN_WRITER_TYPE:DEFAULT_CONFIGURED">
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpSTmin">0.005</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpRxWftMax">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNar">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpBs">0</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNcr">1</SD>
+                            <SD T="2026-03-24T09:44:29Z" GID="CanTpNbr">0</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxPaddingActivation</DEFINITION-REF>
+                          <VALUE>CANTP_ON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxAddressingFormat</DEFINITION-REF>
+                          <VALUE>CANTP_STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxTaType</DEFINITION-REF>
+                          <VALUE>CANTP_FUNCTIONAL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxDl</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpSTmin</DEFINITION-REF>
+                          <VALUE>0.005</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxWftMax</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNar</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpBs</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNcr</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNbr</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="d5fea15e-fc83-4582-bcf5-edbe1c4e13a4">
+                          <SHORT-NAME>CanTpRxNPdu_3</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Func</SD>
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpRxNPduId">3</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpRxNPduId">true</SD>
+                                <SD GID="CanTpRxNPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpRxNPdu/CanTpRxNPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_NPdu_Project_GST_Msg_TP_Func</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="676320da-cc5a-46ad-a73b-52617b418923">
+                          <SHORT-NAME>CanTpNSa_3</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNSa">8</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNSa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNSa/CanTpNSa</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="9c9bfd44-751c-467c-88d8-c952271957e8">
+                          <SHORT-NAME>CanTpNTa_3</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:29Z" GID="CanTpNTa">240</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="CanTpNTa">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpConfig/CanTpChannel/CanTpRxNSdu/CanTpNTa/CanTpNTa</DEFINITION-REF>
+                              <VALUE>240</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>CanTpGeneral0</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/CanTp/CanTpGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpGeneral/CanTpChangeParameterApi</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpGeneral/CanTpDevErrorDetect</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/CanTp/CanTpGeneral/CanTpPaddingByte</DEFINITION-REF>
+                  <VALUE>0xAA</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpGeneral/CanTpReadParameterApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/CanTp/CanTpGeneral/CanTpVersionInfoApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

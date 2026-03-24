@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="02601a59-4af2-4086-89cf-3b29aea0e720">
+      <SHORT-NAME>App_SeatHeating</SHORT-NAME>
+      <ELEMENTS>
+        <CLIENT-SERVER-INTERFACE UUID="7f1c4fc7-4c13-4672-aee8-e96fdf798b24">
+          <SHORT-NAME>If_Setting</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION UUID="9a9c2f26-04de-4ddd-923a-a652463830c1">
+              <SHORT-NAME>Write</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="fb0a1303-a2af-4d0d-9a1f-09e7fff3593c">
+                  <SHORT-NAME>HeatDial</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_DataTypes/ImplementationDataTypes/uint16</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+        <CLIENT-SERVER-INTERFACE UUID="09ed927a-c67a-4297-8172-de1d4d0ce750">
+          <SHORT-NAME>If_Heating</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION UUID="e6412f34-56b0-4c75-9d41-24d463f20a3d">
+              <SHORT-NAME>Write</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="796bf2a2-09df-478a-ac47-771b2a3b9298">
+                  <SHORT-NAME>HeatValue</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_DataTypes/ImplementationDataTypes/uint16</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+        <SENDER-RECEIVER-INTERFACE UUID="6e67ddc4-e9c3-4eaa-950f-708feef3ece1">
+          <SHORT-NAME>If_DialLed</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="e604fcd3-6496-45ef-b3ec-60814c0f14bc">
+              <SHORT-NAME>On</SHORT-NAME>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <SW-IMPL-POLICY>QUEUED</SW-IMPL-POLICY>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_DataTypes/ImplementationDataTypes/boolean</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="72ebb04a-1b59-4e3b-a45c-ab28805d64a4">
+          <SHORT-NAME>Swc_SHControl</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="d79b5f09-2c85-413a-ad61-e25f561d90df">
+              <SHORT-NAME>P_DialLed</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <QUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_DialLed/On</DATA-ELEMENT-REF>
+                </QUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/App_SeatHeating/If_DialLed</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="57f00704-db11-496d-9665-c0c876e3a13e">
+              <SHORT-NAME>P_Setting</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <SERVER-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Setting/Write</OPERATION-REF>
+                  <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                </SERVER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/App_SeatHeating/If_Setting</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="d4699b26-75b9-47e1-b0ba-e31d6d647e6c">
+              <SHORT-NAME>R_HeatingElement</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Heating/Write</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/App_SeatHeating/If_Heating</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="eb163bf5-448c-42db-8391-95d6df4555c2">
+              <SHORT-NAME>R_SeatSwitch</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_SeatSwitch/PassengerDetected</DATA-ELEMENT-REF>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/App_SeatHeating/If_SeatSwitch</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="5f9ad6dd-6bea-476c-8b82-6c615f24583f">
+              <SHORT-NAME>InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <OPERATION-INVOKED-EVENT UUID="8fc0b0a8-0743-4b84-bb9b-924c138676f4">
+                  <SHORT-NAME>OIE_Re_SHControl_P_Setting_Write</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/App_SeatHeating/Swc_SHControl/InternalBehavior/Re_SHControl</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/P_Setting</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Setting/Write</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+                <DATA-RECEIVED-EVENT UUID="f1590942-6c7b-4b89-acbe-a8ad94bcc98d">
+                  <SHORT-NAME>DRE_Re_SHSwitch_R_SeatSwitch_PassengerDetected</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/App_SeatHeating/Swc_SHControl/InternalBehavior/Re_SHSwitch</START-ON-EVENT-REF>
+                  <DATA-IREF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/R_SeatSwitch</CONTEXT-R-PORT-REF>
+                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_SeatSwitch/PassengerDetected</TARGET-DATA-ELEMENT-REF>
+                  </DATA-IREF>
+                </DATA-RECEIVED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="89c8ad21-06f5-402b-93dd-848320da443c">
+                  <SHORT-NAME>Re_SHControl</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="d06f81b8-4ae6-4562-a874-2f17b16fe1b9">
+                      <SHORT-NAME>DSP_Re_SHControl_P_DialLed_On</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/P_DialLed</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_DialLed/On</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="7f1edd07-27a5-4c93-ac7c-1f9eee1330b3">
+                      <SHORT-NAME>SSCP_Re_SHControl_R_HeatingElement_Write</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/R_HeatingElement</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Heating/Write</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>Re_SHControl</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="2181e132-9b4a-4c7d-a86d-705b9b2ba775">
+                  <SHORT-NAME>Re_SHSwitch</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="d471d3be-5da3-43f7-bff8-31008f687d29">
+                      <SHORT-NAME>DRPBA_Re_SHSwitch_R_SeatSwitch_PassengerDetected</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/R_SeatSwitch</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_SeatSwitch/PassengerDetected</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <SYMBOL>Re_SHSwitch</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE UUID="02f12494-4b27-4870-8050-49d7b8397c2c">
+          <SHORT-NAME>Swc_HeatingDial</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="d169dee8-5048-4b39-bb4d-fac3bb821a22">
+              <SHORT-NAME>R_DialLed</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <QUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_DialLed/On</DATA-ELEMENT-REF>
+                  <QUEUE-LENGTH>4</QUEUE-LENGTH>
+                </QUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/App_SeatHeating/If_DialLed</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="23665f42-98f3-417c-a225-8e8d5a5523af">
+              <SHORT-NAME>R_Position</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Setting/Write</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/App_SeatHeating/If_Setting</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="15cad293-5774-4ff4-9212-6fa4a686d65d">
+              <SHORT-NAME>R_IoDial</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_AnaInDir/ReadDirect</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_AnaInDir</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="c37e16f3-1135-4171-9d89-f539535877ec">
+              <SHORT-NAME>R_IoAliveLed</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir/WriteDirect</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="437fe18a-0c0b-44dc-ae7e-812aba8274d4">
+              <SHORT-NAME>R_IoLed</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir/WriteDirect</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="dc6b05c1-ac90-4953-8a15-122d16fa4c67">
+              <SHORT-NAME>InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="2994a208-8b31-47b8-89c8-7e2b7de079bd">
+                  <SHORT-NAME>TE_Re_HeatingDial</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/App_SeatHeating/Swc_HeatingDial/InternalBehavior/Re_HeatingDial</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="81f348a7-aa3a-45a9-861b-058dc9d7d4be">
+                  <SHORT-NAME>Re_HeatingDial</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="350891a6-45d4-4f10-b9c0-49cb6eadd39c">
+                      <SHORT-NAME>DRPBA_Re_HeatingDial_R_DialLed_On</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_DialLed</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_DialLed/On</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="89fa3c6e-12eb-4f77-b915-055901f78b77">
+                      <SHORT-NAME>SSCP_Re_HeatingDial_R_IoAliveLed_WriteDirect</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoAliveLed</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir/WriteDirect</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="5eb42ea6-1f1a-432d-955a-5af616ae15d0">
+                      <SHORT-NAME>SSCP_Re_HeatingDial_R_IoDial_ReadDirect</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoDial</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_AnaInDir/ReadDirect</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="23966846-32d1-4b18-bfe8-6ee5ae6d2687">
+                      <SHORT-NAME>SSCP_Re_HeatingDial_R_IoLed_WriteDirect</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoLed</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_DigDir/WriteDirect</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="a235b1ea-e72c-4c9a-96c2-a72a0ade6c91">
+                      <SHORT-NAME>SSCP_Re_HeatingDial_R_Position_Write</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_Position</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Setting/Write</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>Re_HeatingDial</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE UUID="c0a006d1-246c-4c52-8db4-f7f27a9de4df">
+          <SHORT-NAME>Swc_SeatHeating</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="cc69d4ba-1c45-43af-9567-b032590fbefb">
+              <SHORT-NAME>P_Heating</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <SERVER-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Heating/Write</OPERATION-REF>
+                  <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                </SERVER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/App_SeatHeating/If_Heating</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="e129ef50-3841-407f-a988-7415a8140322">
+              <SHORT-NAME>R_IoHeating</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_Pwm/SetDutyCycle</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_Pwm/SetOutputToIdle</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_Pwm</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="1c6fda3c-9a6e-4c09-a651-ced9c3bee445">
+              <SHORT-NAME>InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <OPERATION-INVOKED-EVENT UUID="0e3af49c-3da1-42b7-ae5d-05ab158ea4ab">
+                  <SHORT-NAME>OIE_Re_SeatHeating_P_Heating_Write</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/App_SeatHeating/Swc_SeatHeating/InternalBehavior/Re_SeatHeating</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatHeating/P_Heating</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/App_SeatHeating/If_Heating/Write</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="fe292ee9-be81-4d64-aceb-9c70921de23a">
+                  <SHORT-NAME>Re_SeatHeating</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="b3471b69-ff82-43d5-995a-4d966f33f90d">
+                      <SHORT-NAME>SSCP_Re_SeatHeating_R_IoHeating_SetDutyCycle</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatHeating/R_IoHeating</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_Pwm/SetDutyCycle</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="70950313-cef5-4b89-a402-e51debf57bad">
+                      <SHORT-NAME>SSCP_Re_SeatHeating_R_IoHeating_SetOutputToIdle</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatHeating/R_IoHeating</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Svc_IoHwAb/ClientServerInterfaces/IoHwAb_If_Pwm/SetOutputToIdle</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>Re_SeatHeating</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+        <SENDER-RECEIVER-INTERFACE UUID="f8d02ca9-d234-4da6-a2a7-a9251ba0a2e6">
+          <SHORT-NAME>If_SeatSwitch</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="571c16f3-c3a8-4e60-bfdd-cd64a83dcc4c">
+              <SHORT-NAME>PassengerDetected</SHORT-NAME>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_DataTypes/ImplementationDataTypes/boolean</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="59c2d4d9-3f2a-4412-87b6-effe32c488ae">
+          <SHORT-NAME>Swc_SeatSwitch</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="61ea04c1-d19b-4ca6-bc16-b4713b7c6061">
+              <SHORT-NAME>P_SeatSwitch</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_SeatSwitch/PassengerDetected</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/App_SeatHeating/If_SeatSwitch</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE UUID="07bb5218-3b1b-4c4d-b7f9-ed0ca95b6e32">
+              <SHORT-NAME>P_RcStatus</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU1_Msg_SH/ECU1_Msg_SH_Sig1</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/DBCImport/INTERFACES/Project_ECU1_Msg_SH</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="b65fe738-2089-435d-811f-7a938bf4ce3d">
+              <SHORT-NAME>R_RcCommand</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU2_Msg_PD/ECU2_Msg_PD_Sig1</DATA-ELEMENT-REF>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/DBCImport/INTERFACES/Project_ECU2_Msg_PD</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="35b57052-7460-4bd5-a4b2-a26d5dbd7ba0">
+              <SHORT-NAME>InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <DATA-RECEIVED-EVENT UUID="3c37fe9d-4016-4b43-b7cc-6b578b68b674">
+                  <SHORT-NAME>DRE_Re_SeatSwitch_R_RcCommand_ECU2_Msg_PD_Sig1</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/App_SeatHeating/Swc_SeatSwitch/InternalBehavior/Re_SeatSwitch</START-ON-EVENT-REF>
+                  <DATA-IREF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/R_RcCommand</CONTEXT-R-PORT-REF>
+                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU2_Msg_PD/ECU2_Msg_PD_Sig1</TARGET-DATA-ELEMENT-REF>
+                  </DATA-IREF>
+                </DATA-RECEIVED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="e894bc5e-2d8c-49ba-ad29-b8ac05cfb5a4">
+                  <SHORT-NAME>Re_SeatSwitch</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="eff25ce5-3318-44d7-a863-362a1a55ba5e">
+                      <SHORT-NAME>DRPBA_Re_SeatSwitch_R_RcCommand_ECU2_Msg_PD_Sig1</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/R_RcCommand</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU2_Msg_PD/ECU2_Msg_PD_Sig1</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="77f95bfd-2f08-4325-8089-96b6820a6b46">
+                      <SHORT-NAME>DSP_Re_SeatSwitch_P_RcStatus_ECU1_Msg_SH_Sig1</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/P_RcStatus</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU1_Msg_SH/ECU1_Msg_SH_Sig1</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS UUID="d3f6c68a-3a63-4796-8ee5-f8302f03bddc">
+                      <SHORT-NAME>DSP_Re_SeatSwitch_P_SeatSwitch_PassengerDetected</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/P_SeatSwitch</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/App_SeatHeating/If_SeatSwitch/PassengerDetected</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                      <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SYMBOL>Re_SeatSwitch</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

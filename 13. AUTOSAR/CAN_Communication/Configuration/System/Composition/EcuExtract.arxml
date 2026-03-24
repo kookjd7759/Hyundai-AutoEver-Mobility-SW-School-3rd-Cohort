@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="3e5a352d-12b9-4a57-8e94-abf97ebe3f67">
+      <SHORT-NAME>ECU_EXTRACT</SHORT-NAME>
+      <ELEMENTS>
+        <SYSTEM UUID="6a2d4643-9c23-4f42-807a-98dd972ec7d1">
+          <SHORT-NAME>EcuExtract</SHORT-NAME>
+          <CATEGORY>ECU_EXTRACT</CATEGORY>
+          <ADMIN-DATA>
+            <LANGUAGE>EN</LANGUAGE>
+            <SDGS>
+              <SDG GID="SWComponentMapping">
+                <SDG-CAPTION>
+                  <SHORT-NAME>SWComponentMapping</SHORT-NAME>
+                </SDG-CAPTION>
+                <SDG-CAPTION-REF DEST="SDG-CAPTION">/ECU_EXTRACT/EcuExtract/SWComponentMapping</SDG-CAPTION-REF>
+                <SDX-REF DEST="COMPOSITION-SW-COMPONENT-TYPE">/AUTOSAR/CSWC_RootCompostion</SDX-REF>
+              </SDG>
+              <SDG GID="DataMappings">
+                <SDG-CAPTION>
+                  <SHORT-NAME>DataMappings</SHORT-NAME>
+                </SDG-CAPTION>
+                <SDG-CAPTION-REF DEST="SDG-CAPTION">/ECU_EXTRACT/EcuExtract/DataMappings</SDG-CAPTION-REF>
+                <SD GID="SignalMappingOption">IfVdpMode-byMobilgene</SD>
+                <SD GID="GroupMappingOption">OnlyEndsWithVdpMode</SD>
+                <SD GID="CaseOption">On</SD>
+                <SD GID="InitialCheckOption">Off</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ANNOTATIONS>
+            <ANNOTATION T="2026-03-24T09:42:37.904+09:00">
+              <ANNOTATION-ORIGIN>DBC_C:/Users/Donggyun/Desktop/설치 파일/Projects/edu_mpc5606b_r2401_hot_can_candb/Project.dbc</ANNOTATION-ORIGIN>
+              <ANNOTATION-TEXT>
+                <DEF-LIST SI="Nodes">
+                  <DEF-ITEM SI="ECU1">
+                    <SHORT-NAME>ECU1</SHORT-NAME>
+                  </DEF-ITEM>
+                </DEF-LIST>
+                <DEF-LIST SI="Messages">
+                  <DEF-ITEM SI="TP" HELP-ENTRY="1">
+                    <SHORT-NAME>GST_Msg_TP2</SHORT-NAME>
+                    <DEF>
+                      <DEF-LIST SI="MSG_CFG">
+                        <DEF-ITEM SI="8">
+                          <SHORT-NAME>Size</SHORT-NAME>
+                        </DEF-ITEM>
+                      </DEF-LIST>
+                    </DEF>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="TP" HELP-ENTRY="0">
+                    <SHORT-NAME>GST_Msg_TP1</SHORT-NAME>
+                    <DEF>
+                      <DEF-LIST SI="MSG_CFG">
+                        <DEF-ITEM SI="8">
+                          <SHORT-NAME>Size</SHORT-NAME>
+                        </DEF-ITEM>
+                      </DEF-LIST>
+                    </DEF>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Diag" HELP-ENTRY="2">
+                    <SHORT-NAME>ECU1_GST_Msg_TP</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_GW1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Diag" HELP-ENTRY="2">
+                    <SHORT-NAME>GST_Msg_TP_Phys</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="TP" HELP-ENTRY="1">
+                    <SHORT-NAME>ECU1_Msg_TP2</SHORT-NAME>
+                    <DEF>
+                      <DEF-LIST SI="MSG_CFG">
+                        <DEF-ITEM SI="8">
+                          <SHORT-NAME>Size</SHORT-NAME>
+                        </DEF-ITEM>
+                      </DEF-LIST>
+                    </DEF>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU2_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU2_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_IF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU2_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU2_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_POE3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Diag" HELP-ENTRY="3">
+                    <SHORT-NAME>GST_Msg_TP_Func</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="TP" HELP-ENTRY="0">
+                    <SHORT-NAME>ECU1_Msg_TP1</SHORT-NAME>
+                    <DEF>
+                      <DEF-LIST SI="MSG_CFG">
+                        <DEF-ITEM SI="8">
+                          <SHORT-NAME>Size</SHORT-NAME>
+                        </DEF-ITEM>
+                      </DEF-LIST>
+                    </DEF>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_P4</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_P3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_P2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Ignore">
+                    <SHORT-NAME>ECU4_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Ignore">
+                    <SHORT-NAME>ECU3_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Ignore">
+                    <SHORT-NAME>ECU2_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Ignore">
+                    <SHORT-NAME>ECU1_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_POE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_OE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU1_Msg_SH</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Normal">
+                    <SHORT-NAME>ECU2_Msg_PD</SHORT-NAME>
+                  </DEF-ITEM>
+                </DEF-LIST>
+                <DEF-LIST SI="Messages_E2E">
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_GST_Msg_TP2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_GST_Msg_TP1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_GST_Msg_TP</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_GW1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_GST_Msg_TP_Phys</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_TP2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_IF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_POE3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_GST_Msg_TP_Func</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_TP1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_P4</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_P3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_P2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU4_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU3_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_POE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_OE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU1_Msg_SH</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>Project_ECU2_Msg_PD</SHORT-NAME>
+                  </DEF-ITEM>
+                </DEF-LIST>
+                <DEF-LIST SI="Messages_PNC">
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>GST_Msg_TP2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>GST_Msg_TP1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_GST_Msg_TP</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_GW1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>GST_Msg_TP_Phys</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_TP2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_IF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_POE3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>GST_Msg_TP_Func</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_TP1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_P4</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_P3</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_PIF1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_P2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_P1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU4_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU3_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_NM</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_POE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_POE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_OE2</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_OE1</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU1_Msg_SH</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>ECU2_Msg_PD</SHORT-NAME>
+                  </DEF-ITEM>
+                </DEF-LIST>
+                <DEF-LIST SI="Options">
+                  <DEF-ITEM SI="true">
+                    <SHORT-NAME>B_PREFIX_ENABLE</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="false">
+                    <SHORT-NAME>B_DIAGMSG_TO_CANFDFRAME</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="false">
+                    <SHORT-NAME>B_GENERATE_PORT_SN</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="true">
+                    <SHORT-NAME>B_SYSTEM_SIGNAL_WITH_MESSAGE_NAME</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="true">
+                    <SHORT-NAME>B_SEPARATE_SYSTEM_SIGNALS_FOR_DUPLICATED_NAME</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="true">
+                    <SHORT-NAME>B_E2E_DLC_ENABLE</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="false">
+                    <SHORT-NAME>B_PN_WAKEUP_SUPPORT_ENABLE</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="true">
+                    <SHORT-NAME>B_GENERATE_SWC</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Project">
+                    <SHORT-NAME>S_CLUSTER_NAME</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="NONE">
+                    <SHORT-NAME>S_MSG_SIGGROUP</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="DBCImport">
+                    <SHORT-NAME>S_PKG_NAME</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>S_CAN_DRIVER</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="--">
+                    <SHORT-NAME>S_MSG_TYPE_NONE_SIG_GRP</SHORT-NAME>
+                  </DEF-ITEM>
+                  <DEF-ITEM SI="Project_">
+                    <SHORT-NAME>S_PREFIX_NAME</SHORT-NAME>
+                  </DEF-ITEM>
+                </DEF-LIST>
+              </ANNOTATION-TEXT>
+            </ANNOTATION>
+          </ANNOTATIONS>
+          <FIBEX-ELEMENTS>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="ECU-INSTANCE">/ECU_EXTRACT/ECU1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-TP-CONFIG">/DBCImport/CANTP/CanTpConfig_Project</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-CLUSTER">/DBCImport/CLUSTERS/Project</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_GST_Msg_TP</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_GW1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_IF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P3</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P4</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_PIF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE3</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_SH</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_OE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_P1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PD</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PIF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_POE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Func</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="CAN-FRAME">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Phys</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU-GROUP">/DBCImport/IPDUGROUPS/ISignalIPduGroupRx_ECU1_Project</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU-GROUP">/DBCImport/IPDUGROUPS/ISignalIPduGroupTx_ECU1_Project</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_GW1_ECU1_Msg_GW1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_GW1_ECU1_Msg_GW1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_IF1_ECU1_Msg_IF1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_IF1_ECU1_Msg_IF1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE1_ECU1_Msg_OE1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE1_ECU1_Msg_OE1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig3</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig4</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig5</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P1_ECU1_Msg_P1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P1_ECU1_Msg_P1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P2_ECU1_Msg_P2_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P2_ECU1_Msg_P2_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P3_ECU1_Msg_P3_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P3_ECU1_Msg_P3_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P4_ECU1_Msg_P4_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_P4_ECU1_Msg_P4_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_PIF1_ECU1_Msg_PIF1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_PIF1_ECU1_Msg_PIF1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE1_ECU1_Msg_POE1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE1_ECU1_Msg_POE1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE2_ECU1_Msg_POE2_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE2_ECU1_Msg_POE2_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE3_ECU1_Msg_POE3_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_POE3_ECU1_Msg_POE3_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_SH_ECU1_Msg_SH_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_TP1_Project_ECU1_Msg_TP1_signal</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU1_Msg_TP2_Project_ECU1_Msg_TP2_signal</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_OE1_ECU2_Msg_OE1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_OE1_ECU2_Msg_OE1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_P1_ECU2_Msg_P1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_P1_ECU2_Msg_P1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_PD_ECU2_Msg_PD_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_PIF1_ECU2_Msg_PIF1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_PIF1_ECU2_Msg_PIF1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_POE1_ECU2_Msg_POE1_Sig1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_ECU2_Msg_POE1_ECU2_Msg_POE1_Sig2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_GST_Msg_TP1_Project_GST_Msg_TP1_signal</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL">/DBCImport/ISIGNALS/ISignal_Project_GST_Msg_TP2_Project_GST_Msg_TP2_signal</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_GW1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_IF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_OE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_OE2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_P1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_P2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_P3</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_P4</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_PIF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_POE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_POE2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_POE3</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_SH</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU1_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU2_Msg_OE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU2_Msg_P1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU2_Msg_PD</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU2_Msg_PIF1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_ECU2_Msg_POE1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_GST_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="I-SIGNAL-I-PDU">/DBCImport/PDUS/ISignalIPdu_Project_GST_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_ECU1_GST_Msg_TP</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_ECU1_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_ECU1_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_GST_Msg_TP1</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_GST_Msg_TP2</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_GST_Msg_TP_Func</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="N-PDU">/DBCImport/PDUS/NPdu_Project_GST_Msg_TP_Phys</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="DCM-I-PDU">/DBCImport/PDUS/DcmIPdu_Project_ECU1_GST_Msg_TP</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="DCM-I-PDU">/DBCImport/PDUS/DcmIPdu_Project_GST_Msg_TP_Func</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="DCM-I-PDU">/DBCImport/PDUS/DcmIPdu_Project_GST_Msg_TP_Phys</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+          </FIBEX-ELEMENTS>
+          <MAPPINGS>
+            <SYSTEM-MAPPING UUID="03cb8b75-e28d-49f5-91ed-73a2d3cb2390">
+              <SHORT-NAME>DataMappings</SHORT-NAME>
+              <DATA-MAPPINGS>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                  <DATA-ELEMENT-IREF>
+                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatSwitch</CONTEXT-COMPONENT-REF>
+                    <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                    <CONTEXT-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/P_RcStatus</CONTEXT-PORT-REF>
+                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU1_Msg_SH/ECU1_Msg_SH_Sig1</TARGET-DATA-PROTOTYPE-REF>
+                  </DATA-ELEMENT-IREF>
+                  <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/DBCImport/SYSSIGNALS/SystemSignal_Project_ECU1_Msg_SH_ECU1_Msg_SH_Sig1</SYSTEM-SIGNAL-REF>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                  <DATA-ELEMENT-IREF>
+                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatSwitch</CONTEXT-COMPONENT-REF>
+                    <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                    <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/R_RcCommand</CONTEXT-PORT-REF>
+                    <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/DBCImport/INTERFACES/Project_ECU2_Msg_PD/ECU2_Msg_PD_Sig1</TARGET-DATA-PROTOTYPE-REF>
+                  </DATA-ELEMENT-IREF>
+                  <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/DBCImport/SYSSIGNALS/SystemSignal_Project_ECU2_Msg_PD_ECU2_Msg_PD_Sig1</SYSTEM-SIGNAL-REF>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+              </DATA-MAPPINGS>
+            </SYSTEM-MAPPING>
+            <SYSTEM-MAPPING UUID="3a80f036-7876-4883-811a-60a0ec2a1441">
+              <SHORT-NAME>SwMappings</SHORT-NAME>
+              <SW-MAPPINGS>
+                <SWC-TO-ECU-MAPPING UUID="1249a867-c71a-44a8-a77c-de98e42d6d19">
+                  <SHORT-NAME>SwMapping0</SHORT-NAME>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_ErrM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_TestModeManager</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_TestModeUser</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_WdgMTest</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SHControl</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatSwitch</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatHeating</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Svc_IoHwAb</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/ComM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Dcm</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Dem</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Det</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/EcuM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/FiM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/NvM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ECU_EXTRACT/EcuExtract/RootSwCompositionPrototype</CONTEXT-COMPOSITION-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/WdgM</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                  <ECU-INSTANCE-REF DEST="ECU-INSTANCE">/ECU_EXTRACT/ECU1</ECU-INSTANCE-REF>
+                </SWC-TO-ECU-MAPPING>
+              </SW-MAPPINGS>
+            </SYSTEM-MAPPING>
+            <SYSTEM-MAPPING UUID="989ecbac-1af0-4ea7-9aab-2da9df57236c">
+              <SHORT-NAME>PncMappings</SHORT-NAME>
+            </SYSTEM-MAPPING>
+          </MAPPINGS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE UUID="8393881c-88eb-449c-89f6-38695d19def3">
+              <SHORT-NAME>RootSwCompositionPrototype</SHORT-NAME>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ECU_EXTRACT/EcuComposition</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+        </SYSTEM>
+        <ECU-INSTANCE UUID="0d3ab26e-5ebe-4b26-9f0e-283dc5a61232">
+          <SHORT-NAME>ECU1</SHORT-NAME>
+          <ASSOCIATED-COM-I-PDU-GROUP-REFS>
+            <ASSOCIATED-COM-I-PDU-GROUP-REF DEST="I-SIGNAL-I-PDU-GROUP">/DBCImport/IPDUGROUPS/ISignalIPduGroupRx_ECU1_Project</ASSOCIATED-COM-I-PDU-GROUP-REF>
+            <ASSOCIATED-COM-I-PDU-GROUP-REF DEST="I-SIGNAL-I-PDU-GROUP">/DBCImport/IPDUGROUPS/ISignalIPduGroupTx_ECU1_Project</ASSOCIATED-COM-I-PDU-GROUP-REF>
+          </ASSOCIATED-COM-I-PDU-GROUP-REFS>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER UUID="b3d2d068-797f-4ff0-97cc-e107216b76ac">
+              <SHORT-NAME>ECU1_Project</SHORT-NAME>
+              <CAN-COMMUNICATION-CONTROLLER-VARIANTS>
+                <CAN-COMMUNICATION-CONTROLLER-CONDITIONAL>
+                  <CAN-CONTROLLER-ATTRIBUTES>
+                    <CAN-CONTROLLER-CONFIGURATION />
+                  </CAN-CONTROLLER-ATTRIBUTES>
+                </CAN-COMMUNICATION-CONTROLLER-CONDITIONAL>
+              </CAN-COMMUNICATION-CONTROLLER-VARIANTS>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR UUID="e0d99135-87bc-474f-a90b-db0e76d00011">
+              <SHORT-NAME>Conn_ECU1_Project</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ECU_EXTRACT/ECU1/ECU1_Project</COMM-CONTROLLER-REF>
+              <ECU-COMM-PORT-INSTANCES>
+                <FRAME-PORT UUID="12da6fca-0cfa-4a4b-9f73-4f2e80eaadad">
+                  <SHORT-NAME>FP_ECU1_Project_GST_Msg_TP2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="d428457f-b861-48b3-a7f1-25c076ea347f">
+                  <SHORT-NAME>PP_ECU1_Project_GST_Msg_TP2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="13be3f9c-8171-45d2-ba2a-4a729ae0b61c">
+                  <SHORT-NAME>SP_ECU1_Project_GST_Msg_TP2_Project_GST_Msg_TP2_signal_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="981de99e-9c42-4cca-9100-0145d0c0ab88">
+                  <SHORT-NAME>FP_ECU1_Project_GST_Msg_TP1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="f4040673-2b78-41bf-9884-46a0af9e2e33">
+                  <SHORT-NAME>PP_ECU1_Project_GST_Msg_TP1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="ca15e917-75c7-445c-8e2c-a3e4cf5d7d1e">
+                  <SHORT-NAME>SP_ECU1_Project_GST_Msg_TP1_Project_GST_Msg_TP1_signal_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="787fc65e-00e9-4f2a-a7d5-48cd5fc7add0">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_GST_Msg_TP_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="c1dd3063-7684-4799-abb1-6f03354b6423">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_GST_Msg_TP_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <FRAME-PORT UUID="c6ad06a8-3ecf-48ef-8ef6-0d486b0ca922">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_GW1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="342e3ff0-986b-4c7f-95b3-0195614488b5">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_GW1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="d99f36ef-3ebb-4245-8a97-a9f3f96d9e09">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_GW1_ECU1_Msg_GW1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="c45f1edc-b862-4a8a-8285-ddabc6106378">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_GW1_ECU1_Msg_GW1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="5cf11c87-a90c-4324-b53a-7622da629bf8">
+                  <SHORT-NAME>FP_ECU1_Project_GST_Msg_TP_Phys_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="9401396d-d77b-4e6e-964b-c5e84b1adab9">
+                  <SHORT-NAME>PP_ECU1_Project_GST_Msg_TP_Phys_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <FRAME-PORT UUID="1d2680c3-66f4-4ea7-a411-758bcba417a5">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_TP2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="dacde099-b2a3-456d-859b-3905b20c6ea2">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_TP2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="4774f135-bcd5-476e-ae43-3cd2d47dd22b">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_TP2_Project_ECU1_Msg_TP2_signal_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="23d85e89-3a7c-473a-a7ae-723b60935cfa">
+                  <SHORT-NAME>FP_ECU1_Project_ECU2_Msg_PIF1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="9d477916-8b25-4070-90a9-52606e4c31bc">
+                  <SHORT-NAME>PP_ECU1_Project_ECU2_Msg_PIF1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="3c9b4ab0-aae6-4734-ab69-e63f68072434">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_PIF1_ECU2_Msg_PIF1_Sig2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="3cc9d137-d1f6-4514-980a-ea4eb2acff83">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_PIF1_ECU2_Msg_PIF1_Sig1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="18bcb8d0-be95-4aff-a412-b045f52117cf">
+                  <SHORT-NAME>FP_ECU1_Project_ECU2_Msg_POE1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="c5e3404d-a080-4191-8b24-0d6001b3a61a">
+                  <SHORT-NAME>PP_ECU1_Project_ECU2_Msg_POE1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="77096343-a5eb-4d96-ad38-d8bab3ecfe00">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_POE1_ECU2_Msg_POE1_Sig1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="9bf9c605-9233-4599-9a87-f3328c4abb9e">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_POE1_ECU2_Msg_POE1_Sig2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="6ead09f5-c132-4d4f-99ca-e16b8a6895e4">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_IF1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="00f48282-fc72-4fdb-b219-908009e01340">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_IF1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="adb0473b-b3a5-4afd-b31a-59b64254f48b">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_IF1_ECU1_Msg_IF1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="c6e8ae28-5cd5-4b71-a7cd-86d6bf345290">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_IF1_ECU1_Msg_IF1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="a82822fc-c6c3-466d-8d68-541b15e3b4b4">
+                  <SHORT-NAME>FP_ECU1_Project_ECU2_Msg_OE1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="27b3bb95-066f-4efd-b96e-33f32fdff235">
+                  <SHORT-NAME>PP_ECU1_Project_ECU2_Msg_OE1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="ca4c84c8-52e5-47c6-84e5-33ff344454f2">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_OE1_ECU2_Msg_OE1_Sig2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="09fa927d-9545-4c5e-b32d-78df9089b78b">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_OE1_ECU2_Msg_OE1_Sig1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="569789dc-87be-451e-8879-fd5d678e5d03">
+                  <SHORT-NAME>FP_ECU1_Project_ECU2_Msg_P1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="8fda18dd-9565-4e47-b5eb-4b5baffdac5f">
+                  <SHORT-NAME>PP_ECU1_Project_ECU2_Msg_P1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="e0adc9d3-1cc3-4c8e-a529-9547939ee983">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_P1_ECU2_Msg_P1_Sig2_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="d0abfd01-93b1-4de9-8253-ab7035b25362">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_P1_ECU2_Msg_P1_Sig1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="10e79435-156c-4d48-bc42-0c8e628c6832">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_POE3_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="028bd4a7-e73f-4bf1-8ed0-5013e9ccfa80">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_POE3_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="50f8ce59-7a83-4a27-8fae-cbeec019b9b2">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE3_ECU1_Msg_POE3_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="df1a77e4-a4c3-4b7a-91b4-01f8bed0c367">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE3_ECU1_Msg_POE3_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="f54090ee-f074-4749-8867-0d4b9a315541">
+                  <SHORT-NAME>FP_ECU1_Project_GST_Msg_TP_Func_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="f3efc34d-d776-4f16-b73f-141970ba638f">
+                  <SHORT-NAME>PP_ECU1_Project_GST_Msg_TP_Func_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <FRAME-PORT UUID="5e2f1d8f-30cf-4901-b457-f4732e37b2df">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_TP1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="564fb2f8-d64d-4977-93f7-993f231d5b63">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_TP1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="3b562c7d-8bb6-44c6-a9b0-a2c0c603fe61">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_TP1_Project_ECU1_Msg_TP1_signal_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="f13a3ca0-1486-47ef-8e73-2ed7a2289fd5">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_P4_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="012c9577-74d5-462c-9768-ca7dc9432e0a">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_P4_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="9bd902c7-a8e5-4d78-b9d6-29d6a44c77ca">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P4_ECU1_Msg_P4_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="bdcb1178-69a8-437b-86a3-0c17bf4a8913">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P4_ECU1_Msg_P4_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="2804571e-6e8a-4054-ae72-df184cead94c">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_P3_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="1ee706f0-be05-46af-9a29-ba8f04712dc3">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_P3_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="437b9c20-970f-4fff-b665-9d566354cc04">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P3_ECU1_Msg_P3_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="85b5c3a7-7d39-41f2-8112-9d0c7a1d4db0">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P3_ECU1_Msg_P3_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="1f738ba0-6a3a-4d41-8fbd-86d367c03e80">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_PIF1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="f23f5e50-8aeb-4b7a-8b1b-9c3fda39e382">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_PIF1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="b7c7d50a-c6d0-4103-a521-a3b8868d378e">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_PIF1_ECU1_Msg_PIF1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="5797d864-3646-49f8-8668-e8a01a664282">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_PIF1_ECU1_Msg_PIF1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="edfb52ad-b9c5-4fa9-89d2-128e4ecb3fff">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_P2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="4d9b953d-3470-428a-a11c-764444081041">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_P2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="f51bbfef-a839-45c2-b0ef-b36009b20fe5">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P2_ECU1_Msg_P2_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="6892b1b2-7250-4fe8-92c2-1c4e9ccc4fdc">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P2_ECU1_Msg_P2_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="dbb93f25-27cd-4d68-bcb2-195d42fbf3ba">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_P1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="335b04e0-0486-4074-b656-4d19d3f2a28c">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_P1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="c25a0dbb-59f0-41dc-a247-9ff3896b8518">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P1_ECU1_Msg_P1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="872d3b15-6375-4629-b4ea-5cc7b78b2c17">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_P1_ECU1_Msg_P1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="bf84ed32-0335-4f75-aebf-a6e74841813c">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_POE2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="66088a92-0a40-4b25-82bd-874eb4c7ba2c">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_POE2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="6a4f9168-f184-4ed4-a25a-af721705c1b4">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE2_ECU1_Msg_POE2_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="59164c95-5104-4b44-9cdd-2f7e7be1a5e2">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE2_ECU1_Msg_POE2_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="eab7189d-08a8-45bd-8909-cc8a07c52b83">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_POE1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="f6903d20-5eb8-438d-8999-962175e08644">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_POE1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="8f3dc7df-0c8c-4bba-ae42-842636d4415e">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE1_ECU1_Msg_POE1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="797eb4f6-d8d8-4aee-aa5d-78568d9af633">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_POE1_ECU1_Msg_POE1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="a70724cc-c0ff-48a7-a380-6bd05c2f2391">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_OE2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="0ae0be74-829e-4f33-a736-895f7e172cde">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_OE2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="5a577d03-5552-4d88-a5fa-ed225e4af773">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig5_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="6eb879dc-c560-4aa8-a975-4a73375ec869">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig4_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="0e0b2b45-5b57-4348-8400-cf9213a8082c">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig3_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="7d5c68a6-7cdc-4eab-afa5-4f8bb9c57580">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="5f1da0d5-9d2c-40a8-88cc-a5e48902bbc2">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE2_ECU1_Msg_OE2_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="9ea87096-5d75-4932-9379-a76716197e85">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_OE1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="7cdf4041-b738-4260-98e5-2e9a4ad69bc2">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_OE1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="74ac2b8a-7018-4e37-8eba-7862908d7a59">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE1_ECU1_Msg_OE1_Sig2_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <I-SIGNAL-PORT UUID="3ea5be8a-e674-45b9-abbf-1413015249b1">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_OE1_ECU1_Msg_OE1_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="e0528fa0-4f54-4004-835d-e3f6cc62280d">
+                  <SHORT-NAME>FP_ECU1_Project_ECU1_Msg_SH_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="1ba5dbd2-8dfa-409b-8662-6720270cad1a">
+                  <SHORT-NAME>PP_ECU1_Project_ECU1_Msg_SH_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="928db205-04b1-4b9e-b109-b7886313eb25">
+                  <SHORT-NAME>SP_Project_ECU1_Msg_SH_ECU1_Msg_SH_Sig1_OUT</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+                <FRAME-PORT UUID="518bbd48-fac8-4fa7-ac20-e786a9d4131a">
+                  <SHORT-NAME>FP_ECU1_Project_ECU2_Msg_PD_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </FRAME-PORT>
+                <I-PDU-PORT UUID="d6420d86-c218-49a3-ac64-e9e978ec4181">
+                  <SHORT-NAME>PP_ECU1_Project_ECU2_Msg_PD_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-PDU-PORT>
+                <I-SIGNAL-PORT UUID="1aba168d-20b0-49f0-ad59-6806b32da23d">
+                  <SHORT-NAME>SP_ECU1_Project_ECU2_Msg_PD_ECU2_Msg_PD_Sig1_IN</SHORT-NAME>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </I-SIGNAL-PORT>
+              </ECU-COMM-PORT-INSTANCES>
+              <PNC-GATEWAY-TYPE xsi:nil="true" />
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="e43756ad-775e-4779-b460-bfeb0cdbddba">
+          <SHORT-NAME>EcuComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE UUID="faf0c15c-acdd-4e69-b09f-78e2510a468c">
+              <SHORT-NAME>SWC_AppMode</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="61646c0e-e6ad-4b1e-bfde-c4fbb43f9071">
+              <SHORT-NAME>SWC_ErrM</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ErrM/ApplicationSwComponentTypes/SWC_ErrM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="bb016ebb-5b4c-4c21-8555-9e85b2ccb371">
+              <SHORT-NAME>SWC_TestModeManager</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/AppMode/ApplicationSwComponentTypes/SWC_TestModeManager</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="b3c39245-fac2-4c69-bb99-dfc6a19cc534">
+              <SHORT-NAME>SWC_TestModeUser</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/AppMode/ApplicationSwComponentTypes/SWC_TestModeUser</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="ecb5f39a-1f45-4a5a-8bc3-0de3468ae4d9">
+              <SHORT-NAME>SWC_WdgMTest</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/App_WdgM/SWC_WdgMTest</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="57920d71-be58-4482-840a-68130cff63a8">
+              <SHORT-NAME>Swc_SHControl</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/App_SeatHeating/Swc_SHControl</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="2eb0b37a-4ec7-420d-b9c5-530439df40a2">
+              <SHORT-NAME>Swc_SeatSwitch</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/App_SeatHeating/Swc_SeatSwitch</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="ddd02066-2f0f-4775-99ca-c6691fdc988c">
+              <SHORT-NAME>Swc_HeatingDial</SHORT-NAME>
+              <TYPE-TREF DEST="SENSOR-ACTUATOR-SW-COMPONENT-TYPE">/App_SeatHeating/Swc_HeatingDial</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="b50d61bf-9446-410b-92af-b2e7a694a5d6">
+              <SHORT-NAME>Swc_SeatHeating</SHORT-NAME>
+              <TYPE-TREF DEST="SENSOR-ACTUATOR-SW-COMPONENT-TYPE">/App_SeatHeating/Swc_SeatHeating</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="f83db5ac-d87c-4070-91ff-d6a93f14295e">
+              <SHORT-NAME>Svc_IoHwAb</SHORT-NAME>
+              <TYPE-TREF DEST="ECU-ABSTRACTION-SW-COMPONENT-TYPE">/Svc_IoHwAb/EcuAbstractionSwComponentTypes/IoHwAb</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="566f1b48-c98b-4a25-a421-1703ea477d75">
+              <SHORT-NAME>BswM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/BswM/ServiceSwComponentTypes/BswM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="c00c0753-650c-40e7-b305-6109a0af5306">
+              <SHORT-NAME>ComM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/Svc_ComM/ComM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="4602e1d9-8a82-424e-8448-1efd3cd0d24e">
+              <SHORT-NAME>Dcm</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/AUTOSAR_Dcm/ServiceSwComponentTypes/Dcm</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="f5c8ec35-3eeb-4fbd-8f76-2ee406d79cab">
+              <SHORT-NAME>Dem</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/AUTOSAR_Dem/ServiceSwComponentTypes/Dem</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="f01a2af9-a0ba-4cd4-a8b8-91d7aba56fc2">
+              <SHORT-NAME>Det</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/ServiceSwComponent_Det/SwComponentType/Det</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="b9b00257-2558-4da5-9467-55c00b0fceac">
+              <SHORT-NAME>EcuM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/EcuM/ServiceSwComponentTypes/EcuM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="b7551b0c-e1c1-4166-951b-bde6dbb89b74">
+              <SHORT-NAME>FiM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/Svc_FiM/FiM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="5cb2972f-2d00-4a37-8f63-b868177410fd">
+              <SHORT-NAME>NvM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/Svc_NvM/NvM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="28549dcc-c40f-4489-bdbc-7144174ca101">
+              <SHORT-NAME>WdgM</SHORT-NAME>
+              <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/WdgM/ServiceSwComponentTypes/WdgM</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <ASSEMBLY-SW-CONNECTOR UUID="02117ab2-5d0c-43c5-97d1-16a7aa619146">
+              <SHORT-NAME>GeneralCBStatusEvtOfSWC_ErrMToGeneralCBStatusEvtOfDem</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_ErrM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ErrM/ApplicationSwComponentTypes/SWC_ErrM/GeneralCBStatusEvt</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Dem</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AUTOSAR_Dem/ServiceSwComponentTypes/Dem/GeneralCBStatusEvt</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="f5c54be8-f118-4fb6-a556-8863a2a13c58">
+              <SHORT-NAME>P_DialLedOfSwc_SHControlToR_DialLedOfSwc_HeatingDial</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SHControl</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/P_DialLed</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_DialLed</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="0ffcfcd6-ddb5-4a2d-bd08-a826efff7213">
+              <SHORT-NAME>P_HeatingOfSwc_SeatHeatingToR_HeatingElementOfSwc_SHControl</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatHeating</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatHeating/P_Heating</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SHControl</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/R_HeatingElement</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="3b2ffc8d-c85b-49cd-8e97-d667536d2aa3">
+              <SHORT-NAME>P_Led1OfIoHwAbToR_IoLedOfSwc_HeatingDial</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Svc_IoHwAb</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Svc_IoHwAb/EcuAbstractionSwComponentTypes/IoHwAb/P_Led1</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoLed</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="df9f9be0-f3c1-4449-a8c9-9a258f1b9696">
+              <SHORT-NAME>P_Led2OfIoHwAbToR_IoAliveLedOfSwc_HeatingDial</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Svc_IoHwAb</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Svc_IoHwAb/EcuAbstractionSwComponentTypes/IoHwAb/P_Led2</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoAliveLed</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="f397b613-f8ee-4e1e-b1fb-5689701365bd">
+              <SHORT-NAME>P_Led4OfIoHwAbToR_IoHeatingOfSwc_SeatHeating</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Svc_IoHwAb</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Svc_IoHwAb/EcuAbstractionSwComponentTypes/IoHwAb/P_Led4</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatHeating</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatHeating/R_IoHeating</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="11fa2cf8-2c85-48ff-be71-3559ab2c2f0e">
+              <SHORT-NAME>P_PotentiometerOfIoHwAbToR_IoDialOfSwc_HeatingDial</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Svc_IoHwAb</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Svc_IoHwAb/EcuAbstractionSwComponentTypes/IoHwAb/P_Potentiometer</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_IoDial</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="80ef6eed-a1c2-42b5-8479-9f87b6884223">
+              <SHORT-NAME>P_SeatSwitchOfSwc_SeatSwitchToR_SeatSwitchOfSwc_SHControl</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SeatSwitch</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SeatSwitch/P_SeatSwitch</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SHControl</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/R_SeatSwitch</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="49d620fb-467a-4d0c-8b2e-4ab736101616">
+              <SHORT-NAME>P_SettingOfSwc_SHControlToR_PositionOfSwc_HeatingDial</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_SHControl</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/App_SeatHeating/Swc_SHControl/P_Setting</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/Swc_HeatingDial</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_SeatHeating/Swc_HeatingDial/R_Position</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="ba17e06b-a292-42e5-a27b-008867f0cfae">
+              <SHORT-NAME>WdgM_API_POfWdgMToWdgM_API_ROfSWC_WdgMTest</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/WdgM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WdgM/ServiceSwComponentTypes/WdgM/WdgM_API_P</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_WdgMTest</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_WdgM/SWC_WdgMTest/WdgM_API_R</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="1ca89096-56f5-40af-8f11-1634a4034f07">
+              <SHORT-NAME>alive_SE_InitOfWdgMToSE_InitOfSWC_WdgMTest</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/WdgM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WdgM/ServiceSwComponentTypes/WdgM/alive_SE_Init</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_WdgMTest</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_WdgM/SWC_WdgMTest/SE_Init</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="5e941160-8df7-4e77-bc4f-38f431043f0c">
+              <SHORT-NAME>alive_SE_WdgMTestOfWdgMToSE_WdgMTestOfSWC_WdgMTest</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/WdgM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WdgM/ServiceSwComponentTypes/WdgM/alive_SE_WdgMTest</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_WdgMTest</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_WdgM/SWC_WdgMTest/SE_WdgMTest</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="5bfe5ae1-fe97-4125-aefe-ccbe4b69d6f6">
+              <SHORT-NAME>globalModeOfWdgMToglobalModeOfSWC_WdgMTest</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/WdgM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WdgM/ServiceSwComponentTypes/WdgM/globalMode</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_WdgMTest</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/App_WdgM/SWC_WdgMTest/globalMode</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="e978a906-2f4b-4ce6-8fba-41f3ca9bd948">
+              <SHORT-NAME>modeRequestPort_AppModeOfSWC_AppModeTomodeRequestPort_AppModeOfBswM</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeRequestPort_AppMode</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeRequestPort_AppMode</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="0869ef4a-57ca-4106-aac4-91e1c50744cd">
+              <SHORT-NAME>modeRequestPort_AppModeOfSWC_ErrMTomodeRequestPort_AppModeOfBswM</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_ErrM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ErrM/ApplicationSwComponentTypes/SWC_ErrM/modeRequestPort_AppMode</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeRequestPort_AppMode</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="ea1f905c-7d4b-41a8-994e-1b4b25d89292">
+              <SHORT-NAME>modeRequestPort_ComMMode_ProjectOfSWC_AppModeTomodeRequestPort_ComMMode_ProjectOfBswM</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeRequestPort_ComMMode_Project</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeRequestPort_ComMMode_Project</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="e6d7a27f-9c7e-4b08-9ab2-25fa7441a986">
+              <SHORT-NAME>modeSwitchPort_ComMMode_ProjectOfBswMTomodeNotificationPort_ComMMode_ProjectOfSWC_AppMode</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeSwitchPort_ComMMode_Project</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeNotificationPort_ComMMode_Project</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="361042b5-2f1d-4269-abf6-03b5b81b6cf0">
+              <SHORT-NAME>modeSwitchPort_EcuModeOfBswMTomodeNotificationPort_EcuModeOfSWC_AppMode</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeSwitchPort_EcuMode</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeNotificationPort_EcuMode</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="3b39335b-268e-4767-b9e2-0a14926e7d09">
+              <SHORT-NAME>modeSwitchPort_InitStateOfBswMTomodeNotificationPort_InitStateOfSWC_AppMode</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeSwitchPort_InitState</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeNotificationPort_InitState</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="d8532496-03ce-4e71-98a3-ed973dbf7b2e">
+              <SHORT-NAME>modeSwitchPort_PduGroupRx_ProjectOfBswMTomodeNotificationPort_PduGroupRx_ProjectOfSWC_AppMode</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeSwitchPort_PduGroupRx_Project</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeNotificationPort_PduGroupRx_Project</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="4ce0576a-2eb2-4660-aab5-7a60b47aa8f5">
+              <SHORT-NAME>modeSwitchPort_PduGroupTx_ProjectOfBswMTomodeNotificationPort_PduGroupTx_ProjectOfSWC_AppMode</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/BswM</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BswM/ServiceSwComponentTypes/BswM/modeSwitchPort_PduGroupTx_Project</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECU_EXTRACT/EcuComposition/SWC_AppMode</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/AppMode/ApplicationSwComponentTypes/SWC_AppMode/modeNotificationPort_PduGroupTx_Project</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="438ba2ed-bd89-47a7-a774-2dc4e20ed367">
+      <SHORT-NAME>SW_COPONENTS</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2bc6b611-9dd7-4734-a02f-e373e4f9e446">
+      <SHORT-NAME>FIBEX_ELEMENTS</SHORT-NAME>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

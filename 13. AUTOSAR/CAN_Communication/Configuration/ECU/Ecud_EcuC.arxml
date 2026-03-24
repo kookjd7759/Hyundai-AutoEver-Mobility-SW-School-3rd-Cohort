@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by yyj (Carnes Company Ltd) -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES>
+          <SHORT-NAME>EcuC</SHORT-NAME>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.2.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+                <DATE>2011-11-09</DATE>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcucDefs/EcuC</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-POST-BUILD</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/Can_T2D13M10I1R0/Implementations/BswImplementation_Can</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="b3e19738-becc-4a75-ad7f-3950d9df2c88">
+              <SHORT-NAME>EcucPduCollection</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                    <SD GID="PduIdTypeEnum">true</SD>
+                    <SD GID="PduLengthTypeEnum">true</SD>
+                  </SDG>
+                  <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                    <SD T="2026-03-24T09:44:29Z" GID="PduIdTypeEnum">UINT8</SD>
+                    <SD T="2026-03-24T09:44:29Z" GID="PduLengthTypeEnum">UINT8</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/PduIdTypeEnum</DEFINITION-REF>
+                  <VALUE>UINT8</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/PduLengthTypeEnum</DEFINITION-REF>
+                  <VALUE>UINT8</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="3c44845e-4a9d-48b5-aff3-a304e74fe28d">
+                  <SHORT-NAME>Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_GST_Msg_TP/PduToFrame_Project_ECU1_GST_Msg_TP</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_GST_Msg_TP/PduToFrame_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e98b989b-d941-4dfa-9b96-4859945d7576">
+                  <SHORT-NAME>Pdu_NPdu_Project_ECU1_GST_Msg_TP</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_GST_Msg_TP/MapNPdu_Project_ECU1_GST_Msg_TP</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_GST_Msg_TP/MapNPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="57d0b9fc-802e-44f9-a0d3-71cdec879e1d">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_GW1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_GW1/PduToFrame_Project_ECU1_Msg_GW1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_GW1/PduToFrame_Project_ECU1_Msg_GW1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5c3a6b3b-104b-4ad7-b7e5-426afe5e3c17">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_IF1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_IF1/PduToFrame_Project_ECU1_Msg_IF1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_IF1/PduToFrame_Project_ECU1_Msg_IF1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="61801ae2-6440-4f19-958e-509e6ebd6f9b">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_OE1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE1/PduToFrame_Project_ECU1_Msg_OE1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE1/PduToFrame_Project_ECU1_Msg_OE1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a678008a-14c8-4b03-bcf1-1d85f614aa6f">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_OE2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE2/PduToFrame_Project_ECU1_Msg_OE2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_OE2/PduToFrame_Project_ECU1_Msg_OE2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a8412e65-7a28-494c-8017-28ed638935b0">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_P1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P1/PduToFrame_Project_ECU1_Msg_P1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P1/PduToFrame_Project_ECU1_Msg_P1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ec8c1d57-f023-4113-8014-9331c54a1560">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_P2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P2/PduToFrame_Project_ECU1_Msg_P2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P2/PduToFrame_Project_ECU1_Msg_P2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="62ef8809-8cb5-4f0e-af65-cc48bbd3c1ed">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_P3</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P3/PduToFrame_Project_ECU1_Msg_P3</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P3/PduToFrame_Project_ECU1_Msg_P3</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a26a8180-f5bc-4a49-a5b5-0e3d8cdcd465">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_P4</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P4/PduToFrame_Project_ECU1_Msg_P4</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_P4/PduToFrame_Project_ECU1_Msg_P4</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1acb3fd7-1388-4bf6-ae9a-17f74ed51eb5">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_PIF1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_PIF1/PduToFrame_Project_ECU1_Msg_PIF1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_PIF1/PduToFrame_Project_ECU1_Msg_PIF1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ea12aafd-8c02-4f59-ba91-beb75cceafd6">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_POE1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE1/PduToFrame_Project_ECU1_Msg_POE1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE1/PduToFrame_Project_ECU1_Msg_POE1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e1cc20f8-f676-4de0-bbfb-aee63e1cf08f">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_POE2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE2/PduToFrame_Project_ECU1_Msg_POE2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE2/PduToFrame_Project_ECU1_Msg_POE2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4ca072ca-0b9c-40e2-a993-98b8f10344fa">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_POE3</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE3/PduToFrame_Project_ECU1_Msg_POE3</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_POE3/PduToFrame_Project_ECU1_Msg_POE3</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="74c34c52-5430-4411-ab85-5641f849c9ce">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_SH</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">1</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_SH/PduToFrame_Project_ECU1_Msg_SH</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_SH/PduToFrame_Project_ECU1_Msg_SH</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4e66c465-472b-403a-9e61-9f5b12ffe532">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP1/PduToFrame_Project_ECU1_Msg_TP1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP1/PduToFrame_Project_ECU1_Msg_TP1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="41b4a4e3-2a36-4d35-ba04-60d5b78ed7ac">
+                  <SHORT-NAME>Pdu_NPdu_Project_ECU1_Msg_TP1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP1/MapNPdu_Project_ECU1_Msg_TP1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP1/MapNPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="223168da-f430-462a-a226-00f27c638c73">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP2/PduToFrame_Project_ECU1_Msg_TP2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP2/PduToFrame_Project_ECU1_Msg_TP2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="ca9877be-69c6-4e58-92ba-bc61f4d540f4">
+                  <SHORT-NAME>Pdu_NPdu_Project_ECU1_Msg_TP2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP2/MapNPdu_Project_ECU1_Msg_TP2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU1_Msg_TP2/MapNPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b94a3258-87ff-4e30-8cba-f67af24b2896">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU2_Msg_OE1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_OE1/PduToFrame_Project_ECU2_Msg_OE1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_OE1/PduToFrame_Project_ECU2_Msg_OE1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="1526884d-f1f4-4a1a-a284-a87b64f5f5d0">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU2_Msg_P1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">2</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_P1/PduToFrame_Project_ECU2_Msg_P1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_P1/PduToFrame_Project_ECU2_Msg_P1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="337aaf40-c8e1-42c3-88c0-f0f723969258">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU2_Msg_PD</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">1</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PD/PduToFrame_Project_ECU2_Msg_PD</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PD/PduToFrame_Project_ECU2_Msg_PD</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f29fd14e-e21d-4e1b-be96-17b7e90e570f">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU2_Msg_PIF1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PIF1/PduToFrame_Project_ECU2_Msg_PIF1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_PIF1/PduToFrame_Project_ECU2_Msg_PIF1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="0f4b5348-92b8-417e-bbbc-84dc641d6a2a">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_ECU2_Msg_POE1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_POE1/PduToFrame_Project_ECU2_Msg_POE1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_ECU2_Msg_POE1/PduToFrame_Project_ECU2_Msg_POE1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="aa232989-d3fe-4584-bd49-36f8a625e115">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_GST_Msg_TP1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP1/PduToFrame_Project_GST_Msg_TP1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP1/PduToFrame_Project_GST_Msg_TP1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="2e0ee237-da98-48c4-af30-01ff741fd35d">
+                  <SHORT-NAME>Pdu_NPdu_Project_GST_Msg_TP1</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP1/MapNPdu_Project_GST_Msg_TP1</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP1/MapNPdu_Project_GST_Msg_TP1</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e32a147b-1cdd-4de0-a376-593e93007aae">
+                  <SHORT-NAME>Pdu_ISignalIPdu_Project_GST_Msg_TP2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP2/PduToFrame_Project_GST_Msg_TP2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP2/PduToFrame_Project_GST_Msg_TP2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b4239d3a-c829-4ec2-8d18-4324e8a36577">
+                  <SHORT-NAME>Pdu_NPdu_Project_GST_Msg_TP2</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP2/MapNPdu_Project_GST_Msg_TP2</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP2/MapNPdu_Project_GST_Msg_TP2</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b7ea5f91-3be0-4f20-b645-db032564c251">
+                  <SHORT-NAME>Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Func/PduToFrame_Project_GST_Msg_TP_Func</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Func/PduToFrame_Project_GST_Msg_TP_Func</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="2cdc862d-2bea-4c03-bae9-23f429628914">
+                  <SHORT-NAME>Pdu_NPdu_Project_GST_Msg_TP_Func</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Func/MapNPdu_Project_GST_Msg_TP_Func</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Func/MapNPdu_Project_GST_Msg_TP_Func</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c4e6362a-2e42-4fcf-be3c-70033dba20e3">
+                  <SHORT-NAME>Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Phys/PduToFrame_Project_GST_Msg_TP_Phys</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Phys/PduToFrame_Project_GST_Msg_TP_Phys</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f54c861e-d80e-4e82-a89d-ced4ce586a0e">
+                  <SHORT-NAME>Pdu_NPdu_Project_GST_Msg_TP_Phys</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:29Z" GID="PduLength">8</SD>
+                        <SD T="2026-03-24T09:44:29Z" GID="SysTPduToFrameMappingRef">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Phys/MapNPdu_Project_GST_Msg_TP_Phys</SD>
+                      </SDG>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduLength">true</SD>
+                        <SD GID="SysTPduToFrameMappingRef">true</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/PduLength</DEFINITION-REF>
+                      <VALUE>8</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTOSAR/EcucDefs/EcuC/EcucPduCollection/Pdu/SysTPduToFrameMappingRef</DEFINITION-REF>
+                      <VALUE-REF DEST="PDU-TO-FRAME-MAPPING">/DBCImport/FRAMES/CanFrame_Project_GST_Msg_TP_Phys/MapNPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

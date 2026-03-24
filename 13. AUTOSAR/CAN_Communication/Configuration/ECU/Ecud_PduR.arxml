@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by yyj (Carnes Company Ltd) -->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES>
+          <SHORT-NAME>PduR</SHORT-NAME>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.2.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+                <DATE>2011-11-09</DATE>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTRON/PduR</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/Bsw_PduR/BswImplementation_PduR</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRBswModules_CanIf</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRBswModules</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelReceive</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelTransmit</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRChangeParameterRequestApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCommunicationInterface</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRLowerModule</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRRetransmission</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTxConfirmation</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUpperModule</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUseTag</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTRON/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/AUTOSAR/CanIf</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRBswModules_Com</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRBswModules</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelReceive</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelTransmit</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRChangeParameterRequestApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCommunicationInterface</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRLowerModule</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRRetransmission</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTxConfirmation</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUpperModule</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUseTag</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTRON/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/AUTOSAR/Com</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRBswModules_Dcm</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRBswModules</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelReceive</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelTransmit</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRChangeParameterRequestApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCommunicationInterface</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRLowerModule</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRRetransmission</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTxConfirmation</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUpperModule</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUseTag</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTRON/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/AUTOSAR/Dcm</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRBswModules_CanTp</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRBswModules</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelReceive</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCancelTransmit</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRChangeParameterRequestApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRCommunicationInterface</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRLowerModule</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRRetransmission</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRTxConfirmation</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUpperModule</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRBswModules/PduRUseTag</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/AUTRON/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/AUTOSAR/CanTp</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRGeneral</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                    <SD GID="PduRVersionInfoApi">true</SD>
+                    <SD GID="PduRZeroCostOperation">true</SD>
+                  </SDG>
+                  <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                    <SD T="2026-03-24T09:44:31Z" GID="PduRVersionInfoApi">0</SD>
+                    <SD T="2026-03-24T09:44:31Z" GID="PduRZeroCostOperation">0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRGeneral/PduRDevErrorDetect</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRGeneral/PduRVersionInfoApi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRGeneral/PduRZeroCostOperation</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>PduRRoutingTables</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                    <SD GID="PduRConfigurationId">true</SD>
+                  </SDG>
+                  <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                    <SD T="2026-03-24T09:44:31Z" GID="PduRConfigurationId">0</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRConfigurationId</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="83546e41-5351-428c-90c1-1aa57dafba96">
+                  <SHORT-NAME>PduRRoutingTable</SHORT-NAME>
+                  <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                        <SD GID="PduRIsMinimumRouting">true</SD>
+                      </SDG>
+                      <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                        <SD T="2026-03-24T09:44:31Z" GID="PduRIsMinimumRouting">0</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRIsMinimumRouting</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="51f4eb93-534b-490c-963d-e9ce3ea4b9c7">
+                      <SHORT-NAME>IN_Project_GST_Msg_TP2_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="c249245d-b693-4509-b458-f31b24309066">
+                          <SHORT-NAME>PduR_Project_GST_Msg_TP2_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="d5aa971e-bfa0-4a4d-8107-963a015d72c9">
+                          <SHORT-NAME>PduR_Project_GST_Msg_TP2_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4e0abc15-b69b-4b84-976c-7469362bf747">
+                      <SHORT-NAME>IN_Project_GST_Msg_TP1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="8a4d74e9-fbf9-40fa-9c3a-a023f109143b">
+                          <SHORT-NAME>PduR_Project_GST_Msg_TP1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="6273263b-9805-4b89-ab99-c828e9279a2f">
+                          <SHORT-NAME>PduR_Project_GST_Msg_TP1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_GST_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="12d2963c-a9f6-47d1-bda0-371450288d7f">
+                      <SHORT-NAME>IN_Project_GST_Msg_TP_Phys_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="b91ef432-3fef-4877-9bc5-95dce8cc5239">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_GST_Msg_TP_Phys_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="162f1cd1-6697-4c7d-95ac-20cad2604d08">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_GST_Msg_TP_Phys_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Phys</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="d816e04b-d50c-4d3c-9d3c-23c07f3c1054">
+                      <SHORT-NAME>IN_Project_ECU2_Msg_PIF1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="f622c397-dcb5-4d9d-b98d-9f5e6a10ad06">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_PIF1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PIF1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PIF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="92dbcc8a-3f21-4240-b9bb-abcdf301f3af">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_PIF1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PIF1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PIF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="eb8d96e7-a810-493c-8bf0-e74ae39e02b2">
+                      <SHORT-NAME>IN_Project_ECU2_Msg_POE1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="abcde939-d4ad-4705-955f-cd323ccf413a">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_POE1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_POE1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_POE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="ad360ff2-5bb0-423c-90c3-4dbcb5e1f82c">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_POE1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_POE1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_POE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="64fc13b6-0c08-4a19-ba3a-24daa1001de9">
+                      <SHORT-NAME>IN_Project_ECU2_Msg_OE1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="f947e19c-d55c-4f0f-af4a-13a62c4231af">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_OE1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_OE1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_OE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="b0295889-f795-47a5-883e-0ddc2c99360a">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_OE1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_OE1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_OE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="56601b33-5e0a-48a3-b157-5b5ebcccf5e8">
+                      <SHORT-NAME>IN_Project_ECU2_Msg_P1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="0567d190-ff19-4a1d-a7ad-bd86c7af5528">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_P1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_P1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_P1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="68da200f-5b5c-4602-8f3e-dfc76b246dad">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_P1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_P1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_P1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="91e0c64d-caa8-47b2-a998-437e24968fd9">
+                      <SHORT-NAME>IN_Project_GST_Msg_TP_Func_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="06017a44-ad0c-4262-bf7e-f231b6f8516f">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_GST_Msg_TP_Func_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="b3aceb92-ebae-4311-9c2a-e682a91dfc1c">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_GST_Msg_TP_Func_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_GST_Msg_TP_Func</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8afa5f12-dc6e-4008-8984-72a94c741a07">
+                      <SHORT-NAME>IN_Project_ECU2_Msg_PD_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="b2f8067f-460a-46c0-bdb1-a7eb4ddcd4c0">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_PD_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">4</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PD</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>4</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PD</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="84e21d2d-aa2f-4649-9cd1-bbb4fb53a327">
+                          <SHORT-NAME>PduR_Project_ECU2_Msg_PD_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">4</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PD</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>4</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU2_Msg_PD</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="49996207-e1f6-476e-b2e1-df4394088fea">
+                      <SHORT-NAME>OUT_Project_ECU1_GST_Msg_TP_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="059a2ead-2d86-4e11-a794-2fe96ee1e728">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_ECU1_GST_Msg_TP_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="da098b29-9b99-4fdb-9019-f9c29b260778">
+                          <SHORT-NAME>PduR_DcmIPdu_Project_ECU1_GST_Msg_TP_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_DcmIPdu_Project_ECU1_GST_Msg_TP</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4eb8dbc2-c7c0-4cf9-b9ff-a8d5590ef6d4">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_GW1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="37fdc39e-3652-4e3d-ac64-7ef746a106f9">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_GW1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">0</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_GW1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_GW1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="78eb43d8-a49e-4b1d-b11f-1eaf616abab4">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_GW1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_GW1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_GW1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="26771690-217b-41a6-a0bf-6f8775b78349">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_TP2_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="0e886da3-bf86-4201-b256-e67eb8313f3b">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_TP2_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="e9eb740f-1066-408e-b4c2-4473a71cd0f8">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_TP2_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="ee8256f1-2226-4a9c-b226-536a2cb0fe16">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_IF1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="dc23624c-3ca7-4308-a486-6f0cc6314077">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_IF1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_IF1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_IF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="3965d1b6-14d3-4831-9a75-cf8c1f6ab07d">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_IF1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_IF1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_IF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="abd36711-b413-4049-9eab-423018188b92">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_POE3_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="5e441d25-5479-412f-95a6-58280b685e7c">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE3_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE3</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="668f4651-d57c-4593-bcbf-91b508f98699">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE3_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">4</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE3</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>4</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE3</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="df012bdd-651e-4d2e-a114-8124a4abf325">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_TP1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="9f2553bf-cf9a-4574-beba-30f15838364c">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_TP1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>2</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="048af4a0-6900-4d27-8af7-38f3bf246d46">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_TP1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">5</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>5</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_TP1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="6241cf77-66bb-467b-be58-24067ac4fa0f">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_P4_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="668c6fae-10cc-4054-8995-f49457867580">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P4_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P4</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>3</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P4</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="dfb33131-900b-4782-b01a-e1d9b0ef015b">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P4_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">6</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P4</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>6</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P4</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="5acd3b63-1ef6-42f8-b482-038b150ebb7a">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_P3_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="7ccb36fd-4f37-4b20-9941-bd1dcbb538a0">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P3_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">4</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P3</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>4</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P3</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="26b4e65c-5f14-42a4-9559-24c6d5bdbd18">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P3_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">7</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P3</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>7</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P3</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="feb68a31-2f09-444a-bc74-25fda8878180">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_PIF1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="fb585c62-25ef-4c2d-ad7e-a6965c66d54d">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_PIF1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">5</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_PIF1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>5</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_PIF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="e22f41c1-68cc-4154-9344-d031f33bc301">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_PIF1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">8</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_PIF1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_PIF1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="5e38b5de-0c0d-4663-9a21-e695ecebc173">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_P2_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="65ad1627-174c-4347-8450-92ee12fe416a">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P2_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">6</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>6</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="933302ef-b332-4c55-a476-c9ab9ba24948">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P2_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">9</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>9</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="673f8095-f092-4c5c-9d3c-4e152f9b641c">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_P1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="28d24a6b-b9b0-4461-8696-4c9375dcbc4d">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">7</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>7</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="4f2caa9e-2940-4bb3-adcb-402ccf81469b">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_P1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">10</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>10</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_P1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="20fc812b-e555-4d82-b279-f2566fb3c64b">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_POE2_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="856c9227-6ecb-422e-a78a-ef720dc52fe2">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE2_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">8</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>8</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="e92a4ba9-3098-485d-9f2c-4a0321509688">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE2_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">11</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>11</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="25d4d7c0-ff4b-49ec-80a8-5113b4d39010">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_POE1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="ba47a75e-19d8-4dc8-9a56-f82c99600f94">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">9</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>9</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="9719927b-a55a-4e0c-aecb-ee00cde7e853">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_POE1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">12</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>12</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_POE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="dd54b14b-1164-4ab3-97fb-af4cb8e73449">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_OE2_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="7d4e49a8-c52c-4006-ada6-429c57d10c0e">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_OE2_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">10</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE2</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>10</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="e0287fb6-ecfe-4523-aaf0-f35e20378e37">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_OE2_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">13</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE2</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>13</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE2</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="6e1d3429-3da8-48b1-b08b-03115c2943f7">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_OE1_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="7e42103b-34db-402b-ad83-b018cca3eddc">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_OE1_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">11</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE1</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>11</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="5de80d37-0bc2-44a1-a79f-8e428547cbe7">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_OE1_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">14</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>14</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_OE1</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="1f3c253a-2a4c-4a5b-bc7a-21ac3e5d2b3d">
+                      <SHORT-NAME>OUT_Project_ECU1_Msg_SH_RoutingPath</SHORT-NAME>
+                      <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="f56b3070-2ee2-4808-9ed5-dbb7f379f9f6">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_SH_DestPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduHandleId">12</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRDestPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_SH</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRTransmissionConfirmation">1</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRDestPduHandleId">true</SD>
+                                <SD GID="PduRTransmissionConfirmation">true</SD>
+                                <SD GID="PduRDestPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduHandleId</DEFINITION-REF>
+                              <VALUE>12</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRTransmissionConfirmation</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_SH</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="2e4f07ed-1e36-446d-8c5b-aa315564d910">
+                          <SHORT-NAME>PduR_Project_ECU1_Msg_SH_SrcPdu</SHORT-NAME>
+                          <CATEGORY>TOOL_CONFIGURED</CATEGORY>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="ODIN_WRITER_TYPE:AUTO_CONFIGURED">
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSourcePduHandleId">15</SD>
+                                <SD T="2026-03-24T09:44:31Z" GID="PduRSrcPduRef">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_SH</SD>
+                              </SDG>
+                              <SDG GID="ODIN_AUTO_CONFIG_PROPERTY">
+                                <SD GID="PduRSourcePduHandleId">true</SD>
+                                <SD GID="PduRSrcPduRef">true</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSourcePduHandleId</DEFINITION-REF>
+                              <VALUE>15</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/AUTRON/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/AUTOSAR/EcuC/EcucPduCollection/Pdu_ISignalIPdu_Project_ECU1_Msg_SH</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+
