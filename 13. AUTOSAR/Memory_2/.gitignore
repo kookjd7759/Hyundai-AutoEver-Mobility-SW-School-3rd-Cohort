@@ -1,0 +1,10 @@
+.log/
+.settings/
+Build/
+Debug/
+Generated/
+Static_Code/
+
+.pydevproject
+.sconsign.dblite
+InstallTools.bat
