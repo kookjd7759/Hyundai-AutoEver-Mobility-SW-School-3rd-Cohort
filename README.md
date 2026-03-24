@@ -1734,7 +1734,7 @@
    ③ Parameter Interface 
    ④ Producer-Consumer Interface 
    
-   7. I/O Abstraction 서비스 중에서 특정 핀의 디지털 값을 읽거나, 변경하기 위하여 사용하는 서비스는?
+  7. I/O Abstraction 서비스 중에서 특정 핀의 디지털 값을 읽거나, 변경하기 위하여 사용하는 서비스는?
   ① ADC (analog-to-digital converter) 
   ② DIO (digital input & output) 
   ③ ICU (input capture unit) 
