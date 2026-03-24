@@ -1696,7 +1696,68 @@
    : Size 10의 Nv Data를 기록/읽기 가능한 Application SW-C를 구성, ASW 100ms Task에서 주기적으로 NvM Service 요청을 확인하여 NvM에게 Write/Read 작업을 지시, 완료된 결과를 Single Block Callback을 통해서 얻는다.  
 
 
-
+  ### 이해도 평가
+  '''
+  1. AUTOSAR에 해당하는 것은 무엇인가?
+  ① 자동차 소프트웨어 표준 플랫폼
+  ② 자동차 하드웨어 표준 플랫폼
+  ③ 자동차 소프트웨어/하드웨어 통합 표준 플랫폼
+  ④ 자동차 기능안전 표준 플랫폼 
+  
+  2. mobilgene 플랫폼에 대한 것 중에 틀린 것은 무엇인가? 
+  ① 현대/기아 자동차 AUTOSAR 플랫폼 
+  ② AUTOSAR 통합 개발 환경 제공 
+  ③ 현대모비스에서 개발한 현대/기아 자동차 고유 솔루션 
+  ④ Model-based Design 기능 제공 
+  
+  3. OSEK OS과 AUTOSAR OS 관계 중 맞는 것은 
+  ① OSEK OS과 AUTOSAR OS 동일한 OS임 
+  ② OSEK OS가 AUTOSAR OS를 포함하고 있음 
+  ③ AUTOSAR OS가 OSEK OS를 포함하고 있음 
+  ④ OSEK OS과 AUTOSAR OS는 관련성이 없는 별개의 OS임 
+  
+  4. AUTOSAR 구성 요소가 아닌 것은? 
+  ① Runtime Environment (RTE) 
+  ② Basic Software (BSW) Layer 
+  ③ Micro-controller Abstraction Layer (MCAL) 
+  ④ Java Virtual Machine (JVM) 
+  
+  5. AUTOSAR OS에서 지원하지 않는 기능은 무엇인가? 
+  ① Event 
+  ② Interrupt 
+  ③ Alarm 
+  ④ Monitor 
+  
+  6. Virtual Function Bus (VFB)에서 지원하지 않는 Interface? 
+  ① Client-Server Interface
+   ② Sender-Receiver Interface 
+   ③ Parameter Interface 
+   ④ Producer-Consumer Interface 
+   
+   7. I/O Abstraction 서비스 중에서 특정 핀의 디지털 값을 읽거나, 변경하기 위하여 사용하는 서비스는?
+  ① ADC (analog-to-digital converter) 
+  ② DIO (digital input & output) 
+  ③ ICU (input capture unit) 
+  ④ PWM (pulse width modulation) 
+  
+  8. 다음의 버스 방식 중에서 AUTOSAR에서 지원하지 않는 것은? 
+  ① Automotive Ethernet 
+  ② CAN (controller area network) 
+  ③ LIN (local interconnect network) 
+  ④ I²C (inter-integrated circuit) 
+  
+  9. CAN 버스에서 bus arbitration을 위하여 신호에 사용하는 논리 연산은 무엇인가? 
+  ① AND 
+  ② NOT 
+  ③ OR 
+  ④ XOR 
+  
+  10. AUTOSAR에서 제공하는 Communication stack 중에서 RTE와 signal 인터페이스를 제공하는 모듈은 무엇인가? 
+  ① AUTOSAR COM 
+  ② Generic NM interface 
+  ③ PDU router 
+  ④ State manager
+  '''
 
 
 ---
