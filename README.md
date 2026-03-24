@@ -1665,8 +1665,16 @@
           - 구성 = NV (2), RAM (1), ROM (0~1), Administrative (1)
         3. NVM_BLOCK_DATASET - 여러 개의 NV Block과 Rom Block들로 구성되어 원하는 Block에 read, write  
           - 구성 = NV (1+), RAM (1), ROM (0~N), Administrative (1)  
-    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)    
-    - NvM과 Fee/Ea Block의 연결 관계 : 
+    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)  
+  3. Service Implemented by NvM (From Autosar Spec)  
+    - [기본 구조] : RTE를 통하여 NvM을 사용하기 위해서는 다음의 3가지 방식을 지켜야 함
+      1. Apllication은 NvM의 API를 사용
+      2. Application은 Request의 결과값을 callback을 통하여 받을 수 있다
+      3. NvM에서 Write/Read하는 Ram-block을 접근할 수 있다
+    - [사용 예제]
+      1. Implicit synchronization - Application와 NvM은 RAM Block에 동시에 접근이 가능, Application은 NvM API를 호출해 Ram에 데이터를 읽거나 쓰기를 수행
+      2. Explicit synchronization - NvM은 애플리케이션의 RAM 블록과 데이터를 교환하는데 사용되는 RAM 미러를 정의, 애플리케이션은 RAM 블록에 데이터를 쓰고 NvM 쓰기 API를 호출 -> NvM은 API를 호출해 RAM 미러를 읽고 데이터가 RAM 미러에서 RAM 블록으로, 마지막 NV 블록으로 복사
+      3. Ports and Port Interfaces - Client/Server Interface 이용, 각각의 NVRAM block에 대하여 port를 만들어서 사용
 
 ---
 
