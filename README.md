@@ -1677,8 +1677,23 @@
       3. Ports and Port Interfaces - Client/Server Interface 이용, 각각의 NVRAM block에 대하여 port를 만들어서 사용
 
   #### AUTOSAR MEMORY 실습  
-   : Size 10의 Nv Data를 기록/읽기 가능한 Application SW-C를 구성, ASW 100ms Task에서 주기적으로 NvM Service 요청을 확인하여 NvM에게 Write/Read 작업을 지시, 완료된 결과를 Single Block Callback을 통해서 얻는다.
+   : Size 10의 Nv Data를 기록/읽기 가능한 Application SW-C를 구성, ASW 100ms Task에서 주기적으로 NvM Service 요청을 확인하여 NvM에게 Write/Read 작업을 지시, 완료된 결과를 Single Block Callback을 통해서 얻는다.  
 
+  - **1. 실습 - Native Block 설정**  
+    - [목적] - Native Block 설정 방법 습득
+    - [용도] - 제어기 Application 개발에 필요한 Block 설정 필요
+    - [실습의 방향] - Native Block 설정
+    - [습득한 내용] - Native Block 설정에 필요한 설정 항목들을 이해
+    - [실습 환경] - Odin Tool에서 Ecud_NvM.arxml / Ecud_Fee.arxml 설정
+
+  - **2. 실습 - Native Block 설정**  
+    - [목적] - Redundant Block 설정 방법 습득
+    - [용도] - 제어기 Application 개발에 필요한 Block 설정 필요
+    - [실습의 방향] - Redundant Block 설정
+    - [습득한 내용] - Redundant Block 설정에 필요한 설정 항목들을 이해
+    - [실습 환경] - mobilgene studio에서 Ecud_NvM.arxml / Ecud_Fee.arxml 설정
+
+    
 
 
 
