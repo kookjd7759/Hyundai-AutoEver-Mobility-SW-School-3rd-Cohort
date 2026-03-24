@@ -1652,20 +1652,21 @@
     4. CAN Analyzer를 통하여 전송 받은 CAN 데이터 수신 및 확인
   
   #### AUTOSAR MEMORY  
-  1. Memory Stack Overview 
-    - Memory Stack의 구성 - Memory Stack은 Memory Service, H/W Abstraction Driver Layer로 구성
-    - Memory Basic Software Layers - NvM(NvRam Manager), MemIf(Memory Abstraction Interface), Ea(EEPROM), Eep(External EEPROM Driver), Fee(Flash EEPROM Emulation), Fls(Flash Driver)
+  1. Memory Stack Overview  
+    - Memory Stack의 구성 - Memory Stack은 Memory Service, H/W Abstraction Driver Layer로 구성  
+    - Memory Basic Software Layers - NvM(NvRam Manager), MemIf(Memory Abstraction Interface), Ea(EEPROM), Eep(External EEPROM Driver), Fee(Flash EEPROM Emulation), Fls(Flash Driver)  
   2. AUTOSAR Memory Basic Concept 
-    - Basic Storage Object - NV block, RAM block, ROM block, Administrative block
-    - Block Type 
+    - Basic Storage Object - NV block, RAM block, ROM block, Administrative block  
+    - Block Type  
       - [종류]
         1. NVM_BLOCK_NATIVE - Write시 Ram Block의 Data를 EEPROM에 한 번 저장
           - 구성 = NV (1), RAM (1), ROM (0~1), Administrative (1)
         2. NVM_BLOCK_REDUNDANT - Write시 Ram Block의 Data를 EEPROM에 두 번 저장
           - 구성 = NV (2), RAM (1), ROM (0~1), Administrative (1)
         3. NVM_BLOCK_DATASET - 여러 개의 NV Block과 Rom Block들로 구성되어 원하는 Block에 read, write
-          - 구성 = NV (1+), RAM (1), ROM (0~N), Administrative (1)
-    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)
+          - 구성 = NV (1+), RAM (1), ROM (0~N), Administrative (1)  
+    - NV Block의 종류 - NvM Block(App에서 EEPROM에 읽고 쓰는 논리적인 단위), Fee/Ea Block (물리적으로 EEPROM에 읽고 쓰는 단위)  
+    - NvM과 Fee/Ea Block의 연결 관계 : 
 
 ---
 
