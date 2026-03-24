@@ -1676,6 +1676,14 @@
       2. Explicit synchronization - NvM은 애플리케이션의 RAM 블록과 데이터를 교환하는데 사용되는 RAM 미러를 정의, 애플리케이션은 RAM 블록에 데이터를 쓰고 NvM 쓰기 API를 호출 -> NvM은 API를 호출해 RAM 미러를 읽고 데이터가 RAM 미러에서 RAM 블록으로, 마지막 NV 블록으로 복사
       3. Ports and Port Interfaces - Client/Server Interface 이용, 각각의 NVRAM block에 대하여 port를 만들어서 사용
 
+  #### AUTOSAR MEMORY 실습  
+   : Size 10의 Nv Data를 기록/읽기 가능한 Application SW-C를 구성, ASW 100ms Task에서 주기적으로 NvM Service 요청을 확인하여 NvM에게 Write/Read 작업을 지시, 완료된 결과를 Single Block Callback을 통해서 얻는다.
+
+
+
+
+
+
 ---
 
 </details> <br>  
