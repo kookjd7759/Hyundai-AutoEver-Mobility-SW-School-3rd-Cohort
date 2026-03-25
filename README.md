@@ -1310,7 +1310,7 @@
 <a id="course-13"></a>
 ### 13\. AUTOSAR 기본 <sub>(2026.03.19 ~ 2026.03.24)</sub>  
 > **📝 학습 내용**  
->   
+> AUTOSAR 계층 구조와 개발 프로세스를 이해하고, SW-C 설계 및 RTE 기반 통신(Sender-Receiver, Client-Server)을 구현하였으며, OS(Task 및 Scheduling), CAN 통신, NvM 메모리 등 핵심 기능을 실습을 통해 학습하였다.  
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
