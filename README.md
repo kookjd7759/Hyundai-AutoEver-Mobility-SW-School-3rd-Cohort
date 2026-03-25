@@ -1330,6 +1330,7 @@
     - Premium Partner - Working group의 선도 및 개선
     - Development Partner - 전문 지식 기여
     - Associate Partner - AUTOSAR 표준 사용자  
+      
     | 항목 | Classic AUTOSAR | Adaptive AUTOSAR |
     |-----|-----------------|------------------|
     | 대상 하드웨어 | MCU | MPU |
