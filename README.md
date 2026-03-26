@@ -1821,9 +1821,8 @@
   ② Generic NM interface 
   ③ PDU router 
   ④ State manager
-  ```
-
-
+  ```  
+  
 ---
 
 </details> <br>  
