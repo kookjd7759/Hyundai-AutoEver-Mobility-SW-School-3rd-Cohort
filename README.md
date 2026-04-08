@@ -1831,7 +1831,7 @@
 <a id="course-14"></a>
 ### 14\. 차량용 임베디드 SW 개발 프로젝트 <sub>(2026.03.25 ~ 2026.04.08)</sub>  
 > **📝 학습 내용**  
->   
+> **무인 이동 방지 자동 제어 시스템 VAPS (Vehicle Anti-rollaway Protection System) 개발** - 운전자 부재와 차량 상태를 종합적으로 판단해, 위험 상황에서 경고와 자동 제동을 통해 차량의 무인 이동을 방지하는 차량용 임베디드 시스템을 팀 프로젝트로 개발했습니다.
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
@@ -1844,7 +1844,107 @@
   3. 스마트 선루프 시스템 개발
   4. 차량 자동문 시스템 개발
   5. 소규모 제어 시스템 개발 및 SW 최적화
+  
+  위 5개의 주제 중 5번 주제 **[소규모 제어 시스템 개발 및 SW 최적화]** 를 선정하여 다음과 같이 프로젝트를 진행하였습니다.
 
+  ## 무인 이동 방지 자동 제어 시스템 VAPS (Vehicle Anti-rollaway Protection System)  
+  ### 0. 🔗 Project Repository  
+  
+  [![GitHub Repo](https://img.shields.io/badge/GitHub-VAPS%20Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SW-6-3-3rd-Party/Vehicle_Anti-rollaway_Protection_System)  
+  
+  ### 1. 프로젝트 소개  
+  > VAPS는 **운전자의 부재를 감지하고 차량의 위험 상태를 판단하여, 경고와 자동 제동으로 차량의 무인 이동을 방지하는 시스템**입니다.  
+  > 주차 또는 정차 상황에서 운전자가 차량을 완전히 안전한 상태로 두지 않고 하차했을 때 발생할 수 있는 사고를 줄이기 위해 개발했습니다.
+  
+  <table> <tr> <td>
+        특히 다음과 같은 위험 상황을 대상으로 합니다.
+        <br /><br />
+        - D/R단 상태에서 하차 시도<br />
+        - N단 상태에서 차량 밀림 위험 발생<br />
+        - 운전자 부재 상태에서 차량 이동 발생<br />
+        - 경고 및 제어 이력의 기록과 모니터링 필요 상황
+      </td> </tr> </table>
+  
+  ### 2. 프로젝트 목표  
+  - 운전자 하차 후 차량 오동작 사고 예방
+  -  위험 상황의 신속한 감지 및 판단
+  - 경고 및 자동 제동을 통한 즉각 대응
+  - 운전자, 보행자, 주변 차량의 안전 확보
+  - 실시간 모니터링 및 사고 기록 체계 구축
+  
+  ### 3. 주요 기능  
+  
+  | 구분 | 내용 |
+  | --- | --- |
+  | **3-1. 운전자 부재 감지** | **도어 상태 감지**: 운전석 도어의 열림/닫힘 상태를 실시간으로 감지<br/>**시트 착좌 감지**: 압력 센서를 통해 운전자 탑승 여부 확인<br/>**ToF / 초음파 보완 감지**: 단일 센서 오작동을 줄이기 위해 거리 센서 기반 교차 검증 수행 |
+  | **3-2. 차량 이동 감지 및 위험 판단** | **엔코더 기반 바퀴 회전 감지**로 차량 이동 여부 확인<br/>**IMU 가속도 기반 이상 움직임 감지**<br/>현재 **기어 상태(P/R/N/D)** 와 이동 상태를 종합해 위험 수준 산출 |
+  | **3-3. 자동 제동 제어** | 운전자 부재 + 차량 이동 조건에서 **자동 제동 개입**<br/>**FORCE / HOLD 제어**로 강한 제동 후 정지 상태 유지<br/>운전자 착석 + 도어 닫힘 조건 충족 시에만 안전하게 해제 |
+  | **3-4. 상태 표시 및 모니터링** | **LCD**를 통한 차량 상태 / 경고 / 제동 상태 표시<br/>**LED / 부저 / 음성 알림**을 통한 시청각 경고<br/>**Raspberry Pi 기반 모니터링 시스템**으로 이벤트 수신, 저장, 조회, 웹 표시 지원<br/>경고 및 제어 이력을 기록하여 사후 분석 가능 |
+  
+  ### 프로젝트 시연  
+  #### 모듈 별 기능  
+  <div align="center">
+    <table>
+      <tr>
+        <td align="center" width="50%">
+          <img src="https://github.com/user-attachments/assets/b05058ea-9dbb-491b-bc40-56e8bcf4767a" width="100%" alt="모듈 별 기능 1" />
+        </td>
+        <td align="center" width="50%">
+          <img src="https://github.com/user-attachments/assets/5d2bcb48-3fa2-4528-b4e8-e230ee358ad8" width="100%" alt="모듈 별 기능 2" />
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="50%">
+          <img src="https://github.com/user-attachments/assets/b6659007-8f73-41ff-95cc-3f60c522eee3" width="100%" alt="모듈 별 기능 3" />
+        </td>
+        <td align="center" width="50%">
+          <img src="https://github.com/user-attachments/assets/c855f3de-2776-4ace-95bb-d466af995c52" width="100%" alt="모듈 별 기능 4" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  #### 시연 영상  
+  ---  
+  <div align="center">
+  
+  [![YouTube Demo](https://img.shields.io/badge/YouTube-Demo-red?logo=youtube&logoColor=white&style=for-the-badge)](https://youtube.com/watch?v=FU-7IzhxiU4&feature=youtu.be)
+  
+  </div>  
+  
+  ---  
+  
+  
+  ## 4. 시스템 구성
+  
+  본 시스템은 4개의 주요 ECU/보드로 구성됩니다.
+  
+  - **MAIN (TC375)** - 운전자 존재 판정, 위험 판단, 제어 명령 생성
+  - **ACT (TC375)** - 모터 구동, 브레이크 동작, 차량 속도 계산
+  - **CLU (TC275)** - LCD / LED / 부저를 통한 경고 및 상태 표시
+  - **RPi (Raspberry Pi 4)** - UART 기반 이벤트 수신, 로그 저장(SQLite), 웹 모니터링(Flask), LED / MP3 알림
+  
+  ### 시스템 설계도
+  
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/842e7c62-c840-4845-8f94-0df7ce30e2a6" width="90%" alt="시스템 설계도" />
+  </p>
+  
+  ### 전체 시스템 아키텍처
+  
+  > VAPS를 구성하는 보드, 센서, 출력 장치의 전체 구조와 역할을 나타낸다.
+  
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/04e6e478-64e8-4e7c-9d1b-3021b37a11eb" width="90%" alt="전체 시스템 아키텍처" />
+  </p>
+  
+  ### 네트워크 아키텍처
+  
+  > ECU 간 제어·상태 데이터가 CAN과 UART를 통해 전달되는 통신 구조를 나타낸다.
+  
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/567ec0e9-eb97-4dd8-80f1-cb83f7634447" width="90%" alt="네트워크 아키텍처" />
+  </p>
 
 ---
 
