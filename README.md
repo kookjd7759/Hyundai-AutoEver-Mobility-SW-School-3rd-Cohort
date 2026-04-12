@@ -1850,7 +1850,7 @@
   ## 무인 이동 방지 자동 제어 시스템 VAPS (Vehicle Anti-rollaway Protection System)  
   ### 0. 🔗 Project Repository  
   
-  [![GitHub Repo](https://img.shields.io/badge/GitHub-VAPS%20Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SW-6-3-3rd-Party/Vehicle_Anti-rollaway_Protection_System)  
+  [![GitHub Repo](https://img.shields.io/badge/GitHub-VAPS%20Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kookjd7759/Vehicle_Anti-rollaway_Protection_System)  
   
   ### 1. 프로젝트 소개  
   > VAPS는 **운전자의 부재를 감지하고 차량의 위험 상태를 판단하여, 경고와 자동 제동으로 차량의 무인 이동을 방지하는 시스템**입니다.  
