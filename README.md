@@ -2095,6 +2095,71 @@
   - TDMA 기반 충돌 회피 : ECU 마다 조금의 시간 차를 두고 전송하여 동시에 전송되어 우선순위 경쟁을 통한 지연을 최소화
   - 일반적인 CAN 통신은 주기적인 통신을 사용, 통신 주기가 짧을 수록 우선순위가 높음 일반적으로 실시간 Deadline은 통신 주기
 
+  #### Bit stuffing  
+  - Bit stuffing : 동일한 값이 5번 반복되는 다른 값의 신호를 추가
+  - Error frame 및 Overload Frame : Bit stuffing 사용하지 않고 6개의 연속된 우성 비트를 전송
+  - Bit Stream Coding : NRZ(Non-Return-to-Zero), Manchester Code
+  - 클럭 동기화 및 Stuff bit는 CAN Controller가 처리
+  - CAN CRC Issue : 왼쪽 stuff bit를 data bit로 인식하고 오른쪽 Data bit를 Stuff 비트로 인식, Data 중 일부에 별도의 오류 검출 고드를 추가하여 해결
+  
+  
+  
+  ### CAN 프레임  
+  #### Property  
+  - Frame Types : DATA, Remote, Error, Overload
+  - Data frame is composed of seven different bit field
+    1. Start of Frame - 항상 1개의 우성 비트로 Frame의 전송 시작을 알림
+    2. Arbitration Field - Identifier는 ID로 우선 순위 경쟁에 사용
+    3. Control Field - Reserved Bit는 항상 우성, Data Len은 데이터 길이
+    4. Data Field - DLC 설정에 따라 0~8 byte 크기
+    5. CRC Field
+    6. ACK Field - 송신 노드는 ACK Slot이 우성이 되지 않으면 오류로 판단
+    7. End of Frame - Data 및 Remote 는 7개의 열성 비트로 끝나야 함
+  - Remote Frame : 수신 노드가 Remote Frame을 전송하여 전송 노드가 특정 데이터를 송신하도록 할 수 있음
+  - Error Frame
+    - Superposition of Error Flags - 에러를 감지한 노드가 전송하는 영역
+    - Error Delimiter - 8개의 연속된 열성 비트
+  - Overload Frame : 다음 통신 프레임의 전송을 지연시키기 위한 프레임, 수신 노드 내부의 다음 메시지 전송 지연이 필요한 경우 전송됨
+  
+  #### Glossary  
+  - LS(Low Speed)-CAN : 최대 125Kbps, 한 가닥의 선으로 통신
+  - HS(High Speed)-CAN : 최대 1Mbps, 두 가닥의 CAN_H 및 CAN_L 차등 신호를 사용
+  - Trunk : Main Bus를 의미
+  - Stub : Main Bus에서 분기한 CAN 통신 라인을 의미
+  - Local CAN : 특정 제어기가 단독으로 사용하는 CAN으로, 다른 제어기에 영향을 주지 않음
+  - P-CAN : Powertrain 도메인에 속한 제어기를 연결하는 HS-CAN
+  - C-CAN : Chassis 도메인에 속한 제어기를 연결하는 HS-CAN
+  - M-CAN : Multimedia 도메인에 속한 제어기를 연결하는 LS-CAN
+  - B-CAN : Body 도메인에 속한 제어기를 연결하는 LS-CAN
+  - Gateway : CCU 라고도 불리며, 다양한 종류의 통신을 연결해주는 장치
+
+
+
+  ### CAN Error 처리 및 CAN 2.0B  
+  #### CAN 데이터 보호  
+  - 데이터 보호를 위해 Error 발생시 재전송
+  - Bit Monitoring : 자신이 전송한 비트와 다시 읽은 비트의 값이 같은지 체크
+  - Stuffing Error : 5개의 동일한 비트 수신 후 반전 비트가 없으면 에러
+  - Form Error : 수신한 CAN Frame이 표준 Frame과 다른 경우
+  - CRC Error : 계산된 CRC Checksum과 수신된 CRC Checksum이 다른 경우
+  - Acknowledgement Error : ACK을 대기하고 전송되지 않으면 재전송
+
+  #### CAN Error 처리  
+  - CAN 노드의 상태
+    - Error Active : 에러가 없는 정상 상태
+    - Error Passive : 에러가 있을 수도 있는 상태
+    - Bus Off : 버스에서 배제된 상태
+  - Error Handling : 에러 카운터 값에 따라 위 3개의 상태로 천이
+  - Error Frame
+    - Superposition of Error Flags : 에러를 감지한 노드가 전송되는 영역
+    - Error Delimiter : 8개의 연속된 열성 비트
+
+  #### CAN 2.0B  
+  - 확장된 29비트 ID 제공
+  - CAN 2.0A : Standard Frame만 지원
+  - CAN 2.0B : Standard 및 Extended Frame 지원
+  
+
 
 
 
