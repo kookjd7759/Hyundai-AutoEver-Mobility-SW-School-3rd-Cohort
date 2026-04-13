@@ -1960,7 +1960,7 @@
 
 ---
 
-  ### 차량 도메인별 통신 요구 사항 및 Error 검출 방법  
+  ### 차량 도메인별 통신 요구 사항  
   #### 차량 통신 개요  
   - 차량 내 늘어나는 전자 장치의 연결 : 제어 시스템과 센서의 정보 교환 필요, 점 대 점 배설, 원료비, 생산 시간, 신뢰성 문제 증가
   - 통신을 이용한 제어 시스템 연결
@@ -2025,6 +2025,9 @@
   - 표준 Ethernet 개요 : 인터넷 분야에서 널리 사용되어 기술 성숙도가 높음, 100Mbps, 100Gbps, 100Gbps 등 고속 통신 지원, 최대 1518Bytes 데이터 전송 가능
   - Automotive Ehternet : 표준 Ethernet을 차량에 맞게 수정하여 배선 축소 및 EMI/EMC 성능 개선, Ethernet은 Switch와 1대1 연결로 충돌이 없음
 
+
+
+  ### 통신 기초 및 Error 검출 방법  
   #### 통신 기초  
   - 직렬 통신 : 하나의 통신 선에서 한 번에 하나의 데이터 신호를 연속적으로 전송, 데이터가 계속되어 전속되면 각 비트를 구별할 방법이 필요
     - 장점 - 저비용, 쉬운 구현
@@ -2159,6 +2162,102 @@
   - CAN 2.0A : Standard Frame만 지원
   - CAN 2.0B : Standard 및 Extended Frame 지원
   
+
+  
+  ### CAN 통신 클럭 동기화  
+  #### Nomical bit time 및 클럭 동기화 필요성  
+  - CAN 통신의 비트 시작 타이밍 동기화 방법 : CAN bus가 idle 상태이고, 송신 노드가 CAN 프레임을 전송, 수신 노드는 CAN 프레임의 시작 비트를 수신하면 데이터를 수신하기 시작하여 종료 비트가 들어오면 수신 종료
+  - 버스 길이 제한 : 40m 버스 길이에서 최대 1Mbit/s, 50Kbit/s 에서 최대 1000m 버스 길이, 버스 길이에 따른 bit rate 제한 존재
+  - 명목 비트 타임 (Nominal Bit Time) : 설계자가 네트워크의 비트 타임에 명목적으로 할당하기 원하는 값
+  - Crystal Oscillator : 크리스탈은 자신이 보유한 고유 주파수만 통과시키는 특성을 가져 외부에 특정 대역의 주파수 신호를 생성기의 필요 여부에 따라 Quartz crystal resonator 및 Quartz crystal oscillator로 구분
+  - Quartz crystal resonator : MCU 등은 내부의 발진회로로 제공, 가격이 저렴하고 정밀한 클럭 설정이 가능
+  - Quartz crystal oscillator : 클럭 발진기를 포함하고 있어 전원을 인가하면 클럭 신호가 발생됨
+  - TC275 CAN 통신 속도 설정
+    - FDR - f_CAN = fA
+    - CAN_NBTRx - x번 노드의 비트 타이밍 설정 레지스터
+    - Clock Drift
+  - 클럭 동기화 필요성 : 통신에 참여하는 노드들의 통신 속도를 오차 범위 이내에서 맞출 필요가 있음
+
+  #### CAN 통신 클럭 동기화 기법  
+  - Clock Synchronization : 서로 다른 클럭을 동일하게 맞추는 것, 비동기 통신을 위해 통신 속도등을 맞추어야 함
+    - Offset Correction - 클럭의 시작 지점을 맞추는 것
+    - Rate Correction - 클럭 frequency를 맞추는 것
+  - CAN Start of Frame : Idle 상황에서 CAN에 데이터를 송신하는 경우 열성에서 우성으로 엣지가 발생
+  - CAN 통신에서 신호의 값이 변경되는 시점에 수신 노드는 버스에 전송된 Bit 신호 값의 Edge를 자신의 내부 Bit Time과 비교할 수 있음
+  - Hard Synchronization : 버스에 전송된 데이터의 Edge에 맞춰 내부 Bit time을 재시작
+  - 비트 재동기화(Bit re-synchronization) : SOF 비트가 아닌 비트 값이 변화되는 Edge에서 수행
+  - 동기화 규칙
+    1. 하나의 bit time에는 한가지 동기화만 적용
+    2. 이전 Sampling Point 의 값과 다른 값이 감지된 Edge만 동기화에 사용
+    3. 하드 동기화는 Bus Idle인 동안 열성에서 우성으로 변경되는 경우 적용
+    4. 위 1,2를 준수하는 열성에서 우성에서 변경되는 Edge는 재동기화에 사용
+  - 클럭 동기화 시점 : 신호의 값이 변화하는 Edge에서 동기화 수행, 동일한 값이 5 비트 연속되는 경우 반전 비트 추가
+  - Synchronization Jump Width : 재동기화에 의해 PHASE_SEG1은 길어질 수 있고, PHASE_SEG2는 짧아질 수 있음
+  - 비트 재동기화 : e > 0인 경우
+  - Propagation Delay : CAN 우선순위 경쟁을 위해 가장 멀리 있는 두개의 노드간에 하나의 Bit time 내에 Bit 값을 주고 받을 수 있어야 함, 가장 멀리 있는 노드간 신호를 전달받는데 걸리는 시간
+  - Limitation of Bit rate : 버스 길이에 따른 bit rate 제한 
+
+
+
+  ### CAN 기반 통신 서비스  
+  #### CAN DB 및 COM(Communication)  
+  - CAN DB : 각 제어기가 송수신하는 메시지의 ID 및 해당 메시지의 각 시그널에 대한 정보를 정의
+  - CAN 통신 Signal : 여러 개의 Signal이 하나의 CAN 메시지의 데이터에 정의, Application에서는 시그널을 기반으로 제어하며 COM 모듈에서 시그널을 모아 CAN 메시지로 전송
+  - Transmission Mode
+    - Direct Transmission Mode : 요청하는 즉시 메시지를 전송하는 모드
+    - Direct Transmission mode with min delay time
+    - Periodic Transmission mode
+    - Mixed Transmission mode
+  - Transmission Deadline monitoring : 송신 노드에서 요청한 메시지 전송이 정해진 시간 내에 완료되었는지 모니터리으 모든 Transmission Mode에서 사용 가능
+  - Reception Deadline monitoring : 주기적으로 전송되는 메시지가 주어진 시간 내에 수신되는지 모니터링
+
+  #### 진단통신 (UDS 및 OBD)  
+  - 법규 통신 (OBD 2, SAE J1979) : 법규에서 명시된 항목을 진단기로 확인하기 위한 통신 표준
+  - UDS (Unified Diagnostic Services) : 차량 진단을 위한 통신 표준
+  - CAN Transport Protocol (TP) : 진단 통신은 8Byte보다 큰 데이터 송수신이 필요, 진단 통신은 CAN TP 상위 계층에서 지원
+  - Data Stream : Single Frame 및 Consecutive Frame 으로 나누어짐
+  - CAN TP Frame Format : Single Frame, First Frame, Consecutive Frame
+  - Flow Control Message format : Flow Control의 목적은 consecutive frame이 너무 빠르게 전송되어 수신 노드의 버퍼 오버플로우를 방지
+    - FS (Flow Status) - Parameter가 전송 network entity가 메시지 전송을 진행할 수 있는지 여부
+    - BS (Block Size) - 블록 당 consecutives frames의 절대 값
+    - STmin - consecutive frame의 전송 사이에서 허용되는 최소 시간 간격
+  - 법규 진단통신 F1979
+    - 진단 통신 CAN ID - 제어기 별로 요청 및 응답 CAN ID가 정해져 있음
+    - Frame Format - 각 동작 모드마다 Frame Format이 정해져 있음
+    - 법규 진단 통신의 PID는 J1979DA에 정의되어 있음
+  - UDS Dataidentifer 정의 : 법규 통신은 제조사에 독립적으로 동작해야 함, UDS는 제조사별로 필요에 의해 개발할 수 있음
+
+  #### CCP (CAN Calibration Protocol)  
+  - XCP (Universal Measurement and Calibration Protocol) : ECU 파라미터 계측 및 캘리브레이션을 위한 프로토콜, ECU 동작 중 메모리에 있는 변수를 읽거나 변경할 수 있음
+  - Variant Coding : 다양한 차량 종류에 대응할 수 있도록 ECU를 프로그래밍 하는 것, 하나의 SW를 용도에 맞게 설정할 수 있어야 함
+  - System Constant : 전처리기를 이용하여 필요한 코드만 남김
+  - Code word : if 문으로 통해 Code word 값에 따라 동작하므로, 모든 코드가 실행 파일에 포함
+  - ECU Calibration 
+    - 전통적 개발 프로세스 - ECU 파라미터 변경시 컴파일 및 플래싱 과정 필수
+    - XCP 프로토콜 기반 개발 프로세스 - 런타임 시점에 ECU 파라미터 변경 가능
+    - 동작 원리
+      - ECU 내의 변수 값 계측 - CAN 통신을 이용해 계측하고자하는 변수 정보 전달
+      - 주행중 ECU 내의 Calivration 변수 값 - CAN 통신 사용
+      - 차량 데이터 생성 - Calibration 툴에서 현재 설정한 변수 값을 바탕으로 Hex 및 DCM 생성
+  - CCP 통신 모델 : Master - Slave 기반 통신, CCP는 최소 두개의 메시지 오브젝트를 필요로 함
+    - Command Receive Object (CRO) - Master가 Slave에게 명령을 전송하기 위해 사용
+    - Data Transmission Object (DTO) - Slave가 Master의 명령에 대한 응답 또는 센서 데이터 전송에 사용
+    - Polling을 이용한 데이터 측정 : 메 측정시 마다 CRO 메시지 송신 후 CRM 응답
+    - CCP DAQ를 이용한 측정 방법 : 미리 측정할 변수 정보를 설정
+    - Object Descriptor Table (ODT) : Master는 Slave에서 수집할 데이터를 초기화 함
+    - DAQ List - DTO 여러개를 포함하고 있으면 ECU내에 여러개를 설정 가능, 동시에 여러개 활성화 가능
+    - A2L 파일 - CCP 연결을 위해 통신 설정 및 ECU 내의 변수 정보를 담고 있는 파일 
+    - CCP 대비 XCP 변경 사항 - Bypass 기능이 추가, 다양한 프로토콜을 지원할 수 있도록 변경됨
+    - CCP 및 XCP on CAN 프레임 구조 차이 - CTP 및 DTO 두 가지 타입 변경
+
+  #### Network Management (NM)  
+  - Network Management : 제어기 Sleep/Wakeup 제어를 위한 프로토콜
+  - AUTOSAR NM 알고리즘 : 네트워크에 참여하는 모든 노드는 브로드 캐스트를 이용해 주기적으로 메시지 전송
+  - CAN 기반 Sleep 제어
+    - 기존 표준 CAN Network - 메시지 전송 시 전체 제어기 Wakeup
+    - Partial CAN Network - 메시지 전송 시 개별 제어기 on/off 가능
+
+
 
 
 
