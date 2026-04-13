@@ -5,6 +5,7 @@ Debug/
 Generated/
 Static_Code/
 Library/
+Automation-Results/
 
 .pydevproject
 .sconsign.dblite
