@@ -30,12 +30,12 @@
   <tr>
     <td align="left"><b>01. </b><a href="#course-01">미래 모빌리티 트렌드</a></td>
     <td align="left"><b>08. </b><a href="#course-08">임베디드 리눅스 시스템 프로그래밍</a></td>
-    <td align="left"><b>15. </b><a href="#course-15">차량용 이더넷 통신 이해</a></td>
+    <td align="left"><b>15. </b><a href="#course-15">차량용 통신시스템</a></td>
   </tr>
   <tr>
     <td align="left"><b>02. </b><a href="#course-02">C/C++ 프로그래밍</a></td>
     <td align="left"><b>09. </b><a href="#course-09">임베디드 MCU 프로그래밍</a></td>
-    <td align="left"><b>16. </b><a href="#course-16">차량용 통신시스템</a></td>
+    <td align="left"><b>16. </b><a href="#course-16">차량용 이더넷 통신 이해</a></td>
   </tr>
   <tr>
     <td align="left"><b>03. </b><a href="#course-03">모던 C++</a></td>
@@ -1845,7 +1845,7 @@
   4. 차량 자동문 시스템 개발
   5. 소규모 제어 시스템 개발 및 SW 최적화
   
-  위 5개의 주제 중 5번 주제 **[소규모 제어 시스템 개발 및 SW 최적화]** 를 선정하여 다음과 같이 프로젝트를 진행하였습니다.
+  위 5개의 주제 중 자유 주제 분야인 5번 주제 **[소규모 제어 시스템 개발 및 SW 최적화]** 를 선정하여 다음과 같이 프로젝트를 진행하였습니다.
 
   ## 무인 이동 방지 자동 제어 시스템 VAPS (Vehicle Anti-rollaway Protection System)  
   ### 0. 🔗 Project Repository  
@@ -1951,7 +1951,7 @@
 </details> <br>  
 
 <a id="course-15"></a>
-### 15\. 차량용 이더넷 통신 이해 <sub>(2026.04.09 ~ 2026.04.15)</sub>  
+### 16\. 차량용 통신시스템 <sub>(2026.04.09 ~ 2026.04.15)</sub>  
 > **📝 학습 내용**  
 >   
 
@@ -1960,6 +1960,72 @@
 
 ---
 
+  ### 차량 도메인별 통신 요구 사항 및 Error 검출 방법  
+  #### 차량 통신 개요
+  - 차량 내 늘어나는 전자 장치의 연결 : 제어 시스템과 센서의 정보 교환 필요, 점 대 점 배설, 원료비, 생산 시간, 신뢰성 문제 증가
+  - 통신을 이용한 제어 시스템 연결
+  - 차량 배선은 엔진 및 샤시 다음으로 비싸고 무거움
+  - CAN 통신 : 여러 장치들이 하나의 버스 라인에 연결되어 데이터를 주고 받는 실시간 통신 프로토콜
+  - FlexRay : Steer-by-wire 및 brake-by-wire를 위해 좀 더 신뢰성 있는 통신이 필요하여 CAN의 ID 기반 우선순위 경쟁으로 인한 지연 문제 개선을 위해 TDMA 기법을 활용
+  - LIN : 1가닥의 통신 선만 사용, 단일 마스터 통신으로 버스 충돌 방지
+  - CAN FD : 기존 CAN 통신 표준을 이용하며 속도만 빠른 새로운 통신
+  - Automotive Ethernet : 고속/대용량 통신이 가능, 1쌍의 UTP로 차량 EMC 조건 만족
+
+  #### 차량 도메인별 및 통신 요구 사항  
+  - Distributed Architecture : Central Gateway를 중심으로 파워트레인, 샤시, 바디, 멀티미디어, ADAS 등의 각 도메일 별 네트워크 구성
+  - Powertrain : 동력 발생 장치에서 실제로 일하는 부품까지 동력을 전달하는 장치를 포함하여 지칭
+  - Chassis : 차량 하중을 지탱하는 프레임워크
+  - Body & comfort : 사용자의 편의성 및 감성 품질을 높이는 기능 (실내 조명, 전조등, 창문 제어 등)
+  - ADAS : 운전자 주행 보조 역할 수행
+  - HMI : Human Machine Interface, 차량과 운전자 간 상호작용
+  
+  #### 차량 E/E 아키텍처  
+  - 과거 차량은 동력 성능, 안전, 편의 중심이었다면 최근 차량은 스마트 홈, IoT 장치, 무선 단말 등과 같은 편의성 제공 및 단순한 이동 수단이 아닌 새로운 경험을 제공할 수 있는 개인 공간으로서의 요구사항이 커지짐
+  - SDV : Software Defined Vehicle : 소프트웨어로 하드웨어를 제어하고 관리하는 자동차
+  - E/E 아키텍처 변화 : SDV를 위한 기존 E/E 아키텍처의 변화가 요구되고 있음, 비용과 위험 부담을 줄이기 위해 단계적 추진함, 전통적 E/E 아키텍처는 정보 공유 시간이 오래 걸리고 CAN DB와 같은 Signal 기반의 통신 방식을 사용하여 동적으로 새로운 기능을 추가하거나 대응하는게 어려움
+  - Signal Oriented Communication : CAN DB, Fibex 등 ID별 시그널을 정적으로 정의, Static 하게 설정되어 개발 및 검증되는 것이 단점 
+  - Domain Centralized Architecture : 고속 통신을 이용한 도메인간 정보 교환
+  - Domain Control Unit : 일반적으로 기존 도메인에서 갖는 기는 중 기존 ECU는 단순 센서 및 엑추에이터 역할을 하고, 통합 제어가 필요한 기능은 DCU에서 수행 (ex. Kefico Vehicle Domain Control Unit)
+  - Vehicle Centralized Architecture : Vehicle Computer를 이용한 통합 제어, Zonal Architecture를 함께 사용하여 배선이 최적화 됨
+  - SOA : Service-Oriented Architecture, 네트워크 상의 통신 프로토콜을 이용해 서비스를 다른 장치에게 제공할 수 있는 소프트웨어 아키텍처, 일반적으로 제공하는 서비스는 조회하고 해당 서비스를 사용할 수 있는 인터페이스 정보를 수신해 해당기능을 네트워크로 활용 가능
+  - SOME/IP : 다양한 운영체제 및 HW를 사용하는 ECU간에 데이터 통신을 위한 미들웨어 솔루션
+  - RPC : Remote Process Call, 운영체제나 HW에 독립적으로 네트워크에 연결되어 있는 다른 컴퓨터의 Process를 원격으로 호출하는 기능
+  - Zonal 아키텍처 : 물리적으로 거리가 가까운 ECU들끼리 클러스터링 구성, 도메인 아키텍처 대비 배선 부게 감소 15~20% 감소
+  
+  #### In-Vehicle Network (IVN) 개요  
+  - CAN 개요 : 최대 1000Kbps 통신 속도, 최대 8Byte 데이터 송수신, CAN 버스를 사용해 어떤 노드도 자유롭게 통신 가능, ID 기반의 우선순위 경쟁을 통한 버스 충돌 방지, 전송 확인 및 오류시 재전송 기능
+    - CAN 트랜시버 : 2가닥의 꼬인 구리선으로 차등 신호를 활용해 신뢰성 확보
+    - CAN 통신은 Event Triggered 방식을 채택 : 어느 제어기나 원할 때 통신을 시작할 수 있음
+    - CAN 통신은 우선순의 경쟁으로 인한 통신 지연이 발생하는 것이 단점
+  
+  - FlexRay 개요 : 최대 254Byte 데이터 크기 및 10Mbps 대역폭 제공, TDMA 기반 시결정적 통신 지원, 통신 사이클을 반복하여 수행
+    - Time Triggered System : 정해진 시간에 정해진 ECU가 데이터 전송
+    - Event Triggered System : 모든 ECU가 원하는 시간에 데이터 전송 가능
+      - 장점 : 충돌 발생 X, 통신 지연 시간이 결정적, 최악 통신 시간 분석에 용이
+      - 단점 : 대역폭 남기 발생 가능
+    - 구성 노드
+      - Host Controller - CPU
+      - Communication Controller - 통신 컨트롤러
+      - Bus Guardian - Time Slot 위배 방지
+      - Bus Driver - FlexRay 트랜시버로 차등 신호 변환
+    - 2개의 채널을 각각 다른 용도로 사용 가능
+    - Communication Cycle
+      - Static segment - Time triggered system
+      - Dynamic segment - Event triggered system
+  
+  - CAN FD 개요 : CAN의 경우 낮은 대역폭 문제가 존재, FlexRay는 일부 고급 차량 위주로 활용되어 등장함
+
+  - LIN 통신 개요 : Local Interconnect Network, 1가닥의 통신 선말 사용해 최대 20Kbps 및 40m 통신 지원, 단일 마스터 통신으로 버스 충돌 방지
+    - LIN 통신은 1가닥 통신 배선 사용 - 커넥터 및 배선 비용 감소, CAN 통신과 유사하게 별도의 트랜시버 반도체 활용
+    - 싱글 마스터 기반 통신 - LIN 버스에는 하나의 Master와 복수개의 Slave 연결 가능
+    - CAN으로 연결된 제어기에 연결된 센서 및 엑추에이터 제어에 활용
+  
+  - SENT 통신 개요 : 1대1로 센서 데이터를 ECU로 전달하기 위한 통신 프로토콜, 높은 정밀도의 센서 데이터를 저렴한 가격으로 제공 가능, 별도의 트랜시버 반도체 사용이 필요하지 않음
+
+  - 표준 Ethernet 개요 : 인터넷 분야에서 널리 사용되어 기술 성숙도가 높음, 100Mbps, 100Gbps, 100Gbps 등 고속 통신 지원, 최대 1518Bytes 데이터 전송 가능
+  - Automotive Ehternet : 표준 Ethernet을 차량에 맞게 수정하여 배선 축소 및 EMI/EMC 성능 개선
+
+
 
 
 ---
@@ -1967,7 +2033,7 @@
 </details> <br>  
 
 <a id="course-16"></a>
-### 16\. 차량용 통신시스템 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
+### 15\. 차량용 이더넷 통신 이해 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
 > **📝 학습 내용**  
 >   
 
