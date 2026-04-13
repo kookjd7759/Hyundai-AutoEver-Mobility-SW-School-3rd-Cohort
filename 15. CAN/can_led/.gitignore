@@ -1,0 +1,13 @@
+.ads/
+.settings/
+TriCore Debug (TASKING)/
+
+__connection_failed_report__Controller0_Core0_2025_09_05.txt
+
+Debug/
+Generated/
+Static_Code/
+
+.pydevproject
+.sconsign.dblite
+InstallTools.bat
