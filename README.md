@@ -2259,6 +2259,29 @@
 
 
 
+  ### CAN FD  
+  #### CAN FD 개요  
+  - Make faster without shorten bus length, Easy migration, Overlocking of controller area networks
+  - Overclocked CAN Frame : SOF | Arbitration | CF | Data Len | Data | CRC | ACK | EOF | IMS
+  - Bit time : Required time for transmit/receive one bit data 
+  - Propagation delay must be lower then point of SP
+  - Error occurred by bus length
+  - Prioritization : In order to determine the node transmitting data alone
+
+  #### CAN FD 프레임  
+  - CAN FD Frame Format : BASE, EXTENDED, FD BASE, FD EXTENDED
+  - Frame Types : Data Frame (Start of Frame, single 0 bit), Remote Frame, Error Frame, Overload Frame
+  - CAN FD Extended Format : Composed of seven different bit fields (SRR, Data len, Data, CRC)
+  - CRC for Bosch CAN FD : Choice the CRC method from DLC, bit stream including stuff bits is used for CRC calculation
+  - CAN FD CRC Issue : CAN does not include stuff bit, CAN FD includes stuff bit to prevent this problem. so, Add 3bit stuff bit count, change CRC initial value to '100...0' for G17 and G21
+
+  #### CAN FD bit 요구사항  
+  - CAN Bit Time Switching : Standard and Short CAN Bit time, Bit time at BRS Bit and CRC Delimiter
+  - Transceiver Delay Compensation
+    - Loop delay : All nodes monitor their own transmitted bit to check for bit errors
+    - Once transmission speeds up, Sample Point is faster than Delay and data is not received accurately, transmitted bits are buffered until the SSP is reached, Compare with the actual value for bit errors
+
+
 
 
 
