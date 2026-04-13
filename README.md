@@ -1951,9 +1951,9 @@
 </details> <br>  
 
 <a id="course-15"></a>
-### 16\. 차량용 통신시스템 <sub>(2026.04.09 ~ 2026.04.15)</sub>  
+### 15\. 차량용 통신시스템 <sub>(2026.04.09 ~ 2026.04.15)</sub>  
 > **📝 학습 내용**  
->   
+> 차량 도메인별 통신 요구사항을 바탕으로 CAN·LIN·FlexRay·CAN FD·Automotive Ethernet의 특성과 활용 목적을 학습하고, CAN 메시지 송수신·버스 분석·ID 필터링·CAN DB 설계·진단 통신·게이트웨이 실습을 통해 차량용 통신 시스템의 구현 흐름을 익힘  
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
@@ -2355,6 +2355,45 @@
 
 
   **실습**  
+  ### 차량 통신 시스템 실습
+  - [실습 환경]
+    - Board - Infineon TC375 Lite Kit V2
+    - MCU - TC375TP
+    - Peripheral Shield - Yurobot Easy Module Shield V1
+  - [개발 환경]
+    - IDE - AURIX Development Studio
+    - Compiler - TASKING VX-Tools
+    - Debugger - UDE (Universal Debug Engine)
+    - Serial Communication : Putty
+    - CAN Monitoring : NGV_CAN
+
+  #### 1. 프로젝트 빌드 및 UDE를 이용한 디버깅 실습  
+
+
+  #### 2. CAN 통신을 활용한 메시지 송수신  
+
+
+  #### 3. CAN BUS 실습  
+
+
+  #### 4. CAN ID 필터링 예제 및 실습  
+
+
+  #### 5. CAN DB 설계 및 실습  
+
+
+  #### 6. 진단 통신 설계 및 실습  
+
+
+  #### 7. CAN 기반 센서 실습  
+
+
+  #### 8. CAN FD 통신을 활용한 메시지 송수신  
+
+
+  #### 9. CAN - CAN FD 게이트웨이 실습  
+
+
 
 
 ---
@@ -2362,7 +2401,7 @@
 </details> <br>  
 
 <a id="course-16"></a>
-### 15\. 차량용 이더넷 통신 이해 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
+### 16\. 차량용 이더넷 통신 이해 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
 > **📝 학습 내용**  
 >   
 
