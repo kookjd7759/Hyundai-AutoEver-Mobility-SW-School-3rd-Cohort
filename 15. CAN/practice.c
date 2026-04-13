@@ -64,3 +64,90 @@ void loop_practice_2(void){
         delay_ms(100);
     }
 }
+
+void loop_practice_3_sender(void){
+    while(1){
+        Can_SendMsg(0x100, "Hello!!!", 8);
+        delay_ms(100);
+    }
+}
+
+void loop_practice_4(void)
+{
+    while(1)
+    {
+        int adcVal = Evadc_readVR();
+        float voltage = (float)adcVal*3.3/4095.0;
+        my_printf("ADC: %d, Voltage: %.2fV\n", adcVal, voltage);
+        delay_ms(100);
+    }
+}
+
+void loop_practice_5(void)
+{
+    while(1)
+    {
+        int adcVal = Evadc_readPR();
+        float voltage = (float)adcVal*3.3/4095.0;
+        my_printf("ADC: %d, Voltage: %.2fV\n", adcVal, voltage);
+        delay_ms(100);
+    }
+}
+
+void loop_practice_6(void)
+{
+    unsigned char CanData[8] = {0, };
+    while(1)
+    {
+        int VoltSen = Evadc_readVR();
+        unsigned int LightSen = Evadc_readPR();
+        CanData[0] = (LightSen & 0xFF00) >> 8;
+        CanData[1] = (LightSen & 0xFF);
+        CanData[2] = (VoltSen & 0xFF00) >> 8;
+        CanData[3] = (VoltSen & 0xFF);
+        my_printf("VoltSen(%d), LightSen(%d)\n", VoltSen, LightSen);
+        delay_ms(200);
+    }
+}
+
+void loop_practice_7(void)
+{
+    volatile int i;
+    while (1)
+    {
+        i = 0;
+        while (i++ < 10)
+        {
+            Can_SendMsg(0x150, (unsigned char *)"ID:0x150", 8);
+            delay_ms(100);
+        }
+
+        i = 0;
+        while (i++ < 10)
+        {
+            Can_SendMsg(0x7FF, (unsigned char *)"ID:0x7FF", 8);
+            delay_ms(100);
+        }
+    }
+}
+
+void loop_practice_8(void)
+{
+    unsigned char tofValue[3] = {0, };
+    unsigned char CanFdData[64] = {0, };
+    int VoltSen = 0; unsigned int LightSen = 0;
+    while (1)
+    {
+        VoltSen = Evadc_readVR();
+        LightSen = Evadc_readPR();
+        CanFdData[0] = (LightSen & 0xFF);
+        CanFdData[1] = (LightSen & 0xFF00) >> 8;
+        CanFdData[2] = (VoltSen & 0xFF);
+        CanFdData[3] = (VoltSen & 0xFF00) >> 8;
+        CanFdData[4] = tofValue[2];
+        CanFdData[5] = tofValue[1];
+        CanFdData[6] = tofValue[0];
+        CanFd_SendMsg(0x300, CanFdData, 32);
+        delay_ms(100);
+    }
+}

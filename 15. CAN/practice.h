@@ -51,3 +51,9 @@
 /*********************************************************************************************************************/
 void loop_practice_1(void);
 void loop_practice_2(void);
+void loop_practice_3_sender(void);
+void loop_practice_4(void);
+void loop_practice_5(void);
+void loop_practice_6(void);
+void loop_practice_7(void);
+void loop_practice_8(void);
