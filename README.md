@@ -2368,31 +2368,79 @@
     - CAN Monitoring : NGV_CAN
 
   #### 1. 프로젝트 빌드 및 UDE를 이용한 디버깅 실습  
-
+  - 실습 프로젝트 Import 
+  - 프로젝트 빌드
+  - 빌드 결과 확인
+  - 실습 프로젝트 구성
+  - 예제 프로그램 실행
+  - 실습 프로젝트 다운로드 및 실행
+  - 예제 프로그램 다운로드 및 실행
+  - 예제 프로그램 테스트
 
   #### 2. CAN 통신을 활용한 메시지 송수신  
-
+  - PCAN View 설치 및 실행 
+  - CAN 인터페이스 연결
+  - PCAN View 메시지 전송
+  - CAN 실습 프로그램 연결 및 실행
+  - CAN 관련 함수 알아보기
+  - ECU -> PC 전송 예시 및 확인
+  - PC - ECU 간 정보 교환 예시 및 확인
+  - PC - ECU 간 정보 교환 실습 및 확인
 
   #### 3. CAN BUS 실습  
-
+  - ECU - ECU 간 정보 교환 예시 및 확인
 
   #### 4. CAN ID 필터링 예제 및 실습  
-
+  - CAN Message RAM 개요
+  - CAN ID Mask 필터링 과정
+  - CAN Filter 설정 관련 함수
+  - CAN ID 필터링 예시 및 확인
+  - CAN ID 필터링 실습
 
   #### 5. CAN DB 설계 및 실습  
-
+  - CAN Signal 소개
+  - CAN 데이터베이스 구성
+  - CAN Signal 변환 과정 예시 및 확인
+  - 가변 저항을 이용한 ADC 예제
+  - 광 센서를 이용한 ADC 예제
+  - CAN DB 설계 실습
+  - CAN DBC 파일 생성 실습
+  - CAN DBC 파일 등록
+  - CANoe 시그널 측정 결과 확인 
 
   #### 6. 진단 통신 설계 및 실습  
-
+  - 진단 서비스 예제
+  - 진단 통신 설계 실습
+  - 센서 데이터 읽기 서비스 실습
+  - 진단 통신 실습
+  - CANoe 진단통신 설정
+  - CANoe 진단통신 결과 확인 
 
   #### 7. CAN 기반 센서 실습  
-
+  - 레이저 센서 개요
+  - 레이저 센서 CAN 프로토콜
+  - ToF 센서 결합
+  - 레이저 센서를 이용한 거리 수신 예제
+  - 레이저 센서를 이용한 LED 제어 실습
+  - CAN Starvation 실습
+  - PCAN-View 설정
+  - 버스 부하 확인
+  - CAN Starvation 예시
+  - PCAN-View 설정 
 
   #### 8. CAN FD 통신을 활용한 메시지 송수신  
-
+  - CAN 인터페이스 연결
+  - CAN FD 관련 함수 확인 알아보기
+  - PC - ECU 간 정보 교환
 
   #### 9. CAN - CAN FD 게이트웨이 실습  
-
+  - Central Gateway
+  - 게이트웨이 실습 HW 구성
+  - 게이트웨이 실습
+  - CAN vs CAN FD 속도 비교
+  - 더미 파일 생성
+  - CAN 속도 측정
+  - CAN FD 속도 측정
 
 
 
