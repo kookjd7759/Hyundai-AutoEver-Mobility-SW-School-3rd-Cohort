@@ -1961,7 +1961,7 @@
 ---
 
   ### 차량 도메인별 통신 요구 사항 및 Error 검출 방법  
-  #### 차량 통신 개요
+  #### 차량 통신 개요  
   - 차량 내 늘어나는 전자 장치의 연결 : 제어 시스템과 센서의 정보 교환 필요, 점 대 점 배설, 원료비, 생산 시간, 신뢰성 문제 증가
   - 통신을 이용한 제어 시스템 연결
   - 차량 배선은 엔진 및 샤시 다음으로 비싸고 무거움
@@ -1992,7 +1992,7 @@
   - RPC : Remote Process Call, 운영체제나 HW에 독립적으로 네트워크에 연결되어 있는 다른 컴퓨터의 Process를 원격으로 호출하는 기능
   - Zonal 아키텍처 : 물리적으로 거리가 가까운 ECU들끼리 클러스터링 구성, 도메인 아키텍처 대비 배선 부게 감소 15~20% 감소
   
-  #### In-Vehicle Network (IVN) 개요  
+  #### In-Vehicle Network (IVN)  
   - CAN 개요 : 최대 1000Kbps 통신 속도, 최대 8Byte 데이터 송수신, CAN 버스를 사용해 어떤 노드도 자유롭게 통신 가능, ID 기반의 우선순위 경쟁을 통한 버스 충돌 방지, 전송 확인 및 오류시 재전송 기능
     - CAN 트랜시버 : 2가닥의 꼬인 구리선으로 차등 신호를 활용해 신뢰성 확보
     - CAN 통신은 Event Triggered 방식을 채택 : 어느 제어기나 원할 때 통신을 시작할 수 있음
@@ -2023,7 +2023,77 @@
   - SENT 통신 개요 : 1대1로 센서 데이터를 ECU로 전달하기 위한 통신 프로토콜, 높은 정밀도의 센서 데이터를 저렴한 가격으로 제공 가능, 별도의 트랜시버 반도체 사용이 필요하지 않음
 
   - 표준 Ethernet 개요 : 인터넷 분야에서 널리 사용되어 기술 성숙도가 높음, 100Mbps, 100Gbps, 100Gbps 등 고속 통신 지원, 최대 1518Bytes 데이터 전송 가능
-  - Automotive Ehternet : 표준 Ethernet을 차량에 맞게 수정하여 배선 축소 및 EMI/EMC 성능 개선
+  - Automotive Ehternet : 표준 Ethernet을 차량에 맞게 수정하여 배선 축소 및 EMI/EMC 성능 개선, Ethernet은 Switch와 1대1 연결로 충돌이 없음
+
+  #### 통신 기초  
+  - 직렬 통신 : 하나의 통신 선에서 한 번에 하나의 데이터 신호를 연속적으로 전송, 데이터가 계속되어 전속되면 각 비트를 구별할 방법이 필요
+    - 장점 - 저비용, 쉬운 구현
+    - 단점 - 병렬 통신 대비 통신 속도가 느림
+  - 병렬 통신 : 여러 개의 통신 선에서 동시에 여러 개의 데이터 신호를 보내는 방법, 데이터 신호 전송을 위해 여러 통신 선이 필요
+    - 장점 - 직렬 통신 대비 통신 속도가 빠름
+    - 단점 - 고비용, 여려운 구현
+  
+  - 데이터 전송 방법
+    - 동기 전송 - 동기 펄스를 사용해 송신자와 수진자의 비트 타이밍을 맞추는 방식, 데이터 통신 선 외에 공통 클럭 펄스를 사용해 데이터의 시작을 식별
+    - 비동기 전송 - 일정한 크기의 데이터에 시작 비트와 종료 비트를 넣어서 구분하여 전송하는 방식, 송신 노드와 수신 노드는 통신 속도가 일치해야 함
+    - Physical Layer - 0, 1을 물리적으로 어떻게 표현할지 정의
+    - EMI - Electromagnetic Interference, 방사된 전자파에 의해 전자 회로에 영향을 미치는 간섭 현상
+    - EMC - Electromagnetic Compatibility, 주어진 전자기적 환경에서 EMI와 같은 원치 않는 전자기적 에너지를 받았을 경우 정상적으로 동작할 수 있는 능력
+    - Ringing - 임피던스가 다른 지점에서 반사 신호 생성
+    - Collision에 의한 송수신 오류 발생 가능
+  
+  #### Parity 이용 Error 검출  
+  - 데이터 단위 : Bit, Byte, Word
+  - Parity Bit : VRC라고도 불리며, UART 등에서 활용, 1비트 오류 검출을 위해 사용
+  
+  #### Checksum 이용 Error 검출  
+  - Checksum : 에러를 검출하기 위해 사용하는 작은 데이터, Parity보다 많은 bit를 사용해 오류 검출 확률을 높이지만, 많은 데이터가 한 번에 변경되는 경우 검출하지 못함
+  
+  #### CRC(Cyclic Redundancy Check) 이용 Error 검출  
+  - CRC(Cyclic Redundancy Check) : 디지털 통신 및 저장 장치에서 에러 검출을 위해 사용, 오류 체크를 위한 CRC 값을 붙여서 전송, 데이터 길이가 동일한 경우 오류 검출 능력이 탁월
+  - ECC : Error Correction Code, 오류 정정코드, 오류를 검출하고 수정할 수 있는 코드르 의미
+  
+  
+   
+  ### CAN 통신 원리  
+  #### OSI 7계층별 CAN 통신 개요  
+  - OSI 계층 : application - presentation - session - transport - network - dataLink - physical
+  - Physical Layer : 데이터 통신을 위한 물리적 신호 및 배선의 정류, 커넥트 등
+  - DataLink Layer : 두 장치 간의 신뢰성 있는 정보 전송을 담당 
+    - CAN 통신에서는 MCU에 내장된 CAN Controller에 의해 수행됨
+  - Network Layer : 여러 개의 네트워크를 거쳐 목적지까지 도달할 수 있도록 노드를 거칠 때마다 경로를 찾아주는 역할
+    - IP 주소 및 DNS
+  - Transport Layer : 패킷을 쪼개서 합치는 역할을 수행, 오류 검출 및 재전송, 흐름제어와 중복 검사 수행
+  - Session Layer : 둘 이상의 통신 장치나 사용자 간의 송수신 연결 상태를 의미
+  - Presentation Layer : 코드 간의 번역을 담당해 데이터의 형식 차이를 변환하지 않도록 함
+    - 바이트 정렬 : 레지스터를 메모리에 저장할 때 연속된 바이트를 어떤 방식으로 저장할 것인지에 대한 방법 (리틀 엔디안, 빅엔디안)
+  - Application Layer : 다양한 응용 서비스 수행
+  
+  - TCP/IP 계층 : Application - TCP/UDP - IP - Ethernet - Physical 
+  - CAN은 데이터 링크 계층까지 사용 : Application - CAN protocol - CAN Physical 
+
+  #### CAN 버스 및 CAN 통신 트랜시버  
+  - CAN Bus : 하나의 버스에 여러개의 ECU가 연결
+  - CAN Frame 구조
+    - SOF | Identifier | RTR | IDE | r0 | Data Length | Data | CRC fileld | ACK | EOF | IMS
+  - CAN 통신 DataLink 계층 : CAN 통신 DataLink 계층은 CAN Controller IC에서 수행,
+    - TXD - CAN BUS로 전송
+    - RXD - CAN BUS에서 수신
+  - CAN Physical Layer : CAN Transceiver IC에 의해 수행, ECU내의 별도의 IC로 장착, 두 가닥의 차등 신호를 사용
+  
+  #### CAN 통신 원리  
+  - 표준 CAN 프레임 : SOF | Arbitration | CF | Data Len | Data | CRC | ACK | EOF | IMS  
+  - CSMA/CD : 미디어 충돌을 감지하여 해결하는 방법, 충돌을 감지하면 랜덤한 시간만큼 대기하여 전송 
+  - CSMA/CR : 충돌이 발생하면 우선순위 경쟁을 통해 해결
+  - 우성/열성 비트 : (1)=우성, (0)=열성의 두 개의 로직 상태가 존재, CAN 버스상에서 우성 비트는 열성 비트를 무시
+  - CAN 프레임 전송 단계
+    1. CAN 프레임 생성
+    2. CAN 전송 - Arbitration Phase (Prioritization, Identifier bit)
+    3. Data Phase (버스 중재가 끝나면 CAN 버스에는 하나의 노드만이 데이터를 전송)
+    4. ACK Phase (ACK slot bit)
+  - 우선 순위 경쟁 : 동시에 Start of Frame을 전송한 노드들 간의 경쟁
+  - TDMA 기반 충돌 회피 : ECU 마다 조금의 시간 차를 두고 전송하여 동시에 전송되어 우선순위 경쟁을 통한 지연을 최소화
+  - 일반적인 CAN 통신은 주기적인 통신을 사용, 통신 주기가 짧을 수록 우선순위가 높음 일반적으로 실시간 Deadline은 통신 주기
 
 
 
