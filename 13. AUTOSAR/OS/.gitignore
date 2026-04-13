@@ -4,6 +4,7 @@ Build/
 Debug/
 Generated/
 Static_Code/
+Library/
 
 .pydevproject
 .sconsign.dblite
