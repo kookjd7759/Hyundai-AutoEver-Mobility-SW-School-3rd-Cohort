@@ -2283,6 +2283,50 @@
 
 
 
+  ### CAN XL 및 10Base-T1S  
+  #### CAL XL 소개  
+  - CAN XL : 최대 20Mbps 및 2048Byte 지원, CSMA/CR, Ethernet 연동 지원, CAN FD와 호환
+  - CAN XL Frame Format : RRS, FDF, XLF, AL1, DH1, DL1, Payload type, SEC, SBC, H_CTC, Virtual CAN ID, AF
+  - CAN XL Transceiver : Data phase에서 모드 Change 가능
+  - Ethernet Tunnelling : CAL XL 프레임 내에 Ethernet 메시지를 담아서 송수신
+
+  #### 10Base-T1S 소개  
+  - 10BASE-T1S : 10Mbps를 지원하는 Ethernet, Bus 토폴로지를 지원하나 stub가 10cm 이내여야 함
+
+
+
+  ### LIN 통신  
+  #### LIN 통신 방식  
+  - Local Interconnect Network (LIN) : 1가닥의 통신 선만 사용, 20Kbps 및 40m 통신, 단일 마스터 통신
+  - LIN 통신 물리 계층 : 1가닥 통신 배선, 커넥터 및 배선 미용 감소, 전압 60% 이상 -> 1 40% 이하 -> 0
+  - LIN 통신 활용 분야 : CAN으로 연결된 제어기의 local 망으로 활용 (ex. 자동차 창문 제어)
+  - 통신 버스 충돌 방지 필요성 : 통신 버스는 여러 개의 노드가 동일한 통신선을 공유하고 있어 두 개의 노드가 서로 다른 데이터를 전송하는 경우 충돌 발생
+    - 방지 기법 - CAN = ID 기반 우선 순위 경쟁, FlexRay = TDMA 기법
+  - LIN 통신 방식 : 싱글 마스터 기반 통신, 하나의 Master와 복수개의 Slave
+  - LIN 클러스터 구성 : 하나의 Master와 복수개의 Slave, 마스터 노드는 Master Task, Slave Task를 가질 수 있으며 Slave는 Slave Task만을 가질 수 있음
+  - LIN 통신 방식 : Master-Slave 통신 
+
+  #### LIN Frame 구성  
+  - LIN Frame Header 구성 
+    - Break field - 새로운 Frame의 시작을 알림
+    - Sync field - 클럭 동기화를 위해 매 bit 마다 신호가 변하는 0x55를 전송
+    - Protected identifier field - Frame ID, Parity
+    - Data field - 0~8 byte 데이터
+    - Checksum 
+  - LIN Frame Type
+    - Unconditonal frame - 마스터가 헤더를 전송하면 생산자에 해당하는 Slave는 항상 응답 메시지를 전송해야 함
+    - Event triggered frame - 자주 발생하지 않는 event에 대해 통신 대역폭을 절약하기 위한 용도, 마스터가 Event 요청을 하면, 해당 Event가 발생한 Slave만 응답
+    - Sporadic frame - 하나의 frame slot을 간헐적으로 전송할 필요가 있는 frame이 공유
+    - Diagnostic frame - 진단을 위한 Frame으로 항상 Transport 계층에서 전송됨
+      - Diagnostic Class 1 - 간단한 디바이스에서 활용, 진단 기능이 필요하지 않거나 아주 적음
+      - Diagnostic Class 2 - Class 1과 유사하나 Identification 서비스가 제공
+      - Diagnostic Class 3 - 복잡한 기능을 수행하는 장치에서 활용, 대다수의 UDS의 기능을 사용
+  - LIN Transport Layer 
+
+
+
+
+
 
 
 ---
