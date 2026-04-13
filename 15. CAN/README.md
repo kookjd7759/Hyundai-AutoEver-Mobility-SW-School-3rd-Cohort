@@ -1,1 +1,3 @@
-- can_led : CAN 메시지를 수신해 ID와 데이터 값에 따라 보드의 LED를 제어하는 차량용 통신 기초 실습 프로젝트
+- practice.loop_practice_1() : ECU -> PC로 500ms 마다 "Hello!!!"를 전송
+- practice.loop_practice_2() : ECU -> PC로 100ms 마다 1씩 값을 증가하여 전송
+- main.Can_RxIsrHandler() : CAN 메시지를 수신해 ID와 데이터 값에 따라 보드의 LED를 제어
