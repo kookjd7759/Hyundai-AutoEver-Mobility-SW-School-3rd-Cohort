@@ -2321,10 +2321,36 @@
       - Diagnostic Class 1 - 간단한 디바이스에서 활용, 진단 기능이 필요하지 않거나 아주 적음
       - Diagnostic Class 2 - Class 1과 유사하나 Identification 서비스가 제공
       - Diagnostic Class 3 - 복잡한 기능을 수행하는 장치에서 활용, 대다수의 UDS의 기능을 사용
-  - LIN Transport Layer 
+  - LIN Transport Layer : LIN은 한번에 최대 8Byte 데이터 전송 가능, 8Byte 이상 데이터를 송수신하기 위해 전송 계층 활용
+    - NAD (Node Address) - 진당 통신용 Slave Address
+    - PCI (Protocol Control Information) - 흐름 제어 정보 제공
+    - LEN - FF (First Frame)인 경우에만 사용
+    - SID (Service Identifier)
+    - Frame slot - 하나의 Frame을 전송하기 위해 할당된 시간
+  - LIN Network Mangement : 저전력 모드 지원을 위한 wakeup 및 sleep 모드 진입 기능, 고장 상태 관리 기능
+    - Slave 통신 다이어그램 - initializing -> operational -> Bus sleep mode -> initializing
+    - Wakeup 시그널 150us 이상 0 전송
+    - Go to sleep - LIN은 Single Master 이므로 CAN NM 처럼 모든 노드가 합의하여 Sleep 모드에 진입하는 것이 불필요함, 마스터가 특정 값을 가지는 메시지를 전송하면 Sleep 모드 진입
+
+  #### LIN Frame 구성  
+  - Status Management : 상태 관리의 목적은 동작 중 오류 검출, 마스터 노드는 모든 노드의 정보를 모니터링하여 특정 노드가 고장이 있는지 확인 가능, Event Triggered Frame 및 이외의 Frame에 대한 에러를 검출함
 
 
 
+  ### SENT 통신  
+  #### SENT 응용 분야  
+  - SENT : 1대1로 센서 데이터를 ECU로 전달하기 위한 통신 프로토콜, 높은 정밀도의 센서 데이터를 저렴한 가격으로 제공, 전용 통신 모듈이 없어도 가능
+    - 장점 : 별도의 트랜시버 IC가 불필요, 1가닥의 통신 배선, 5V와 GND 그리고 통신선 만으로 연결 가능
+    
+  #### SENT 통신 프레임 구성 및 통신 방식  
+  - SENT 통신의 구성 : Synchromization & Calibration, Status & Communcation, Data Nibble Pulse, CRC
+  - Synchromization & Calibration : 클럭을 동기화하기 위해 사용됨
+  - Communcation channel
+    - Fast channel : SENT Frame에 여러 데이터를 포함하여 전송
+    - Slow Channel : Status & Communcation 의 2번째 bit에 1비트씩 전송
+  - Status & Communcation Nubble : Slow channel 전송을 위한 정보 제공
+  - Data Nibble Pulse : 5bit의 Low 신호 이후의 High 신호의 길이를 통해 결정
+  - CRC : 1Bit Error에 대한 검출 기능
 
 
 
