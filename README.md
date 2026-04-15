@@ -8,15 +8,17 @@
       />
     </td>
     <td width="700" valign="top">
-      <strong>Hyundai AutoEver Mobility SW School, 3rd Cohort (현대오토에버 모빌리티 SW 스쿨 3기)</strong><br/>
+      <strong>Hyundai AutoEver Mobility SW School, 3rd Cohort</strong>
+      <sub>(현대오토에버 모빌리티 SW 스쿨 3기)</sub><br/>
       <em>
-        Embedded Software, 6th Cohort (임베디드 SW 6기)
-      </em><br/><br/>
+        Embedded Software, 6th Cohort 
+      <sub>(임베디드 SW 6기)</sub><br/>
+      </em><br/>
       📅 <strong>Dec 2025 – Jun 2026 (Expected)</strong>
     </td>
   </tr>
 </table>
-<br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
 
 ---
 
