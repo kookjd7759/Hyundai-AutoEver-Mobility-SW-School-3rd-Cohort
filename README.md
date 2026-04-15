@@ -1,16 +1,23 @@
-  <img
-    src="https://github.com/user-attachments/assets/38667ebf-0e6a-402c-999d-ee3862cbfa2c"
-    width="120"
-    align="left"
-    hspace="20"
-  />
-  <div>
-    <strong>Hyundai AutoEver Mobility SW School, 3rd Cohort (현대오토에버 모빌리티 SW 스쿨 3기) </strong><br/>
-    <em>&nbsp;Embedded Software, 6th Cohort (임베디드 SW 6기) </em><br/>
-    📅 Dec 2025 – Jun 2026 (Expected)
-  </div>
-  <br clear="left"/>
-</div>
+<table width="860" align="left">
+  <tr>
+    <td width="150" align="center" valign="middle">
+      <img
+        src="https://github.com/user-attachments/assets/8f3e76e6-578f-4611-930e-6addff3babc1"
+        width="92"
+        alt="Hyundai AutoEver Mobility SW School"
+      />
+    </td>
+    <td width="700" valign="top">
+      <strong>Hyundai AutoEver Mobility SW School, 3rd Cohort (현대오토에버 모빌리티 SW 스쿨 3기)</strong><br/>
+      <em>
+        Embedded Software, 6th Cohort (임베디드 SW 6기)
+        <a href="https://github.com/kookjd7759/Hyundai-AutoEver-Mobility-SW-School-3rd-Cohort">🔗 View Details</a>
+      </em><br/><br/>
+      📅 <strong>Dec 2025 – Jun 2026 (Expected)</strong>
+    </td>
+  </tr>
+</table>
+<br> <br> <br> <br> <br> <br>
 
 ---
 
