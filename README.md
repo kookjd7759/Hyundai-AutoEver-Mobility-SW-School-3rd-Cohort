@@ -2525,7 +2525,81 @@
 
   ### Ethernet  
   #### Ethernet  
-  - 
+  - MCU에 내장된 Ethernet Controller : 사용자가 전달한 MAC, Ethertype, Payload(Data)를 전송, CRC 계산, Switch가 목적지 MAC 주소를 참조하여 목적 PORT로 전달
+  - Ethernet Frame Format : Preamble | SFD | Dest/src MAC | 802.1Q Tag | Ethertype or Length | IPG
+
+  #### Media Access Control (MAC)  
+  - CSMA/CD : 스테이션이 채널의 상태를 미리 감지해 충돌을 피하는 방식, 스테이션은 데이터를 전송하기 전에 회선 상태를 점검, 프레임 전송 중 충돌이 발생하면 정해진 최대 시도 횟수만큼 재전송을 시도, 초기 이더넷에서 충돌을 감지하고 해결하는데 사용
+
+  #### VLAN  
+  - LAN : 일반적으로 스위치를 중심으로 연결된 근거리 통신망
+  - 가상 LAN : 동일한 스위치에 견결된 장치들을 논리적으로 분리하여 별개의 네트워크로 나누는 기술
+    - Port-based VLAN : Port 번호에 기반하여 VLAN을 구분
+    - Tagged VLAN : VLAN Tag를 사용해 VLAN을 지정
+    - Protocol-based VLAN : 프로토콜 유형에 따라 LVAN을 구성
+    - MAC-based VLAN : 수신 프레임의 Source MAC 주소를 기준으로 VLAN 할당
+    - VLAN을 지원하는 스위치의 각 포트는 설정 가능 - Access 모드/Trunk 모드/Hybrid 모드
+  - IEEE 802.1Q : 하나의 이더넷 네트워크에서 가상 랜을 지원하는 네트워크 표준
+  - IEEE 802.1p : 이더넷 프레임 내 트래픽 등급에 따라 서로 다른 우선순위를 부여하는 프로토콜
+
+  #### 연결기기  
+  - Ethernet Switch : MAC 주소를 기반으로 특정 노드에게 수신한 패킷을 목적 노드로 전달
+    - 종류
+      1. Managed switch - 네트워크 설정이 가능한 스위치
+      2. Unmanaged switch - 네트워크 설정이 불가능한 스위치
+  - Switch Hub - 스위치와 다르게 MAC 주소 테이블을 저장하지 않음
+  - Network TAP (Test Access Point) : 네트워크 트래픽을 감시하고 분석하기 위한 하드웨어 장치
+  - Wireless Access Point : Wi-Fi, WAP2, WAP3 등의 보안 기능 제공
+
+
+  ### TCP/IP 스택  
+  #### IP  
+  - Network Layer : IP 주소를 이용해 인터넷상의 목적지로 메시지를 전송, 중간 경로에서 메시지 전달은 라우터가 수행
+    - Protocols
+      - ARP (Address Resolution Protocol) - 주소 결정 프로토콜
+      - ICMP (Internet Control Message Protocol) - 인터넷 제어 메시지 프로토콜
+      - IP (Internet Protocol) - 소스로부터 목적지로의 패킷 전달을 담당
+        - IPv4 -  32비트 주소, 4개의  8비트 구간, '.'으로 구분, 10진수 표기
+        - IPv6 - 128비트 주소, 8개의 16비트 구간, ':'으로 구분, 16진수 표기
+        - Type of Communication
+          - Unicast - 특정 IP를 가진 노드에만 전송
+          - Multicast - 해당 멀티캐스트 IP에 명시적으로 가입한 노드로 전송
+          - Broadcast - 모든 노드에게 전송
+      - IGMP (Internet Group Management Protocol)
+    - 라우터 - 컴퓨터 네트워크 간에 데이터 패킷을 전송하는 네트워크 장치
+
+  #### UDP  
+  - UDP 특징 : 비연결형 서비스, 신뢰성 없는 데이터 전송, 신속성
+  - connectionless 통신 - 송신 및 수신 노드는 미리 데이터를 주고 받는 것을 약속하지 않음
+  - 데이터 신뢰성을 보장하지 않음 - 메시지 송신 후 잘 받았는지 확인하지 않음
+  - Checksum - 손상된 패킷이 수신되면 해당 패킷을 버림
+  - Datagram - UDP의 전송 계층 패킷
+  - Process-to-Process Communication : 전송 계층은 프로세스 대 프로세스 통신에 사용
+  - UDP 통신을 위해 Port 번호가 필요
+  - UDP 장점 : 수신을 확인하지 않음, 순서가 동일함을 보장하지 않음
+  - UDP 단점 : 빠르고 효율적, 통신 리소스를 적게 사용, 정확성보다 시민감성이 우선되는 경우에 적함
+  
+  #### TCP  
+  - TCP 특징 : 연결 지향형 프로토콜, 신뢰성 있는 송수신, 흐름 제어 및 혼잡 제어
+  - 3 Way Handshake : TCP는 통신 시작전 먼저 연결함
+  - TCP 소켓 : 연결이 완료된 TCP 소켓은 Sender 및 Receiver사이를 연결하는 스트림을 생성
+  - Sequence# 및 Acknowledge# 를 이용해 신뢰성 있는 송수신 제공
+  - Flow Control : 수신자의 Application이 Rx버퍼를 읽는 속도보다 송신자의 전송하는 시간이 빠른 경우 오버플로우 발생, 수신자의 버퍼 상태를 체크하여 받을 수 있는 만큼의 메시지를 전송
+    - Stop & Wait 기법 - 수신 노드에서 ACK 신호를 수신한 이후 새로운 메시지 전송
+    - Sliding Window 기법 - 최초 통신 연결시 수신자의 시용 가능한 버퍼의 크기를 수신
+  - 재전송 기반 오류 제어 제공 : Go back N 기법, Selective Repeat 기법
+  - Delayed Acknowledge : ACK 메시지 전송에 대한 오버헤드를 줄이기 위해 모아서 ACK을 전송
+  - Congestion Control : 전송 계층이 네트워크의 혼잡을 감지해 제어하는 방법
+    - Slow Start - TCP 연결 시작 시 초기에 전송하는 패킷 수를 제어
+    - AIMD - 송신자는 패킷 손실을 감지할 때마다 송신 속도를 절반으로 줄이고 성공하면 증가
+    - Fast Retransmit
+    - Fast Recovery - 패킷 손실 시에 TCP 연결의 성능을 빠르게 회복하는 방법
+
+  #### Encapsulation 및 Decapsulation  
+  - Encapsulation : 전송 노드는 데이터 전송을 위해 프로토콜 헤더를 추가하여 전송
+  - Decapsulation : 수신 노드는 수신한 데이터를 분석하여 데이터를 사용
+  
+  
 
 
 
