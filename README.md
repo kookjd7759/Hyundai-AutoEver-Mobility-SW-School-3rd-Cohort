@@ -2503,7 +2503,7 @@
 
   ### 차량용 통신 요약 비교  
   #### 통신 기초  
-  - [통신 기초](#communication-basic)
+   15\. 차량용 통신시스템 [통신 기초](#communication-basic)와 동일
 
 
 ---
