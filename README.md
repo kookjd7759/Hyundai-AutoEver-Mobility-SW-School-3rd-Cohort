@@ -2467,6 +2467,43 @@
 ---
 
 
+  ### 차량 통신 개요  
+  #### 차량 통신 개요  
+  - 차량 내 전자 장치의 연결이 필요, 통신을 이용한 제어 시스템 연결, 차량 배선은 엔진 및 샤시 다음으로 비싸고 무거움
+  - CAN 통신 : 여러 장치들이 하나의 버스라인에 연결되어 데이터를 주고 받음
+  - LIN 통신 : 1가닥의 통신선, 낮은 통신 속도와 저렴한 가격, 단일 마스터 통신으로 버스 충돌 방지, 엑추에이터 구동 및 센서 읽기 등으로 활용
+  - FlexRay : CAN의 ID 기반 우선순위 경쟁으로 인한 지연 문제를 TDMA 기법을 활용해 개선
+  - CAN FD : 기존 CAN 통신 표준을 이용하면서 통신 속도는 더 빠름
+  - 멀티미디어용 통신 프로토콜
+    - MOST (Media Oriented System Transport) - 20/50/150Mbps
+    - LVDS (Low Voltage Diffetential Signaling) - 매우 높은 데이터 전속 속도, 무압축 데이터 전송
+  - Ethernet
+    - 장점 - 인터넷 분야에서 널리 사용되어 기술 성숙도가 높음, 개발 툴 및 부품의 가격이 저렴, 100Mbps, 1Gpbs 등 대역폭이 큼, 고신뢰성 어플리케이션에 적용되어 신뢰성이 확보됨
+    - 문제점 - 차량 EMC 조건을 만족하지 못해 쉴드 케이블이 필요, 4가닥의 선을 사용
+
+  #### 차량 E/E 아키텍처  
+  - 전통적인 차량 요구 사항 : 동력 성능, 안전, 편의, 연비, 디자인, 양산 이후 차량 SW 변경 없음
+  - 최근 차량 요구 사항 : 새로운 경험을 제공하는 개인 공간, 스마트 홈, IoT 등 무선 단말들과의 연결 필요, 교통 정보 및 신호 등과의 연결, 개일화된 서비스 제공
+  - SDV (Software Defined Vehicle) : 소프트웨어로 하드웨어를 제어하고 관리하는 자동차
+    - 필요 항목 - Vehicle Centralized Architecture, 고속 백본망을 이용한 다양한 제어기와 Vehicle Computer간의 실시간 데이터 공유 및 제어 기능, OTA 업데이트 기능, 클라우드 서버와 연계
+    - SDV를 위한 E/E 아키텍처 변화 - 교통, 홈, IoT 장치 등이 연결되는 새로운 User Experience를 제공하기 위해 변화 단계적으로 변화될 예정
+  - 전통적인 E/E 아키텍처 : Central Gateway를 중심으로 파워트레인, 샤시, 바디 등의 도메인별 네트워크로 구성, CAN DB와 같은 Signal 기반의 통신 방식을 사용
+  - Signal Oriented Communication : CAN DB, Fibex 등 ID별 시그널을 정적으로 정의. static 하게 설정되어 개발 검증 됨
+  - Service Oriented Architecture : 네트워크 상의 통신 프로토콜을 이용해 서비스를 다른 장치에게 제공, 일반적으로 제공하는 서비스는 조회하고, 해당 서비스를 사용할 수 있는 인터페이스 정보를 수신하여 해당 기능을 네트워크로 활용할 수 있음
+  - SOMP/IP : Scalable service Oriented MiddlewareE Over IP, 다양한 운영체제 및 HW를 사용하는 ECU간에 데이터 통신을 위한 미들웨어 솔루션
+  - RPC (Remote Process Call) : 운영체제나 HW에 독립적으로 네트워크에 연결되어 있는 다른 컴퓨터의 Process를 원격으로 호출하는 기능
+  - Domain Centralized Architecture : 고속 통신을 이용한 도메인간 정보 교환
+  - DCU (Domain Control Unit) : 고속의 Ethernet으로 연결되어 다양한 도메인의 정보를 빠르게 처리
+    - ex. Kefico Vehicle DCU - 하이브리드 제어 및 SBW 제어 기능 통합
+  - Vehicle Centralized Architecture : Vehicle Computer를 이용한 통합 제어, 고성능 Vehicle Computer가 지역별로 배치된 Zone Control Unit의 정보를 수집하여 통합 제어, TSN 기반의 Backbone 네트워크 적용
+  - Zonal 아키텍처 : 물리적으로 거리가 가까운 ECU들끼리 클러스터링
+
+
+
+  ### 차량용 통신 요약 비교  
+  #### 통신 기초  
+  - [통신 기초](#통신-기초)
+
 
 ---
 
