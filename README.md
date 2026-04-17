@@ -2466,6 +2466,8 @@
 
 ---
 
+  **이론**  
+
   ### 차량 통신 개요  
   #### 차량 통신 개요  
   - 차량 내 전자 장치의 연결이 필요, 통신을 이용한 제어 시스템 연결, 차량 배선은 엔진 및 샤시 다음으로 비싸고 무거움
@@ -2601,6 +2603,230 @@
   
   
 
+  ### Physical Layer  
+  #### Standard Ethernet Physical Layer  
+  - CAN vs Ethernet : Clock 동기화 및 디코딩 기능은 PHY에서 수행, 디코딩된 정보를 MII (동기 통신)으로 MAC 전송
+  - 100BASE-TX Bit Encoding
+    - 4B/5B Encoding - 0또는 1이 특정 시간 이상 연속되어 전송되지 않도록 4Bit 코드를 5Bit로 변경하여 전송
+    - Scrambler : 전송 비트열을 무작위화하여 전이 발생하도록 함
+    - MLT-3 방식 : -1, 0, +1로 3진 코드를 사용해 1을 만나면 신호 반전
+  - Clock Recovery : Start Of Frame을 이용한 Hard Synchronization 수행
+  - Hard Synchronization : 버스에 전송된 데이터의 Edge에 맞춰 내부 Bit time을 재시작, 결과적으로 내부 Bit time은 버스에 전송된 SYNC_SEG와 동일한 시점에 시작하도록 강제로 맞춤
+  - 비트 재동기화 (Bit re-synchronization) : SOF 비트가 아닌 비트 값이 변화되는 Edge에서 수행됨, 동일한 값이 5Bit 연속되는 경우 반전 비트 추가
+
+  #### Automotive Ethernet Physical Layer  
+  - 100BASE-T1
+    - 100BASE-TX이 차량 적용 문제점 - 차량 EMC 조건 불만족 문제 개선, 2쌍의 UTP 케이블이 필요해 비쌈
+    - BroadR-Reach - 1쌍의 UTP 케이블로 100Mbps Full-Duplix 구현
+  
+  - 1000BASE-T1
+    - RS-FEC - (450, 406) 코드 기반 에러 정정
+    - Hamming code - 데이터 전송 시 1비트의 에러를 정정할 수 있는 ECC의 일좀
+    - 1000BASE-T1은 항상 4050 Bit 단위로 송수신
+  
+  - 10BASE-T1S
+    - 2020년 기준 차량읜 90%이상은 10Mbps 보다 훨씬 적은 속도를 사용, Ethernet을 10Mbps 속도로 낮추고 가격을 100Base-T1 대비 50% 이하로 개발해 기존의 CAN, CAN FD, FlexRay를 대체하는 것을 목표로 함
+    - 장점 
+      1. 멀티 드랍 방식을 사용 - 최대 25m 버스에서 10cm 이하의 stub 지원
+      2. PHY 디자인 복잡도를 낮춰 PHY 가격 저렴 - Half duplex만 사용, Low speed and DME 사용
+      3. PLCA를 활용한 충돌 방진
+      4. 별도의 Gateway없이 스위치 기반 Ethernet 메시지 전달 가능
+      5. 10Mbps 전속 속도로 인한 전력 소모 낮음
+  
+
+
+  ### SOME/IP  
+  #### SOME/IP 개요  
+   : 다양한 운영체제 및 HW를 사용하는 ECU간에 데이터 통신을 위한 미들웨어 솔루션으로 Classic AUTOSAR, Adaptive AUTOSAR, Genevi 등 다양한 환경에서 사용 가능  
+  - 미들웨어 : 운영체제와 애플리케이션 사이에서 서로 다른 시스템, 서비스 또는 애플리케이션 간의 통신, 데이터 교환, 자원 공유를 중개하는 소프트웨어 계층
+  - 차량 미들웨어 : 서로 다른 하드웨어, 운영체제, 프로그래밍 언어 간 통신 가능
+  - SOME/IP 목표 : 임베디드 시스템에 맞게 자원 사용이 적어야함, 차량에서 필요한 다양한 use-case를 만족할 수 있어야 함, AUTOSAR와 호환 가능하여 별도의 표준 변경 없이 AUTOSAR RDU와 통신할 수 있어야 함
+  - SOME/IP message는 SoAd를 이용하여 TCP/IP와 연결
+  - Remote Process Call (RPC) : 운영체제나 HW에 독립적으로 네트워크에 연결되어있는 다른 컴퓨터의 Process를 원격으로 호출하는 기능
+
+  #### SOME/IP  
+  - SOME/IP는 UDP, TCP를 이용해 송수신
+  - 헤터는 네트워크 바이트 순서로 인코딩 되어야 함
+  - SOME/IP Header : Message ID, Length , Request ID, Protocol Version, Interface Version, Message Type, Request/Response Communication, Fire & Forget Communication, Notification Events, Event Group, Event Trigger, Field, Return Code, payload
+  - Serialization : RPC를 위한 파라미터 전달
+  - Magic Cookie Message for TCP : TCP는 경계가 없어 Segment의 시작을 magic cookie 추가 가능
+  - Reliability of Message : RPC 메시지는 아래와 같은 Reliability를 가질 수 있음
+  
+  #### SOME/IP Service Discovery (SD)  
+  - SOME/IP SD (Service Discovery) : 서비스 인스턴스를 찾고, 해당 서비스 인스턴스가 실행 중인지 감지하고, 게시/구독 서비스를 제공
+  - SOME/IP SD 주소 : 모든 SOME/IP 노드는 동일한 멀티캐스트 IP에 가입해야 함
+  - Transport Protocol Binding : 서비스 제공자는 자신이 제공하는 서비스에 대해 Port를 할당, TCP 및 UDP에서 한번에 전송할 수 있는 데이터 이상을 SOME/IP에서 처리할 수 없음
+
+
+
+  ### SOME/IP  
+  - Data Distribution Service (DDS) : OMG(Object Distribution Service)에서 정의한 Publish-Subscribe 방식의 통신 미들웨어, 중앙 서버 없이 노드 간 직접 데이터 교환이 가능
+  - DDS 주요 목적 : 대규모 분산 시스템에서 효율적이고 예측 가능한 데이터 전달
+  - ROS2 : 로봇 소프트웨어 개발을 위한 오픈소스 미들웨어 프레임워크, DD2 기반 유연한 통신 지원
+  - Data-Centric Publish-Subscribe model : 개념적으로 모든 노드가 공유하는 "global data space"
+  - TOPIC : Publisher와 Subscribe가 데이터를 명확하게 식별
+  - SQL 쿼리와 유사하게 특정 조건으로 원하는 데이터만 구독 가능
+
+
+
+  ### DoIP  
+  #### UDS (Unified Diagnositc Serivces)  
+  - 법규 통신 : 법규에 명시된 항목을 진단기로 확인하기 위한 통신 표준, UDS와는 별도의 프로토콜이 정의되어 있음
+  - UDS : 차량 진단을 위한 통신 표준
+  - CAN Transport Protocol (TP) : 진단 통신은 8Byte 보다 큰 데이터 송수신이 필요
+    - Data Stream - Single Frame 및 Consecutive Frame 으로 나누어짐, 7Byte 이하의 데이터는 한번에 송수신 가능
+  - 법규 진단통신(J1979)
+    - 다음 동작 모드가 존재 - 01 ~ 09, 0A
+    - 진단 통신 CAN ID - 제어기 별로 요청 및 응답 CAN ID가 정해져 있음
+    - 진단 통신 Frame Format - 각 동작 모드마다 Frame format이 정해져 있음
+    - 법규 진단 통신의 PID는 J1979DA에 정의되어 있음
+    - 법규 통신은 제조사에 독립적으로 동작해야 함, 
+  - UDS는 제조사별로 필요에 의해 개발할 수 있음
+
+  #### DoIP (Diagnostics Over Internet Protocol)  
+  - DoIP Ethernet 요구 사항
+    - Ethernet physical layer 요구 사항 - 잡음 환경에서 작동을 보장하도록 진단기와 DoIP Edge Node PHY간의 최대 케이블 길이에 의해 구현되기 위한 요구사항
+    - Activation line 요구 사항 - Ethernet controller를 활성화 또는 비활성화 해야하는 이유
+  - DoIP header structure : Protocol Version | Inverse Protocol Version | Payload Type | Payload Length | Data
+
+  #### DoIP 및 CAN ECU간 진단 메시지 라우팅  
+  - DoIP and CAN ECU routing
+    1. TCP socket connection between Tester and Gateway
+    2. Diagnostic Routing via the Gateway
+    3. Forwarding the response message to the Tester 
+  - DoIP 연결을 위한 IP 설정 방식
+    - Vehicle Announcement - UDP 등을 사용해 브로드캐스트 또는 멀티캐스트하여 차량 정보를 알림
+    - Static IP 설정 - Edge Gateway IP를 고정값 사용함
+    - OEM별 자체 알고리즘 - OTA등을 위한 자체 알고리즘 활용
+  - Diagnositc routing implementation using CAN
+    - Diagnostic Console
+    - Each node logic development using CAPL
+  - DoIP and CAN ECU routing implementation
+    - Resolution of MAC address using ARP
+    - Establish TCP socket connection
+    - ISO 13400-2
+    - Routing Activation
+    - Tester sends the request diagnositc message
+    - ECU sends the response diagnostic message to tester
+
+  #### DoIP 및 Ethernet ECU 간 진단 메시지 라우팅  
+  - DoIP and Ethernet ECU routing overview order
+    1. TCP socket connection between Test and ECU
+    2. Routing activation
+    3. Tester sends request diagnositc message to ECU
+    4. ECU processing
+    5. ECU sends response diagnositc message to Tester 
+  
+
+
+  ### Etherent AVB  
+  #### Ethernet AVB 개요  
+  - IEEE 802.1 AVB : 기존 영상 및 음향 장비 간 데이터 전송
+  - Ethernet AVB 프로토콜 : 
+    - Ethernet AVB 전송 프로토콜(IEEE 1722)
+    - 시간 동기화 프로토콜(IEEE 802.1AS)
+    - 대역폭 예약 프로토콜(IEEE 802.1Qat)
+    - 메시지 포워딩 및 큐 관리 기법 (IEEE 802.1Qav)
+
+  #### IEEE 1722 정의  
+  - 미디어 포맷 및 캡슐화 제공, 미디어 동기화 메커니즘, AVB Strea ID를 통한 멀티캐스트 주소 지정
+  - Ethernet AVB 패킷 : VLAN 태그가 추가된 표준 Ethernet 프레임, 원시&압축 Audio/Video 제공
+  
+  #### IEEE 802.1AS  
+  - Precision Time Protocol (PTP), 정밀 클럭 동기화를 위한 표준 네트워크 측정 및 제어 프로토콜, 실시간으로 클럭을 동기화 하도록 설계된 정밀 시간 프로토콜
+  - Ofsset 및 시간 동기화 : 오프셋, 지연시간, 시간 동기화
+  - IEEE 1588 PIP 메시지 타입 : SYNC Message, FOLLOW_UP messages, DELAY_REQ Message, DELAY_RESP Messages
+  - IEEE 1588 동기화 알고리즘 : 클럭의 시작 지점 동기화 및 타임스탬프 기반 주기 동기화
+  - IEEE 802.1AS 정의 : AVB 네트워크의 정확한 동기화를 위한 표준, Audio/Video 시간 동기화 기술
+  - IEEE 802.1AS 동기화 절차 : BMCA를 수행해 Grand Master 선정, Grand Master의 시간 정보를 이용해 Slave가 동기화
+  - BMCA (Best Master Clock Algorithm) : ANNOUNCE 메시지 전송, 각 GM의 ANNOUNCE 정보 비교
+
+  #### IEEE 802.1Qat  
+   : Stream Reservation Protocol (SRP) 표준 정의, OSI 모델 제 2계층 스트리밍에 대한 표준정의  
+  - 프로토콜 종류
+    - MMRP (Multiple MAC Registration Protocol)
+    - MVRP (Multiple VLAN Registration Protocol)
+    - MSRP (Multiple Stream Registration Protocol)
+
+  - MMRP : 송신 노드는 자신이 사용할 Group MAC 주소를 지정
+  - MVRP : Stream Source 중인 VLAN의 Member 전달 및 저장, 주어진 VLAN ID를 위한 수신 프레임 필요시 MVRP에 의해 등록
+  - MSRP : Talker와 Listener 사이의 경로 및 대역폭 등록을 위한 프로토콜
+
+  #### IEEE 802.1Qav  
+   : Forwarding and Queuing Enhencements for Time-Sensitive Stream, Traffic Shaping 기반의 Queue 관리 기법
+  - 트래픽 클래스 : ST Class A와 B 제공, A는 B보다 더 높은 우선순위를 갖음
+  - FQTSS : 모든 포트는 최소 2개 트래픽 클래스 지원, SR Class는 CBS 기반의 Transmission Selection 알고리즘 사용
+  - Time-sensitive 스트림에 대한 우서순위 매핑
+  - Strict Priority와 CBS 두가지 선택 기법을 함께 사용
+  - CBS : SR Class A/B 전송 조건
+  - Best Effort Frame 전송으로 인한 AVB Frame 지연 : Credit을 양수 방향으로 증가시킴
+
+
+
+  ### Time Sensitive Networking (TSN)  
+  #### TSN 개요  
+   : IEEE 802 표준 기반의 시간 민감형 데이터 전송을 위한 이더넷 확장 기술, 기존의 Ethernet AVB의 실시간 데이터 지연 문제를 개선  
+  - TSN 주요 표준
+    - 시간 동기화 (IEEE 802.1AS)
+    - 트래픽 스케줄링 (802.1Qbv, 802.1Qav)
+    - 스트림 예약 및 설정 (802.1Qcc)
+    - Frame Preemption (802.3br, 802.1Qbu)
+    - 이중화 통신 (802.1CB)
+
+  #### IEEE 802.1Qbv (Time Aware Shaper)  
+  - Time Aware Shaper (Qbv) : 특정 시간에 특정 Port만 송신 가능하도록 하는 기법
+  - 정해진 주기마다 실시간 데이터 전송 보장
+  - Gate Control List (GCL) : 하나의 Cycle Time은 여러 개의 Time Interval로 구성
+  - Ethernet은 Link가 Idle인 경우 Frame 전송
+  - Guard Band를 이용한 실시간 데이터 전송 보장
+  - 특정 시점에 모든 노드 및 스위치는 특정 Queue만 전송 가능
+  - 동일한 우선순위의 Frame이 특정 Switch에 동시에 수신되는 경우
+  - Store & Forward : 스위치가 Frame을 전체는 내부 메모리에 저장 후 목적 Prot로 전달하는 방식
+  - Cut Through : 스위치가 Destination MAC 주소만 보고 목적 Port로 바로 전달하는 방식
+  - TSN은 TAS 및 CBS를 함께 사용 가능, CBS는 TAS와는 개별적으로 동작함
+
+  #### IEEE 802.1Qbu (Frame Preemption)  
+  - IEEE 802.1p 기반 우선 순위 경쟁시 지연 단축, Frame Preemption을 통한 guard band 단축
+  
+  #### IEEE 802.1Qch (Cyclic Queuing & Forwarding)  
+  - Time Aware Shaper 최저 지연 보장, 모든 노드 및 스위치는 동일한 Cycle Time을 인식할 수 있어야 함
+  
+  #### Etc. Standards  
+  - IEEE 802.1Qcc 
+  - IEEE 802.1Qci
+  - 802.1CB
+
+
+
+
+  **실습**  
+  #### 실습 환경  
+  - [실습 환경]
+    - TC375 LK Board Specification
+    - Easy Module Shield
+  - [개발 환경]
+    - Aurix Development Studio
+    - Universal Debug Engine
+  
+  #### 1. UART, CAN, Ethernet  
+  
+
+  #### 2. TCP/IP (Transmission Control Protocol/Internet Protocol)  
+  
+
+  #### 3. CAN-Ethernet 변환  
+  
+
+  #### 4. DoIP (Diagnostic over Internet Protocol)  
+  
+
+  #### 5. SOME/IP (Scalable service-Oriented MiddlewarE over IP)  
+  
+
+  #### 6. VLAN  
+  
+
+  
 
 
 
