@@ -13,3 +13,11 @@
     - Libraries/Ethernet/Iwip/port/src/netif.c
     
 - main.Loop_4() : 10ms 마다 Ethernet 메시지 전송
+
+- Libraries/Ethernet/Iwip/port/src/Ifx_Lwip.c : LwIP 네트워크 설정
+- examples/tcp_echo.c : TCP 초기화 함수
+- examples/udp_echo.c : UDP 초기화 함수
+
+- can_eth_recv() : tcp 수신 콜백 함수
+
+- tcp_doip_init : DoIP 초기화 및 13400 포트 설정
