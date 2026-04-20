@@ -5,3 +5,11 @@
 - BSW/Driver/can.c - void Can_SendMsg(), void Can_RecvMsg() : CAN 송수신 함수
 
 - main.Loop_3() : 100ms 마다 CAN 메시지 전송
+
+- LwIP 초기화 함수
+    - BSW/Driver/geth_Iwip.c - Ifx_Lwip_init()
+    - Libraries/Ethernet/Iwip/src/init.c - Iwip_init()
+- 이더넷 모듈 초기화 함수
+    - Libraries/Ethernet/Iwip/port/src/netif.c
+    
+- main.Loop_4() : 10ms 마다 Ethernet 메시지 전송
