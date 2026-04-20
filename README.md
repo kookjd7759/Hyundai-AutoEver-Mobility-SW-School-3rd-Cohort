@@ -2808,22 +2808,48 @@
     - Universal Debug Engine
   
   #### 1. UART, CAN, Ethernet  
-  
+  - ASCLIN 모듈 소개
+  - UART 통신 
+  - MCMCAN 모듈 소개 
+  - CAN 통신
+  - Ethernet 통신
 
   #### 2. TCP/IP (Transmission Control Protocol/Internet Protocol)  
-  
+  - LwIP 소개
+  - TCP/UDP Raw API
+  - LwIP 포팅
+  - TCP 에코 서버 
+  - 실습 1 : 제어기의 IP 및 포트 번호를 아래와 같이 변경하여 Echo 서버가 동작하는지 확인
+    - TC375 IP : 192.168.2.30
+    - Port : 40
+    - 제어기 IP 설정은 Ifx_Lwip.c의 Ifx_Lwip_init에 존재
+  - 실습 2 : TCP/IP로 전송한 글자를 대문자로 변경하여 반환하도록 echoSend함수를 수정
+  - UDP/IP Echo 통신 
+  - 실습 3 : UDP 에코 서버를 변경하여, 대문자를 소문자로 변경하여 응답하도록 수정
 
   #### 3. CAN-Ethernet 변환  
-  
+  - CAN_Ethernet 변환
+    - main.c 수정
+    - TCP/IP 실습 프로그램에서 제어기로 TCP 연결
+    - CAN 인터페이스 설정 및 연결
+    - 연결 확인 후 "Start", "Hello" 데이터 입력 후 전송
+    - 전송 패킷 확인
 
   #### 4. DoIP (Diagnostic over Internet Protocol)  
-  
+  - 실습 : TCP/IP 실습 프로그램에서 제어기에 DoIP를 요청하여 초음파센서 및 가변저항 값 확인
+  - 초음파 센서 및 TOF 센서 거리 측정
+  - 가변 저항 전압 변화
+  - DoIP 예제
 
   #### 5. SOME/IP (Scalable service-Oriented MiddlewarE over IP)  
-  
+  - SOME/IP : Format, Header, Protocol, Service Discovery
+  - 실습 1 : PC -> TC375로 SOME/IP Service Discovery를 전송
+  - 실습 2 : SOME/IP 서비스를 요청하여 LED를 제어
 
   #### 6. VLAN  
-  
+  - VLAN 미적용 시 Switch 동작 확인
+  - CISCO Switch를 활용한 VLAN 설정
+  - Port 기반 VLAN 설정
 
   
 
