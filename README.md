@@ -2459,7 +2459,7 @@
 <a id="course-16"></a>
 ### 16\. 차량용 이더넷 통신 이해 <sub>(2026.04.16 ~ 2026.04.22)</sub>  
 > **📝 학습 내용**  
->   
+> 차량용 통신 구조와 SDV 기반 E/E 아키텍처 변화 속에서 Automotive Ethernet의 필요성과 특성을 이해하고, Ethernet 프레임·MAC·VLAN·TCP/IP·PHY 계층의 동작 원리와 SOME/IP·DoIP 기반 서비스/진단 통신 개념을 학습하며 차량용 이더넷 통신의 전체 흐름을 익힘    
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
