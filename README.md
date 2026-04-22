@@ -2913,6 +2913,69 @@
   - CISCO Switch를 활용한 VLAN 설정
   - Port 기반 VLAN 설정
 
+  ### 이해도 평가
+  ```
+  1. 아래 차량용 통신 프로토콜 중 시간당 가장 많은 데이터를 전송할 수 있는 통신 프로콜은 무엇인가? 
+  ① LIN
+  ② Ethernet
+  ③ CAN
+  ④ FlexRay
+  
+  2. 스위치를 사용하는 Full Duplexed Ethernet에 대한 설명으로 잘못된 것은 무엇인가?
+  ① CAN과 다르게 서로 다른 제어기가 미디어에 동시에 데이터를 전송하는 충돌 문제가 발생하지 않는다.
+  ② BroadR-Reach 기술을 사용하면 2가닥의 구리선(1쌍의 Unshielded Twist Pair)로 Full-Duplex 통신이 가능하다.
+  ③ 통신 지연은 CAN과 유사하게 미디어에 대한 충돌 방지를 위한 우선순위 경쟁을 통해 발생한다.
+  ④ CAN, CAN FD 보다 가격이 비싸지만 대용량 데이터 송수신이 가능하다.
+
+  3. 차량 이더넷 통신에서 BroadR-Reach 기술이 기존 범용 이더넷(100BASE-TX 등) 대비 차량 환경에 적합한 이유로 가장 적절한 것은 무엇인가?
+  ① 중앙 브로커 기반 구조를 사용하여 ECU 간 통신을 단순화하기 때문이다.
+  ② 단일 페어(1쌍) 구리선을 사용하여 배선 무게와 EMI 문제를 줄이면서 Full-Duplex 통신을 지원하기 때문이다.
+  ③ CAN과 동일한 메시지 중재 방식을 사용하여 실시간성을 보장하기 때문이다.
+  ④ 모든 데이터 프레임을 시간 슬롯 기반(TDMA)으로 전송하기 때문이다.
+
+  4. 다음 중 Ethernet 기반으로 진단 통신을 지원하기 위한 프로토콜을 고르시오.   
+  ① XCP
+  ② UDP NM
+  ③ Ethernet AVB
+  ④ DoIP
+
+  5. 다음 중 Ethernet AVB에는 지원하지 않았으나, Time-Sensitive Networking(TSN)에서 새롭게 개발된 기술을 고르시오. 
+  ① IEEE 802.1AS (Timing and Synchronization)
+  ② IEEE 802.1Qbv (Time Aware Shaper)
+  ③ IEEE 802.1Qav (Credit Based Shaper)
+  ④ IEEE 802.1Qat (Stream Reservation)
+
+  6. 다음 차량 통신의 미디어 접근 제어(Media Access Control, MAC)에 대한 설명 중 잘못된 설명을 고르시오. 
+  ① FlexRay 통신은 TDMA 방식을 사용하여 충돌을 방지한다.
+  ② CAN 통신은 ID 기반의 우선순위 경쟁을 통해 버스 충돌을 해결한다.
+  ③ TSN은 모든 데이터를 TDMA 방식으로 스케줄하여, 모든 데이터는 지연 없이 전송된다.
+  ④ LIN 통신은 하나의 마스터만 통신을 시작할 수 있어, 충돌이 발생하지 않는다.
+
+  7. 차량에서 SoA (Service Oriented Architecture)를 구현하기 위해 사용하는 Ethernet 기반의 통신 프로토콜로 통신을 이용하여 제어기가 제공하는 서비스를 찾고 이용하는데 사용하는 것은 무엇인가?
+  ① BroadR-Reach
+  ② TSN
+  ③ SOME/IP
+  ④ XCP
+
+  8. E/E 아키텍처와 관련하여 잘못된 것을 고르시오. 
+  ① Zonal Architecture는 도메인 기반 아키텍처에 비해 배선이 효율적이다.
+  ② Vehicle Centralized 아키텍처는 고성능의 Vehicle 컴퓨터가 통신을 이용하여 다양한 제어기를 제어할 수 있어, SDV 구현에 더 적합하다.
+  ③ Vehicle Centralized 아키텍처에서는 TSN 등의 고속의 통신이 필요하다.
+  ④ 차량의 E/E 아키텍처에서는 실시간 성능 등 성능이 중요하므로 배선의 효율성 등은 고려하지 않아도 된다.
+
+  9. DDS(Data Distribution Service)에 대한 설명으로 옳지 않은 것은?
+  ① 중앙 브로커를 사용한다.
+  ② Publisher/Subscriber 구조이다
+  ③ QoS 정책을 지원한다.
+  ④ 데이터 타입은 IDL로 정의된다.
+
+  10. 다음 중 DDS와 SOME/IP의 차이에 대한 설명으로 가장 적절한 것은?
+  ① DDS는 요청/응답 기반이다.
+  ② SOME/IP는 데이터 중심 통신이다.
+  ③ DDS는 Topic 기반 데이터 배포를 중심으로 한다.
+  ④ SOME/IP는 중앙 브로커를 필수로 한다.
+  ```
+
 ---
 
 </details> <br>  
