@@ -2913,13 +2913,6 @@
   - CISCO Switch를 활용한 VLAN 설정
   - Port 기반 VLAN 설정
 
-  
-
-
-
-
-
-
 ---
 
 </details> <br>  
