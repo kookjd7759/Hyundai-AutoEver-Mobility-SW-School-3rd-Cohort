@@ -2920,7 +2920,7 @@
   ② Ethernet
   ③ CAN
   ④ FlexRay
-  
+
   2. 스위치를 사용하는 Full Duplexed Ethernet에 대한 설명으로 잘못된 것은 무엇인가?
   ① CAN과 다르게 서로 다른 제어기가 미디어에 동시에 데이터를 전송하는 충돌 문제가 발생하지 않는다.
   ② BroadR-Reach 기술을 사용하면 2가닥의 구리선(1쌍의 Unshielded Twist Pair)로 Full-Duplex 통신이 가능하다.
@@ -2990,7 +2990,53 @@
 
 ---
 
+  ### 실시간 운영체제 개요  
+  #### OS in the wild  
+  - A computing system typically runs with an OS
+  - Desktops/servers
+  - Mobile
+  - Home appliances
+  - Automotive
 
+  #### OS in our view  
+  - For IT-natives : a natural tool as easy as breathing
+  - Using computer (or using OS)
+  - Getting a cup of coffee : You can get it in 5 min, as easy as using OS, But how is it so easy
+  - Using computer : operating systems with abstractions
+
+  #### OS is Real-Time Systems  
+  - Systems that operate with time constraints : Inportant to produce accurate results before deadlines
+  - Definition : Systems whose correctness depend on their temporal aspects as well as their functional aspects
+  - Perfornace measure : Timeliness on timing constraints, Speed/average case performance are less significant
+  - Key property : Predictability on timing constraints
+  - Misconceptions about Real-Time Systems : Real-time does not mean fast
+    - Example - Web Server, Autonomous Vehicle Driving 
+  - Types of real-time systems 
+    - Hard real-time systems - Disastrous or very serious consepuences may occur if a deadline is missed, Calidations is essential(can all the deadlines be met, even under worst-case scenario)
+    - Soft real-time systems - Ideally, th deadline should be met for maximum performance. The performance degrades in case of deadline misses, Best effort approaches/statistical guarantees
+  - General VS Real-time systems
+    - General Purpose Computers - General Purpose, Programmable, Less interaction with physical world, As fast as possible, Plenty of resource, Far from HW
+    - Real-Time Embedded System - Special Purpose, Non-Programmable, Interaction with physical world, Real-time Requirements, Restricted resources, Close to HW
+  - GPOS VS RTOS
+    - GPOS - Provide its dedicated and protected address space using MMU
+    - RTOS - No process but tasks with a single address space 
+  - RTOS scheduing : Workload is Static and Fixed at Design Time, Try to guarantee every task's timing requirement or deadline, Resource is Single/Multi core
+
+  #### OSEK/VDX  
+  - Open Systems and their Interfaces for the Electronics in Moter Vehicles
+  - A specifiacation for an embedded operating system 
+  - OSEK was founded in 1993 by a German automotive company consortium and the University of Karlsruhe
+  - VDX was founded in 1994 by French
+  - OSEK spaces : OS, OIL, COM ...
+  - OSEK goal : For Protability and Reusability, Standard interfaces, Scalability, Error checking, Protability support 
+  - OSEK build : OIL files, User source codes
+  - OSEK object 
+    - Task - 추상화된 프로세싱의 기본 단위
+    - Event - Task 동기화를 위한 운영체제 객체
+    - Interrupt - 예외 및 I/O 처리를 위한 운영체제 객체
+    - Alarm - 시간의 흐름에 따라 interrupt를 발생시키는 객체
+    - Resource - 여러 task의 공유자원 접근 시 동기화를 위한 객체
+    - Hook - 특정한 상황에서 호출되어 운영체제가 추가적인 작업을 할 수 있도록 지원하는 객체
 
 ---
 
