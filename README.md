@@ -3196,11 +3196,6 @@
   17. Priority Inversion : Mutex 활용하여 스케줄 재현
   18. Deadlock : Deadlock 재현
 
-
-
-
-
-
 ---
 
 </details> <br>  
