@@ -3038,6 +3038,128 @@
     - Resource - 여러 task의 공유자원 접근 시 동기화를 위한 객체
     - Hook - 특정한 상황에서 호출되어 운영체제가 추가적인 작업을 할 수 있도록 지원하는 객체
 
+  
+
+  ### OSEK Real-Time OS - OS features. 1  
+  #### Background  
+  - An instance of a program in execution
+  - Machine state : a major part of a process 
+    - What a program can read or update when it is running
+    - Memory 
+    - Registers
+  - Program : A set of instructions and data
+  - Process : A profram in execution
+  - A process can be one of three states
+    - Running - A process is running on a processor
+    - Ready - A process is ready to run but for some reason the OS has chosen not to run it at this given moment 
+    - Blocked - A process has performed some king of operation, When a process initiates an I/O request to a disk, it blocked and thus some other process can use the processor
+  - Limited direct execution
+  - Allow the kernel to carefully expose certain key pices of functionality to user program
+    - such as Accesing the file system, Creating and destroying processes, Communicating with other processes, Allocating more memory
+  - Trap instruction : Jump into the kernel 
+  - Return-from-trap instruction : Return into the calling user program
+  - How does the trap know which code to run inside th OS ? : trap table, trap handler 
+  - System-call number : Assigned to each system call, The user code is thus responsible for placing the desired system-call number in a register 
+  - How can the OS regain control of the CPU so that it can switch between processes ? : A cooperative Approach: Wait for system calls, A Non-Cooperative Approach: The OS takes control
+  - Hardware signals operating system when some event happns
+  - Scheduler makes a decision : Whether to continue running the current process, or switch to a different one
+  - A low-level piece of assemply code : save a few register values for the current process into its kernel stack, Restore a few for the soon-to-be-executing process from its kernel stack, Switch to the kernel stack for the soon-to-be-executing process 
+  - A Policy deciding which process to run next, given a set of runnable processes
+  - Non-preemptive scheduling : The scheduler waits for the running process to voluntarily yield the CPU
+  - Preemptive scheduling : Virtually all modern schedulers are preemptive
+  - Workload : A set of job descriptions 
+  - Scheduler : A logic that decides when jobs run
+  - Metric : Measurement of scheduling quality
+  - Workload assumptions 
+    1. Each job runs for the same amount of time
+    2. All jobs arrive at the same time
+    3. Once started, each job runs to completion
+    4. All jobs only use the CPU
+    5. The run-time of each job is known
+  - Performance metric (Turnaround Time) : The time at which the job completes minus the time at which the job arrived in the system
+  - Another metric is Fairness : Performance and fairness are often at adds in scheduling
+  - First Come, First Served (FCFS)
+  - Let's relax assumption 1: Each job no longer runs for the same amount of time
+    - Run the shortest job first, the next shortest, and so on
+  - Let's relax assumption 2: Jobs can arrive at any time 
+    - The time from when the job arrives th the first time it is scheduled
+  - Time slicing Scheduling 
+    - Run a job for a time slice and then switch to the next job in the run queue until the jobs are finished
+    - It repeatedly does so until the jobs are finished
+  - RR is fair, but performs poorly on metrics such as turnaround time
+  - Deciding on the length of the time slice presents a trade-off to a system designer 
+
+
+
+  ### OSEK OS features  
+  - Processing levels
+    - Processing entities - Interrupt service routines, Tasks
+    - Processing levels - Interrupt, Logical level for scheduler, Task
+    - Rules - Interrups have precedence over tasks, The interrupt processing level consists of one or more interrup priority leves, Interrup service routines have a statically assigned interrupt priority level ...
+  - Conformance classes : Determined by Multiple requesting of task activation / Task types / number of tasks per priority
+  - Task : An abstraction for processing
+  - Basic task : It only releases the precessor
+  - Extended task : From basic tasks, it allows to use the OS system call WaitEvent
+  - Task activation : Task activation is perfromed using the operating system services ActivateTask or ChainTask. After activation the task is ready to execute from the first statement
+  - Task API : DeclareTask, StatusType ActivateTask/TerminateTask/ChainTask/schedule/GetTaskID/GetTaskState
+  - Task scheduling : OSEK switches running tasks through "task switching", Priority-based scheduling, Preemptive and non-preemtive scheduling
+  - 
+
+
+  ### OSEK Real-Time OS - OS features. 2  
+  #### Background  
+  - A number of processes run on a single shared resource
+  - In point of the app's view, it utilized dedicated CPU memory
+  - What if a process wants to share its data with another process 
+  - OS provides IPC features
+  - Signals : standardized messages sent to a running program to tirgger specific behavior
+  - Whe a signal is sent, the operating syetem interrupts the target process normal flow of execution to deliver the siganl
+
+  #### OSEK OS features  
+  - Event : For synchronisation, is only provided for extended task, initiates sate transitions of tasks to and from the waiting state
+  - Event API : DeclareEvent, StatusType SetEvent/ClearEvent/GetEvent/WaitEvent
+  - Alarm : The OS provides services to activate task, set events or call an alarm-callback routine when an alarm expires
+  - Alarm API : DeclareAlarm, StatusType GetAlarmBase/GetAlarm/SetRelAlarm/SetAbsAlarm/CancelAlarm
+  - Hook : The OSEK operating system provides system specific hook routines to allow user-defined actions within the OS internal procssing, Two hook routines are called on task context switches
+  - Hook routines : void ErrorHook/PreTaskHook/PostTaskHook/StartupHook/ShutdownHook
+
+
+
+  ### OSEK Real-Time OS - OS features. 3  
+  #### Background  
+  - Race condition  
+  - Terms : Critical section, Race condition, Atomicity, Mutual exclusion
+  - Concurrency leads to non-deterministic results, We need synchronization mechanisms for controlling access to shared resource
+  - Critical Section : A critical section is a piece of code that accesses a shared resource, usually a variable or data structre
+  - The Basic Idea : Ensure that any critical section executes as if it were a single atomic instruction, Lock variable holds the state of the lock
+  - Semaphore 
+  - The Dining Philosophers : Assume there are five "philosophers" sitting around a table, Key challenge, We need some semaphore one for each fork
+
+  #### OSEK OS features  
+  - Resource : The resource management is used to co-ordinate concurrent accesses of several tasks with different priorities to shared resources, e.g. management entities, program sequences, memory or hardware areas
+  - Restrictions : Not possible to get nested resource
+  - Internal resource : Internal resources are resources which are not visible to the user and therefor can not be addressed by the system funcstions GetResource and ReleaseResource. Instead, they are managed strictly internally within a clearly defined set of system functions
+  - Resource API : DeclareResource, StatusType GetResource/RealeaseResource
+  - PCP : OSEK Priority Ceiling Protocol
+
+
+
+  ### OSEK Real-Time OS - OS features. 4  
+  #### Background  
+  - Recap: Real-Time Systems 
+    - Definition : Systems whose correctness depend on their temporal aspects as well as their functional aspects
+    - Performance measure : Timeliness on timing constraints, Speed/average case performance are less significant
+    - Key property : Predictability timing constraints
+  
+
+
+
+
+
+
+
+
+
 ---
 
 </details> <br>  
