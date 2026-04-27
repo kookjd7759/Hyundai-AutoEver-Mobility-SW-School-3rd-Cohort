@@ -1,0 +1,10 @@
+build/
+conf/
+
+base
+base.hex
+counter.map
+
+guil.sh
+build.py
+make.py

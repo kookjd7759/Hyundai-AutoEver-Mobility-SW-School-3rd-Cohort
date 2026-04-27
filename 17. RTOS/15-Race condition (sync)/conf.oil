@@ -1,0 +1,156 @@
+/* Running the following example:
+ * just call goil a first time using the command line:
+ * goil --target=avr/arduino/uno --templates=../../../../goil/templates/ serial.oil
+ * you may have to update ARDUINO section (l.13) for your configuration.
+ *
+ */
+
+OIL_VERSION = "2.5" : "test" ;
+
+CPU test {    
+  OS config {
+    STATUS = STANDARD;
+    BUILD = TRUE {
+      TRAMPOLINE_BASE_PATH = "../..";
+      APP_NAME = "base";
+      APP_SRC = "bsw.cpp";
+      LDFLAGS = "-Wl,-Map=counter.map";
+      CPPCOMPILER = "avr-g++";
+      COMPILER = "avr-gcc";
+      LINKER = "avr-gcc";
+      ASSEMBLER = "avr-gcc";
+      COPIER = "avr-objcopy";
+      SYSTEM = PYTHON;
+      LIBRARY = serial;
+
+    };
+    SYSTEM_CALL = TRUE;
+    ERRORHOOK = TRUE;
+    USEGETSERVICEID = TRUE;
+    USEPARAMETERACCESS = TRUE;
+  };
+
+  APPMODE stdAppmode {};
+
+  /* The following code block is for basic features of the labs */
+  COUNTER DefaultTimer {
+    SOURCE = TIMER2_OVF;
+    TICKSPERBASE = 1;
+    MAXALLOWEDVALUE = 2000;
+    MINCYCLE = 1;
+  };
+
+  ALARM TimerAlarm {
+    COUNTER= DefaultTimer;
+    ACTION = ACTIVATETASK {
+      TASK = TickPrint;
+    };
+    AUTOSTART = TRUE {
+      // note: no more than 255 => MAXALLOWEDVALUE in counter
+      ALARMTIME = 977; 
+      CYCLETIME = 977; //activated each 1000 ms
+      APPMODE = stdAppmode;
+    };
+  };
+
+  TASK TickPrint {
+    PRIORITY = 20;
+    AUTOSTART = FALSE; 
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+    STACKSIZE = 192;
+  };
+  /* The above code block is for basic features of the labs */
+
+  /* Fill up your code in here */
+  EVENT Event1 { MASK = AUTO; };
+  EVENT Event2 { MASK = AUTO; };
+
+  ISR ISRPin2 {
+    CATEGORY = 2;
+    PRIORITY = 1;
+    STACKSIZE = 128;
+    SOURCE = PIN2 {
+      MODE = FALLING;
+      PULL = UP;
+    };
+  };
+
+  ISR ISRPin3 {
+    CATEGORY = 2;
+    PRIORITY = 2;
+    STACKSIZE = 128;
+    SOURCE = PIN3 {
+      MODE = FALLING;
+      PULL = UP;
+    };
+  };
+
+  RESOURCE S1 {
+    RESOURCEPROPERTY = STANDARD;
+  };
+
+  TASK Task1 {
+    PRIORITY = 1;
+    AUTOSTART = TRUE
+      {APPMODE = stdAppmode;};
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+    STACKSIZE = 192;
+    EVENT = Event1;
+    EVENT = Event2;
+  };
+  
+  TASK Task2 {
+    PRIORITY = 2;
+    AUTOSTART = TRUE
+      {APPMODE = stdAppmode;};
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+    STACKSIZE = 192;
+  };
+
+  COUNTER counter1 {
+    SOURCE = TIMER1_OVF;
+    TICKSPERBASE = 1;
+    MAXALLOWEDVALUE = 65535;
+    MINCYCLE = 1;
+  };
+
+  ALARM alarm1 {
+    COUNTER = counter1;
+    ACTION = ACTIVATETASK {
+      TASK = Task1;
+    };
+    AUTOSTART = TRUE {
+      ALARMTIME = 5;
+      CYCLETIME = 10;
+      APPMODE = stdAppmode;
+    };
+  };
+
+  ALARM alarm2 {
+    COUNTER = counter1;
+    ACTION = ACTIVATETASK {
+      TASK = Task2;
+    };
+    AUTOSTART = TRUE {
+      ALARMTIME = 5;
+      CYCLETIME = 20;
+      APPMODE = stdAppmode;
+    };
+  };
+
+  ALARM alarm3 {
+    COUNTER = counter1;
+    ACTION = SETEVENT {
+      TASK = Task1;
+      EVENT = Event1;
+    };
+    AUTOSTART = TRUE {
+      ALARMTIME = 15;
+      CYCLETIME = 40;
+      APPMODE = stdAppmode;
+    };
+  };
+};
