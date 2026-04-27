@@ -3150,10 +3150,51 @@
     - Definition : Systems whose correctness depend on their temporal aspects as well as their functional aspects
     - Performance measure : Timeliness on timing constraints, Speed/average case performance are less significant
     - Key property : Predictability timing constraints
+  - Real-time scheduling : Fundamental problems (Scheduling algorithm design, schedulability analysis)
+  - Real-time task : a sequence of similar jobs (job: an individual computation, task: a series of jobs)
+  - Performance metric : Real-time scheduling, Real-time schedulability
+  - RM (Rate Monotonic) : Optimal static-priority scheduling (Assigns priority according to period)
+  - Response Time : Not representing the duration from the arrival time to the first schedule time
+  - RM-RTA (Response Time Analysis)
+  - EDF (Earliset Deadline First) : A task with a shorter deadline has a higher priority, Executes a job with the earliest deadline
+  - Priority inversion : Priority-based preemptive scheduling, It is not harmful, most of time
+  - PIP : A higher-priority task inherits its priority to a lower-priority task
+  - PCP : A task can lock a resource if its priority is strictly higher than all ceilings of the resources currently locked by other tasks
+
+  #### OSEK OS features  
+  - Possible sunchronization issue in OSEK : Typical priority inversion (Task T1 has the highest priority)
+  - OSEK Priority Ceiling Protocol : At the system generation, to each resource its own ceiling priority is statically assigned. The ceiling priority shall be set at least to the highest priority of all tasks that access a resource or any of the resources linked to this resource.
   
 
+  
+  ### Lab: OSEK Real-Time OS - setup  
+  - TrampolineRTOS : Open-source real-time OS, aligned OSEK/VDX and AUTOSAR OS 4.2 standards
+  - Erika Enterprise RTOS : Open-source OSEK/VDX compliant Real-time OS
+  - installation list
+    - Msys2 - for shell/CLI environment, Build tools, Arduino libraries, Avrdude, Python, vim
+    - Termite - for serial communication
+    - GOIL compiler - for GOIL compilation
 
-
+  ### Lab: OSEK Real-Time OS - OSEK projects  
+  00. Base : download bsw.cpp, bsw.h, conf.oil 
+  01. Blink : LED Blink 실습
+  02. Hello world : Hello world 출력 
+  03. mdelay : Mdelay 함수 이용, Task 3초 수행 
+  04. Timeline : TickPrint 활성화
+  05. Tasks : Priority2를 갖는 Task2 추가
+  06. Task Activation : Timer가 Task1 activate, Task1이 Task2 activate
+  07. GetTaskID : 각 Task의 ID 확인 및 출력
+  08. GetTaskState : 각 Task State 확인을 위한 printstate 함수 추가
+  09. Interrupt : 스위치 인터럽트 실습
+  10. Alarm : 주기적인 Task 실행 (Alarm 설정에 따른 Task 실행 간격 확인)
+  11. Event : Event 발생 확인
+  12. AlarmEvent : Alarm & Event 조합으로 periodic task activation 만들기
+  13. Hook & deadline miss : Error 상황 만들기
+  14. Race condition : Race condition 실험
+  15. Race condition (sync) : OSEK resource 활용 동기화
+  16. Mutex : Binary semaphore style Mutex 구현
+  17. Priority Inversion : Mutex 활용하여 스케줄 재현
+  18. Deadlock : Deadlock 재현
 
 
 
