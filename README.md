@@ -2983,7 +2983,7 @@
 <a id="course-17"></a>
 ### 17\. 차량용 실시간 운영체제 기반 프로그래밍 <sub>(2026.04.23 ~ 2026.04.28)</sub>  
 > **📝 학습 내용**  
-> 실시간 운영체제의 개념과 RTOS 스케줄링, Task·Alarm·Event·Interrupt·Hook·Resource 등 OSEK/AUTOSAR OS 기반 핵심 요소를 학습하고, TrampolineRTOS 환경에서 LED Blink, Task Activation, 주기 실행, 이벤트 처리, Race Condition 동기화, Priority Inversion 및 Deadlock 재현 실습을 통해 차량용 실시간 OS 프로그래밍 구조를 익힘   
+> 차량용 실시간 운영체제의 기본 개념과 OSEK/AUTOSAR OS 기반 Task·Alarm·Event·Interrupt·Resource·Hook 구조를 이해하고, TrampolineRTOS 실습을 통해 Task 스케줄링, 주기 실행, 이벤트 처리, 동기화, Race Condition, Priority Inversion, Deadlock 등 RTOS 기반 임베디드 제어 흐름을 구현 및 분석   
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
