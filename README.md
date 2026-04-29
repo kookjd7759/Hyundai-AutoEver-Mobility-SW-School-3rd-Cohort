@@ -37,38 +37,47 @@
 <table>
   <tr>
     <td align="left"><b>01. </b><a href="#course-01">미래 모빌리티 트렌드</a></td>
-    <td align="left"><b>08. </b><a href="#course-08">임베디드 리눅스 시스템 프로그래밍</a></td>
-    <td align="left"><b>15. </b><a href="#course-15">차량용 통신시스템</a></td>
+    <td align="left"><b>12. </b><a href="#course-12">자동차 사이버보안 및 시큐어코딩 이해</a></td>
   </tr>
   <tr>
     <td align="left"><b>02. </b><a href="#course-02">C/C++ 프로그래밍</a></td>
-    <td align="left"><b>09. </b><a href="#course-09">임베디드 MCU 프로그래밍</a></td>
-    <td align="left"><b>16. </b><a href="#course-16">차량용 이더넷 통신 이해</a></td>
+    <td align="left"><b>13. </b><a href="#course-13">AUTOSAR 기본</a></td>
   </tr>
   <tr>
     <td align="left"><b>03. </b><a href="#course-03">모던 C++</a></td>
-    <td align="left"><b>10. </b><a href="#course-10">임베디드 C 프로그래밍 코드 최적화 기법</a></td>
-    <td align="left"><b>17. </b><a href="#course-17">차량용 실시간 운영체제 기반 프로그래밍</a></td>
+    <td align="left"><b>14. </b><a href="#course-14">차량용 임베디드 SW 개발 프로젝트</a></td>
   </tr>
   <tr>
     <td align="left"><b>04. </b><a href="#course-04">자동차 구조 및 전장시스템 이해</a></td>
-    <td align="left"><b>11. </b><a href="#course-11">소프트웨어 요구사항 분석 및 설계</a></td>
-    <td align="left"><b>18. </b><a href="#course-18">차량용 통신시스템 구현 프로젝트</a></td>
+    <td align="left"><b>15. </b><a href="#course-15">차량용 통신시스템</a></td>
   </tr>
   <tr>
     <td align="left"><b>05. </b><a href="#course-05">자동차 소프트웨어 개발 프로세스</a></td>
-    <td align="left"><b>12. </b><a href="#course-12">자동차 사이버보안 및 시큐어코딩 이해</a></td>
-    <td align="left"><b>19. </b><a href="#course-19">소프트웨어 테스팅</a></td>
+    <td align="left"><b>16. </b><a href="#course-16">차량용 이더넷 통신 이해</a></td>
   </tr>
   <tr>
     <td align="left"><b>06. </b><a href="#course-06">임베디드 소프트웨어 개발 기초</a></td>
-    <td align="left"><b>13. </b><a href="#course-13">AUTOSAR 기본</a></td>
-    <td align="left"><b>20. </b><a href="#course-20">OTA</a></td>
+    <td align="left"><b>17. </b><a href="#course-17">차량용 실시간 운영체제 기반 프로그래밍</a></td>
   </tr>
   <tr>
     <td align="left"><b>07. </b><a href="#course-07">임베디드 C 프로그래밍 기초</a></td>
-    <td align="left"><b>14. </b><a href="#course-14">차량용 임베디드 SW 개발 프로젝트</a></td>
+    <td align="left"><b>18. </b><a href="#course-18">차량용 통신시스템 구현 프로젝트</a></td>
+  </tr>
+  <tr>
+    <td align="left"><b>08. </b><a href="#course-08">임베디드 리눅스 시스템 프로그래밍</a></td>
+    <td align="left"><b>19. </b><a href="#course-19">소프트웨어 테스팅</a></td>
+  </tr>
+  <tr>
+    <td align="left"><b>09. </b><a href="#course-09">임베디드 MCU 프로그래밍</a></td>
+    <td align="left"><b>20. </b><a href="#course-20">OTA</a></td>
+  </tr>
+  <tr>
+    <td align="left"><b>10. </b><a href="#course-10">임베디드 C 프로그래밍 코드 최적화 기법</a></td>
     <td align="left"><b>21. </b><a href="#course-21">자율주행 기능 구현 프로젝트</a></td>
+  </tr>
+  <tr>
+    <td align="left"><b>11. </b><a href="#course-11">소프트웨어 요구사항 분석 및 설계</a></td>
+    <td align="left"></td>
   </tr>
 </table>
 
