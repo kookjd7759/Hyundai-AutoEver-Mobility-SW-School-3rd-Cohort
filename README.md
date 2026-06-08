@@ -3124,7 +3124,19 @@
 
 ---
 
+  #### Project Subject  
+  1. TC375 Embedded System을 활용한 Ethernet 통신 제어 시스템 구축
+  2. Infineon TC375 CAN Module을 활용한 CAN 통신 제어 시스템 구축
+  3. 태블릿 기반 유선 업데이트 APP 개발
+  4. OTA 업데이트 관리 로직 개발
+  5. OTA 업데이트 수행 로직 개발
+  
+  위 5개의 주제 중 자유 주제 분야인 5번 주제 **[TC375 Embedded System을 활용한 Ethernet 통신 제어 시스템 구축]** 를 선정하여 다음과 같이 프로젝트를 진행하였습니다.
 
+  ## 원격 차량 호출 및 회수 제어 시스템 ReV-CaRS (Remote Vehicle Call & Return System)
+
+  [![GitHub Repo](https://img.shields.io/badge/GitHub-ReV--CaRS%20Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SW-6-3-3rd-Party/Remote-Vehicle-Call-and-Return-System#rev-cars-remote-vehicle-call--return-system)  
+  
 
 ---
 
