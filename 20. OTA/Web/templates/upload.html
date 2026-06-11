@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload with Progress Bar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+    <div class="upload-box">
+        <h1>Upload Your File</h1>
+
+        <form id="upload-form" enctype="multipart/form-data">
+            
+            <label for="file-input">Firmware Package</label>
+            <input type="file" id="file-input" name="file" required>
+
+            <label for="ceart-input">Ceart</label>
+            <input type="file" id="ceart-input" name="ceart" required>
+            
+            <label for="username">MQTT Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">MQTT Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="uploadFile()">Upload</button>
+        </form>
+
+        <div class="progress-bar-container" id="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+
+        <div id="status"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>

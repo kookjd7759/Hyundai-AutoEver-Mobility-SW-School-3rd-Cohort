@@ -1,0 +1,10 @@
+user sender
+topic write topic
+
+user reciver
+topic read topic
+
+
+## 사용자명이 %u에 자동으로 적용 되도록 pattern 생성 가능
+pattern write ota/result/%u
+pattern read ota/update/%u

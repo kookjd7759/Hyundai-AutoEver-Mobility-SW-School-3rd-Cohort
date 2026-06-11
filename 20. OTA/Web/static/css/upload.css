@@ -1,0 +1,101 @@
+/* 전체 화면 중앙 배치 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+/* 업로드 박스 스타일 */
+.upload-box {
+    width: 50%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    text-align: left;      /* 변경 */
+}
+
+.upload-box h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.upload-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-box input[type="file"] {
+    padding: 0;
+}
+
+/* 로딩바 컨테이너 */
+.progress-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 20px;
+    display: none;
+}
+
+/* 로딩바 */
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+}
+
+/* 상태 텍스트 */
+#status {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* 업로드 버튼 */
+.upload-box button {
+    display: block;
+
+    width: 100%;
+    margin-top: 20px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+}
+
+.upload-box button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    font-weight: 600;
+    color: #333;
+}
