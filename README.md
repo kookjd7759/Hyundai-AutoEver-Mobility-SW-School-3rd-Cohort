@@ -3422,7 +3422,7 @@
 <a id="course-20"></a>
 ### 20\. OTA <sub>(2026.06.09 ~ 2026.06.15)</sub>  
 > **📝 학습 내용**  
->   
+> 차량 OTA의 개념과 SOTA/FOTA 업데이트 방식, UN R155·UN R156·ISO 21434·ISO 24089 등 관련 법규·표준을 학습하고, OTA Server–DCU–Master ECU–Target ECU 기반 업데이트 흐름과 부트로더·롤백·A/B 업데이트·차분 업데이트·Secure Boot·Uptane·DevSecOps 보안 체계를 이해하며 Raspberry Pi·MQTT·CAN 기반 OTA 관리 시스템 및 Secure OTA 구현 실습을 수행  
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
