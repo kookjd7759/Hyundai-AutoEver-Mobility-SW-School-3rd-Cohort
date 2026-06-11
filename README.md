@@ -3430,7 +3430,7 @@
 ---
 
   ## 이론  
-
+  ### 자동차 SW 업데이트와 OTA 개요  
   **OTA 개요**  
   - [정의] : 차량의 수명 주기 안전 및 보안과 관련해 악영향을 줄 수 있는 소프트웨어의 결함을 수정하고 성능을 개선하기 위해 소프트웨어를 업데이트하는 기술을 의미
   - [종류]
@@ -3472,6 +3472,224 @@
     1. OTA Update는 차량에 무선으로 소프트웨어를 업데이트하는 기술을 의미
     2. SDV는 SW 중심의 자동차를 개발하는 것
     3. 자동차 사이버보안 관련 법규는 UNR.155, UNR.156가 있으며 관련 표준으로는 ISO 21434, ISO 24089가 있다.
+  
+  ### OTA 프로세스의 이해  
+  **OTA 프로세스 개요**  
+  - [Vehicle]
+    1. OTA server - VIN 및 제어기 버전 기반 OTA 실행 판단
+    2. DCU (Modem) - 서버와 무선통신수행
+    3. Master ECU (CCU) - DM Client 및 OTA Master를 포함
+    4. Target ECU - 수행제어기 내 Reprogramming을 수행하는 로직으로 리프로그래밍 명령에 따라 수행제어기의 코드/데이터 영역을 삭제하고 관리 로직으로부터 수신한 ROM file을 쓰는 역할
+  - [ECU]
+    1. Cloud Service에서 업데이트할 ECU의 소프트웨어를 자동차의 OTA Master로 보낸다
+    2. Security Key 확인 후, OTA Master의 Memory에 업데이트 소프트웨어를 저장
+    3. 정지한 상태에서 New Program을 해당 ECU로 전송
+    4. Update Data를 Memory에 저장
+  - [Update] : 업데이트 모드 진입 - Full Image 생성 - 업데이트 - 정상 부팅
+  - 업데이트시 UART 통신 에러로 BIN 파일이 오전달 될 수 있어 UART 패킷에 CRC16 적용
+  - [Boot Sequence]
+    1. 전원 ON / 리셋 - 디바이스에 전원이 들어오거나 리셋되면 MCU가 시작됨
+    2. 1단계 부트로더 (Primary Bootloader) - ROM에 영구 상주, 하드웨어 초기호 후 소프트웨어를 메모리에 로드
+    3. 2단계 부트로더 (SSBL) - OTA 업데이트 프로세스를 담당, 어떤 Application을 실행할지 판단, SSBL은 2단계 부트로더가 업데이트 코드를 한 곳으로 모으고, 안전한 검증과 롤백을 책임진다. SSBL을 생략하면 App마다 업데이트 코드가 중복되고 업데이트 중 실패시 복구가 불가능
+    4. Application 실행 - 선택된 사용자 application으로 제어를 넘겨 정상 동작 시작
+  - Boot sequence with rollback : 새 펌웨어 불량시 이전 버전으로 자동 복구
+    - 메커니즘
+      1. 임시 적용 - 새 펌웨어를 곧바로 적용하지 않고 '검증 대기' 상태로 부팅
+      2. 검증 실패 시 중단 - 자가 점검 및 헬스체크 실패 시 새 버전 적용을 취소
+      3. 이전 버전 자동 복귀 - 보존해 둔 직전 펌웨어로 자동 전환
+  - Anti-Rollback : 롤백 방지는 내장된 보안 버전이 장치의 EFuse에 프로그래밍된 버전보다 높은 경우에만 펌웨어를 실행할 수 있는 기능
+  - Booting Process : 전원이 들어오면 ROM에서 사전에 정해진 위치에서 Boot Loader를 읽고 Boot Loader는 초기화를 진행하고, OS를 로딩
+  - Secure Booting
+    - [신뢰 체인] - 단 단계가 다음 단계의 서명을 검증한 뒤에만 실행을 넘김 (CPU/ROM - Boot Loader - Kernel - RootFS/App)
+    - [검증 실패 시 공격 차단] - 공격자가 변조된 코드를 끼워 넣으면 서명 불일치로 그 단계에서 부팅 차단
+  
+  **OTA 요수 기술의 이해**  
+  - FOTA : OTA 서버와 통신을 위한 프로토콜
+  - Differential Update : 차량 내부의 다양한 제어기에 업데이트 정보를 전달하고, 상태를 수집해 DM에 전달
+  - A/B Update : OTA 정보를 제어기에 전달하고, 업데이트 결과를 전달 받기 위한 통신
+  - A/B Differential Update : 제어기 저장 공간을 충분하게 확보 가능한 경우 사용. 저장 공간을 이중화하여 하나의 저장공간만을 동작 시 사용하고 다른 하나의 저장 공간은 업데이트를 위해 사용
+    - [제약사항]
+      1. 파일 종류에 따른 제약사항 - 유사한 데이터라도 압축되면, 데이터 유사성이 훼손되어 차분 데이터 적용 어려움
+      2. 원본 데이터 보존 필요 - Old가 변조되는 경우 정상적인 New 데이터 생성이 불가능
+  - In-place Diffenential Update (Non-A/B Update) : 여분의 저장공간 확보가 불가능한 제어기 차분 업데이트를 위해 사용
+  - UDS : Full Update와 Differential Update 두 종류
+  - Security : 현대 자동차 사용 - Secure Flash 1/2
+  - Hash Algorithm : Old 데이터 변조 확인, 업데이트 성공 여부 확인, OTA 패키지 변조 여부 확인  
+
+  - OTA Protocol
+    1. OMA DM 1.x - 현대자동차 기분 OTA 기반 프로토콜
+    2. OMA DM 2.x - 강화된 보안
+    3. Lightweight Machine to Machine (LwM2M) - IoT 장치 관리자를 위한 통신 프로토콜로 리프로그래밍 관련 사양 포함되어 있음
+      - CoAP 사용 - IoT 전송 프로토콜 CoAP 사용
+      - DTLS 기반 보안 - DTLS 기반 보안 기술 적용
+      - oneM2M 표준 - 다수 장치를 효율적으로 관리
+      - 기타 - 응용개발 용이, 재사용성 증가
+    4. MQTT - 가볍고 효율적, 확장성과 신뢰성 및 보안성을 지원하여 IoT에서 사실상 데이터 전송의 표준
+      - Publish - Subscribe 기반의 메시지 송수신 프로토콜, 작은 코드 공간이 필요하거나 네트워크 대역폭이 제한되는 원격 통신을 위해, 즉 IoT와 같은 제한된 혹은 대규모 트래픽 전송을 위해 만들어진 프로토콜
+  - The Update Framework (TUF) : 다양한 OTA 해킹에 대한 대용 시나리오와 Private Key 유출 등의 사고 대응 시나리오를 포함하는 사양
+
+  **다양한 종류의 OTA**  
+  - OTA 방식에 따라 Target ECU가 CGW로 부터 받는 UDS 요청이 달라짐
+    - 압축 데이터 - 롬데이터를 압축하여 수행제어기에 전송하며, 수행제어기에서 압축해제와 동시에 Reprogramming하는 방식
+    - 차분 데이터 - 기존 롬데이터 대비 변경부분만 추출하여 차분데이터를 생성하고, 이를 전송하여 기존 롬데이터와 차분데이터를 조합하여 Reprogramming을 수행하는 방식
+    - 메모리 이중화 - 다수 개의 메모리 블록으로 업데이트 할 롬데이터를 작동할 메모리 블록에 write 후 swap 할 수 있는 방식
+  - Caching 
+    - Application 데이터를 메모리에 넣는 방식 - 바이이너리는 비휘발성 메모리에 들어가는 부분만을 포함하고, 스타트업 루틴을 실행하면 휘발성 메모리에 들어있는 부분을 초기화 함
+    - W/O Caching - 새로운 Application의 일부를 포함한 패킷이 도착할 때마다 이를 플래시 메모리의 지정된 위치에다 저장
+    - Partial Caching - SRAM에 일정 영역을 캐싱용으로 할당하고 새로운 패킷이 도착하면 이 영역에 저장 함
+    - Full Caching - 새로운 application 전체를 SRAM에 저장하고 서버로부터 다운로드가 완전히 끝나야만 플래시 메모리에 쓰는 방식
+
+  **OTA 연구 동향**  
+  - [OTA 보안 요구사항] : 기밀성, 무결성, 가용성, 인증, 최신성
+  - [OTA 연구 동향] : 암호화 모듈 기반 연구, 하드웨어 모듈 기반 연구, 통신 프로토콜 기반 연구, 업데이트 프레임워크 기반 연구, AI/ML 기반 보안 - 지능형 위협 탐지 연구, 블록체인/분산원장(DLT) 기반 보안 연구, 표준과 규제에 관한 연구
+
+  ### OTA 프로세스의 이해  
+  **자동차 사이버보안의 이해**  
+  - Spoofing : 속이는 것을 이용한 공격 기법 (ARP, E-main Spoofing)
+  - Sniffing (Snooping) : 네트워크 상에서 자신이 아닌 다른 상대방들의 패킷 교환을 엿듣는 것
+  - Jamming (전파 방해) : 강한 노이즈 신호를 송출해 전상 무선 통신을 방해 및 차단하는 공격
+  - DoS (Denial of Service, 서비스 거부) : 대량의 트래픽 및 요청을 보내 시스템 자원을 고갈시켜 정상 서비스를 마비시키는 공격
+  - 리버스 엔지니어링 (Reverse Engineering) : 완성된 소프트웨어나 하드웨어를 역으로 분석해 내부 구조와 동작 원리를 파악하는 기법  
+  - 자동차 사이버 보안 : 자동차 내부 시스템과 통신 네트워크를 보호하여 사이버 공격으로부터 차량을 안전하게 지키는 기술
+
+  **OTA 관련 보안 위협**  
+  - Booting Process : Booting 과정에서 공격자가 원하는 프로그램을 실행하기된다면?
+  - Attack Serface 증가 : OTA로 인해 원격에서 자동차로의 사이버 공격의 attack path가 생겨 공격 난이도가 감소
+  - 자동차와 인터넷의 연결성 증가 -> 사이버공격 경로 증가 -> 위협 가능성 증대
+
+  **OTA 관련 사이버공격 대응 기술**  
+  - 운영모드 : DES나 AES와 같은 블록 암호를 사용하여 다양한 크기의 데이터를 암호화 하는 방식
+    - Electronic Code Block (ECB) 모드 - 한 블록의 평문은 한 블록의 암호문으로 암호화
+      - [장점] - 병렬 처리 가능, 오류 확산 없음
+      - [단점] - 같은 평문에 대해 같은 암호문 즉, 블록 단위의 패턴 존재 (블록 재사용 공격 가능)
+    - Cipher Block Chaining (CBC) 모드 - 한 평문 블록이 암호화 되기 이전에 바로 앞 평문 블록의 암호문과 XOR
+      - 연결성 - 한 평문 안에 동일한 두 개의 블록이 대응되는 암호문 블록이 상이하여 블록단위의 재사용 공격이 불가능
+      - 오류 확산 가능
+    - CFB 모드 - 오류확산, 동기식 스트림 암호
+    - CTR 모드 - 전처리, 병렬처리 가능  
+  
+  - 공개키 암호 : 비밀키 분배 필요, 비밀키 개수는 (n-1)개, 암호화&복호화 속도 빠름 (DES, AES, SEED, ARIA)
+    - 일방향 함수, 소인수분해 문제, Trapdoor One-Way Function (TOWF)
+  - 대칭키 암호 : 비밀키 분배 불필요, 비밀키 개수는 1개, 암호화&복호화 속도 느림 (RSA, EIGamal)
+  - 하이브리드 암호 : 비밀키를 공개키 암호로 암호화 하여 분배, 수신자는 분배된 비밀키를 이용해 암호화  
+
+  - 메시지 무결성 : 원본 메시지의 변조를 방지하기 위한 서비스
+    - 메시지 변조 감지 코드 (MDC)
+  - Hash Function : 임의의 크기의 데이터 입력 -> 고정된 크기의 출력 값
+    - [성질] - 역상 저항성, 제2 역상 저항성, 충돌 저항성
+    - Birthday Paradox, Birthday Problem 
+    - MD5, SHA etc..  
+
+  - Digital Signature : 개인키로 서명, 공개키로 검증
+    - 메시지 무결성, 메시지 인증, 부인방지 제공  
+
+  - Key Exchange
+    - Key Transport Protocol
+    - Key Agreement Protocol
+    - 키 교환 프로토콜의 안전성 - 전방향 안전성, 기지-키 안전성, 세션 상태 노출에 대한 안전성, 비밀키 사용 위장에 대한 안전성, 파트너 혼돈 공격에 대한 안전성
+    - Diffie-Hellman 동의 프로토콜
+    - STS 프로토콜  
+
+  - TLS(SSL) : Transprotation Layer Security는 컴퓨터 네트워크에 통신 보안을 제공하기 위해 설계된 암호 규약으로 도청, 간섭, 위조를 방지하기 위해 설계
+  - Handshake Protocol : The negotiation of the cipher suite and the generation of cryptographic secrets
+    - [Phase 1]
+      - Client Hello (Client -> Server)
+      - Server Hello (Server -> Client)
+      - After Phase 1, the client and server know the following: version of SSL, compression method etc..  
+    - [phase 2]
+      - Sever Certificate (Server -> Client)
+      - Server Key Exchange (Server -> Client)
+      - Certificate Request (Server -> Client)
+      - Server Hello (Server -> Client)
+    - [phase 3]
+      - Certificate (Client -> Server)
+      - Client Key Exchange (Client -> Server)
+      - Certificate Verify (Client -> Server)
+    - [phase 4]
+      - Change Cipher Spec (Client -> Server)
+      - Finished (Client -> Server)
+      - Change Cipher Spec (Server -> Client)
+      - Finished (Server -> Client)
+  
+  ### 자동차 SW 업데이트 법규 및 표준의 이해  
+  - UN R156 (UNECE WP.29) : 차량 SW 업데이트 규제 (법적 의무)
+  - CSMS : 사이버보안 관리체계
+  - SUMS : SW 업데이트 관리체계
+  - RXSWIN : 형식승인 SW 식별자
+  - VTA : 차량 형식승인
+  - WVTA : 전체차량 형식승인  
+
+  **SW Update 법규 및 표준의 이해**  
+  - SUMS
+    - [요구사항] - 소프트업데이트 대상 차량을 특정할 수 있음, 모든 초기/업데이트 소프트웨어는 고유한 정보로 식별 가능, RXSWIN을 사용하여 소프트웨어 버전을 검증하고 소프트웨어 버전 정보를 업데이트함, 업데이트 프로세스 이전에 스포트웨어가 무단조작되지 않도록 함, 프로세스가 손상되지 않도록 보호함, 주행중 OTA 업데이트가 수행되어도 안전에 영향을 미치지 않음
+  - RXSWIN 
+    - [관리 아키텍처]
+      - RXSWIN은 고유 식별딜 수 있도록 속성 정보 항목을 5개로 구성하여 생성
+        1. 법규 발행 기관의 Prefix 정보
+        2. 법규 번호 정보
+        3. 형식 승인 인증 받은 '차종 프로젝트 명-연식' 정보
+        4. Type Approval 인증 받을 당시 '차종 타입'구분 정보 or '법규 내용 변경'으로 인해 Type Approval 재인증 받았을 경우 법규 변경 정보
+        5. 소프트웨어 업데이트로 인해 Type Approval 재 인증 받은 경우 RXSWIN Extension 정보
+      - 통합 진단 서비스(UDS) 표준 'ISO 14229'을 RXSWIN 생성 규칙에 적용하여 RXSWIN 저장 효율성을 증대
+    - [동작 아키텍처]
+      - RXSWIN Generation (Update 포함)
+        1. RXSWIN은 고유 식별자로 사람이 읽을 수 있는 형식으로 인코딩 된다.
+        2. 형식 승인 시스템에 영향을 미치는 소프트웨어가 업데이트되는 경우, 차량의 RXSWIN 세트가 업데이트 된다
+        3. 소프트웨어 업데이트가 형식 승인 시스템에 영향을 미치지 않고 업데이트되는 경우, 차량의 RXSWIN 세트가 업데이트 되지 않음
+        4. 대상 차량의 소프트웨어 업데이트가 성공적으로 완료되었을 때만 RXSWIN 및 해당 소프트웨어 버전은 소프트웨어 정보관리 시스템에 차량 별로 업데이트 되어야 한다.
+      - RXSWIN Read
+        1. 진단기에서 RXSWIN 버전 조회 요청시 Gateway 제어기에서 각 제어기의 RXSWIN 버전을 조회하여 송신
+        2. 모든 ECU로부터 수신된 목록에는 차량 내에 존재하는 여러 개의 RXSWIN이 포함되어 있으며, Gateway 제어기는 ECU에 의해 수신된 모든 RXSWIN-Set으로부터 RXSWIN 마스터 리스트를 생성하는 작업을 진행
+        3. 게이트웨이는 RXSWIN Table을 관리한다. 제어기로부터 응답 받은 Local RXSWIN을 테이블에 업데이트
+        4. RXSWIN 마스터 리스트는 진단 장비에 전달되며, RXSWIN을 읽을 수 없는 경우 RXSWIN 대신 오류 코드를 전달
+      - RXSWIN Write
+        - 모든 차량에 저장된 특정 RXSWIN 세트는 허가 없이 조작하거나 변경할 수 없다
+  - ISO 24089
+    - 소프트웨어 업데이트 프로세스에 관한 조직 및 제품 수준의 요구사항
+    - Target 컴포넌트는 직접 통신 채널 또는 네트워크 게이트웨이를 통한 간접 통신 채널로 업데이트됨, 업데이트 프로세스가 수행되는 동안 안전, 사이버 보안 및 관련 기능에 대한 요구사항들을 만족, 유선 또는 무선을 통한 소프트웨어 패키지 전송을 지원, 품질 및 사이버 보안과 안전에 관련 산업계 모법 사례 프로세스 및 Technical Standard를 구현  
+
+  **UNR156. SUMS 인증사례**  
+  - UNR.156 인증 프로젝트
+    1. TS 업체 선정 - TS 기관 별 SUMS 인증 기준, 실적, 견적 조사 및 평가 / 2개월
+    2. 현황 분석 및 증적 제출 - UNR.156 SUMS 심사 체크리스트 분석 / 6개월
+    3. SUMS 인증 사전 심사 - 제출된 증적 및 소명 자료에 대한 서류 심사 / 2개월
+    4. SUMS 인증 최종 심사 - Off-site 심사 / 3개월
+    5. 인증서 발급 절차 - SUMS 인증서 발급 / 1개월
+  - SUMS VTA 
+    - [심사 절차] - VTA 인증 신청 - VTA 인증 심사 - 심사보고서 제출 - VTA 인증서 발급
+    - [Check List]
+      - Requirement for the Vehicle Type
+      - Additional Requirements for OTA updates
+      - Requirement for Software updates
+      - Where a vehicle type uses RXSWIN
+      - Each RXSWIN shall ve easily readable in a standard way via the use of an electronic communication interface, at least by standard interface (OBD port)
+      - The vehicle manufacturer shall protect the RXSWINs and/or software version(s) on a vehicle against unauthorized modification. At the time of Type Approval, the means implemented to protect against unauthorized modification of the RXSWIN and/or software version(s) chosen by the vehicle manufacturer shall be confidentially provied.
+      - Additional Requirement for over the air updates
+      - The vehicle shall have the following functionality with regards to software updates
+      - etc ..
+  - Key takeways
+    1. Secure OTA 시스템에서 네트워크 관점에서의 개선사항은 네트워크 채널의 보안성, 안정성, 그리고 효율성 등을 고려하여 보안 메커니즘을 적용
+    2. UNR.156은 자동차 소프트웨어 업데이트에 관련한 법규이고, ISO 24089는 해당 법규에 대한 표준문서이다. 법규는 What에 대한 내용을 포함하고, 표준은 How에 대한 내용을 포함한다.
+    3. SUMS 요구사항은 아래와 같이 4개 항목으로 구성됨
+
+  ### Uptane Framework  
+  **왜 Uptane인가?**  
+
+  
+  **Uptane 위협 모델**  
+
+  
+  **Uptane 아키텍처**  
+
+  
+  **동작 절차와 방어 원리**  
+
+  
+  **구현, 배포, 표준 연계**  
+
+
+
+
 
   ## 실습  
   ### Windows 기반 서버 환경 구성  
