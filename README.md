@@ -3468,7 +3468,7 @@
   - [제정 배경] : 자동차의 변화, 법규 발효 
   - UN/WP29 Organization
   - CS, SU regulation
-  - Key takeways 
+  - Key takeaways 
     1. OTA Update는 차량에 무선으로 소프트웨어를 업데이트하는 기술을 의미
     2. SDV는 SW 중심의 자동차를 개발하는 것
     3. 자동차 사이버보안 관련 법규는 UNR.155, UNR.156가 있으며 관련 표준으로는 ISO 21434, ISO 24089가 있다.
@@ -3667,29 +3667,100 @@
       - Additional Requirement for over the air updates
       - The vehicle shall have the following functionality with regards to software updates
       - etc ..
-  - Key takeways
+  - Key takeaways
     1. Secure OTA 시스템에서 네트워크 관점에서의 개선사항은 네트워크 채널의 보안성, 안정성, 그리고 효율성 등을 고려하여 보안 메커니즘을 적용
     2. UNR.156은 자동차 소프트웨어 업데이트에 관련한 법규이고, ISO 24089는 해당 법규에 대한 표준문서이다. 법규는 What에 대한 내용을 포함하고, 표준은 How에 대한 내용을 포함한다.
     3. SUMS 요구사항은 아래와 같이 4개 항목으로 구성됨
 
   ### Uptane Framework  
   **왜 Uptane인가?**  
+  - OTA 보안이 만족해야하는 5가지 속성
+    1. 기밀성 - 펌웨어 노출, 역공학, 취약점 비교 방지
+    2. 무결성 - 패키지, 저장소의 변조 탐지
+    3. 인증 - 신뢰된 출처가 서명했는지 검증
+    4. 최신성 - 구버전, 재사용 패키지 차단
+    5. 안전, 보안 업데이트는 항상 적용 가능
+  - 범용 SW 업데이트 보안 기법을 차량에 그대로 적용하기 어려움 - 단일 키 서명, TLS/전송 계층 보안 및 자동차 고유의 제약 때문. 그래서 TUF의 검증된 원리를 차량환경에 맞게 확장한 것
 
+  - Uptane : 지상 차량의 소프트웨어 업데이트를 안전하게 설계,구현,배포하기위한 보안 프레임워크 표준, Uptane의 모든 구조는 하나의 목표로 수렴해야 함 (공격자가 임의 코드를 설치하려면 반드시 둘 이상의 독립적인 요소를 동시에 침해해야 한다)  
   
   **Uptane 위협 모델**  
+  - 공격자의 목표에 따른 4단계 정의
+    1. Read - 업데이트 내용 읽기
+    2. Deny - 업데이트 설치 방해
+    3. Disable - ECU 기능 마비
+    4. Control - ECU/차량 장악
+  - Uptane은 '강하지만 전능하지 않은'공격자를 가정 : 네트워크 가로채기/변조, 저장소 한 곳 장악, ECU 한 종류 장악
+  - 자동차 OTA 특유의 위협 : Rollback/Freeze, Mix-and-match, Arbitary software
 
-  
   **Uptane 아키텍처**  
+  - Uptane 전체 구성도
+    - OEM Backend (Cloud)
+      - Image Repository
+      - Director Repository
+      - Time Server
+    - Vehicle
+      - Primary ECU
+        - Scondary ECU ...
+  - Image Repository : 이 이미지가 정상인지, 모든 가용 이미지와 메타데이터 확인
+    - OEM이 공개 및 서명한 모든 이미지의 권위있는 출처
+  - Director Repository : 이 차량에 무엇을 설치할지, 차량별 설치 지시 메타데이터 확인
+    - 차량별로 설치할 이미지를 실시간 지시하는 두뇌
+  - 공격자는 Director의 지시와 Image의 진위를 모두 위조해야 한다.
+  - Role : 특정 메타데이터에 서명할 책임을 가진 주체
+    1. Root - 모든 신뢰가 시작되는 단 하나의 지점
+    2. Target & 위임 - 이미지의 해시, 크기, 버전을 서명
+    3. Snapshot & Timestamp - 버전 조합과 시간을 지키는 두 파수꾼.
+    - 각 단계가 다음 단계를 검증하며, 끊기면 즉시 거부함.
+  - Time Server & Nonce - ECU는 지금이 언제인지 스스로 알 수 없기 때문에 Time server가 서명된 현재 시각을 제공
 
-  
   **동작 절차와 방어 원리**  
-
+  - Image는 '등록과 서명', Director는 '차량별 지시 생성'
+    1. 이미지 빌드, 서명
+    2. Image Repo 등록
+    3. 인벤토리 갱신
+    4. 차량별 지시 서명
+  - Vehicle Version Manifest : '우리 차량의 현재 상태'를 서명해 백엔드에 보고
+  - ECU Full Verification 절차
+    1. 시각확인
+    2. Root 검증
+    3. Timestamp
+    4. Snapshot
+    5. Targets
+    6. 이미지 검증
+    - 모든 검증 통과 -> 설치 / 하나라도 실패 -> 설치 거부 
   
   **구현, 배포, 표준 연계**  
+  - Uptane 구현 옵션 : 표준 준수 범위 내에서 기술 선택은 자유
+  - POUF (Protocols, Operations, Usage, Formats) : Uptane은 '무엇을 보장해야 하는가'를 정의하고, 데이터 형식 및 프로토콜 등 구체적 선택은 구현에 맡긴다. POUF는 그 구체적 선택을 문서화 한 것.
+  - Key Takeaways
+    1. 핵심 원리 - Uptane = TUF의 자동차 확장. 모든 설계가 'Compromise-resilience'로 수렴
+    2. 이중 저장소 - Image + Director 분리 -> 한 저장소 침해로는 임의 코드 설치 불가
+    3. 4개 Role - Root / Targets / Snapshot / Timestamp
+    4. 엔드포인트 검증 -  Primary + Secondary가 설치 직전 직접 검증 - 자원에 맞춰 두 수준
+    5. 위협 대응 - Rollback, Freeze, Mix-and-Arbitary software 등 8대 공격을 구조적으로 차단 
+    6. 생태계 - ISO 24089, UN R156/21434 준수의 기술적 토대
 
+  ### DevSecOps  
+  **CI/CD**  
+  - Continuous Integration & Continuous Deply (CI/CD) : 지속적인 통합과 배포를 통해 어플리케이션 개발 단계를 자동화하여 고객에게 보다 짧은 주기로 서비스를 제공하고 개선하는 방법
+  - CI
+    - [절차] - 개발(여러명의 개발자가 개발) - 통합(소스 코드를 하나로 통합) - 저장(소스 저장소에 저장) - 빌드(실행 파일 생성) - 테스트(실행 파일의 동작 여부 점검)
+    - [목표] - 버그를 신속히 해결, 소프트웨어 품질 향상, 소프트웨어 업데이트 검증 및 릴리즈 소요 시간 감소
+  - CD
+    - [절차] - 테스트 - 배포 - 운영 - 모니터링
+  - CI/CD Toos : JIRA, GitHub & Git, Jenkins, Monitoring
+  - CI/CD 보안 : CI/CD 파이프라인은 소스, 빌드, 테스트, 배포 각 단계마다 코드 변조 및 비밀번호 유출, 취약한 의존성 주입 등 다양한 보안 위협에 노출되어 단계별 보안 통제가 필요함
 
+  **SW 개발 방법론**  
+  - SW 개발 방법론 : 고객/시장의 욕구를 이해하고 구현하기 위해 SDLC 전과정을 다루는 방법, 작게 시작하고 빠른 피드백, 고객과 시장이 정말로 원하는 욕구를 반영하는 방향으로 변화
+  - Agile : 점진적 개발, 점진적 개선
 
-
+  **DevSecOps**  
+  - DevOps (Development + Operations) : 개발(Dev)은 새로운 기능을 빠르게 출시하고자 하고, 운영(Ops)은 시스템을 안정적으로 유지하고자 함. 이 간극을 좁히는 것이 DevOps의 출발지점.
+    - [정의] - 단절된 개발과 운영간 프로세스를 Seamless하게 연결하고 자동화 방법을 통해 효율성을 극대화하는 방법
+    - Agile DevOps Process - 계획 -> 개발 -> 빌드 -> 테스트 -> 배포 -> 운영 -> 모니터링이 끊임없이 순환하는 DevOps 흐름
+  - DevSecOps : 개발과 운영의 무한 순환 흐름에 전체에 보안(Sec)을 녹여 넣음
 
   ## 실습  
   ### Windows 기반 서버 환경 구성  
