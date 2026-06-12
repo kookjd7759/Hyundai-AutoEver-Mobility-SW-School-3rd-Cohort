@@ -1,173 +1,45 @@
 import paho.mqtt.client as mqtt
-from pathlib import Path
-import json
-import base64
-import hashlib
-import getpass
-import threading
 
-BROKER_PORT = 1883
-
-
-def on_connect(client, userdata, flags, reasonCode):
+#MQTT broker에 연결 시 연결 성공 여부 확인을 위한 콜백 함수 작성 (print 내 내용 수정을 통해 원하는 메시지가 커널에 출력되도록 할 수 있음)
+def on_connect(__,userdata,flags,reasonCode):
     if reasonCode == 0:
         print("connected OK")
-        userdata["connected"] = True
     else:
         print("Error: connection failed, Return Code =", reasonCode)
-        userdata["connected"] = False
 
-    userdata["connect_event"].set()
-
-
+#MQTT broker와 연결 종료 시 결과 확인을 위한 콜백 함수 작성
 def on_disconnect(client, userdata, flags, rc=0):
-    print("Disconnected, RC:", rc)
+    print('Disconnected, RC:', rc)
 
-
+#MQTT broker에 message publish 요청의 결과 확인을 위한 콜백 함수 작성
 def on_publish(client, userdata, mid):
-    print("message published, MID:", mid)
+    print("message published, MID: ", mid)
 
-
-def make_client(mqtt_id, mqtt_password):
-    state = {
-        "connected": False,
-        "connect_event": threading.Event()
-    }
-
-    client = mqtt.Client(userdata=state)
+#MQTT message publish 함수 정의
+def message_publish(topic, message, broker_ip, port = 1883):
+    #MQTT Client 선언 및 class function에 작성한 콜백 함수 연동
+    client = mqtt.Client()
     client.on_connect = on_connect
     client.on_disconnect = on_disconnect
     client.on_publish = on_publish
 
-    client.username_pw_set(mqtt_id, mqtt_password)
-
-    return client, state
-
-
-def publish_payload(topic, payload, broker_ip, mqtt_id, mqtt_password, port=1883):
-    client, state = make_client(mqtt_id, mqtt_password)
-
+    #Message publish를 위해 broker와 연결 및 publish 요청 시도
     try:
         client.connect(broker_ip, port)
         client.loop_start()
-
-        # 연결 결과 대기
-        connected = state["connect_event"].wait(timeout=5)
-
-        if not connected:
-            print("Error: broker connection timeout")
-            client.loop_stop()
-            client.disconnect()
-            return False
-
-        if not state["connected"]:
-            print("Error: authentication failed or connection rejected")
-            client.loop_stop()
-            client.disconnect()
-            return False
-
-        result = client.publish(topic, payload, qos=2)
-        result.wait_for_publish()
+        
+        client.publish(topic, message, qos=2)
 
         client.loop_stop()
+
+        print(f"Success sending message: {message}")
         client.disconnect()
-
-        return True
-
     except Exception as e:
-        print("Error:", e)
-        return False
+        print("Error: ", e)
 
-
-# 텍스트 메시지 전송
-def message_publish_msg(topic, message, broker_ip, mqtt_id, mqtt_password, port=1883):
-    data = {
-        "type": "msg",
-        "message": message
-    }
-
-    payload = json.dumps(data, ensure_ascii=False).encode("utf-8")
-
-    success = publish_payload(topic, payload, broker_ip, mqtt_id, mqtt_password, port)
-
-    if success:
-        print(f"Success sending text message: {message}")
-    else:
-        print("Failed sending text message")
-
-
-# 파일 전송
-def message_publish_file(topic, file_path, broker_ip, mqtt_id, mqtt_password, port=1883):
-    path = Path(file_path)
-
-    if not path.exists():
-        print("Error: file does not exist:", file_path)
-        return
-
-    file_data = path.read_bytes()
-
-    data = {
-        "type": "file",
-        "filename": path.name,
-        "size": len(file_data),
-        "sha256": hashlib.sha256(file_data).hexdigest(),
-        "data": base64.b64encode(file_data).decode("utf-8")
-    }
-
-    payload = json.dumps(data, ensure_ascii=False).encode("utf-8")
-
-    success = publish_payload(topic, payload, broker_ip, mqtt_id, mqtt_password, port)
-
-    if success:
-        print(f"Success sending file: {path.name}")
-        print(f"File size: {len(file_data)} bytes")
-    else:
-        print("Failed sending file")
-
-DEBUG = True
-
+#해당 코드를 직적 실행할 때만 message를 보내도록 정의, 모듈로 쓸 경우 이하 코드는 실행 되지 않음!
 if __name__ == '__main__':
-    if DEBUG:
-        broker_ip = '192.168.203.50'
-        topic = 'topic'
-    else:
-        broker_ip = input("Broker IP 입력: ").strip()
-        topic = input("Topic 입력: ").strip()
-
-    if DEBUG:
-        mqtt_id = 'ecu1'
-        mqtt_password = '1234'
-    else:
-        mqtt_id = input("MQTT 사용자 이름 입력: ").strip()
-        mqtt_password = getpass.getpass("MQTT 비밀번호 입력: ")
-
-    print()
-    print("1. 텍스트 메시지 전송")
-    print("2. 파일 전송")
-
-    select = input("전송 방식 선택: ").strip()
-
-    if select == "1":
-        message = input("전송할 메시지 입력: ")
-        message_publish_msg(
-            topic,
-            message,
-            broker_ip,
-            mqtt_id,
-            mqtt_password,
-            BROKER_PORT
-        )
-
-    elif select == "2":
-        file_path = input("전송할 파일 경로 입력: ").strip().strip('"')
-        message_publish_file(
-            topic,
-            file_path,
-            broker_ip,
-            mqtt_id,
-            mqtt_password,
-            BROKER_PORT
-        )
-
-    else:
-        print("잘못된 선택입니다.")
+    TOPIC = '<topic>' #Message 전송 주제를 정의하는 변수
+    BROKER_IP = "<broker ip>" #Message publish를 중개해주는 MQTT Broker의 주소
+    BROKER_PORT = "<broker port>" #연결하려는 MQTT Broker의 open port
+    message_publish(TOPIC, "Hello! I am an update server.", BROKER_IP, BROKER_PORT)
