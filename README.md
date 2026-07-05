@@ -3860,15 +3860,18 @@
 <a id="course-21"></a>
 ### 21\. 자율주행 기능 구현 프로젝트 <sub>(2026.06.16 ~ 2026.06.29)</sub>  
 > **📝 학습 내용**  
->   
+> **센서 융합 기반 RC카 자율주행 통합 제어 시스템 O-ADAS (OTA-based Advanced Driver Assistance System) 개발** - 카메라 기반 차선·보행자 인식과 초음파·ToF 거리 센서를 결합하여
+차선 유지, 측면 안전 판단, 자동 긴급 제동, 조향·구동 제어를 수행하는 프로젝트를 개발했습니다.
 
 <details>
   <summary>📚 상세 학습 내용 보기</summary>
 
 ---
 
+  ## 센서 융합 기반 RC카 자율주행 통합 제어 시스템 O-ADAS (OTA-based Advanced Driver Assistance System)
 
-
+  [![GitHub Repo](https://img.shields.io/badge/GitHub-O--ADAS%20Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SW-6-3-3rd-Party/OTA-based_Advanced_Driver_Assistance_System)  
+  
 ---
 
 </details> <br>  
